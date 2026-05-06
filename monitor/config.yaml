@@ -1,0 +1,130 @@
+# Job monitor search spec.
+#
+# Concrete searches are generated as the cross-product of (cities x role_templates x
+# role_templates.search_terms). Each (template, city) pair produces N searches —
+# one per search_term. The search name is `<template>_<city>`. Multiple terms
+# under one template are merged before dedup, so the digest treats them as one
+# bucket.
+#
+# Edit `cities`, `role_templates`, and `filters` to retune. Keep this YAML —
+# `monitor/run.py` reads it at every run.
+
+cities:
+  - name: london
+    location: "London, United Kingdom"
+    country_indeed: uk
+  - name: dublin
+    location: "Dublin, Ireland"
+    country_indeed: ireland
+  - name: amsterdam
+    location: "Amsterdam, Netherlands"
+    country_indeed: netherlands
+  - name: berlin
+    location: "Berlin, Germany"
+    country_indeed: germany
+  - name: munich
+    location: "Munich, Germany"
+    country_indeed: germany
+  - name: zurich
+    location: "Zurich, Switzerland"
+    country_indeed: switzerland
+  - name: paris
+    location: "Paris, France"
+    country_indeed: france
+  - name: stockholm
+    location: "Stockholm, Sweden"
+    country_indeed: sweden  # NOTE: Glassdoor is not available for Sweden — it
+                            # will be silently dropped from sites at runtime.
+
+role_templates:
+  - name: sde_junior
+    search_terms:
+      - "software engineer new grad"
+      - "junior software engineer"
+      - "graduate software engineer"
+    sites: [linkedin, indeed, glassdoor]
+    results_wanted: 50
+    hours_old: 72
+    job_type: fulltime
+
+  - name: mle_junior
+    search_terms:
+      - "machine learning engineer new grad"
+      - "junior machine learning engineer"
+      - "graduate machine learning engineer"
+    sites: [linkedin, indeed]
+    results_wanted: 30
+    hours_old: 72
+    job_type: fulltime
+
+  - name: applied_scientist
+    search_terms:
+      - "applied scientist"
+    sites: [linkedin, indeed]
+    results_wanted: 30
+    hours_old: 72
+    job_type: fulltime
+
+filters:
+  # Case-insensitive substring match on the title. Any hit drops the row.
+  exclude_titles:
+    - senior
+    - staff
+    - principal
+    - director
+    - vp
+    - head of
+    - lead
+    - manager
+    - " ii"
+    - " iii"
+    - "level 5"
+    - "level 6"
+    - "l5"
+    - "l6"
+    - "5+ years"
+    - "7+ years"
+    - "10+ years"
+
+  # Allowlist of large tech companies. When non-empty, only roles whose
+  # company name contains one of these tokens (case-insensitive) survive.
+  # Matching is suffix-tolerant: "Google" matches "Google LLC", "Amazon"
+  # matches "Amazon Web Services", etc. Synonyms can be listed as an inner
+  # list — any hit on a synonym counts as a match for that company.
+  include_companies:
+    - google
+    - meta
+    - amazon
+    - microsoft
+    - apple
+    - netflix
+    - nvidia
+    - openai
+    - anthropic
+    - deepmind
+    - stripe
+    - databricks
+    - snowflake
+    - asml
+    - booking.com
+    - adyen
+    - spotify
+    - klarna
+    - revolut
+    - wise
+    - datadog
+    - cloudflare
+    - uber
+    - airbnb
+    - [tiktok, bytedance]
+    - bloomberg
+    - palantir
+    - atlassian
+    - canva
+    - jetbrains
+    - sap
+
+  exclude_companies: []
+
+  # Drop suspiciously empty postings (usually scraper/aggregator pages).
+  min_description_chars: 200

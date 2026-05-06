@@ -1,0 +1,4 @@
+# Monitor-only deps. JobSpy itself is installed editable from the parent
+# directory (`pip install -e ..`), which pulls in pandas/requests/etc.
+pyyaml>=6.0
+requests>=2.31.0

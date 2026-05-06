@@ -1,0 +1,66 @@
+name: Job monitor scrape
+
+on:
+  schedule:
+    # 07:00 UTC and 15:00 UTC — EMEA morning + afternoon batches.
+    - cron: "0 7,15 * * *"
+  workflow_dispatch:
+
+# Allow only one concurrent run; cancel queued runs that haven't started.
+concurrency:
+  group: job-monitor-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed to commit jobs.db back to the branch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use the default token for the commit-back step below.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install -r monitor/requirements.txt
+
+      - name: Run monitor
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python -m monitor.run
+
+      - name: Commit jobs.db
+        if: success()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- monitor/jobs.db; then
+            echo "no changes to jobs.db; skipping commit"
+            exit 0
+          fi
+          git add monitor/jobs.db
+          git commit -m "chore(monitor): update jobs.db [skip ci]"
+          # Push to the branch the workflow ran on. Tolerate a non-fast-forward
+          # if a concurrent run beat us — the next cron will pick up the data.
+          git push origin HEAD:${GITHUB_REF#refs/heads/} || echo "push failed; will retry next run"
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitor-logs
+          path: monitor/logs/
+          if-no-files-found: ignore
+          retention-days: 14
