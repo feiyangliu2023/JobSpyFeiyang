@@ -78,8 +78,12 @@ last CI run.
 
 - Cron runs at **07:00 UTC** and **15:00 UTC** (catches EMEA morning posts
   and the afternoon batch). Adjust in `.github/workflows/scrape.yml`.
-- Each successful run commits the updated `jobs.db` back to the branch with a
-  `[skip ci]` message so it doesn't trigger itself.
-- Zero net-new jobs = no notification (no spam).
+- Each successful run commits the updated `jobs.db` and `JOBS.md` back to
+  the branch with a `[skip ci]` message so it doesn't trigger itself.
+- **`JOBS.md`** at the repo root renders the current active jobs as a
+  GitHub-friendly table grouped into FAANG+ / Quant / Other tiers, with
+  per-row Apply buttons. It overwrites every run so age counters tick up
+  and gone roles disappear.
+- Zero net-new jobs = no ntfy notification (no spam).
 - On failure, the workflow uploads `monitor/logs/` as a build artifact —
   download it from the run page to see what broke.

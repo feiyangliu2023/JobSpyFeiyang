@@ -41,17 +41,20 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: python -m monitor.run
 
-      - name: Commit jobs.db
+      - name: Commit jobs.db and JOBS.md
         if: success()
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- monitor/jobs.db; then
-            echo "no changes to jobs.db; skipping commit"
+          # Stage first so this works whether the files are newly created
+          # (untracked) or just modified — `git diff` alone doesn't see
+          # untracked files.
+          git add monitor/jobs.db JOBS.md
+          if git diff --cached --quiet -- monitor/jobs.db JOBS.md; then
+            echo "no changes to commit; skipping"
             exit 0
           fi
-          git add monitor/jobs.db
-          git commit -m "chore(monitor): update jobs.db [skip ci]"
+          git commit -m "chore(monitor): refresh jobs.db + JOBS.md [skip ci]"
           # Push to the branch the workflow ran on. Tolerate a non-fast-forward
           # if a concurrent run beat us — the next cron will pick up the data.
           git push origin HEAD:${GITHUB_REF#refs/heads/} || echo "push failed; will retry next run"

@@ -14,6 +14,7 @@ import argparse
 import logging
 import math
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,6 +24,7 @@ import yaml
 
 from monitor import db as dbmod
 from monitor import notify
+from monitor import render_md as render_md_mod
 
 
 log = logging.getLogger("monitor")
@@ -160,27 +162,102 @@ def _normalize(s: Any) -> str:
     return (s or "").strip().lower()
 
 
+# Corporate suffixes we strip before matching, so "Google LLC", "Adyen N.V.",
+# "Booking.com B.V." all reduce to bare brand names. Iterated until stable
+# (handles compound suffixes like "Foo Inc., Ltd."). Order matters only for
+# readability — the loop normalizes regardless.
+_CORP_SUFFIXES_RE = re.compile(
+    r"[,\s]+(?:llc|l\.l\.c\.?|inc\.?|incorporated|limited|ltd\.?|gmbh|ag|"
+    r"s\.a\.?|sa|sarl|sas|s\.r\.l\.?|srl|n\.v\.?|nv|b\.v\.?|bv|plc|co\.?|"
+    r"corp\.?|corporation|company|se|oyj|ab|aps|pte|pty|holdings?|group)\.?"
+    r"\s*$",
+    re.IGNORECASE,
+)
+# Common decorative bits — drop noise like "& Co", trailing punctuation.
+_TRIM_RE = re.compile(r"[\s,&\-/]+$")
+
+
+def _normalize_company_name(name: str) -> str:
+    """Reduce a raw company string to its bare brand for word-boundary matching.
+
+    Applies suffix stripping iteratively: a name like "Foo, Inc., Ltd."
+    collapses to "foo" rather than only chopping the outermost suffix.
+    """
+    name = _normalize(name)
+    if not name:
+        return ""
+    # Drop a leading "the "
+    if name.startswith("the "):
+        name = name[4:]
+    # Iteratively strip suffixes (cap at 4 passes — overrunning would just
+    # mean the name was unusual, not infinite).
+    for _ in range(4):
+        new = _CORP_SUFFIXES_RE.sub("", name)
+        new = _TRIM_RE.sub("", new).strip()
+        if new == name:
+            break
+        name = new
+    return name
+
+
 def _match_company(company: str, allowlist: list) -> bool:
-    """Case-insensitive, substring + synonym-list match.
+    """Word-boundary substring match against an allowlist of tokens / synonyms.
 
     `allowlist` items are either strings (single token) or lists of strings
-    (synonyms — any hit counts). Returns True if `company` contains any token.
+    (synonyms — any hit counts). The token must appear as a whole word in
+    the company name; this prevents "meta" from matching "Metaverse Labs"
+    while still matching "Meta Platforms Inc".
+
+    Two candidate forms are tried for every company:
+      - raw lowercase (preserves periods so token `booking.com` matches
+        "Booking.com B.V.")
+      - period-collapsed (`j.p. morgan` -> `jp morgan`, so token `jp morgan`
+        matches the dotted form)
     """
-    c = _normalize(company)
-    if not c:
+    raw = _normalize(company)
+    if not raw:
         return False
+    if raw.startswith("the "):
+        raw = raw[4:]
+    candidates = {raw, raw.replace(".", "")}
+
     for entry in allowlist:
         tokens = entry if isinstance(entry, list) else [entry]
         for tok in tokens:
-            if _normalize(tok) and _normalize(tok) in c:
-                return True
+            tok_norm = _normalize(tok)
+            if not tok_norm:
+                continue
+            # `\b` against tokens that start/end with non-word chars (period in
+            # `booking.com`) wouldn't match — anchor on `(?:^|\b)` and
+            # `(?:\b|$)` instead, which works for both regular words and
+            # punctuated tokens.
+            pattern = r"(?:^|\b)" + re.escape(tok_norm) + r"(?:\b|$)"
+            for cand in candidates:
+                if re.search(pattern, cand):
+                    return True
     return False
 
 
 def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
-    """Apply title-exclusion / company-allow / company-block / min-desc filters."""
+    """Apply title-exclusion / company-allow / company-block / min-desc filters.
+
+    `include_companies_mode` controls how `include_companies` is used:
+      - "enforce" (default): drop rows whose company isn't on the list.
+      - "off": ignore the list entirely (keeps the curated values around so
+        you can flip back later without re-typing them).
+    """
     excl_titles = [_normalize(t) for t in filters.get("exclude_titles") or []]
     incl_companies = filters.get("include_companies") or []
+    # YAML 1.1 coerces bare `off`/`no`/`false` to a Python bool, so be liberal
+    # in what we accept. Anything truthy/strict-looking → enforce; falsy or
+    # "off"/"disabled"/"none" → off.
+    raw_mode = filters.get("include_companies_mode")
+    if isinstance(raw_mode, bool):
+        incl_mode = "enforce" if raw_mode else "off"
+    else:
+        incl_mode = (raw_mode or "enforce").strip().lower()
+        if incl_mode in ("disabled", "none", "false", "no", "0"):
+            incl_mode = "off"
     excl_companies = filters.get("exclude_companies") or []
     min_desc = int(filters.get("min_description_chars") or 0)
 
@@ -191,7 +268,11 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
             continue
 
         company = r.get("company") or ""
-        if incl_companies and not _match_company(company, incl_companies):
+        if (
+            incl_mode == "enforce"
+            and incl_companies
+            and not _match_company(company, incl_companies)
+        ):
             continue
         if excl_companies and _match_company(company, excl_companies):
             continue
@@ -238,6 +319,11 @@ def main(argv: list[str] | None = None) -> int:
         "--log-dir",
         default=str(Path(__file__).parent / "logs"),
         help="directory for log files",
+    )
+    parser.add_argument(
+        "--md",
+        default=str(Path(__file__).parent.parent / "JOBS.md"),
+        help="path to the rendered markdown table (committed by CI)",
     )
     args = parser.parse_args(argv)
 
@@ -289,6 +375,12 @@ def main(argv: list[str] | None = None) -> int:
             log.info("notification sent=%s", sent)
         else:
             log.info("no new jobs; skipping ntfy")
+
+        # Render JOBS.md from the current DB state regardless of whether this
+        # run added anything — gone-jobs disappear, ages tick up.
+        active = dbmod.fetch_active(conn)
+        n_rendered = render_md_mod.render_md(active, args.md)
+        log.info("rendered %d active jobs to %s", n_rendered, args.md)
     finally:
         conn.close()
 

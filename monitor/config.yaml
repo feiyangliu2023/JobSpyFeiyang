@@ -33,16 +33,20 @@ cities:
     country_indeed: france
   - name: stockholm
     location: "Stockholm, Sweden"
-    country_indeed: sweden  # NOTE: Glassdoor is not available for Sweden — it
-                            # will be silently dropped from sites at runtime.
+    country_indeed: sweden
 
+# NOTE: Glassdoor was previously included but its location-resolution endpoint
+# 400's on every "City, Country" string we tried, and Indeed already covers
+# the same job surface. Re-add later only if we want to split JobSpy calls
+# per-site (city-only string for Glassdoor, full string for Indeed/LinkedIn).
 role_templates:
   - name: sde_junior
     search_terms:
       - "software engineer new grad"
       - "junior software engineer"
       - "graduate software engineer"
-    sites: [linkedin, indeed, glassdoor]
+      - "early career software engineer"
+    sites: [linkedin, indeed]
     results_wanted: 50
     hours_old: 72
     job_type: fulltime
@@ -52,6 +56,7 @@ role_templates:
       - "machine learning engineer new grad"
       - "junior machine learning engineer"
       - "graduate machine learning engineer"
+      - "ai engineer new grad"
     sites: [linkedin, indeed]
     results_wanted: 30
     hours_old: 72
@@ -76,6 +81,7 @@ filters:
     - head of
     - lead
     - manager
+    - architect
     - " ii"
     - " iii"
     - "level 5"
@@ -86,43 +92,252 @@ filters:
     - "7+ years"
     - "10+ years"
 
-  # Allowlist of large tech companies. When non-empty, only roles whose
-  # company name contains one of these tokens (case-insensitive) survive.
-  # Matching is suffix-tolerant: "Google" matches "Google LLC", "Amazon"
-  # matches "Amazon Web Services", etc. Synonyms can be listed as an inner
-  # list — any hit on a synonym counts as a match for that company.
+  # How `include_companies` is applied:
+  #   enforce — drop any row whose company doesn't match a token on the list.
+  #             The matching is word-boundary on a suffix-stripped form, so
+  #             "Google" matches "Google", "Google LLC", "Google Cloud Spain"
+  #             but does NOT match "Googleable Ltd". Use synonym lists for
+  #             rebrands/abbreviations (e.g. [twitter, x corp]).
+  #   off     — ignore the allowlist entirely; rely on title + min-desc
+  #             filters only.
+  include_companies_mode: "enforce"
+
+  # Allowlist of large tech / scaleup / consulting / finance companies whose
+  # roles we want to see. Synonyms can be listed as an inner list — any hit
+  # counts as a match. Tokens shorter than ~3 characters are unsafe (too
+  # many false positives even with word boundaries) — prefer full names or
+  # qualified phrases (e.g. "ing bank" not "ing"). Aggressively broadened
+  # to err on the side of including more rather than missing real postings.
   include_companies:
+    # ---- US Big Tech & Classic Enterprise ----
     - google
-    - meta
-    - amazon
+    - [meta, meta platforms, facebook]
+    - [amazon, amazon web services, aws]
     - microsoft
     - apple
     - netflix
     - nvidia
+    - oracle
+    - ibm
+    - intel
+    - amd
+    - [salesforce, slack]
+    - workday
+    - servicenow
+    - [vmware, broadcom]
+    - cisco
+    - adobe
+    - paypal
+    - ebay
+    - twilio
+    - [twitter, x corp]
+    - linkedin
+    - pinterest
+    - reddit
+    - snap
+    - snapchat
+    - roblox
+    - bumble
+    - dropbox
+    - zoom
+    - twitch
+    - hp
+    - hewlett-packard
+    - dell
+    - tesla
+    - spacex
+
+    # ---- AI Labs ----
     - openai
     - anthropic
-    - deepmind
+    - [deepmind, google deepmind]
+    - cohere
+    - mistral
+    - hugging face
+    - stability ai
+    - perplexity
+    - inflection
+    - [scale ai, scale]
+    - glean
+    - harvey
+    - sierra
+    - runway
+    - replicate
+    - [character.ai, character ai]
+    - midjourney
+    - elevenlabs
+
+    # ---- Data / Cloud / Dev Tools ----
     - stripe
     - databricks
     - snowflake
+    - datadog
+    - cloudflare
+    - mongodb
+    - elastic
+    - confluent
+    - hashicorp
+    - gitlab
+    - github
+    - jetbrains
+    - atlassian
+    - canva
+    - notion
+    - figma
+    - miro
+    - airtable
+    - segment
+    - splunk
+    - vercel
+    - replit
+    - linear
+    - mixpanel
+    - amplitude
+    - posthog
+    - sentry
+    - retool
+    - fivetran
+    - dbt labs
+    - palantir
+
+    # ---- EU / UK Champions & Scaleups ----
     - asml
-    - booking.com
+    - sap
+    - [booking.com, booking holdings]
     - adyen
+    - mollie
     - spotify
     - klarna
     - revolut
     - wise
-    - datadog
-    - cloudflare
+    - monzo
+    - starling bank
+    - n26
+    - trade republic
+    - zopa
+    - tink
+    - gocardless
+    - scalable capital
+    - bolt
+    - deliveroo
+    - just eat
+    - delivery hero
+    - hellofresh
+    - zalando
+    - personio
+    - celonis
+    - deepl
+    - doctolib
+    - king
+    - mojang
+    - northvolt
+    - arm
+    - criteo
+    - dassault
+    - amadeus
+    - shopify
+    - block
+    - square
+    - coinbase
+    - kraken
+
+    # ---- Marketplaces / Consumer ----
     - uber
     - airbnb
+    - lyft
+    - doordash
+    - instacart
     - [tiktok, bytedance]
+    - expedia
+    - trip.com
+    - duolingo
+
+    # ---- Gaming / Entertainment ----
+    - epic games
+    - riot games
+    - unity
+    - niantic
+    - [electronic arts, ea sports]
+    - ubisoft
+    - [activision, activision blizzard]
+    - playstation
+    - sony interactive
+    - disney streaming
+
+    # ---- Quant / Hedge Funds ----
     - bloomberg
-    - palantir
-    - atlassian
-    - canva
-    - jetbrains
-    - sap
+    - two sigma
+    - jane street
+    - hudson river trading
+    - citadel
+    - [d. e. shaw, de shaw]
+    - millennium
+    - point72
+    - optiver
+    - imc trading
+    - flow traders
+    - [drw, drw trading]
+    - maven securities
+    - five rings
+
+    # ---- Investment Banks & Asset Managers ----
+    - goldman sachs
+    - [jpmorgan, jp morgan]
+    - morgan stanley
+    - blackrock
+    - [bank of america, merrill lynch]
+    - barclays
+    - hsbc
+    - deutsche bank
+    - ubs
+    - bnp paribas
+    - santander
+    - ing bank
+    - nordea
+    - credit suisse
+
+    # ---- Big 4 / MBB Consulting ----
+    - pwc
+    - pricewaterhousecoopers
+    - deloitte
+    - [ernst & young, ey llp]
+    - kpmg
+    - accenture
+    - capgemini
+    - mckinsey
+    - [boston consulting group, bcg]
+    - bain
+    - infosys
+    - tata consultancy
+    - wipro
+
+    # ---- Auto / Industrial Tech (EMEA-heavy) ----
+    - [bmw group, bmw]
+    - [mercedes-benz, mercedes benz, daimler]
+    - audi
+    - porsche
+    - [volkswagen, vw group]
+    - stellantis
+    - bosch
+    - siemens
+    - [abb group, abb]
+    - schneider electric
+
+    # ---- Pharma / Biotech Tech Roles ----
+    - roche
+    - novartis
+    - gsk
+    - astrazeneca
+    - sanofi
+
+    # ---- Aerospace / Defense ----
+    - airbus
+    - boeing
+    - [rtx, raytheon]
+    - lockheed martin
+    - northrop grumman
+    - thales
+    - bae systems
 
   exclude_companies: []
 
