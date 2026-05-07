@@ -24,17 +24,79 @@ importable as `jobspy`. The relevant API:
 
 - `jobspy.scrape_jobs(site_name=[...], search_term=..., location=...,
   results_wanted=N, hours_old=N, country_indeed=..., job_type=...,
-  linkedin_fetch_description=False, ...) -> pandas.DataFrame`
+  linkedin_fetch_description=False, proxies=[...], ...) -> pandas.DataFrame`
 - DataFrame columns we care about: `site`, `job_url`, `title`, `company`,
   `location`, `date_posted`, `description`.
-- Site values: `linkedin`, `indeed`, `glassdoor`, `google`, `zip_recruiter`,
-  `bayt`, `naukri`, `bdjobs`. We use only the first three.
-- `country_indeed` accepts country names defined in `jobspy.model.Country`.
-  Glassdoor support requires a 3-tuple in the enum value (e.g. Sweden has
-  no Glassdoor TLD — see `_glassdoor_supported` in `run.py`).
+- All 8 site values supported by JobSpy: `linkedin`, `indeed`, `glassdoor`,
+  `google`, `bayt`, `zip_recruiter`, `naukri`, `bdjobs`.
+
+We currently use **5 of the 8** for EMEA: `indeed`, `linkedin`,
+`glassdoor`, `google`, `bayt`. zip_recruiter is US/CA only, naukri is
+India only, bdjobs is Bangladesh only — none of those help our EMEA
+focus. (NA is fed entirely by SimplifyJobs, no JobSpy needed there.)
 
 We keep `monitor/` separate from `jobspy/` so upstream pulls don't conflict.
 JobSpy rows are tagged `region='emea'` in `run.py` before upsert.
+
+#### Per-site quirks handled in run_search
+
+- **glassdoor**: Glassdoor's `findPopularLocationAjax.htm?term=...`
+  endpoint 400's on full "City, Country" strings. `run_search` strips
+  to city only ("London, United Kingdom" → "London") just for Glassdoor
+  calls. Other sites still get the full string.
+- **glassdoor TLD support**: `_glassdoor_supported` checks
+  `jobspy.model.Country`'s value tuple — countries without a Glassdoor
+  TLD (Sweden, Norway, etc.) get auto-dropped per-city.
+- **google**: ignores `search_term`/`location`/`hours_old` separately;
+  needs a single `google_search_term` in natural-language form.
+  `run_search` synthesizes `"<term> jobs near <location> since last
+  <N> days"` from the same fields.
+- **bayt**: takes only `search_term`, no location filter. Currently
+  enabled for `sde_junior` and `mle_junior` to surface UAE / Israel /
+  Saudi roles; dropped from `quant_junior` since quant isn't a Middle
+  East category in our experience.
+
+#### Search expansion (cities × templates × sites × terms)
+
+`expand_searches` produces ONE search per `(template, city, site, term)`
+tuple. A template has:
+- `sites: [list]` — which scrapers to call.
+- `search_terms: [list]` — DEFAULT terms for sites without override.
+- `site_search_terms: {site: [terms]}` — per-site override. We use this
+  to give LinkedIn just one efficient term (LinkedIn does loose title
+  matching anyway, and each call burns IP reputation), while letting
+  Indeed iterate the whole `search_terms` list (Indeed matches against
+  the description, so more terms = more recall).
+- `sites_skip_in_ci: [list]` — sites to drop when `GITHUB_ACTIONS` /
+  `CI` env var is set. LinkedIn is the only entry by default.
+
+Per-run search counts (current config: 14 cities × 4 templates):
+- **LOCAL** mode: ~444 searches (incl 56 LinkedIn, paced 5s apart)
+- **CI** mode: ~388 searches (LinkedIn auto-dropped)
+
+#### LinkedIn stability — env-var knobs
+
+LinkedIn aggressively blocks data-center IPs (GitHub Actions ranges
+included). The combination that gives us reasonable coverage:
+
+1. **`sites_skip_in_ci: [linkedin]`** in config — dropped automatically
+   when `GITHUB_ACTIONS=true` / `CI=true`. CI gets indeed/glassdoor/
+   google/bayt only; LinkedIn runs locally where the user's home IP
+   has clean reputation.
+2. **`LINKEDIN_PER_SEARCH_DELAY`** env var (default 5s) — sleep AFTER
+   each LinkedIn call to spread request density. 56 calls × 5s = ~5min
+   added to local wall clock.
+3. **One efficient term per template** via `site_search_terms.linkedin`.
+   Cuts LinkedIn calls from `cities × templates × full_term_list` to
+   `cities × templates × 1`.
+4. **`JOBSPY_PROXIES`** env var (comma-separated, format
+   `user:pass@host:port` or `host:port`) — passed straight to JobSpy's
+   `proxies=[...]` param. **Opt-in**, off by default. Set this when
+   even local IPs start getting blocked (BrightData / ScraperAPI /
+   self-hosted SOCKS / etc).
+5. **Block-detection warning** — `run_search` logs a `WARNING` when
+   LinkedIn returns 0 rows for any search, with hints on how to recover.
+   Easier to grep logs for "LinkedIn returned 0" than to silently lose data.
 
 ### Secondary feeds: SimplifyJobs (both repos)
 
@@ -188,19 +250,16 @@ SimplifyJobs/New-Grad-Positions). If imgur rots, the link still works.
 
 ## Known issues
 
-- **LinkedIn blocks GitHub Actions IPs aggressively.** Expect sparse or empty
-  LinkedIn results from CI. The user accepts this and runs locally as a
-  fallback (`python -m monitor.run`). Do NOT add proxy logic to "fix" it.
-- **Glassdoor is currently disabled** in `config.yaml` because its
-  `findPopularLocationAjax.htm?term=...` endpoint 400s on every "City,
-  Country" string (e.g. "London, United Kingdom") — only the city alone
-  matches its typeahead. We didn't want to split JobSpy into per-site calls,
-  and Indeed already covers the same job surface. To re-enable: split
-  `run_search` into one JobSpy call per (location, sites) bucket so
-  Glassdoor can receive city-only locations.
-- **Glassdoor is unavailable for several countries even when working**
-  (Sweden, Norway, etc.) — `expand_searches` keeps a country-list fallback
-  in case Glassdoor is reinstated.
+- **LinkedIn blocks GitHub Actions IPs aggressively.** Mitigated by the
+  4-knob combo described in "LinkedIn stability" above: `sites_skip_in_ci`
+  drops LinkedIn from CI runs entirely, leaving CI to depend on
+  indeed/glassdoor/google/bayt; LinkedIn runs locally with pacing. If even
+  local fails, set `JOBSPY_PROXIES`. Do NOT make proxies a hardcoded default.
+- **Glassdoor location format quirk** — fixed. `run_search` strips
+  `"City, Country"` to `"City"` only when calling Glassdoor; other
+  sites still get the full string. The `_glassdoor_supported` check
+  also drops cities whose country has no Glassdoor TLD (Sweden, Norway,
+  Finland, Denmark) — those get auto-skipped per-city in `expand_searches`.
 - **EMEA postings are often bilingual or non-English.** We rely on the fact
   that seniority terms in titles are usually English even at non-English
   companies. Substring filters work most of the time. Don't try to localize.
@@ -233,7 +292,11 @@ SimplifyJobs/New-Grad-Positions). If imgur rots, the link still works.
 
 ## Do NOT add without asking
 
-- Proxies / rotating IPs (won't help reliably and adds cost).
+- ~~Proxies / rotating IPs~~ — superseded. Proxy support is now opt-in
+  via `JOBSPY_PROXIES` env var (see "LinkedIn stability" section above).
+  The default is still no proxies; only enable when LinkedIn / Indeed
+  start failing even on local. Don't bake a specific proxy provider
+  into config — keep the env-var indirection.
 - `asyncio` / `aiohttp` (JobSpy already does its own thread pool internally).
 - An ORM (SQLAlchemy, Peewee — raw `sqlite3` is plenty for this scale).
 - LLM-based filtering (latency, cost, non-determinism for a cron job).

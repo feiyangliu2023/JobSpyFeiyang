@@ -16,6 +16,7 @@ import math
 import os
 import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,52 @@ from monitor import render_md as render_md_mod
 
 
 log = logging.getLogger("monitor")
+
+
+# --------------------------------------------------------------------------- #
+# Environment-driven knobs (LinkedIn anti-block tooling)
+# --------------------------------------------------------------------------- #
+
+
+def _proxies_from_env() -> list[str] | None:
+    """Read JOBSPY_PROXIES (comma-separated) and pass to JobSpy.
+
+    Format mirrors JobSpy's own `proxies=[...]` param: each item can be
+    "user:pass@host:port", "host:port", or "localhost". JobSpy round-robins
+    through the list per site. Set this when LinkedIn / Indeed start
+    returning 0 rows from a CI runner whose IP got rate-limited.
+    Returns None when unset so JobSpy uses its default direct connection.
+    """
+    raw = os.environ.get("JOBSPY_PROXIES", "").strip()
+    if not raw:
+        return None
+    proxies = [p.strip() for p in raw.split(",") if p.strip()]
+    return proxies or None
+
+
+def _linkedin_delay_seconds() -> float:
+    """Inter-call sleep after each LinkedIn search.
+
+    Spreads request density to dodge LinkedIn's burst-rate detection.
+    Default 5s. LinkedIn calls per run are roughly 14 cities × 4
+    templates × 1 term = 56 calls; 5s × 56 = ~5min added to wall clock.
+    """
+    raw = os.environ.get("LINKEDIN_PER_SEARCH_DELAY", "5")
+    try:
+        return max(0.0, float(raw))
+    except ValueError:
+        return 5.0
+
+
+def _running_in_ci() -> bool:
+    """True when we're running under GitHub Actions (or any CI that sets it).
+
+    Used to gate `sites_skip_in_ci` — sites whose origin IPs get blocked
+    from data-center ranges (notably LinkedIn) are skipped automatically
+    in CI so we don't churn empty results, then run normally on local.
+    """
+    return os.environ.get("GITHUB_ACTIONS", "").lower() == "true" or \
+        os.environ.get("CI", "").lower() == "true"
 
 # Glassdoor isn't supported for every country. The Country enum's value is a
 # 2- or 3-tuple; the 3rd element is the glassdoor TLD spec. If absent, we
@@ -63,33 +110,81 @@ def _glassdoor_supported(country_indeed: str) -> bool:
 
 
 def expand_searches(cfg: dict) -> list[dict]:
-    """Cross-product cities x role_templates x search_terms -> flat search list."""
+    """Cross-product cities × role_templates × sites × search_terms.
+
+    Each emitted search is single-site (`site` is a string, not a list)
+    so `run_search` can give each site its own location format /
+    google_search_term shape / pacing.
+
+    Per-template config knobs:
+      - `sites: [list]` — which JobSpy scrapers to call.
+      - `search_terms: [list]` — DEFAULT terms used by sites without
+        an explicit override.
+      - `site_search_terms: {site: [terms]}` — per-site override. We
+        use this to give LinkedIn a single broad term (since LinkedIn
+        matches loosely and burns IP reputation fast) while letting
+        Indeed iterate a longer list (Indeed matches against the
+        description, so more terms = more recall).
+      - `sites_skip_in_ci: [list]` — sites to drop when `GITHUB_ACTIONS`
+        / `CI` env var is set. LinkedIn is the canonical entry here:
+        GitHub Actions IPs get blocked, so we run it only on local.
+
+    Glassdoor TLD support is checked per-city via `_glassdoor_supported`;
+    cities where Glassdoor has no TLD silently drop it.
+    """
     searches: list[dict] = []
+    in_ci = _running_in_ci()
+    if in_ci:
+        log.info("CI mode detected (GITHUB_ACTIONS / CI env set) — applying sites_skip_in_ci")
+
     for city in cfg["cities"]:
         for tpl in cfg["role_templates"]:
             sites = list(tpl.get("sites") or [])
+
             if "glassdoor" in sites and not _glassdoor_supported(city["country_indeed"]):
                 log.info(
-                    "skipping glassdoor for %s (%s) — not supported",
-                    city["name"],
-                    city["country_indeed"],
+                    "skipping glassdoor for %s (%s) — no Glassdoor TLD",
+                    city["name"], city["country_indeed"],
                 )
                 sites = [s for s in sites if s != "glassdoor"]
+
+            if in_ci:
+                ci_skip = set(tpl.get("sites_skip_in_ci") or [])
+                drops = [s for s in sites if s in ci_skip]
+                if drops:
+                    log.info(
+                        "CI: dropping %s for %s_%s",
+                        drops, tpl["name"], city["name"],
+                    )
+                sites = [s for s in sites if s not in ci_skip]
+
             if not sites:
                 continue
-            for term in tpl.get("search_terms") or []:
-                searches.append(
-                    {
-                        "name": f"{tpl['name']}_{city['name']}",
-                        "location": city["location"],
-                        "country_indeed": city["country_indeed"],
-                        "sites": sites,
-                        "search_term": term,
-                        "results_wanted": int(tpl.get("results_wanted", 30)),
-                        "hours_old": int(tpl.get("hours_old", 72)),
-                        "job_type": tpl.get("job_type"),
-                    }
-                )
+
+            default_terms = list(tpl.get("search_terms") or [])
+            site_terms_map = tpl.get("site_search_terms") or {}
+
+            for site in sites:
+                terms = site_terms_map.get(site) or default_terms
+                if not terms:
+                    log.warning(
+                        "no search_terms for site=%s in template %s — skipping",
+                        site, tpl["name"],
+                    )
+                    continue
+                for term in terms:
+                    searches.append(
+                        {
+                            "name": f"{tpl['name']}_{city['name']}",
+                            "location": city["location"],
+                            "country_indeed": city["country_indeed"],
+                            "site": site,
+                            "search_term": term,
+                            "results_wanted": int(tpl.get("results_wanted", 30)),
+                            "hours_old": int(tpl.get("hours_old", 72)),
+                            "job_type": tpl.get("job_type"),
+                        }
+                    )
     return searches
 
 
@@ -99,33 +194,82 @@ def expand_searches(cfg: dict) -> list[dict]:
 
 
 def run_search(search: dict) -> list[dict]:
-    """Call JobSpy for one (term, location, sites) tuple. Return list of dicts.
+    """Call JobSpy for one (site, term, location) tuple. Return list of dicts.
 
-    Errors are logged and swallowed — one bad search shouldn't kill the run.
+    Per-site quirks handled here (kept centralised so the main loop stays
+    flat and `expand_searches` stays a pure cross-product):
+
+      - **glassdoor**: location resolver hates "City, Country" — we strip
+        to the city only ("London, United Kingdom" → "London"). This was
+        the root cause of the previous Glassdoor disable in CLAUDE.md.
+
+      - **google**: ignores the regular `search_term` and `location`;
+        you must compose `google_search_term` yourself in Google Jobs's
+        natural-language form ("X jobs near Y since last N days"). We
+        synthesize it from the same fields.
+
+      - **linkedin**: nothing JobSpy-side, but the caller is expected to
+        sleep `_linkedin_delay_seconds()` after each LinkedIn return.
+
+    Proxies are read from JOBSPY_PROXIES (comma-separated). Errors are
+    logged and swallowed — one bad search shouldn't kill the whole run.
     """
     from jobspy import scrape_jobs
 
-    try:
-        df = scrape_jobs(
-            site_name=search["sites"],
-            search_term=search["search_term"],
-            location=search["location"],
-            results_wanted=search["results_wanted"],
-            hours_old=search["hours_old"],
-            country_indeed=search["country_indeed"],
-            job_type=search.get("job_type"),
-            linkedin_fetch_description=False,
-            description_format="markdown",
-            verbose=1,
+    site = search["site"]
+    location = search["location"]
+
+    if site == "glassdoor":
+        # Glassdoor's findPopularLocationAjax 400's on full "City, Country"
+        # strings — the typeahead only resolves bare city names. Strip
+        # everything after the first comma.
+        location = location.split(",")[0].strip()
+
+    kwargs: dict[str, Any] = {
+        "site_name": [site],
+        "search_term": search["search_term"],
+        "location": location,
+        "results_wanted": search["results_wanted"],
+        "hours_old": search["hours_old"],
+        "country_indeed": search["country_indeed"],
+        "job_type": search.get("job_type"),
+        "linkedin_fetch_description": False,
+        "description_format": "markdown",
+        "verbose": 1,
+    }
+
+    if site == "google":
+        # Google Jobs ignores everything except `google_search_term`, so
+        # we encode location + age window inline. Per JobSpy README FAQ:
+        # "Search for google jobs on your browser, copy whatever shows
+        # up in the search box". The phrasing below mirrors that natural
+        # form and works for English-language hubs.
+        days = max(1, int(search["hours_old"]) // 24)
+        kwargs["google_search_term"] = (
+            f"{search['search_term']} jobs near {search['location']} "
+            f"since last {days} days"
         )
+
+    proxies = _proxies_from_env()
+    if proxies:
+        kwargs["proxies"] = proxies
+
+    try:
+        df = scrape_jobs(**kwargs)
     except Exception as e:
         log.exception(
-            "run_search failed [%s | %s | %s]: %s",
-            search["name"], search["search_term"], search["sites"], e,
+            "run_search failed [%s | site=%s | term=%r]: %s",
+            search["name"], site, search["search_term"], e,
         )
         return []
 
     if df is None or df.empty:
+        if site == "linkedin":
+            log.warning(
+                "LinkedIn returned 0 rows for %s/%r — possible IP block. "
+                "Set JOBSPY_PROXIES or run locally to recover.",
+                search["name"], search["search_term"],
+            )
         return []
     return _df_to_dicts(df)
 
@@ -478,11 +622,12 @@ def main(argv: list[str] | None = None) -> int:
     total_new = 0
 
     try:
+        linkedin_delay = _linkedin_delay_seconds()
         for search in searches:
             log.info(
-                "search %s | term=%r | sites=%s | loc=%s",
-                search["name"], search["search_term"],
-                search["sites"], search["location"],
+                "search %s | site=%s | term=%r | loc=%s",
+                search["name"], search["site"],
+                search["search_term"], search["location"],
             )
             rows = run_search(search)
             log.info("  scraped %d raw rows", len(rows))
@@ -501,6 +646,12 @@ def main(argv: list[str] | None = None) -> int:
                 conn, run_started_at, search["name"], scraped, new
             )
             total_new += new
+
+            # Pace LinkedIn — burst-rate detection is the main reason
+            # LinkedIn returns 0 rows from a fresh-IP run. Sleep AFTER
+            # each LinkedIn call so the next one isn't back-to-back.
+            if search["site"] == "linkedin" and linkedin_delay > 0:
+                time.sleep(linkedin_delay)
 
         # External sources (SimplifyJobs etc.) — runs after the JobSpy
         # loop so mark_gone treats both feeds uniformly.
