@@ -304,13 +304,56 @@ SimplifyJobs/New-Grad-Positions). If imgur rots, the link still works.
 - Heavy CLI libs (`click`, `typer`, `rich`, `loguru`).
 - Any cloud DB / object store — the whole point is to keep `jobs.db` in git.
 
+## Health reporting
+
+Per-source success/failure accounting is handled by `monitor/health.py`.
+The flow:
+
+1. `run.main` instantiates a `HealthTracker` once per run.
+2. The JobSpy main loop and `ingest_external_sources` call `record_*`
+   on it as they go. JobSpy sources use the bare site name as the key
+   (`linkedin`, `indeed`, `glassdoor`, `google`, `bayt`); external
+   sources use the `external:<name>` form so they don't collide.
+3. At end of run, three things happen:
+   - **Always**: a per-source table is logged at INFO level (visible
+     in `logs/run.log` and stdout). One status glyph per source:
+     `OK / DEG / SLT / BRK / —`.
+   - **Always**: a JSON dump goes to `logs/health-latest.json`. This
+     file overwrites every run; grep-friendly enough to inspect via
+     `jq '.sources | with_entries(select(.value.status != "OK"))'`.
+   - **When any source is non-OK**: an ntfy push is sent via
+     `notify.send_health_alert`. Tagged `warning,construction` and
+     priority 4 (vs digest's 3) so it's distinguishable from the daily
+     "new jobs" digest.
+
+Status classification thresholds:
+- `OK`        — at least one call returned ≥1 row, success rate ≥ 30%, no errors > attempts.
+- `DEGRADED`  — some calls succeeded but rate < 30% (flaky source / partial rate-limit).
+- `SILENT`    — every call returned 0 rows AND no exception thrown
+                (statistically improbable across 50+ searches → almost
+                always an IP block).
+- `BROKEN`    — every call threw an exception (URL down, schema change).
+- `UNUSED`    — never invoked (config flag, `sites_skip_in_ci`, etc.).
+
+`run.main` returns exit code 2 when `overall_status()` is `BROKEN` or
+`SILENT` so a cron / CI runner fails loudly. `DEGRADED` is non-fatal —
+expect Google Jobs in particular to drift between OK and DEGRADED
+depending on the day's search-term recall.
+
+Toggles:
+- `NTFY_HEALTH_ALERTS=0` env var — disables the ntfy push (still logs
+  + writes JSON). Useful when iterating locally and you don't want to
+  spam your phone.
+- `NTFY_TOPIC` unset — no push (same as digest).
+
 ## Files in this directory
 
 - `config.yaml`      — search spec (cities, templates, filters, external_sources)
 - `run.py`           — entry point: `python -m monitor.run`
 - `db.py`            — sqlite3 helpers (`setup_db`, `upsert_jobs`, `mark_gone`,
                       `record_run`, `fetch_new_since`, `fetch_active`)
-- `notify.py`        — ntfy.sh JSON POST + digest body builder
+- `health.py`        — per-source HealthTracker + SourceStats + classification
+- `notify.py`        — ntfy.sh JSON POST + digest body builder + health alert
 - `render_md.py`     — JOBS.md generator (Region × Tier grid + table render)
 - `external/`        — non-JobSpy ingestion modules
    `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)

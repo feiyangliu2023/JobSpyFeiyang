@@ -26,6 +26,7 @@ import yaml
 from monitor import db as dbmod
 from monitor import notify
 from monitor import render_md as render_md_mod
+from monitor.health import HealthTracker
 
 
 log = logging.getLogger("monitor")
@@ -193,7 +194,9 @@ def expand_searches(cfg: dict) -> list[dict]:
 # --------------------------------------------------------------------------- #
 
 
-def run_search(search: dict) -> list[dict]:
+def run_search(
+    search: dict, health: HealthTracker | None = None
+) -> list[dict]:
     """Call JobSpy for one (site, term, location) tuple. Return list of dicts.
 
     Per-site quirks handled here (kept centralised so the main loop stays
@@ -210,6 +213,10 @@ def run_search(search: dict) -> list[dict]:
 
       - **linkedin**: nothing JobSpy-side, but the caller is expected to
         sleep `_linkedin_delay_seconds()` after each LinkedIn return.
+
+    `health` (optional) gets `record_error` called on any caught
+    exception so the end-of-run health report can flag broken sources.
+    Caller is responsible for `record_attempt` / `record_outcome`.
 
     Proxies are read from JOBSPY_PROXIES (comma-separated). Errors are
     logged and swallowed — one bad search shouldn't kill the whole run.
@@ -257,6 +264,8 @@ def run_search(search: dict) -> list[dict]:
     try:
         df = scrape_jobs(**kwargs)
     except Exception as e:
+        if health is not None:
+            health.record_error(site, e)
         log.exception(
             "run_search failed [%s | site=%s | term=%r]: %s",
             search["name"], site, search["search_term"], e,
@@ -473,7 +482,10 @@ def apply_filters(
 
 
 def ingest_external_sources(
-    cfg: dict, conn, run_started_at: str
+    cfg: dict,
+    conn,
+    run_started_at: str,
+    health: HealthTracker | None = None,
 ) -> tuple[int, int]:
     """Pull rows from each entry in cfg['external_sources'], filter, upsert.
 
@@ -511,6 +523,12 @@ def ingest_external_sources(
             allowed = set(allowed)
         default_region = src.get("default_region") or "north_america"
 
+        # Health key — uses `external:` prefix so it doesn't collide with
+        # JobSpy site names (`indeed`, `linkedin`, etc.) in the report.
+        health_key = f"external:{name or kind}"
+        if health is not None:
+            health.record_attempt(health_key)
+
         try:
             if kind in ("simplify_newgrad", "simplify_intern"):
                 from monitor.external import simplify as simplify_mod
@@ -518,6 +536,9 @@ def ingest_external_sources(
                 url = src.get("url") or simplify_mod.SIMPLIFY_PRESETS.get(kind)
                 if not url:
                     log.warning("source %r missing url; skipping", name)
+                    if health is not None:
+                        health.record_error(
+                            health_key, ValueError("missing url"))
                     continue
                 listings = simplify_mod.fetch_listings(url)
                 rows = simplify_mod.to_rows(
@@ -531,15 +552,24 @@ def ingest_external_sources(
                     "unknown external source type %r (name=%r) — skipping",
                     kind, name,
                 )
+                if health is not None:
+                    health.record_error(
+                        health_key, ValueError(f"unknown type {kind!r}")
+                    )
                 continue
-        except Exception:
+        except Exception as e:
             log.exception("ingest %s failed; skipping", name or kind)
+            if health is not None:
+                health.record_error(health_key, e)
             continue
 
         log.info(
             "external %s (type=%s) | %d rows after region filter",
             name or kind, kind, len(rows),
         )
+        if health is not None:
+            health.record_outcome(health_key, len(rows))
+
         filtered = apply_filters(rows, cfg["filters"], skip=skip)
         # Per-region row counts so we can see EMEA contribution at a glance
         by_region: dict[str, int] = {}
@@ -554,6 +584,9 @@ def ingest_external_sources(
             ", ".join(f"{k}={v}" for k, v in sorted(by_region.items())),
         )
         total_filtered += len(filtered)
+        if health is not None:
+            health.record_filtered(health_key, len(filtered))
+
         scraped, new = dbmod.upsert_jobs(
             conn, filtered, run_started_at, f"external:{name or kind}"
         )
@@ -561,6 +594,8 @@ def ingest_external_sources(
             conn, run_started_at, f"external:{name or kind}", scraped, new
         )
         total_new += new
+        if health is not None:
+            health.record_new(health_key, new)
     return total_filtered, total_new
 
 
@@ -616,6 +651,7 @@ def main(argv: list[str] | None = None) -> int:
     log.info("expanded %d concrete searches", len(searches))
 
     conn = dbmod.setup_db(args.db)
+    health = HealthTracker()
 
     total_scraped = 0
     total_filtered_in = 0
@@ -629,7 +665,10 @@ def main(argv: list[str] | None = None) -> int:
                 search["name"], search["site"],
                 search["search_term"], search["location"],
             )
-            rows = run_search(search)
+            site = search["site"]
+            health.record_attempt(site)
+            rows = run_search(search, health=health)
+            health.record_outcome(site, len(rows))
             log.info("  scraped %d raw rows", len(rows))
             filtered = apply_filters(rows, cfg["filters"])
             # JobSpy is our EMEA pipeline. Tag rows so the renderer can
@@ -637,6 +676,7 @@ def main(argv: list[str] | None = None) -> int:
             for r in filtered:
                 r.setdefault("region", "emea")
             log.info("  %d rows passed filters", len(filtered))
+            health.record_filtered(site, len(filtered))
             total_scraped += len(rows)
             total_filtered_in += len(filtered)
             scraped, new = dbmod.upsert_jobs(
@@ -646,17 +686,18 @@ def main(argv: list[str] | None = None) -> int:
                 conn, run_started_at, search["name"], scraped, new
             )
             total_new += new
+            health.record_new(site, new)
 
             # Pace LinkedIn — burst-rate detection is the main reason
             # LinkedIn returns 0 rows from a fresh-IP run. Sleep AFTER
             # each LinkedIn call so the next one isn't back-to-back.
-            if search["site"] == "linkedin" and linkedin_delay > 0:
+            if site == "linkedin" and linkedin_delay > 0:
                 time.sleep(linkedin_delay)
 
         # External sources (SimplifyJobs etc.) — runs after the JobSpy
         # loop so mark_gone treats both feeds uniformly.
         ext_filtered, ext_new = ingest_external_sources(
-            cfg, conn, run_started_at
+            cfg, conn, run_started_at, health=health
         )
         total_filtered_in += ext_filtered
         total_new += ext_new
@@ -667,12 +708,29 @@ def main(argv: list[str] | None = None) -> int:
             total_scraped, total_filtered_in, total_new, gone,
         )
 
+        # End-of-run health report — write to log + JSON + ntfy when
+        # any source is non-OK. Order matters: log first (always), JSON
+        # second (always), ntfy alert last (only if degraded).
+        for line in health.summary_lines():
+            log.info(line)
+        try:
+            health_path = health.write_json(args.log_dir)
+            log.info("[health] dump written to %s", health_path)
+        except OSError as e:
+            log.warning("[health] could not write JSON dump: %s", e)
+
         new_jobs = dbmod.fetch_new_since(conn, run_started_at)
         if new_jobs:
             sent = notify.send_digest(new_jobs, topic=os.environ.get("NTFY_TOPIC"))
             log.info("notification sent=%s", sent)
         else:
             log.info("no new jobs; skipping ntfy")
+
+        if health.has_warnings():
+            sent_alert = notify.send_health_alert(
+                health, topic=os.environ.get("NTFY_TOPIC")
+            )
+            log.info("[health] alert sent=%s", sent_alert)
 
         # Render JOBS.md from the current DB state regardless of whether this
         # run added anything — gone-jobs disappear, ages tick up.
@@ -682,6 +740,11 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         conn.close()
 
+    # Non-zero exit when any source is BROKEN/SILENT — this lets a
+    # cron / CI runner fail loudly instead of pretending success.
+    # DEGRADED is non-fatal; SILENT/BROKEN are.
+    if health.overall_status() in ("BROKEN", "SILENT"):
+        return 2
     return 0
 
 
