@@ -16,6 +16,7 @@ import math
 import os
 import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -25,9 +26,56 @@ import yaml
 from monitor import db as dbmod
 from monitor import notify
 from monitor import render_md as render_md_mod
+from monitor.health import HealthTracker
 
 
 log = logging.getLogger("monitor")
+
+
+# --------------------------------------------------------------------------- #
+# Environment-driven knobs (LinkedIn anti-block tooling)
+# --------------------------------------------------------------------------- #
+
+
+def _proxies_from_env() -> list[str] | None:
+    """Read JOBSPY_PROXIES (comma-separated) and pass to JobSpy.
+
+    Format mirrors JobSpy's own `proxies=[...]` param: each item can be
+    "user:pass@host:port", "host:port", or "localhost". JobSpy round-robins
+    through the list per site. Set this when LinkedIn / Indeed start
+    returning 0 rows from a CI runner whose IP got rate-limited.
+    Returns None when unset so JobSpy uses its default direct connection.
+    """
+    raw = os.environ.get("JOBSPY_PROXIES", "").strip()
+    if not raw:
+        return None
+    proxies = [p.strip() for p in raw.split(",") if p.strip()]
+    return proxies or None
+
+
+def _linkedin_delay_seconds() -> float:
+    """Inter-call sleep after each LinkedIn search.
+
+    Spreads request density to dodge LinkedIn's burst-rate detection.
+    Default 5s. LinkedIn calls per run are roughly 14 cities × 4
+    templates × 1 term = 56 calls; 5s × 56 = ~5min added to wall clock.
+    """
+    raw = os.environ.get("LINKEDIN_PER_SEARCH_DELAY", "5")
+    try:
+        return max(0.0, float(raw))
+    except ValueError:
+        return 5.0
+
+
+def _running_in_ci() -> bool:
+    """True when we're running under GitHub Actions (or any CI that sets it).
+
+    Used to gate `sites_skip_in_ci` — sites whose origin IPs get blocked
+    from data-center ranges (notably LinkedIn) are skipped automatically
+    in CI so we don't churn empty results, then run normally on local.
+    """
+    return os.environ.get("GITHUB_ACTIONS", "").lower() == "true" or \
+        os.environ.get("CI", "").lower() == "true"
 
 # Glassdoor isn't supported for every country. The Country enum's value is a
 # 2- or 3-tuple; the 3rd element is the glassdoor TLD spec. If absent, we
@@ -63,33 +111,81 @@ def _glassdoor_supported(country_indeed: str) -> bool:
 
 
 def expand_searches(cfg: dict) -> list[dict]:
-    """Cross-product cities x role_templates x search_terms -> flat search list."""
+    """Cross-product cities × role_templates × sites × search_terms.
+
+    Each emitted search is single-site (`site` is a string, not a list)
+    so `run_search` can give each site its own location format /
+    google_search_term shape / pacing.
+
+    Per-template config knobs:
+      - `sites: [list]` — which JobSpy scrapers to call.
+      - `search_terms: [list]` — DEFAULT terms used by sites without
+        an explicit override.
+      - `site_search_terms: {site: [terms]}` — per-site override. We
+        use this to give LinkedIn a single broad term (since LinkedIn
+        matches loosely and burns IP reputation fast) while letting
+        Indeed iterate a longer list (Indeed matches against the
+        description, so more terms = more recall).
+      - `sites_skip_in_ci: [list]` — sites to drop when `GITHUB_ACTIONS`
+        / `CI` env var is set. LinkedIn is the canonical entry here:
+        GitHub Actions IPs get blocked, so we run it only on local.
+
+    Glassdoor TLD support is checked per-city via `_glassdoor_supported`;
+    cities where Glassdoor has no TLD silently drop it.
+    """
     searches: list[dict] = []
+    in_ci = _running_in_ci()
+    if in_ci:
+        log.info("CI mode detected (GITHUB_ACTIONS / CI env set) — applying sites_skip_in_ci")
+
     for city in cfg["cities"]:
         for tpl in cfg["role_templates"]:
             sites = list(tpl.get("sites") or [])
+
             if "glassdoor" in sites and not _glassdoor_supported(city["country_indeed"]):
                 log.info(
-                    "skipping glassdoor for %s (%s) — not supported",
-                    city["name"],
-                    city["country_indeed"],
+                    "skipping glassdoor for %s (%s) — no Glassdoor TLD",
+                    city["name"], city["country_indeed"],
                 )
                 sites = [s for s in sites if s != "glassdoor"]
+
+            if in_ci:
+                ci_skip = set(tpl.get("sites_skip_in_ci") or [])
+                drops = [s for s in sites if s in ci_skip]
+                if drops:
+                    log.info(
+                        "CI: dropping %s for %s_%s",
+                        drops, tpl["name"], city["name"],
+                    )
+                sites = [s for s in sites if s not in ci_skip]
+
             if not sites:
                 continue
-            for term in tpl.get("search_terms") or []:
-                searches.append(
-                    {
-                        "name": f"{tpl['name']}_{city['name']}",
-                        "location": city["location"],
-                        "country_indeed": city["country_indeed"],
-                        "sites": sites,
-                        "search_term": term,
-                        "results_wanted": int(tpl.get("results_wanted", 30)),
-                        "hours_old": int(tpl.get("hours_old", 72)),
-                        "job_type": tpl.get("job_type"),
-                    }
-                )
+
+            default_terms = list(tpl.get("search_terms") or [])
+            site_terms_map = tpl.get("site_search_terms") or {}
+
+            for site in sites:
+                terms = site_terms_map.get(site) or default_terms
+                if not terms:
+                    log.warning(
+                        "no search_terms for site=%s in template %s — skipping",
+                        site, tpl["name"],
+                    )
+                    continue
+                for term in terms:
+                    searches.append(
+                        {
+                            "name": f"{tpl['name']}_{city['name']}",
+                            "location": city["location"],
+                            "country_indeed": city["country_indeed"],
+                            "site": site,
+                            "search_term": term,
+                            "results_wanted": int(tpl.get("results_wanted", 30)),
+                            "hours_old": int(tpl.get("hours_old", 72)),
+                            "job_type": tpl.get("job_type"),
+                        }
+                    )
     return searches
 
 
@@ -98,34 +194,91 @@ def expand_searches(cfg: dict) -> list[dict]:
 # --------------------------------------------------------------------------- #
 
 
-def run_search(search: dict) -> list[dict]:
-    """Call JobSpy for one (term, location, sites) tuple. Return list of dicts.
+def run_search(
+    search: dict, health: HealthTracker | None = None
+) -> list[dict]:
+    """Call JobSpy for one (site, term, location) tuple. Return list of dicts.
 
-    Errors are logged and swallowed — one bad search shouldn't kill the run.
+    Per-site quirks handled here (kept centralised so the main loop stays
+    flat and `expand_searches` stays a pure cross-product):
+
+      - **glassdoor**: location resolver hates "City, Country" — we strip
+        to the city only ("London, United Kingdom" → "London"). This was
+        the root cause of the previous Glassdoor disable in CLAUDE.md.
+
+      - **google**: ignores the regular `search_term` and `location`;
+        you must compose `google_search_term` yourself in Google Jobs's
+        natural-language form ("X jobs near Y since last N days"). We
+        synthesize it from the same fields.
+
+      - **linkedin**: nothing JobSpy-side, but the caller is expected to
+        sleep `_linkedin_delay_seconds()` after each LinkedIn return.
+
+    `health` (optional) gets `record_error` called on any caught
+    exception so the end-of-run health report can flag broken sources.
+    Caller is responsible for `record_attempt` / `record_outcome`.
+
+    Proxies are read from JOBSPY_PROXIES (comma-separated). Errors are
+    logged and swallowed — one bad search shouldn't kill the whole run.
     """
     from jobspy import scrape_jobs
 
-    try:
-        df = scrape_jobs(
-            site_name=search["sites"],
-            search_term=search["search_term"],
-            location=search["location"],
-            results_wanted=search["results_wanted"],
-            hours_old=search["hours_old"],
-            country_indeed=search["country_indeed"],
-            job_type=search.get("job_type"),
-            linkedin_fetch_description=False,
-            description_format="markdown",
-            verbose=1,
+    site = search["site"]
+    location = search["location"]
+
+    if site == "glassdoor":
+        # Glassdoor's findPopularLocationAjax 400's on full "City, Country"
+        # strings — the typeahead only resolves bare city names. Strip
+        # everything after the first comma.
+        location = location.split(",")[0].strip()
+
+    kwargs: dict[str, Any] = {
+        "site_name": [site],
+        "search_term": search["search_term"],
+        "location": location,
+        "results_wanted": search["results_wanted"],
+        "hours_old": search["hours_old"],
+        "country_indeed": search["country_indeed"],
+        "job_type": search.get("job_type"),
+        "linkedin_fetch_description": False,
+        "description_format": "markdown",
+        "verbose": 1,
+    }
+
+    if site == "google":
+        # Google Jobs ignores everything except `google_search_term`, so
+        # we encode location + age window inline. Per JobSpy README FAQ:
+        # "Search for google jobs on your browser, copy whatever shows
+        # up in the search box". The phrasing below mirrors that natural
+        # form and works for English-language hubs.
+        days = max(1, int(search["hours_old"]) // 24)
+        kwargs["google_search_term"] = (
+            f"{search['search_term']} jobs near {search['location']} "
+            f"since last {days} days"
         )
+
+    proxies = _proxies_from_env()
+    if proxies:
+        kwargs["proxies"] = proxies
+
+    try:
+        df = scrape_jobs(**kwargs)
     except Exception as e:
+        if health is not None:
+            health.record_error(site, e)
         log.exception(
-            "run_search failed [%s | %s | %s]: %s",
-            search["name"], search["search_term"], search["sites"], e,
+            "run_search failed [%s | site=%s | term=%r]: %s",
+            search["name"], site, search["search_term"], e,
         )
         return []
 
     if df is None or df.empty:
+        if site == "linkedin":
+            log.warning(
+                "LinkedIn returned 0 rows for %s/%r — possible IP block. "
+                "Set JOBSPY_PROXIES or run locally to recover.",
+                search["name"], search["search_term"],
+            )
         return []
     return _df_to_dicts(df)
 
@@ -238,7 +391,11 @@ def _match_company(company: str, allowlist: list) -> bool:
     return False
 
 
-def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
+def apply_filters(
+    rows: list[dict],
+    filters: dict,
+    skip: set[str] | None = None,
+) -> list[dict]:
     """Apply title-exclusion / title-include / company-allow / company-block /
     min-desc filters.
 
@@ -253,7 +410,14 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
       - "enforce" (default): drop rows whose company isn't on the list.
       - "off": ignore the list entirely (keeps the curated values around so
         you can flip back later without re-typing them).
+
+    `skip` lets a caller turn off individual filter blocks for one batch
+    of rows — used by external sources that come pre-curated. Recognised
+    names: `exclude_titles`, `include_title_keywords`, `include_companies`,
+    `exclude_companies`, `min_description_chars`. Unknown names are
+    silently ignored so a typo doesn't crash the run.
     """
+    skip = skip or set()
     # Lowercase only — preserve user-authored spaces in tokens.
     excl_titles = [(t or "").lower() for t in filters.get("exclude_titles") or []]
     incl_kws = [(t or "").lower() for t in filters.get("include_title_keywords") or []]
@@ -274,27 +438,165 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
     out: list[dict] = []
     for r in rows:
         title_padded = " " + _normalize(r.get("title")) + " "
-        if any(tok and tok in title_padded for tok in excl_titles):
+        if "exclude_titles" not in skip and any(
+            tok and tok in title_padded for tok in excl_titles
+        ):
             continue
-        if incl_kws and not any(kw and kw in title_padded for kw in incl_kws):
+        if (
+            "include_title_keywords" not in skip
+            and incl_kws
+            and not any(kw and kw in title_padded for kw in incl_kws)
+        ):
             continue
 
         company = r.get("company") or ""
         if (
-            incl_mode == "enforce"
+            "include_companies" not in skip
+            and incl_mode == "enforce"
             and incl_companies
             and not _match_company(company, incl_companies)
         ):
             continue
-        if excl_companies and _match_company(company, excl_companies):
+        if (
+            "exclude_companies" not in skip
+            and excl_companies
+            and _match_company(company, excl_companies)
+        ):
             continue
 
         desc = r.get("description") or ""
-        if min_desc and len(desc) < min_desc:
+        if (
+            "min_description_chars" not in skip
+            and min_desc
+            and len(desc) < min_desc
+        ):
             continue
 
         out.append(r)
     return out
+
+
+# --------------------------------------------------------------------------- #
+# External sources (SimplifyJobs etc.)
+# --------------------------------------------------------------------------- #
+
+
+def ingest_external_sources(
+    cfg: dict,
+    conn,
+    run_started_at: str,
+    health: HealthTracker | None = None,
+) -> tuple[int, int]:
+    """Pull rows from each entry in cfg['external_sources'], filter, upsert.
+
+    Dispatches by the `type` field. Currently supported types:
+      - `simplify_newgrad`  → SimplifyJobs/New-Grad-Positions listings.json
+      - `simplify_intern`   → SimplifyJobs/Summer2026-Internships listings.json
+
+    Both share the SimplifyJobs schema and the same fetch/map module.
+    Region is auto-classified per listing (a London role lands in EMEA
+    regardless of repo). `allowed_regions` (set) lets a source ingest
+    only certain regions — typical config: `[emea, north_america]` to
+    drop APAC entirely.
+
+    `skip_filters` lets a source opt out of individual filter blocks
+    (e.g. `include_companies` because SimplifyJobs is curated and we
+    don't want our EMEA-tuned allowlist to gate it).
+
+    Returns (total_filtered_in, total_new). Errors per-source are
+    logged and swallowed.
+    """
+    sources = cfg.get("external_sources") or []
+    total_filtered = 0
+    total_new = 0
+    for src in sources:
+        name = (src.get("name") or "").strip()
+        # `type` is the dispatch key; falls back to `name` for backward
+        # compat with the original single-source config.
+        kind = (src.get("type") or src.get("name") or "").strip().lower()
+        # Convert "simplify" (legacy) → "simplify_newgrad"
+        if kind == "simplify":
+            kind = "simplify_newgrad"
+        skip = set(src.get("skip_filters") or [])
+        allowed = src.get("allowed_regions")
+        if allowed is not None:
+            allowed = set(allowed)
+        default_region = src.get("default_region") or "north_america"
+
+        # Health key — uses `external:` prefix so it doesn't collide with
+        # JobSpy site names (`indeed`, `linkedin`, etc.) in the report.
+        health_key = f"external:{name or kind}"
+        if health is not None:
+            health.record_attempt(health_key)
+
+        try:
+            if kind in ("simplify_newgrad", "simplify_intern"):
+                from monitor.external import simplify as simplify_mod
+
+                url = src.get("url") or simplify_mod.SIMPLIFY_PRESETS.get(kind)
+                if not url:
+                    log.warning("source %r missing url; skipping", name)
+                    if health is not None:
+                        health.record_error(
+                            health_key, ValueError("missing url"))
+                    continue
+                listings = simplify_mod.fetch_listings(url)
+                rows = simplify_mod.to_rows(
+                    listings,
+                    site_label=kind,
+                    default_region=default_region,
+                    allowed_regions=allowed,
+                )
+            else:
+                log.warning(
+                    "unknown external source type %r (name=%r) — skipping",
+                    kind, name,
+                )
+                if health is not None:
+                    health.record_error(
+                        health_key, ValueError(f"unknown type {kind!r}")
+                    )
+                continue
+        except Exception as e:
+            log.exception("ingest %s failed; skipping", name or kind)
+            if health is not None:
+                health.record_error(health_key, e)
+            continue
+
+        log.info(
+            "external %s (type=%s) | %d rows after region filter",
+            name or kind, kind, len(rows),
+        )
+        if health is not None:
+            health.record_outcome(health_key, len(rows))
+
+        filtered = apply_filters(rows, cfg["filters"], skip=skip)
+        # Per-region row counts so we can see EMEA contribution at a glance
+        by_region: dict[str, int] = {}
+        for r in filtered:
+            by_region[r.get("region") or "?"] = by_region.get(
+                r.get("region") or "?", 0
+            ) + 1
+        log.info(
+            "  %d rows passed filters (skip=%s) → by region: %s",
+            len(filtered),
+            sorted(skip) or "—",
+            ", ".join(f"{k}={v}" for k, v in sorted(by_region.items())),
+        )
+        total_filtered += len(filtered)
+        if health is not None:
+            health.record_filtered(health_key, len(filtered))
+
+        scraped, new = dbmod.upsert_jobs(
+            conn, filtered, run_started_at, f"external:{name or kind}"
+        )
+        dbmod.record_run(
+            conn, run_started_at, f"external:{name or kind}", scraped, new
+        )
+        total_new += new
+        if health is not None:
+            health.record_new(health_key, new)
+    return total_filtered, total_new
 
 
 # --------------------------------------------------------------------------- #
@@ -349,22 +651,32 @@ def main(argv: list[str] | None = None) -> int:
     log.info("expanded %d concrete searches", len(searches))
 
     conn = dbmod.setup_db(args.db)
+    health = HealthTracker()
 
     total_scraped = 0
     total_filtered_in = 0
     total_new = 0
 
     try:
+        linkedin_delay = _linkedin_delay_seconds()
         for search in searches:
             log.info(
-                "search %s | term=%r | sites=%s | loc=%s",
-                search["name"], search["search_term"],
-                search["sites"], search["location"],
+                "search %s | site=%s | term=%r | loc=%s",
+                search["name"], search["site"],
+                search["search_term"], search["location"],
             )
-            rows = run_search(search)
+            site = search["site"]
+            health.record_attempt(site)
+            rows = run_search(search, health=health)
+            health.record_outcome(site, len(rows))
             log.info("  scraped %d raw rows", len(rows))
             filtered = apply_filters(rows, cfg["filters"])
+            # JobSpy is our EMEA pipeline. Tag rows so the renderer can
+            # split them from external (north_america) sources.
+            for r in filtered:
+                r.setdefault("region", "emea")
             log.info("  %d rows passed filters", len(filtered))
+            health.record_filtered(site, len(filtered))
             total_scraped += len(rows)
             total_filtered_in += len(filtered)
             scraped, new = dbmod.upsert_jobs(
@@ -374,6 +686,21 @@ def main(argv: list[str] | None = None) -> int:
                 conn, run_started_at, search["name"], scraped, new
             )
             total_new += new
+            health.record_new(site, new)
+
+            # Pace LinkedIn — burst-rate detection is the main reason
+            # LinkedIn returns 0 rows from a fresh-IP run. Sleep AFTER
+            # each LinkedIn call so the next one isn't back-to-back.
+            if site == "linkedin" and linkedin_delay > 0:
+                time.sleep(linkedin_delay)
+
+        # External sources (SimplifyJobs etc.) — runs after the JobSpy
+        # loop so mark_gone treats both feeds uniformly.
+        ext_filtered, ext_new = ingest_external_sources(
+            cfg, conn, run_started_at, health=health
+        )
+        total_filtered_in += ext_filtered
+        total_new += ext_new
 
         gone = dbmod.mark_gone(conn, run_started_at)
         log.info(
@@ -381,12 +708,29 @@ def main(argv: list[str] | None = None) -> int:
             total_scraped, total_filtered_in, total_new, gone,
         )
 
+        # End-of-run health report — write to log + JSON + ntfy when
+        # any source is non-OK. Order matters: log first (always), JSON
+        # second (always), ntfy alert last (only if degraded).
+        for line in health.summary_lines():
+            log.info(line)
+        try:
+            health_path = health.write_json(args.log_dir)
+            log.info("[health] dump written to %s", health_path)
+        except OSError as e:
+            log.warning("[health] could not write JSON dump: %s", e)
+
         new_jobs = dbmod.fetch_new_since(conn, run_started_at)
         if new_jobs:
             sent = notify.send_digest(new_jobs, topic=os.environ.get("NTFY_TOPIC"))
             log.info("notification sent=%s", sent)
         else:
             log.info("no new jobs; skipping ntfy")
+
+        if health.has_warnings():
+            sent_alert = notify.send_health_alert(
+                health, topic=os.environ.get("NTFY_TOPIC")
+            )
+            log.info("[health] alert sent=%s", sent_alert)
 
         # Render JOBS.md from the current DB state regardless of whether this
         # run added anything — gone-jobs disappear, ages tick up.
@@ -396,6 +740,11 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         conn.close()
 
+    # Non-zero exit when any source is BROKEN/SILENT — this lets a
+    # cron / CI runner fail loudly instead of pretending success.
+    # DEGRADED is non-fatal; SILENT/BROKEN are.
+    if health.overall_status() in ("BROKEN", "SILENT"):
+        return 2
     return 0
 
 

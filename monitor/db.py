@@ -2,17 +2,27 @@
 
 Two tables: `jobs` (one row per unique job_url, with first/last seen timestamps
 and active/gone status) and `runs` (one row per scrape run for diagnostics).
+
+Each `jobs` row also carries a `signature` — a normalized
+(company, title, location-city) hash used to dedupe the same posting
+when it shows up in multiple sources (e.g. the same Apple London role
+appears in JobSpy/Indeed AND in SimplifyJobs/New-Grad-Positions). The
+URL stays the PK; the signature only matters at render time.
 """
 
 from __future__ import annotations
 
+import re
 import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Iterable, Iterator
 
 
-SCHEMA = """
+# Tables only — indexes are created after migrations because some indexes
+# reference columns added by ALTER TABLE (e.g. `region`). On a legacy DB
+# the index would fail validation otherwise.
+_SCHEMA_TABLES = """
 CREATE TABLE IF NOT EXISTS jobs (
     job_url         TEXT PRIMARY KEY,
     site            TEXT,
@@ -28,6 +38,9 @@ CREATE TABLE IF NOT EXISTS jobs (
     max_amount      REAL,
     currency        TEXT,
     salary_interval TEXT,
+    region          TEXT,
+    source_category TEXT,
+    signature       TEXT,
     first_seen      TEXT NOT NULL,
     last_seen       TEXT NOT NULL,
     status          TEXT NOT NULL DEFAULT 'active'
@@ -40,9 +53,13 @@ CREATE TABLE IF NOT EXISTS runs (
     rows_scraped INTEGER NOT NULL DEFAULT 0,
     rows_new     INTEGER NOT NULL DEFAULT 0
 );
+"""
 
+_SCHEMA_INDEXES = """
 CREATE INDEX IF NOT EXISTS idx_jobs_first_seen ON jobs(first_seen);
 CREATE INDEX IF NOT EXISTS idx_jobs_status     ON jobs(status);
+CREATE INDEX IF NOT EXISTS idx_jobs_region     ON jobs(region);
+CREATE INDEX IF NOT EXISTS idx_jobs_signature  ON jobs(signature);
 """
 
 # Columns added after the original schema. Each statement is idempotent —
@@ -55,6 +72,9 @@ _MIGRATIONS = [
     "ALTER TABLE jobs ADD COLUMN salary_interval TEXT",
     "ALTER TABLE jobs ADD COLUMN company_url TEXT",
     "ALTER TABLE jobs ADD COLUMN is_remote INTEGER",
+    "ALTER TABLE jobs ADD COLUMN region TEXT",
+    "ALTER TABLE jobs ADD COLUMN source_category TEXT",
+    "ALTER TABLE jobs ADD COLUMN signature TEXT",
 ]
 
 
@@ -64,14 +84,119 @@ def setup_db(path: str | Path) -> sqlite3.Connection:
     path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
-    conn.executescript(SCHEMA)
+    conn.executescript(_SCHEMA_TABLES)
     for stmt in _MIGRATIONS:
         try:
             conn.execute(stmt)
         except sqlite3.OperationalError:
             pass  # column already exists — this is the only expected error
+    conn.executescript(_SCHEMA_INDEXES)
+    # Backfill: anything without a region tag predates the multi-region work
+    # and was scraped by the JobSpy EMEA pipeline. Tag it accordingly.
+    conn.execute("UPDATE jobs SET region = 'emea' WHERE region IS NULL")
+    # Backfill signatures for rows that predate the dedup work. Cheap to
+    # run on every startup — only operates on rows where signature IS NULL.
+    _backfill_signatures(conn)
     conn.commit()
     return conn
+
+
+# --------------------------------------------------------------------------- #
+# Signature (cross-source dedup)
+# --------------------------------------------------------------------------- #
+
+# Words to strip from the title before hashing — these are the ones that
+# differ between sources for the same posting. SimplifyJobs writes
+# "Software Engineer New Grad" while Indeed writes "Software Engineer -
+# 2026 Grad"; without this, the two would have different signatures.
+_TITLE_NOISE_RE = re.compile(
+    r"\b(?:new\s*grad(?:uate)?|graduate|early[\s-]+career|"
+    r"intern(?:ship)?|co[\s-]?op|student|junior|jr|associate|entry[\s-]+level|"
+    r"early\s+talent|emerging\s+talent|future\s+talent|fresh(?:er)?|"
+    r"trainee|programme?|apprentice(?:ship)?|"
+    r"f/m/x|f/m/d|m/f/d|m/w/d|m/f/x|all\s+genders?|"
+    r"h/f|w/m|m/w)\b",
+    re.IGNORECASE,
+)
+_TITLE_PARENS_RE = re.compile(r"\([^)]*\)")
+_TITLE_YEAR_RE = re.compile(r"\b20\d\d\b")
+_NON_LETTER_RE = re.compile(r"[^a-z]")
+
+
+def _norm_company(s: str) -> str:
+    """Letters-only lowercase, capped — same canonical form for "Apple" /
+    "Apple Inc." / "Apple Inc". Aggressive but safe for hashing."""
+    s = (s or "").lower()
+    # Drop common corp-suffixes before letter-stripping so "Apple Inc"
+    # doesn't get a different hash from "Apple".
+    s = re.sub(
+        r"[,\s]+(?:llc|inc(?:orporated)?|ltd|limited|gmbh|ag|"
+        r"s\.?a\.?|sarl|sas|n\.?v\.?|b\.?v\.?|plc|corp(?:oration)?|"
+        r"company|co|holdings?|group|se|oyj|ab|aps|pte|pty)\.?\s*$",
+        "",
+        s,
+    )
+    return _NON_LETTER_RE.sub("", s)[:30]
+
+
+def _norm_title(s: str) -> str:
+    s = (s or "").lower()
+    s = _TITLE_PARENS_RE.sub(" ", s)
+    s = _TITLE_YEAR_RE.sub(" ", s)
+    s = _TITLE_NOISE_RE.sub(" ", s)
+    return _NON_LETTER_RE.sub("", s)[:60]
+
+
+def _norm_first_city(s: str) -> str:
+    """Take the first city in a multi-location string and letter-strip.
+
+    Locations look like "London, UK", "London, ENG, GB", or
+    "London, UK · Cambridge, UK". We split on `·` first (our renderer's
+    separator), then on `,`, and take the leftmost token.
+    """
+    s = (s or "").lower()
+    first = re.split(r"[·]", s)[0]
+    first = first.split(",")[0]
+    return _NON_LETTER_RE.sub("", first)[:25]
+
+
+def compute_signature(row: dict) -> str:
+    """Stable hash for cross-source dedup.
+
+    Same role posted to multiple sources should collapse to the same
+    signature most of the time. Failure modes worth knowing:
+      - Different cities (London vs Cambridge) → different signatures
+        (correctly, these ARE different roles)
+      - Title with junior keyword on one side only ("Junior Software
+        Engineer" vs "Software Engineer") → SAME signature (we strip
+        seniority words)
+      - Brand-new company name format ("Apple Inc." vs "Apple LLC") →
+        SAME signature (we strip corp suffixes)
+    """
+    return "|".join(
+        (
+            _norm_company(row.get("company", "")),
+            _norm_title(row.get("title", "")),
+            _norm_first_city(row.get("location", "")),
+        )
+    )
+
+
+def _backfill_signatures(conn: sqlite3.Connection) -> int:
+    """One-shot fill of signatures for rows that predate the dedup work."""
+    rows = conn.execute(
+        "SELECT job_url, company, title, location FROM jobs "
+        "WHERE signature IS NULL OR signature = ''"
+    ).fetchall()
+    if not rows:
+        return 0
+    for r in rows:
+        sig = compute_signature(dict(r))
+        conn.execute(
+            "UPDATE jobs SET signature = ? WHERE job_url = ?",
+            (sig, r["job_url"]),
+        )
+    return len(rows)
 
 
 @contextmanager
@@ -103,6 +228,9 @@ def upsert_jobs(
             url = row.get("job_url")
             if not url:
                 continue
+            # Compute signature once per row — used both as cross-source
+            # dedup key at render time and for INSERT/UPDATE here.
+            sig = compute_signature(row)
             existing = conn.execute(
                 "SELECT job_url FROM jobs WHERE job_url = ?", (url,)
             ).fetchone()
@@ -123,7 +251,10 @@ def upsert_jobs(
                            min_amount      = COALESCE(?, min_amount),
                            max_amount      = COALESCE(?, max_amount),
                            currency        = COALESCE(?, currency),
-                           salary_interval = COALESCE(?, salary_interval)
+                           salary_interval = COALESCE(?, salary_interval),
+                           region          = COALESCE(?, region),
+                           source_category = COALESCE(?, source_category),
+                           signature       = ?
                      WHERE job_url = ?
                     """,
                     (
@@ -140,6 +271,9 @@ def upsert_jobs(
                         row.get("max_amount"),
                         row.get("currency"),
                         row.get("interval") or row.get("salary_interval"),
+                        row.get("region"),
+                        row.get("source_category"),
+                        sig,
                         url,
                     ),
                 )
@@ -150,8 +284,9 @@ def upsert_jobs(
                         (job_url, site, title, company, company_url, location,
                          is_remote, date_posted, description, search_name,
                          min_amount, max_amount, currency, salary_interval,
+                         region, source_category, signature,
                          first_seen, last_seen, status)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
                     """,
                     (
                         url,
@@ -168,6 +303,9 @@ def upsert_jobs(
                         row.get("max_amount"),
                         row.get("currency"),
                         row.get("interval") or row.get("salary_interval"),
+                        row.get("region"),
+                        row.get("source_category"),
+                        sig,
                         run_started_at,
                         run_started_at,
                     ),
@@ -236,7 +374,8 @@ def fetch_active(conn: sqlite3.Connection) -> list[dict]:
         """
         SELECT job_url, site, title, company, company_url, location, is_remote,
                date_posted, search_name, min_amount, max_amount, currency,
-               salary_interval, first_seen, last_seen
+               salary_interval, region, source_category, signature,
+               first_seen, last_seen
           FROM jobs
          WHERE status = 'active'
          ORDER BY first_seen DESC, company, title

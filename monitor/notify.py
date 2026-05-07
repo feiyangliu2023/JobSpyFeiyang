@@ -88,3 +88,56 @@ def send_digest(new_jobs: Sequence[dict], topic: str | None = None) -> bool:
     except requests.RequestException as e:
         log.error("send_digest: ntfy POST failed: %s", e)
         return False
+
+
+def send_health_alert(health, topic: str | None = None) -> bool:
+    """Push a per-source health alert to ntfy when any source is non-OK.
+
+    Returns True only if a non-empty payload was actually accepted by
+    the server. Returns False (and does nothing else) when:
+      - there's nothing wrong (`health.has_warnings()` is False)
+      - `NTFY_TOPIC` isn't configured
+      - `NTFY_HEALTH_ALERTS` env var is set to a falsy value
+        ("0", "off", "false", "no")
+
+    The alert priority is bumped to 4 (above the digest's 3) and
+    tagged with `warning` + `construction` so the user's phone treats
+    it as "something needs attention" rather than "new jobs in your
+    inbox".
+    """
+    if not health.has_warnings():
+        return False
+
+    raw_toggle = os.environ.get("NTFY_HEALTH_ALERTS", "1").strip().lower()
+    if raw_toggle in ("0", "off", "false", "no", "disabled"):
+        log.info("send_health_alert: disabled via NTFY_HEALTH_ALERTS env var")
+        return False
+
+    topic = topic or os.environ.get("NTFY_TOPIC")
+    if not topic:
+        log.warning("send_health_alert: NTFY_TOPIC not set, skipping notification")
+        return False
+
+    overall = health.overall_status()
+    body_lines = health.alert_lines()
+    body = "\n".join(body_lines) if body_lines else "(no detail)"
+
+    payload = {
+        "topic": topic,
+        "title": f"[monitor] {overall}: source(s) need attention",
+        "message": body,
+        "tags": ["warning", "construction"],
+        "priority": 4,
+    }
+
+    try:
+        resp = requests.post(NTFY_BASE_URL, json=payload, timeout=DEFAULT_TIMEOUT)
+        resp.raise_for_status()
+        log.info(
+            "send_health_alert: posted %s alert to ntfy topic %s (%d affected sources)",
+            overall, topic, len(body_lines),
+        )
+        return True
+    except requests.RequestException as e:
+        log.error("send_health_alert: ntfy POST failed: %s", e)
+        return False

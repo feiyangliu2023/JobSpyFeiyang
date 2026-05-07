@@ -182,74 +182,228 @@ def _render_section(rows: list[dict], has_salary: bool) -> str:
     return "\n".join(lines)
 
 
+_TIER_ORDER: list[tuple[str, str]] = [
+    ("faang", "FAANG+ & AI Labs"),
+    ("quant", "Quant & Finance"),
+    ("other", "Other"),
+]
+
+# Region rendering order. EMEA is the user's primary feed (their own
+# JobSpy scrape) and stays on top regardless of row count; North America
+# is a secondary feed pulled from SimplifyJobs.
+_REGION_ORDER: list[tuple[str, str, str]] = [
+    # (region_key, anchor_prefix, heading)
+    ("emea", "emea", "EMEA"),
+    ("north_america", "na", "North America"),
+]
+
+_REGION_BLURB = {
+    "emea": (
+        "JobSpy-driven scrape of EMEA tech hubs (London, Dublin, Amsterdam, "
+        "Berlin, Munich, Zurich, Paris, Stockholm)."
+    ),
+    "north_america": (
+        "Pulled daily from "
+        "[SimplifyJobs/New-Grad-Positions](https://github.com/SimplifyJobs/New-Grad-Positions) "
+        "— hand-curated upstream feeding speedyapply and similar trackers."
+    ),
+}
+
+
+def _sort_key(r: dict) -> tuple[str, str]:
+    """Newest-first ordering, using the same age signal we render."""
+    return (
+        r.get("date_posted") or r.get("first_seen") or "",
+        r.get("company") or "",
+    )
+
+
+# Source priority for cross-source dedup. Lower index = preferred when
+# the same posting (same signature) appears in multiple sources.
+# SimplifyJobs entries usually point at the company's direct apply URL
+# (jobs.apple.com, careers.microsoft.com); JobSpy/Indeed entries are
+# referrals through indeed.com / linkedin.com — direct is better.
+_SOURCE_PRIORITY = [
+    "simplify_newgrad",
+    "simplify_intern",
+    "simplify",       # legacy label, kept for old DB rows
+    "linkedin",
+    "indeed",
+    "glassdoor",
+    "google",
+]
+
+
+def _source_rank(site: str | None) -> int:
+    if not site:
+        return len(_SOURCE_PRIORITY) + 1
+    s = site.lower()
+    for i, name in enumerate(_SOURCE_PRIORITY):
+        if s == name:
+            return i
+    return len(_SOURCE_PRIORITY)
+
+
+def _dedupe_by_signature(rows: list[dict]) -> tuple[list[dict], int]:
+    """Collapse rows that share a signature, keep the higher-priority source.
+
+    Operates on a single tier within a region — we never collapse across
+    regions, since "Apple, Cupertino" and "Apple, London" are obviously
+    different roles even with similar titles.
+
+    Returns (deduped_rows, num_collapsed).
+    """
+    by_sig: dict[str, dict] = {}
+    no_sig: list[dict] = []
+    collapsed = 0
+    for r in rows:
+        sig = (r.get("signature") or "").strip()
+        if not sig:
+            no_sig.append(r)
+            continue
+        prev = by_sig.get(sig)
+        if prev is None:
+            by_sig[sig] = r
+            continue
+        # Already have one with this signature — keep the higher-priority
+        # source. Tie-breaker: keep whichever was scraped first
+        # (lower first_seen) so the row that's been around longer wins
+        # over a freshly-discovered duplicate.
+        prev_rank = _source_rank(prev.get("site"))
+        curr_rank = _source_rank(r.get("site"))
+        if curr_rank < prev_rank or (
+            curr_rank == prev_rank
+            and (r.get("first_seen") or "") < (prev.get("first_seen") or "")
+        ):
+            by_sig[sig] = r
+        collapsed += 1
+    return list(by_sig.values()) + no_sig, collapsed
+
+
+def _split_tiers(region_rows: list[dict]) -> dict[str, list[dict]]:
+    by_tier: dict[str, list[dict]] = {k: [] for k, _ in _TIER_ORDER}
+    for r in region_rows:
+        by_tier[classify(r.get("company") or "")].append(r)
+    for tier_key in by_tier:
+        # Dedup before sort — sort on the survivors only
+        deduped, _collapsed = _dedupe_by_signature(by_tier[tier_key])
+        deduped.sort(key=_sort_key, reverse=True)
+        by_tier[tier_key] = deduped
+    return by_tier
+
+
 def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
-    """Group `active_rows` into FAANG+/Quant/Other and write the markdown.
+    """Group `active_rows` into Region × Tier and write the markdown.
 
     Returns the total row count written. Always overwrites; the file is
     intended to be committed by the workflow alongside jobs.db.
 
-    Each section table is wrapped in `<!-- TABLE_<TIER>_START -->` /
-    `<!-- TABLE_<TIER>_END -->` HTML comment markers (mirroring the
-    SimplifyJobs / speedyapply convention) so future tooling can do
-    partial-replace on a hand-curated outer file without changing the
-    rest of the document.
+    Layout (single file, EMEA always first since that's the user's
+    primary scraper):
 
-    The Salary column is hidden whenever no active row has salary data
-    (typical for EMEA Indeed scrapes), keeping the table compact instead
-    of emitting an all-empty column.
+        # Junior Tech Roles
+        [Last updated, totals, ToC]
+        ---
+        ## EMEA              (primary)
+          ### FAANG+ / Quant / Other  → 3 tables
+        ---
+        ## North America     (via SimplifyJobs)
+          ### FAANG+ / Quant / Other  → 3 tables
+
+    Each table is wrapped in `<!-- TABLE_<REGION>_<TIER>_START -->` /
+    `<!-- ..._END -->` HTML markers (mirroring SimplifyJobs / speedyapply)
+    so future tooling can do partial-replace on a hand-curated outer file.
+
+    The Salary column is hidden globally whenever no active row carries
+    salary data (typical for EMEA Indeed scrapes), keeping every table
+    consistently shaped.
     """
     rows = list(active_rows)
     has_salary = any(_has_salary(r) for r in rows)
 
-    by_tier = {"faang": [], "quant": [], "other": []}
+    # Group by region first; anything with an unknown region tag falls
+    # into EMEA so legacy DB rows render somewhere visible.
+    by_region: dict[str, list[dict]] = {k: [] for k, _, _ in _REGION_ORDER}
     for r in rows:
-        by_tier[classify(r.get("company") or "")].append(r)
+        region = (r.get("region") or "emea").lower()
+        if region not in by_region:
+            region = "emea"
+        by_region[region].append(r)
 
-    # Newest-first within each tier — sort by the same age signal we render
-    # (date_posted preferred, first_seen fallback) so the table top reflects
-    # actual freshness rather than scrape order.
-    def _sort_key(r):
-        return (
-            r.get("date_posted") or r.get("first_seen") or "",
-            r.get("company") or "",
-        )
+    region_tiers = {
+        region_key: _split_tiers(by_region[region_key])
+        for region_key, _, _ in _REGION_ORDER
+    }
 
-    for tier_rows in by_tier.values():
-        tier_rows.sort(key=_sort_key, reverse=True)
+    # Counts AFTER dedup — what the user actually sees.
+    region_visible = {
+        region_key: sum(len(t) for t in region_tiers[region_key].values())
+        for region_key, _, _ in _REGION_ORDER
+    }
+    visible_total = sum(region_visible.values())
+    collapsed = len(rows) - visible_total
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
-    out.append("# EMEA Junior Tech Roles")
+    out.append("# Junior Tech Roles")
     out.append("")
-    out.append(
-        f"Last updated: **{now}** · **{len(rows)}** active roles "
-        f"across the EMEA hubs we track. Generated from `monitor/jobs.db` "
-        f"after the latest scrape — see [monitor/](monitor/) for how this "
-        f"works."
+
+    region_summaries = []
+    for region_key, anchor_prefix, heading in _REGION_ORDER:
+        n = region_visible[region_key]
+        region_summaries.append(f"[{heading}](#{anchor_prefix}) ({n})")
+    dedup_note = (
+        f" · {collapsed} cross-source duplicates merged" if collapsed else ""
     )
-    out.append("")
     out.append(
-        "**Sections:** "
-        f"[FAANG+ & AI Labs](#faang) ({len(by_tier['faang'])}) · "
-        f"[Quant & Finance](#quant) ({len(by_tier['quant'])}) · "
-        f"[Other](#other) ({len(by_tier['other'])})"
+        f"Last updated: **{now}** · **{visible_total}** active roles "
+        f"({' · '.join(region_summaries)}){dedup_note}. Generated from "
+        f"`monitor/jobs.db` after the latest scrape — see "
+        f"[monitor/](monitor/) for how this works."
     )
     out.append("")
     out.append("---")
     out.append("")
 
-    for tier_key, heading in [
-        ("faang", "FAANG+ & AI Labs"),
-        ("quant", "Quant & Finance"),
-        ("other", "Other"),
-    ]:
-        out.append(f'<a name="{tier_key}"></a>')
-        out.append(f"## {heading}")
+    for region_key, anchor_prefix, heading in _REGION_ORDER:
+        out.append(f'<a name="{anchor_prefix}"></a>')
+        primary_tag = " (primary)" if region_key == "emea" else ""
+        out.append(f"## {heading}{primary_tag}")
         out.append("")
-        out.append(f"<!-- TABLE_{tier_key.upper()}_START -->")
-        out.append(_render_section(by_tier[tier_key], has_salary))
-        out.append(f"<!-- TABLE_{tier_key.upper()}_END -->")
+        blurb = _REGION_BLURB.get(region_key)
+        if blurb:
+            out.append(blurb)
+            out.append("")
+
+        tiers = region_tiers[region_key]
+        toc_bits = []
+        for tier_key, tier_heading in _TIER_ORDER:
+            n = len(tiers[tier_key])
+            toc_bits.append(
+                f"[{tier_heading}](#{anchor_prefix}-{tier_key}) ({n})"
+            )
+        out.append("**Sections:** " + " · ".join(toc_bits))
         out.append("")
+
+        for tier_key, tier_heading in _TIER_ORDER:
+            anchor = f"{anchor_prefix}-{tier_key}"
+            marker = f"TABLE_{anchor_prefix.upper()}_{tier_key.upper()}"
+            out.append(f'<a name="{anchor}"></a>')
+            out.append(f"### {tier_heading}")
+            out.append("")
+            out.append(f"<!-- {marker}_START -->")
+            out.append(_render_section(tiers[tier_key], has_salary))
+            out.append(f"<!-- {marker}_END -->")
+            out.append("")
+
+        out.append("---")
+        out.append("")
+
+    # Drop the trailing `---` separator so the file ends on a clean
+    # newline rather than a horizontal rule.
+    while out and out[-1] in ("", "---"):
+        out.pop()
+    out.append("")
 
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
     return len(rows)

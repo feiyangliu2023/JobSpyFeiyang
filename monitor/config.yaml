@@ -13,6 +13,15 @@ cities:
   - name: london
     location: "London, United Kingdom"
     country_indeed: uk
+  - name: edinburgh
+    location: "Edinburgh, United Kingdom"
+    country_indeed: uk
+  - name: cambridge_uk
+    location: "Cambridge, United Kingdom"
+    country_indeed: uk
+  - name: manchester
+    location: "Manchester, United Kingdom"
+    country_indeed: uk
   - name: dublin
     location: "Dublin, Ireland"
     country_indeed: ireland
@@ -34,40 +43,121 @@ cities:
   - name: stockholm
     location: "Stockholm, Sweden"
     country_indeed: sweden
+  - name: madrid
+    location: "Madrid, Spain"
+    country_indeed: spain
+  - name: barcelona
+    location: "Barcelona, Spain"
+    country_indeed: spain
+  - name: vienna
+    location: "Vienna, Austria"
+    country_indeed: austria
 
 # NOTE: Glassdoor was previously included but its location-resolution endpoint
 # 400's on every "City, Country" string we tried, and Indeed already covers
 # the same job surface. Re-add later only if we want to split JobSpy calls
 # per-site (city-only string for Glassdoor, full string for Indeed/LinkedIn).
+# Per-template config knobs:
+#   sites: [list]              — which JobSpy scrapers to call
+#   search_terms: [list]       — DEFAULT terms (used by sites without override)
+#   site_search_terms:         — per-site override; LinkedIn gets ONE term
+#                                because each LinkedIn call burns IP reputation
+#                                fast; Indeed iterates all of search_terms because
+#                                it matches description-text and benefits from variety.
+#   sites_skip_in_ci: [list]   — sites to drop when GITHUB_ACTIONS / CI env is set
+#                                (LinkedIn IPs from CI runners get blocked aggressively
+#                                — leave LinkedIn for local runs where the user's home
+#                                IP has clean reputation).
+#   results_wanted: int        — how many to ask each site for
+#   hours_old: int             — freshness window
+#   job_type: fulltime/intern  — JobSpy filter
 role_templates:
   - name: sde_junior
+    sites: [indeed, linkedin, glassdoor, google, bayt]
+    sites_skip_in_ci: [linkedin]
     search_terms:
       - "software engineer new grad"
       - "junior software engineer"
       - "graduate software engineer"
       - "early career software engineer"
-    sites: [linkedin, indeed]
+      - "associate software engineer"
+      - "graduate programme software"
+    site_search_terms:
+      linkedin:
+        - "graduate software engineer"
+      glassdoor:
+        - "graduate software engineer"
+      google:
+        - "graduate software engineer new grad"
+      bayt:
+        - "software engineer"
     results_wanted: 50
-    hours_old: 72
+    # 168h = one week. The DB de-dupes by URL across runs so a wider
+    # window costs ingest time, not duplicate rows.
+    hours_old: 168
     job_type: fulltime
 
   - name: mle_junior
+    sites: [indeed, linkedin, glassdoor, google, bayt]
+    sites_skip_in_ci: [linkedin]
     search_terms:
       - "machine learning engineer new grad"
       - "junior machine learning engineer"
       - "graduate machine learning engineer"
       - "ai engineer new grad"
-    sites: [linkedin, indeed]
+      - "graduate machine learning"
+    site_search_terms:
+      linkedin:
+        - "graduate machine learning engineer"
+      glassdoor:
+        - "graduate machine learning engineer"
+      google:
+        - "machine learning engineer new grad"
+      bayt:
+        - "machine learning engineer"
     results_wanted: 30
-    hours_old: 72
+    hours_old: 168
     job_type: fulltime
 
   - name: applied_scientist
+    sites: [indeed, linkedin, glassdoor, google]
+    sites_skip_in_ci: [linkedin]
     search_terms:
       - "applied scientist"
-    sites: [linkedin, indeed]
+      - "research scientist new grad"
+      - "graduate research scientist"
+    site_search_terms:
+      linkedin:
+        - "applied scientist"
+      glassdoor:
+        - "applied scientist"
+      google:
+        - "applied scientist new grad"
     results_wanted: 30
-    hours_old: 72
+    hours_old: 168
+    job_type: fulltime
+
+  - name: quant_junior
+    # Quant is a small but high-signal category for the EMEA hubs we
+    # track (London especially). Keep results_wanted low — these roles
+    # are concentrated, not distributed. Bayt is dropped here — quant is
+    # not a Middle-East category in our experience.
+    sites: [indeed, linkedin, glassdoor, google]
+    sites_skip_in_ci: [linkedin]
+    search_terms:
+      - "graduate trader"
+      - "quantitative researcher new grad"
+      - "graduate quantitative"
+      - "junior quant developer"
+    site_search_terms:
+      linkedin:
+        - "graduate quantitative"
+      glassdoor:
+        - "graduate quantitative"
+      google:
+        - "quantitative researcher new grad"
+    results_wanted: 20
+    hours_old: 168
     job_type: fulltime
 
 filters:
@@ -372,3 +462,36 @@ filters:
 
   # Drop suspiciously empty postings (usually scraper/aggregator pages).
   min_description_chars: 200
+
+# External (non-JobSpy) job sources. Each source is mapped onto our
+# jobs.db schema by code in monitor/external/ and goes through the same
+# `filters` block above — `skip_filters` lets a curated source opt out
+# of individual filter blocks.
+#
+# Region is auto-classified per listing from its location string (so a
+# London Cohere posting in a "US-centric" repo still ends up in our
+# EMEA section). `allowed_regions` lets a source ingest only certain
+# regions — e.g. drop APAC postings entirely.
+#
+# Supported types:
+#   - simplify_newgrad → SimplifyJobs/New-Grad-Positions listings.json
+#   - simplify_intern  → SimplifyJobs/Summer2026-Internships listings.json
+external_sources:
+  - name: simplify_newgrad
+    type: simplify_newgrad
+    # `url` defaults to the type's preset; override only if you fork.
+    # Auto-classify region by location; ingest both EMEA + NA, drop APAC.
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      # SimplifyJobs is hand-curated and broader than our EMEA-tuned
+      # company allowlist; skip the gate so we surface the curated set.
+      - include_companies
+      # listings.json has no description — skip or every row drops.
+      - min_description_chars
+
+  - name: simplify_intern
+    type: simplify_intern
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - include_companies
+      - min_description_chars
