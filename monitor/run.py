@@ -238,7 +238,11 @@ def _match_company(company: str, allowlist: list) -> bool:
     return False
 
 
-def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
+def apply_filters(
+    rows: list[dict],
+    filters: dict,
+    skip: set[str] | None = None,
+) -> list[dict]:
     """Apply title-exclusion / title-include / company-allow / company-block /
     min-desc filters.
 
@@ -253,7 +257,14 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
       - "enforce" (default): drop rows whose company isn't on the list.
       - "off": ignore the list entirely (keeps the curated values around so
         you can flip back later without re-typing them).
+
+    `skip` lets a caller turn off individual filter blocks for one batch
+    of rows — used by external sources that come pre-curated. Recognised
+    names: `exclude_titles`, `include_title_keywords`, `include_companies`,
+    `exclude_companies`, `min_description_chars`. Unknown names are
+    silently ignored so a typo doesn't crash the run.
     """
+    skip = skip or set()
     # Lowercase only — preserve user-authored spaces in tokens.
     excl_titles = [(t or "").lower() for t in filters.get("exclude_titles") or []]
     incl_kws = [(t or "").lower() for t in filters.get("include_title_keywords") or []]
@@ -274,27 +285,139 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
     out: list[dict] = []
     for r in rows:
         title_padded = " " + _normalize(r.get("title")) + " "
-        if any(tok and tok in title_padded for tok in excl_titles):
+        if "exclude_titles" not in skip and any(
+            tok and tok in title_padded for tok in excl_titles
+        ):
             continue
-        if incl_kws and not any(kw and kw in title_padded for kw in incl_kws):
+        if (
+            "include_title_keywords" not in skip
+            and incl_kws
+            and not any(kw and kw in title_padded for kw in incl_kws)
+        ):
             continue
 
         company = r.get("company") or ""
         if (
-            incl_mode == "enforce"
+            "include_companies" not in skip
+            and incl_mode == "enforce"
             and incl_companies
             and not _match_company(company, incl_companies)
         ):
             continue
-        if excl_companies and _match_company(company, excl_companies):
+        if (
+            "exclude_companies" not in skip
+            and excl_companies
+            and _match_company(company, excl_companies)
+        ):
             continue
 
         desc = r.get("description") or ""
-        if min_desc and len(desc) < min_desc:
+        if (
+            "min_description_chars" not in skip
+            and min_desc
+            and len(desc) < min_desc
+        ):
             continue
 
         out.append(r)
     return out
+
+
+# --------------------------------------------------------------------------- #
+# External sources (SimplifyJobs etc.)
+# --------------------------------------------------------------------------- #
+
+
+def ingest_external_sources(
+    cfg: dict, conn, run_started_at: str
+) -> tuple[int, int]:
+    """Pull rows from each entry in cfg['external_sources'], filter, upsert.
+
+    Dispatches by the `type` field. Currently supported types:
+      - `simplify_newgrad`  → SimplifyJobs/New-Grad-Positions listings.json
+      - `simplify_intern`   → SimplifyJobs/Summer2026-Internships listings.json
+
+    Both share the SimplifyJobs schema and the same fetch/map module.
+    Region is auto-classified per listing (a London role lands in EMEA
+    regardless of repo). `allowed_regions` (set) lets a source ingest
+    only certain regions — typical config: `[emea, north_america]` to
+    drop APAC entirely.
+
+    `skip_filters` lets a source opt out of individual filter blocks
+    (e.g. `include_companies` because SimplifyJobs is curated and we
+    don't want our EMEA-tuned allowlist to gate it).
+
+    Returns (total_filtered_in, total_new). Errors per-source are
+    logged and swallowed.
+    """
+    sources = cfg.get("external_sources") or []
+    total_filtered = 0
+    total_new = 0
+    for src in sources:
+        name = (src.get("name") or "").strip()
+        # `type` is the dispatch key; falls back to `name` for backward
+        # compat with the original single-source config.
+        kind = (src.get("type") or src.get("name") or "").strip().lower()
+        # Convert "simplify" (legacy) → "simplify_newgrad"
+        if kind == "simplify":
+            kind = "simplify_newgrad"
+        skip = set(src.get("skip_filters") or [])
+        allowed = src.get("allowed_regions")
+        if allowed is not None:
+            allowed = set(allowed)
+        default_region = src.get("default_region") or "north_america"
+
+        try:
+            if kind in ("simplify_newgrad", "simplify_intern"):
+                from monitor.external import simplify as simplify_mod
+
+                url = src.get("url") or simplify_mod.SIMPLIFY_PRESETS.get(kind)
+                if not url:
+                    log.warning("source %r missing url; skipping", name)
+                    continue
+                listings = simplify_mod.fetch_listings(url)
+                rows = simplify_mod.to_rows(
+                    listings,
+                    site_label=kind,
+                    default_region=default_region,
+                    allowed_regions=allowed,
+                )
+            else:
+                log.warning(
+                    "unknown external source type %r (name=%r) — skipping",
+                    kind, name,
+                )
+                continue
+        except Exception:
+            log.exception("ingest %s failed; skipping", name or kind)
+            continue
+
+        log.info(
+            "external %s (type=%s) | %d rows after region filter",
+            name or kind, kind, len(rows),
+        )
+        filtered = apply_filters(rows, cfg["filters"], skip=skip)
+        # Per-region row counts so we can see EMEA contribution at a glance
+        by_region: dict[str, int] = {}
+        for r in filtered:
+            by_region[r.get("region") or "?"] = by_region.get(
+                r.get("region") or "?", 0
+            ) + 1
+        log.info(
+            "  %d rows passed filters (skip=%s) → by region: %s",
+            len(filtered),
+            sorted(skip) or "—",
+            ", ".join(f"{k}={v}" for k, v in sorted(by_region.items())),
+        )
+        total_filtered += len(filtered)
+        scraped, new = dbmod.upsert_jobs(
+            conn, filtered, run_started_at, f"external:{name or kind}"
+        )
+        dbmod.record_run(
+            conn, run_started_at, f"external:{name or kind}", scraped, new
+        )
+        total_new += new
+    return total_filtered, total_new
 
 
 # --------------------------------------------------------------------------- #
@@ -364,6 +487,10 @@ def main(argv: list[str] | None = None) -> int:
             rows = run_search(search)
             log.info("  scraped %d raw rows", len(rows))
             filtered = apply_filters(rows, cfg["filters"])
+            # JobSpy is our EMEA pipeline. Tag rows so the renderer can
+            # split them from external (north_america) sources.
+            for r in filtered:
+                r.setdefault("region", "emea")
             log.info("  %d rows passed filters", len(filtered))
             total_scraped += len(rows)
             total_filtered_in += len(filtered)
@@ -374,6 +501,14 @@ def main(argv: list[str] | None = None) -> int:
                 conn, run_started_at, search["name"], scraped, new
             )
             total_new += new
+
+        # External sources (SimplifyJobs etc.) — runs after the JobSpy
+        # loop so mark_gone treats both feeds uniformly.
+        ext_filtered, ext_new = ingest_external_sources(
+            cfg, conn, run_started_at
+        )
+        total_filtered_in += ext_filtered
+        total_new += ext_new
 
         gone = dbmod.mark_gone(conn, run_started_at)
         log.info(

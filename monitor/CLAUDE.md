@@ -3,16 +3,24 @@
 ## Purpose
 
 Twice-daily scheduled scrape of EMEA junior-level SDE and entry-level AI roles
-(MLE, Applied Scientist) at large tech companies. Net-new postings (deduped
-against `jobs.db`) are pushed as a single digest to ntfy.sh per run.
+(MLE, Applied Scientist) at large tech companies — that's the user's primary
+use case ("我自己要用"). A secondary North America feed pulls daily from
+SimplifyJobs/New-Grad-Positions for awareness; both feeds share one
+`jobs.db` and one `JOBS.md`.
 
-The user's phone subscribes to an ntfy topic; that's the only delivery channel.
+Net-new postings (deduped against `jobs.db`) are pushed as a single digest
+to ntfy.sh per run. The user's phone subscribes to an ntfy topic; that's
+the only delivery channel.
 
-## Library used
+## Data sources
 
-This directory sits alongside the upstream JobSpy package (the fork's `jobspy/`
-folder at the repo root). We `pip install -e ..` so JobSpy is importable as
-`jobspy`. The relevant API:
+Two feeds, one DB. They're tagged on the `region` column.
+
+### EMEA (primary): JobSpy
+
+This directory sits alongside the upstream JobSpy package (the fork's
+`jobspy/` folder at the repo root). We `pip install -e ..` so JobSpy is
+importable as `jobspy`. The relevant API:
 
 - `jobspy.scrape_jobs(site_name=[...], search_term=..., location=...,
   results_wanted=N, hours_old=N, country_indeed=..., job_type=...,
@@ -26,6 +34,49 @@ folder at the repo root). We `pip install -e ..` so JobSpy is importable as
   no Glassdoor TLD — see `_glassdoor_supported` in `run.py`).
 
 We keep `monitor/` separate from `jobspy/` so upstream pulls don't conflict.
+JobSpy rows are tagged `region='emea'` in `run.py` before upsert.
+
+### Secondary feeds: SimplifyJobs (both repos)
+
+`monitor/external/simplify.py` handles two SimplifyJobs-format upstreams,
+dispatched by the `type` field in `config.yaml`:
+
+- `simplify_newgrad` → [SimplifyJobs/New-Grad-Positions](https://github.com/SimplifyJobs/New-Grad-Positions) (~10 MB, ~2300 active, **~250 EMEA**)
+- `simplify_intern` → [SimplifyJobs/Summer2026-Internships](https://github.com/SimplifyJobs/Summer2026-Internships) (~14 MB, ~2400 active, **~225 EMEA**)
+
+These two files together are the canonical upstream behind every
+public "new grad jobs tracker" repo (speedyapply, coderquad-simplify,
+etc.) — those repos don't scrape, they render this. We do the same.
+
+SimplifyJobs schema (verified by inspecting raw listings.json):
+`id, source, category, company_name, title, active, date_updated,
+date_posted (unix epoch), url, locations[], company_url, is_visible,
+sponsorship, degrees[]`.
+
+We drop rows where `active=false` or `is_visible=false` (SimplifyJobs's
+own "this is gone / internal" flags). For each remaining row, we
+auto-classify `region` by parsing its `locations[]` strings via
+`monitor.external.locations.classify_locations` — so a London Cohere
+posting from a "US-centric" repo lands in our EMEA section, while
+"Cambridge, MA" stays in NA (the location classifier is suffix-biased
+and disambiguates Cambridge UK / Cambridge MA correctly).
+
+Sources can declare `allowed_regions: [emea, north_america]` to drop
+APAC rows entirely — that's our default config.
+
+The same `apply_filters` pipeline runs on the mapped rows, but a source
+can `skip_filters` individual gates. We skip `include_companies`
+(SimplifyJobs is broader than our EMEA-tuned allowlist) and
+`min_description_chars` (listings.json has no description field).
+**Title filters (`exclude_titles`, `include_title_keywords`) stay ON**
+across both feeds — senior/staff/sales-shaped titles are dropped
+consistently regardless of source. That's the user's "保留关键词筛选
+灵活性" requirement: keyword filtering is universal, allowlist is per-source.
+
+Adding more sources later: drop a new entry into `external_sources`
+with a known `type`. Schema-compatible repos (vanshb03/, etc.) just
+need a different URL. Schema-incompatible sources need a new module
+under `monitor/external/`.
 
 ## Search spec
 
@@ -45,10 +96,13 @@ limited): `exclude_titles` (substring match on title), `include_companies`
 
 ```
 jobs(
-  job_url        PRIMARY KEY,        -- the dedup key
+  job_url        PRIMARY KEY,        -- per-source dedup key (same posting from same source over multiple runs collapses here)
   site, title, company, company_url, location, is_remote,
   date_posted, description, search_name,
-  min_amount, max_amount, currency, salary_interval,  -- nullable; populated when JobSpy returns salary data
+  min_amount, max_amount, currency, salary_interval,  -- nullable; populated when the source returns salary data
+  region          TEXT,              -- 'emea' | 'north_america' | 'other' — auto-classified for SimplifyJobs, hardcoded 'emea' for JobSpy
+  source_category TEXT,              -- SimplifyJobs's category string ('Software', 'AI/ML/Data', 'Quant', ...) — null for JobSpy rows
+  signature       TEXT,              -- cross-source dedup key (see below)
   first_seen     TEXT NOT NULL,      -- ISO8601 UTC, set on insert
   last_seen      TEXT NOT NULL,      -- ISO8601 UTC, refreshed on each upsert
   status         TEXT NOT NULL       -- 'active' or 'gone'
@@ -62,19 +116,72 @@ runs(
 
 "New" = rows whose `first_seen` equals this run's timestamp. After the upsert
 loop, any active row whose `last_seen < this_run` is flipped to `'gone'`.
+All feeds share the same `mark_gone` pass — SimplifyJobs rows whose
+`active=false` upstream simply don't get re-ingested, so they age out via
+the same mechanism.
 
-The salary / company_url / is_remote columns were added after the original
-schema; `setup_db` runs `ALTER TABLE ADD COLUMN` statements wrapped in
-try/except so older DBs upgrade in place.
+### Two layers of dedup
+
+1. **Same-source / multi-run dedup** — the `job_url` PK. Re-running the
+   monitor against unchanged upstream data refreshes `last_seen` instead
+   of inserting duplicates. This is sqlite-level and automatic.
+
+2. **Cross-source dedup** — the `signature` column, computed by
+   `db.compute_signature` from a normalized `(company, title, first
+   location city)` tuple. Title normalization strips year tokens (2026),
+   seniority words (junior, new grad, graduate, etc.), and parenthetical
+   suffixes ("(All Genders)", "(f/m/x)") so the same Apple London role
+   produces the same signature whether it came from Indeed or SimplifyJobs.
+   The signature is stored on every row but the dedup itself happens at
+   render time (`render_md._dedupe_by_signature`) so we keep multi-source
+   provenance in the DB. When duplicates exist the renderer prefers the
+   higher-priority source — SimplifyJobs first (direct apply URLs),
+   then LinkedIn, then Indeed (Indeed is usually a referral chain).
+
+Columns added after the original schema (salary, company_url, is_remote,
+region, source_category, signature) live in `_MIGRATIONS`; `setup_db`
+runs `ALTER TABLE ADD COLUMN` statements wrapped in try/except so older
+DBs upgrade in place. Two backfills run on every startup (cheap, only
+touch `WHERE x IS NULL` rows): legacy region rows → 'emea', legacy
+signature rows → computed from existing fields.
 
 ## JOBS.md (rendered table)
 
 `render_md.render_md(active_rows, path)` writes `JOBS.md` at the repo root
-on every run. It's grouped into three tiers — FAANG+ & AI Labs / Quant &
-Finance / Other — with anchor links at the top. Tier classification is a
-hardcoded substring match in `render_md.py`; it's deliberately separate
-from the strict word-boundary `_match_company` allowlist gate, because at
-render time we just need a quick bucket label, not a precision filter.
+on every run. Layout is a single file (the user explicitly chose not to
+split per-region) with a Region × Tier grid:
+
+```
+EMEA (primary)
+  ├─ FAANG+ & AI Labs
+  ├─ Quant & Finance
+  └─ Other
+North America (via SimplifyJobs)
+  ├─ FAANG+ & AI Labs
+  ├─ Quant & Finance
+  └─ Other
+```
+
+EMEA always renders FIRST regardless of row counts — that's the user's
+primary feed. Tier classification is a hardcoded substring match in
+`render_md.py`; deliberately separate from the strict word-boundary
+`_match_company` allowlist gate, because at render time we just need a
+quick bucket label, not a precision filter.
+
+Each table is wrapped in `<!-- TABLE_<REGION>_<TIER>_START -->` /
+`<!-- TABLE_<REGION>_<TIER>_END -->` HTML comment markers (mirroring the
+SimplifyJobs / speedyapply convention) so future tooling can do
+partial-replace on a hand-curated outer file. Today we still write the
+whole file; the markers are forward-compat.
+
+The Salary column is hidden globally whenever no active row carries
+salary data — typical for EMEA Indeed scrapes which almost never return
+salary. The column reappears automatically once any row has data.
+
+Age is computed from `date_posted` first, falling back to `first_seen`
+(scraper's first sighting). This matters because some Indeed listings
+come back with a 6-month-old `date_posted` while `first_seen` is today,
+which would otherwise show as "0d" — misleading.
 
 The "Apply" cell embeds an external imgur image (the same one used by
 SimplifyJobs/New-Grad-Positions). If imgur rots, the link still works.
@@ -136,12 +243,15 @@ SimplifyJobs/New-Grad-Positions). If imgur rots, the link still works.
 
 ## Files in this directory
 
-- `config.yaml`      — search spec (cities, templates, filters)
+- `config.yaml`      — search spec (cities, templates, filters, external_sources)
 - `run.py`           — entry point: `python -m monitor.run`
 - `db.py`            — sqlite3 helpers (`setup_db`, `upsert_jobs`, `mark_gone`,
                       `record_run`, `fetch_new_since`, `fetch_active`)
 - `notify.py`        — ntfy.sh JSON POST + digest body builder
-- `render_md.py`     — JOBS.md generator (tier classification + table render)
+- `render_md.py`     — JOBS.md generator (Region × Tier grid + table render)
+- `external/`        — non-JobSpy ingestion modules
+   `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
+   `external/locations.py` — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.
 - `requirements.txt` — pyyaml + requests (JobSpy is editable-installed)
 - `jobs.db`          — committed SQLite state (do NOT gitignore)
 - `logs/`            — per-run log files (gitignored, uploaded as artifact on CI failure)

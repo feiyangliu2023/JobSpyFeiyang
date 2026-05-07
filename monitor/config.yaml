@@ -13,6 +13,15 @@ cities:
   - name: london
     location: "London, United Kingdom"
     country_indeed: uk
+  - name: edinburgh
+    location: "Edinburgh, United Kingdom"
+    country_indeed: uk
+  - name: cambridge_uk
+    location: "Cambridge, United Kingdom"
+    country_indeed: uk
+  - name: manchester
+    location: "Manchester, United Kingdom"
+    country_indeed: uk
   - name: dublin
     location: "Dublin, Ireland"
     country_indeed: ireland
@@ -34,6 +43,15 @@ cities:
   - name: stockholm
     location: "Stockholm, Sweden"
     country_indeed: sweden
+  - name: madrid
+    location: "Madrid, Spain"
+    country_indeed: spain
+  - name: barcelona
+    location: "Barcelona, Spain"
+    country_indeed: spain
+  - name: vienna
+    location: "Vienna, Austria"
+    country_indeed: austria
 
 # NOTE: Glassdoor was previously included but its location-resolution endpoint
 # 400's on every "City, Country" string we tried, and Indeed already covers
@@ -46,9 +64,13 @@ role_templates:
       - "junior software engineer"
       - "graduate software engineer"
       - "early career software engineer"
+      - "associate software engineer"
+      - "graduate programme software"
     sites: [linkedin, indeed]
     results_wanted: 50
-    hours_old: 72
+    # 168h = one week. The DB de-dupes by URL across runs so a wider
+    # window costs ingest time, not duplicate rows.
+    hours_old: 168
     job_type: fulltime
 
   - name: mle_junior
@@ -57,17 +79,34 @@ role_templates:
       - "junior machine learning engineer"
       - "graduate machine learning engineer"
       - "ai engineer new grad"
+      - "graduate machine learning"
     sites: [linkedin, indeed]
     results_wanted: 30
-    hours_old: 72
+    hours_old: 168
     job_type: fulltime
 
   - name: applied_scientist
     search_terms:
       - "applied scientist"
+      - "research scientist new grad"
+      - "graduate research scientist"
     sites: [linkedin, indeed]
     results_wanted: 30
-    hours_old: 72
+    hours_old: 168
+    job_type: fulltime
+
+  - name: quant_junior
+    # Quant is a small but high-signal category for the EMEA hubs we
+    # track (London especially). Keep results_wanted low — these roles
+    # are concentrated, not distributed.
+    search_terms:
+      - "graduate trader"
+      - "quantitative researcher new grad"
+      - "graduate quantitative"
+      - "junior quant developer"
+    sites: [linkedin, indeed]
+    results_wanted: 20
+    hours_old: 168
     job_type: fulltime
 
 filters:
@@ -372,3 +411,36 @@ filters:
 
   # Drop suspiciously empty postings (usually scraper/aggregator pages).
   min_description_chars: 200
+
+# External (non-JobSpy) job sources. Each source is mapped onto our
+# jobs.db schema by code in monitor/external/ and goes through the same
+# `filters` block above — `skip_filters` lets a curated source opt out
+# of individual filter blocks.
+#
+# Region is auto-classified per listing from its location string (so a
+# London Cohere posting in a "US-centric" repo still ends up in our
+# EMEA section). `allowed_regions` lets a source ingest only certain
+# regions — e.g. drop APAC postings entirely.
+#
+# Supported types:
+#   - simplify_newgrad → SimplifyJobs/New-Grad-Positions listings.json
+#   - simplify_intern  → SimplifyJobs/Summer2026-Internships listings.json
+external_sources:
+  - name: simplify_newgrad
+    type: simplify_newgrad
+    # `url` defaults to the type's preset; override only if you fork.
+    # Auto-classify region by location; ingest both EMEA + NA, drop APAC.
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      # SimplifyJobs is hand-curated and broader than our EMEA-tuned
+      # company allowlist; skip the gate so we surface the curated set.
+      - include_companies
+      # listings.json has no description — skip or every row drops.
+      - min_description_chars
+
+  - name: simplify_intern
+    type: simplify_intern
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - include_companies
+      - min_description_chars
