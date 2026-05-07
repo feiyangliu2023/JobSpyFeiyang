@@ -120,35 +120,65 @@ def _md_escape_cell(s: str) -> str:
     return (s or "").replace("|", "\\|").replace("\n", " ").strip()
 
 
-def _render_section(rows: list[dict]) -> str:
+def _has_salary(r: dict) -> bool:
+    """True iff this row carries a non-zero min or max salary."""
+    for k in ("min_amount", "max_amount"):
+        v = r.get(k)
+        if v not in (None, 0):
+            try:
+                if float(v) > 0:
+                    return True
+            except (TypeError, ValueError):
+                pass
+    return False
+
+
+def _row_age_days(r: dict) -> int:
+    """Prefer real `date_posted` from the source, fall back to `first_seen`
+    (when JobSpy didn't return a posting date — common for LinkedIn).
+
+    `first_seen` overstates "freshness" for jobs the scraper has never seen
+    before but were posted weeks ago; `date_posted` is the true age."""
+    return days_since(r.get("date_posted") or r.get("first_seen"))
+
+
+def _render_section(rows: list[dict], has_salary: bool) -> str:
     if not rows:
         return "_No active roles in this category._"
 
+    headers = ["Company", "Position", "Location"]
+    if has_salary:
+        headers.append("Salary")
+    headers += ["Posting", "Age"]
     lines = [
-        "| Company | Position | Location | Salary | Posting | Age |",
-        "|---|---|---|---|---|---|",
+        "| " + " | ".join(headers) + " |",
+        "|" + "|".join(["---"] * len(headers)) + "|",
     ]
+
     for r in rows:
         company = _md_escape_cell(r.get("company") or "—")
         title = _md_escape_cell(r.get("title") or "")
         location = _md_escape_cell(r.get("location") or "")
         url = (r.get("job_url") or "#").strip()
-        age = days_since(r.get("first_seen"))
-        salary = fmt_salary(
-            r.get("min_amount"),
-            r.get("max_amount"),
-            r.get("currency"),
-            r.get("salary_interval"),
-        )
+        age = _row_age_days(r)
         company_cell = f"**{company}**"
         cu = (r.get("company_url") or "").strip()
         if cu:
             company_cell = f'<a href="{cu}"><strong>{company}</strong></a>'
         apply_cell = f'<a href="{url}">{_APPLY_IMG}</a>'
-        lines.append(
-            f"| {company_cell} | {title} | {location} | {salary} | "
-            f"{apply_cell} | {age}d |"
-        )
+
+        cells = [company_cell, title, location]
+        if has_salary:
+            cells.append(
+                fmt_salary(
+                    r.get("min_amount"),
+                    r.get("max_amount"),
+                    r.get("currency"),
+                    r.get("salary_interval"),
+                )
+            )
+        cells += [apply_cell, f"{age}d"]
+        lines.append("| " + " | ".join(cells) + " |")
     return "\n".join(lines)
 
 
@@ -157,19 +187,35 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
 
     Returns the total row count written. Always overwrites; the file is
     intended to be committed by the workflow alongside jobs.db.
+
+    Each section table is wrapped in `<!-- TABLE_<TIER>_START -->` /
+    `<!-- TABLE_<TIER>_END -->` HTML comment markers (mirroring the
+    SimplifyJobs / speedyapply convention) so future tooling can do
+    partial-replace on a hand-curated outer file without changing the
+    rest of the document.
+
+    The Salary column is hidden whenever no active row has salary data
+    (typical for EMEA Indeed scrapes), keeping the table compact instead
+    of emitting an all-empty column.
     """
     rows = list(active_rows)
+    has_salary = any(_has_salary(r) for r in rows)
+
     by_tier = {"faang": [], "quant": [], "other": []}
     for r in rows:
         by_tier[classify(r.get("company") or "")].append(r)
 
-    # Newest-first within each tier (caller already sorts globally — sort
-    # again so a tier-only consumer stays consistent).
-    for tier_rows in by_tier.values():
-        tier_rows.sort(
-            key=lambda r: (r.get("first_seen") or "", r.get("company") or ""),
-            reverse=True,
+    # Newest-first within each tier — sort by the same age signal we render
+    # (date_posted preferred, first_seen fallback) so the table top reflects
+    # actual freshness rather than scrape order.
+    def _sort_key(r):
+        return (
+            r.get("date_posted") or r.get("first_seen") or "",
+            r.get("company") or "",
         )
+
+    for tier_rows in by_tier.values():
+        tier_rows.sort(key=_sort_key, reverse=True)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
@@ -192,23 +238,18 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
     out.append("---")
     out.append("")
 
-    out.append('<a name="faang"></a>')
-    out.append("## FAANG+ & AI Labs")
-    out.append("")
-    out.append(_render_section(by_tier["faang"]))
-    out.append("")
-
-    out.append('<a name="quant"></a>')
-    out.append("## Quant & Finance")
-    out.append("")
-    out.append(_render_section(by_tier["quant"]))
-    out.append("")
-
-    out.append('<a name="other"></a>')
-    out.append("## Other")
-    out.append("")
-    out.append(_render_section(by_tier["other"]))
-    out.append("")
+    for tier_key, heading in [
+        ("faang", "FAANG+ & AI Labs"),
+        ("quant", "Quant & Finance"),
+        ("other", "Other"),
+    ]:
+        out.append(f'<a name="{tier_key}"></a>')
+        out.append(f"## {heading}")
+        out.append("")
+        out.append(f"<!-- TABLE_{tier_key.upper()}_START -->")
+        out.append(_render_section(by_tier[tier_key], has_salary))
+        out.append(f"<!-- TABLE_{tier_key.upper()}_END -->")
+        out.append("")
 
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
     return len(rows)

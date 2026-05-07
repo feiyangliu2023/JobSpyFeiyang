@@ -71,7 +71,12 @@ role_templates:
     job_type: fulltime
 
 filters:
-  # Case-insensitive substring match on the title. Any hit drops the row.
+  # Case-insensitive substring match on a SPACE-PADDED lowercased title (the
+  # title is wrapped in leading/trailing spaces before matching). Tokens are
+  # lowercased but NOT stripped, so a leading/trailing space in the YAML
+  # token acts as a cheap word-boundary — e.g. ` sr ` matches "Foo Sr Bar"
+  # but not "Hawaii"/"Israeli". Substring tokens without spaces (`senior`,
+  # `staff`) still work like before.
   exclude_titles:
     - senior
     - staff
@@ -82,6 +87,10 @@ filters:
     - lead
     - manager
     - architect
+    # "Sr" variants — Indeed UK/US frequently uses "Sr." or "Sr "
+    - "sr."
+    - " sr "
+    - "sr,"
     - " ii"
     - " iii"
     - "level 5"
@@ -91,6 +100,26 @@ filters:
     - "5+ years"
     - "7+ years"
     - "10+ years"
+
+  # POSITIVE filter — keep only titles that contain AT LEAST ONE of these
+  # tokens (case-insensitive substring on the same space-padded title).
+  # Drops cross-domain Indeed matches (e.g. a "Sales Specialist" returned
+  # for an SDE search because Indeed matches against the description too).
+  # Set empty / remove the key to disable.
+  include_title_keywords:
+    - software
+    - engineer
+    - developer
+    - scientist
+    - sde
+    - swe
+    - "machine learning"
+    - " ml "
+    - "applied scientist"
+    - "research scientist"
+    - "data scientist"
+    - "ai engineer"
+    - "ml engineer"
 
   # How `include_companies` is applied:
   #   enforce — drop any row whose company doesn't match a token on the list.

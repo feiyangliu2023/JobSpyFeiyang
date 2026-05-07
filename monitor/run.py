@@ -239,14 +239,24 @@ def _match_company(company: str, allowlist: list) -> bool:
 
 
 def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
-    """Apply title-exclusion / company-allow / company-block / min-desc filters.
+    """Apply title-exclusion / title-include / company-allow / company-block /
+    min-desc filters.
+
+    Title matching uses lowercase + a SPACE-PADDED title (` <title> `), so
+    YAML tokens that include surrounding spaces (e.g. ` sr `, ` ii`) act
+    as poor-man's word boundaries; bare tokens (`senior`, `staff`) keep
+    behaving as plain substrings. We deliberately don't strip the YAML
+    tokens — the user uses leading/trailing whitespace as the boundary
+    signal.
 
     `include_companies_mode` controls how `include_companies` is used:
       - "enforce" (default): drop rows whose company isn't on the list.
       - "off": ignore the list entirely (keeps the curated values around so
         you can flip back later without re-typing them).
     """
-    excl_titles = [_normalize(t) for t in filters.get("exclude_titles") or []]
+    # Lowercase only — preserve user-authored spaces in tokens.
+    excl_titles = [(t or "").lower() for t in filters.get("exclude_titles") or []]
+    incl_kws = [(t or "").lower() for t in filters.get("include_title_keywords") or []]
     incl_companies = filters.get("include_companies") or []
     # YAML 1.1 coerces bare `off`/`no`/`false` to a Python bool, so be liberal
     # in what we accept. Anything truthy/strict-looking → enforce; falsy or
@@ -263,8 +273,10 @@ def apply_filters(rows: list[dict], filters: dict) -> list[dict]:
 
     out: list[dict] = []
     for r in rows:
-        title = _normalize(r.get("title"))
-        if any(tok and tok in title for tok in excl_titles):
+        title_padded = " " + _normalize(r.get("title")) + " "
+        if any(tok and tok in title_padded for tok in excl_titles):
+            continue
+        if incl_kws and not any(kw and kw in title_padded for kw in incl_kws):
             continue
 
         company = r.get("company") or ""
