@@ -1,6 +1,6 @@
 # Junior Tech Roles
 
-Last updated: **2026-05-08 13:28 UTC** · **548** active roles ([EMEA](#emea) (72) · [North America](#na) (476)) · 54 cross-source duplicates merged. Generated from `monitor/jobs.db` after the latest scrape — see [monitor/](monitor/) for how this works.
+Last updated: **2026-05-08 13:39 UTC** · **548** active roles ([EMEA](#emea) (72) · [North America](#na) (476)) · 54 cross-source duplicates merged. Generated from `monitor/jobs.db` after the latest scrape — see [monitor/](monitor/) for how this works.
 
 ---
 
