@@ -490,15 +490,18 @@ external_sources:
     # Auto-classify region by location; ingest both EMEA + NA, drop APAC.
     allowed_regions: [emea, north_america]
     skip_filters:
-      # SimplifyJobs is hand-curated and broader than our EMEA-tuned
-      # company allowlist; skip the gate so we surface the curated set.
-      - include_companies
       # listings.json has no description — skip or every row drops.
+      # We deliberately do NOT skip `include_companies` here: the raw
+      # SimplifyJobs feeds carry ~2k active rows each (mostly NA), and
+      # without the allowlist gate that produces a >2,000-row JOBS.md
+      # full of companies the user wouldn't apply to. The allowlist in
+      # `filters.include_companies` is broad enough that the curated
+      # FAANG/AI-lab/quant/scaleup set still surfaces; obscure startups
+      # drop out instead of drowning the table.
       - min_description_chars
 
   - name: simplify_intern
     type: simplify_intern
     allowed_regions: [emea, north_america]
     skip_filters:
-      - include_companies
       - min_description_chars
