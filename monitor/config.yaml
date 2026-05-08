@@ -120,12 +120,15 @@ role_templates:
     job_type: fulltime
 
   - name: applied_scientist
+    # "Research Scientist" titles are explicitly excluded — they're
+    # PhD+ track at every employer in our allowlist, so they're not
+    # appropriate for this user. We still search the `applied scientist`
+    # term because Amazon / Microsoft use that label for entry-level
+    # MLE roles.
     sites: [indeed, linkedin, glassdoor, google]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "applied scientist"
-      - "research scientist new grad"
-      - "graduate research scientist"
     site_search_terms:
       linkedin:
         - "applied scientist"
@@ -190,6 +193,11 @@ filters:
     - "5+ years"
     - "7+ years"
     - "10+ years"
+    # Research Scientist tracks are PhD+ at every employer we monitor —
+    # explicitly drop them. Note the trailing space so "Research Scientist
+    # II" / "Research Scientist, Foo" both match while a hypothetical
+    # "Junior Research Scientist Assistant" still drops too (substring).
+    - "research scientist"
 
   # POSITIVE filter — keep only titles that contain AT LEAST ONE of these
   # tokens (case-insensitive substring on the same space-padded title).
@@ -206,7 +214,6 @@ filters:
     - "machine learning"
     - " ml "
     - "applied scientist"
-    - "research scientist"
     - "data scientist"
     - "ai engineer"
     - "ml engineer"

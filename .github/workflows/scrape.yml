@@ -42,7 +42,14 @@ jobs:
         run: python -m monitor.run
 
       - name: Commit jobs.db and JOBS.md
-        if: success()
+        # Run even if `monitor.run` exited non-zero. The script returns
+        # exit 2 on SILENT/BROKEN health (e.g. glassdoor/google blocked
+        # from CI IPs) — but it has usually still upserted what Indeed
+        # /SimplifyJobs returned. Skipping the commit on those runs
+        # silently throws away the partial data; running the commit
+        # always lets `git diff` decide whether anything is worth
+        # writing back. We still skip on cancel.
+        if: ${{ !cancelled() }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
