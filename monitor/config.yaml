@@ -120,12 +120,15 @@ role_templates:
     job_type: fulltime
 
   - name: applied_scientist
+    # "Research Scientist" titles are explicitly excluded — they're
+    # PhD+ track at every employer in our allowlist, so they're not
+    # appropriate for this user. We still search the `applied scientist`
+    # term because Amazon / Microsoft use that label for entry-level
+    # MLE roles.
     sites: [indeed, linkedin, glassdoor, google]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "applied scientist"
-      - "research scientist new grad"
-      - "graduate research scientist"
     site_search_terms:
       linkedin:
         - "applied scientist"
@@ -190,6 +193,11 @@ filters:
     - "5+ years"
     - "7+ years"
     - "10+ years"
+    # Research Scientist tracks are PhD+ at every employer we monitor —
+    # explicitly drop them. Note the trailing space so "Research Scientist
+    # II" / "Research Scientist, Foo" both match while a hypothetical
+    # "Junior Research Scientist Assistant" still drops too (substring).
+    - "research scientist"
 
   # POSITIVE filter — keep only titles that contain AT LEAST ONE of these
   # tokens (case-insensitive substring on the same space-padded title).
@@ -206,7 +214,6 @@ filters:
     - "machine learning"
     - " ml "
     - "applied scientist"
-    - "research scientist"
     - "data scientist"
     - "ai engineer"
     - "ml engineer"
@@ -483,15 +490,18 @@ external_sources:
     # Auto-classify region by location; ingest both EMEA + NA, drop APAC.
     allowed_regions: [emea, north_america]
     skip_filters:
-      # SimplifyJobs is hand-curated and broader than our EMEA-tuned
-      # company allowlist; skip the gate so we surface the curated set.
-      - include_companies
       # listings.json has no description — skip or every row drops.
+      # We deliberately do NOT skip `include_companies` here: the raw
+      # SimplifyJobs feeds carry ~2k active rows each (mostly NA), and
+      # without the allowlist gate that produces a >2,000-row JOBS.md
+      # full of companies the user wouldn't apply to. The allowlist in
+      # `filters.include_companies` is broad enough that the curated
+      # FAANG/AI-lab/quant/scaleup set still surfaces; obscure startups
+      # drop out instead of drowning the table.
       - min_description_chars
 
   - name: simplify_intern
     type: simplify_intern
     allowed_regions: [emea, north_america]
     skip_filters:
-      - include_companies
       - min_description_chars

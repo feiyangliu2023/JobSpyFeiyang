@@ -127,13 +127,16 @@ Sources can declare `allowed_regions: [emea, north_america]` to drop
 APAC rows entirely — that's our default config.
 
 The same `apply_filters` pipeline runs on the mapped rows, but a source
-can `skip_filters` individual gates. We skip `include_companies`
-(SimplifyJobs is broader than our EMEA-tuned allowlist) and
-`min_description_chars` (listings.json has no description field).
-**Title filters (`exclude_titles`, `include_title_keywords`) stay ON**
-across both feeds — senior/staff/sales-shaped titles are dropped
-consistently regardless of source. That's the user's "保留关键词筛选
-灵活性" requirement: keyword filtering is universal, allowlist is per-source.
+can `skip_filters` individual gates. We skip `min_description_chars`
+(listings.json has no description field — every row would otherwise
+drop). **`include_companies` is enforced** for SimplifyJobs as well:
+without it the two feeds together surface >2,000 rows on every run, the
+vast majority at companies that aren't on the allowlist. The allowlist
+is intentionally broad (FAANG, AI labs, scaleups, quant/finance,
+consulting) so the curated set still shows up. **Title filters
+(`exclude_titles`, `include_title_keywords`) stay ON** across both feeds
+— senior/staff/sales-shaped titles are dropped consistently regardless
+of source.
 
 Adding more sources later: drop a new entry into `external_sources`
 with a known `type`. Schema-compatible repos (vanshb03/, etc.) just
