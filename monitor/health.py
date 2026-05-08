@@ -127,10 +127,26 @@ class HealthTracker:
     # ---- reporting ------------------------------------------------------
 
     def overall_status(self) -> str:
-        """Worst per-source status, with a fixed precedence."""
+        """Worst per-source status, with a fixed precedence.
+
+        Special case: if AT LEAST ONE source returned OK we don't escalate
+        all the way to BROKEN/SILENT — the run still produced data, even
+        if some sites got blocked (steady state for CI: indeed +
+        SimplifyJobs OK, glassdoor/google/bayt SILENT). In that case we
+        downgrade to DEGRADED so the run exits 0 (caller treats DEGRADED
+        as non-fatal) but the per-source health alert still fires for
+        the SILENT sources. Only when ZERO sources are OK do we surface
+        BROKEN/SILENT, which is what genuinely warrants a red CI run.
+        """
         statuses = [s.status() for s in self.sources.values() if s.attempts > 0]
         if not statuses:
             return "UNUSED"
+        any_ok = any(st == "OK" for st in statuses)
+        if any_ok:
+            for tier in ("BROKEN", "SILENT", "DEGRADED"):
+                if tier in statuses:
+                    return "DEGRADED"
+            return "OK"
         for tier in ("BROKEN", "SILENT", "DEGRADED"):
             if tier in statuses:
                 return tier
