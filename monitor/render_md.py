@@ -11,6 +11,7 @@ want a fourth bucket, add a constant + classify branch below.
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -290,6 +291,152 @@ def _split_tiers(region_rows: list[dict]) -> dict[str, list[dict]]:
         deduped.sort(key=_sort_key, reverse=True)
         by_tier[tier_key] = deduped
     return by_tier
+
+
+# Title tokens that mark a row as an internship rather than a new-grad role.
+# Substring-matched against a lowercased title — leading prefixes are fine
+# (so `intern` matches `internship`/`interns`).
+_INTERN_TITLE_TOKENS = (
+    "intern",        # "Intern", "Internship", "Software Engineer Intern"
+    "placement",     # UK industrial placement
+    "year in industry",
+    "industrial placement",
+    "praktikum",     # German
+    "stagiair",      # Dutch
+    "becario",       # Spanish
+    "tirocinante",   # Italian
+    "trainee",       # often (but not always) intern-shaped; close enough
+)
+# `stage` is the French/Italian word for an internship. We can't substring-
+# match it because it would also match real titles like "Backstage Platform
+# Engineer" or "Multi-stage Pipeline Engineer". Bare `\bstage\b` isn't enough
+# either — `\b` matches at hyphen boundaries, so "Multi-stage" still hits.
+# Exclude word chars AND hyphens on either side so only the standalone word
+# (whitespace / punctuation / start-of-string boundaries) counts.
+_STAGE_RE = re.compile(r"(?<![\w-])stage(?![\w-])")
+
+
+def _classify_intern_or_newgrad(r: dict) -> str:
+    """Return 'intern' or 'newgrad'. Used only for the EMEA entry-level view.
+
+    SimplifyJobs rows carry the answer in `site` (the upstream repo split is
+    intern vs new-grad). For JobSpy rows we substring-match the title; if no
+    intern token is present we default to 'newgrad' since the EMEA scrape's
+    `job_type=fulltime` filter biases toward new-grad anyway.
+    """
+    site = (r.get("site") or "").lower()
+    if site == "simplify_intern":
+        return "intern"
+    if site == "simplify_newgrad":
+        return "newgrad"
+    title = (r.get("title") or "").lower()
+    for tok in _INTERN_TITLE_TOKENS:
+        if tok in title:
+            return "intern"
+    if _STAGE_RE.search(title):
+        return "intern"
+    return "newgrad"
+
+
+_EMEA_KIND_ORDER: list[tuple[str, str]] = [
+    ("intern", "Internships"),
+    ("newgrad", "New Grad"),
+]
+
+
+def render_emea_entry_level(
+    rows: Iterable[dict], output_path: str | Path
+) -> int:
+    """Broader EMEA entry-level view — same row shape as JOBS.md but no
+    company allowlist gate.
+
+    Produces a parallel file (default `emea-entry-level.md`) so the curated
+    `JOBS.md` stays small and ntfy-worthy while this file gives the user a
+    wide-net browse of every EMEA intern + new-grad role our pipelines saw.
+    Layout is Intern / New Grad at the top level, each split into the same
+    FAANG / Quant / Other tiers JOBS.md uses.
+
+    Stateless: caller hands in already-fetched rows (region == 'emea',
+    title/desc filters applied, `include_companies` skipped). We do not
+    touch jobs.db here — net-new alerting is intentionally a JOBS.md-only
+    thing so this broader feed doesn't spam ntfy.
+    """
+    rows = [r for r in rows if (r.get("region") or "").lower() == "emea"]
+    has_salary = any(_has_salary(r) for r in rows)
+
+    by_kind: dict[str, list[dict]] = {k: [] for k, _ in _EMEA_KIND_ORDER}
+    for r in rows:
+        by_kind[_classify_intern_or_newgrad(r)].append(r)
+
+    kind_tiers: dict[str, dict[str, list[dict]]] = {}
+    kind_visible: dict[str, int] = {}
+    collapsed_total = 0
+    for kind_key, _ in _EMEA_KIND_ORDER:
+        tiers = _split_tiers(by_kind[kind_key])
+        kind_tiers[kind_key] = tiers
+        visible = sum(len(t) for t in tiers.values())
+        kind_visible[kind_key] = visible
+        collapsed_total += len(by_kind[kind_key]) - visible
+
+    visible_total = sum(kind_visible.values())
+
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    out: list[str] = []
+    out.append("# EMEA Entry-Level Roles")
+    out.append("")
+    kind_summaries = [
+        f"[{heading}](#{kind_key}) ({kind_visible[kind_key]})"
+        for kind_key, heading in _EMEA_KIND_ORDER
+    ]
+    dedup_note = (
+        f" · {collapsed_total} cross-source duplicates merged"
+        if collapsed_total
+        else ""
+    )
+    out.append(
+        f"Last updated: **{now}** · **{visible_total}** active EMEA "
+        f"entry-level roles ({' · '.join(kind_summaries)}){dedup_note}. "
+        "Wider net than [JOBS.md](JOBS.md) — drops the curated company "
+        "allowlist, keeps title/desc filters. Sources: SimplifyJobs feeds "
+        "(intern + new-grad) and the EMEA JobSpy scrape."
+    )
+    out.append("")
+    out.append("---")
+    out.append("")
+
+    for kind_key, kind_heading in _EMEA_KIND_ORDER:
+        out.append(f'<a name="{kind_key}"></a>')
+        out.append(f"## {kind_heading}")
+        out.append("")
+
+        tiers = kind_tiers[kind_key]
+        toc_bits = [
+            f"[{tier_heading}](#{kind_key}-{tier_key}) ({len(tiers[tier_key])})"
+            for tier_key, tier_heading in _TIER_ORDER
+        ]
+        out.append("**Sections:** " + " · ".join(toc_bits))
+        out.append("")
+
+        for tier_key, tier_heading in _TIER_ORDER:
+            anchor = f"{kind_key}-{tier_key}"
+            marker = f"TABLE_EMEA_{kind_key.upper()}_{tier_key.upper()}"
+            out.append(f'<a name="{anchor}"></a>')
+            out.append(f"### {tier_heading}")
+            out.append("")
+            out.append(f"<!-- {marker}_START -->")
+            out.append(_render_section(tiers[tier_key], has_salary))
+            out.append(f"<!-- {marker}_END -->")
+            out.append("")
+
+        out.append("---")
+        out.append("")
+
+    while out and out[-1] in ("", "---"):
+        out.pop()
+    out.append("")
+
+    Path(output_path).write_text("\n".join(out), encoding="utf-8")
+    return visible_total
 
 
 def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
