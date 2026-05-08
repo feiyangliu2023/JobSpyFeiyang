@@ -11,6 +11,7 @@ want a fourth bucket, add a constant + classify branch below.
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -293,21 +294,26 @@ def _split_tiers(region_rows: list[dict]) -> dict[str, list[dict]]:
 
 
 # Title tokens that mark a row as an internship rather than a new-grad role.
-# Used by the broader EMEA entry-level view, where SimplifyJobs already tells
-# us via `site` (simplify_intern vs simplify_newgrad) but JobSpy rows need to
-# be classified from the title itself.
+# Substring-matched against a lowercased title — leading prefixes are fine
+# (so `intern` matches `internship`/`interns`).
 _INTERN_TITLE_TOKENS = (
     "intern",        # "Intern", "Internship", "Software Engineer Intern"
     "placement",     # UK industrial placement
     "year in industry",
     "industrial placement",
     "praktikum",     # German
-    "stage",         # French (also Italian)
     "stagiair",      # Dutch
     "becario",       # Spanish
     "tirocinante",   # Italian
     "trainee",       # often (but not always) intern-shaped; close enough
 )
+# `stage` is the French/Italian word for an internship. We can't substring-
+# match it because it would also match real titles like "Backstage Platform
+# Engineer" or "Multi-stage Pipeline Engineer". Bare `\bstage\b` isn't enough
+# either — `\b` matches at hyphen boundaries, so "Multi-stage" still hits.
+# Exclude word chars AND hyphens on either side so only the standalone word
+# (whitespace / punctuation / start-of-string boundaries) counts.
+_STAGE_RE = re.compile(r"(?<![\w-])stage(?![\w-])")
 
 
 def _classify_intern_or_newgrad(r: dict) -> str:
@@ -327,6 +333,8 @@ def _classify_intern_or_newgrad(r: dict) -> str:
     for tok in _INTERN_TITLE_TOKENS:
         if tok in title:
             return "intern"
+    if _STAGE_RE.search(title):
+        return "intern"
     return "newgrad"
 
 
