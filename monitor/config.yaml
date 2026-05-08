@@ -198,6 +198,13 @@ filters:
     # II" / "Research Scientist, Foo" both match while a hypothetical
     # "Junior Research Scientist Assistant" still drops too (substring).
     - "research scientist"
+    # "Research Engineer" / "Research Software Engineer" titles ride
+    # the same PhD-track even at FAANG (Google Research SWE, Mistral
+    # Research Engineer, Citadel Quant Research Engineer). Drop the
+    # whole "research <engineer>" surface — substring match handles
+    # "AI Research Engineer", "Quantitative Research Engineer", etc.
+    - "research engineer"
+    - "research software"
 
   # POSITIVE filter — keep only titles that contain AT LEAST ONE of these
   # tokens (case-insensitive substring on the same space-padded title).
