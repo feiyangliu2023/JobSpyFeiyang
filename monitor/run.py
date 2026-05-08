@@ -486,6 +486,7 @@ def ingest_external_sources(
     conn,
     run_started_at: str,
     health: HealthTracker | None = None,
+    broader_emea_sink: list[dict] | None = None,
 ) -> tuple[int, int]:
     """Pull rows from each entry in cfg['external_sources'], filter, upsert.
 
@@ -571,6 +572,21 @@ def ingest_external_sources(
             health.record_outcome(health_key, len(rows))
 
         filtered = apply_filters(rows, cfg["filters"], skip=skip)
+
+        # Broader EMEA-entry-level view (no company allowlist gate). The
+        # SimplifyJobs feeds are intrinsically intern + new-grad upstream,
+        # so a region=emea cut + the title/desc filters yields a usable
+        # wide-net feed. We never write these to jobs.db — pure render input.
+        if (
+            broader_emea_sink is not None
+            and kind in ("simplify_newgrad", "simplify_intern")
+        ):
+            broader_skip = set(skip) | {"include_companies"}
+            broader = apply_filters(rows, cfg["filters"], skip=broader_skip)
+            broader_emea_sink.extend(
+                r for r in broader if (r.get("region") or "").lower() == "emea"
+            )
+
         # Per-region row counts so we can see EMEA contribution at a glance
         by_region: dict[str, int] = {}
         for r in filtered:
@@ -639,6 +655,16 @@ def main(argv: list[str] | None = None) -> int:
         default=str(Path(__file__).parent.parent / "JOBS.md"),
         help="path to the rendered markdown table (committed by CI)",
     )
+    parser.add_argument(
+        "--md-emea-entry-level",
+        default=str(
+            Path(__file__).parent.parent / "emea-entry-level.md"
+        ),
+        help=(
+            "path to the broader EMEA entry-level markdown view "
+            "(intern + new grad, no company allowlist)"
+        ),
+    )
     args = parser.parse_args(argv)
 
     _setup_logging(Path(args.log_dir))
@@ -656,6 +682,12 @@ def main(argv: list[str] | None = None) -> int:
     total_scraped = 0
     total_filtered_in = 0
     total_new = 0
+
+    # Broader EMEA-entry-level view: rows that pass title/desc filters but
+    # NOT the company allowlist. Aggregated across both pipelines (JobSpy +
+    # SimplifyJobs); rendered to a parallel markdown file at end of run.
+    # Never written to jobs.db — purely a presentation feed.
+    broader_emea_rows: list[dict] = []
 
     try:
         linkedin_delay = _linkedin_delay_seconds()
@@ -679,6 +711,16 @@ def main(argv: list[str] | None = None) -> int:
             health.record_filtered(site, len(filtered))
             total_scraped += len(rows)
             total_filtered_in += len(filtered)
+
+            # Broader EMEA capture — same row set, but skip the company
+            # allowlist. JobSpy's `region` isn't set on raw rows (only on
+            # the curated `filtered` list above), so tag here too.
+            broader = apply_filters(
+                rows, cfg["filters"], skip={"include_companies"}
+            )
+            for r in broader:
+                r.setdefault("region", "emea")
+            broader_emea_rows.extend(broader)
             scraped, new = dbmod.upsert_jobs(
                 conn, filtered, run_started_at, search["name"]
             )
@@ -695,9 +737,13 @@ def main(argv: list[str] | None = None) -> int:
                 time.sleep(linkedin_delay)
 
         # External sources (SimplifyJobs etc.) — runs after the JobSpy
-        # loop so mark_gone treats both feeds uniformly.
+        # loop so mark_gone treats both feeds uniformly. Pass the broader
+        # sink so SimplifyJobs's no-allowlist EMEA cut joins the JobSpy
+        # rows already collected above for emea-entry-level.md.
         ext_filtered, ext_new = ingest_external_sources(
-            cfg, conn, run_started_at, health=health
+            cfg, conn, run_started_at,
+            health=health,
+            broader_emea_sink=broader_emea_rows,
         )
         total_filtered_in += ext_filtered
         total_new += ext_new
@@ -737,6 +783,20 @@ def main(argv: list[str] | None = None) -> int:
         active = dbmod.fetch_active(conn)
         n_rendered = render_md_mod.render_md(active, args.md)
         log.info("rendered %d active jobs to %s", n_rendered, args.md)
+
+        # Broader EMEA entry-level view. Signatures aren't auto-computed
+        # for rows that never hit upsert_jobs, so backfill them here so
+        # the renderer's cross-source dedup helper works the same way.
+        for r in broader_emea_rows:
+            if not r.get("signature"):
+                r["signature"] = dbmod.compute_signature(r)
+        n_emea = render_md_mod.render_emea_entry_level(
+            broader_emea_rows, args.md_emea_entry_level
+        )
+        log.info(
+            "rendered %d EMEA entry-level rows to %s",
+            n_emea, args.md_emea_entry_level,
+        )
     finally:
         conn.close()
 
