@@ -84,8 +84,8 @@ tuple. A template has:
   `CI` env var is set. LinkedIn is the only entry by default.
 
 Per-run search counts (current config: 14 cities × 4 templates):
-- **LOCAL** mode: ~444 searches (incl 56 LinkedIn, paced 5s apart)
-- **CI** mode: ~388 searches (LinkedIn auto-dropped)
+- **LOCAL** mode: 612 searches (476 indeed + 56 linkedin + 52 glassdoor + 28 bayt; LinkedIn paced 5s apart)
+- **CI** mode: 476 searches — Indeed only (linkedin/glassdoor/bayt all dropped via `sites_skip_in_ci`; SimplifyJobs externals run on top)
 
 #### LinkedIn stability — env-var knobs
 
