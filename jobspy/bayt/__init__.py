@@ -3,6 +3,7 @@ from __future__ import annotations
 import random
 import re
 import time
+import unicodedata
 
 from bs4 import BeautifulSoup
 
@@ -33,10 +34,13 @@ def _slugify_query(query: str) -> str:
     """Bayt URL slugs are hyphenated lowercase (e.g. `software-engineer-jobs`).
 
     Spaces in the path produce a 404 with no listings, which previously
-    showed up as a SILENT source. Lowercase, collapse whitespace to `-`,
-    drop characters Bayt's slug grammar doesn't accept.
+    showed up as a SILENT source. Lowercase, fold accented Latin chars
+    to ASCII (so "ingénieur logiciel" → "ingenieur-logiciel" rather
+    than "ingnieur-logiciel"), collapse whitespace to `-`, drop
+    characters Bayt's slug grammar doesn't accept.
     """
     q = (query or "").strip().lower()
+    q = unicodedata.normalize("NFKD", q).encode("ascii", "ignore").decode("ascii")
     q = re.sub(r"\s+", "-", q)
     q = re.sub(r"[^a-z0-9\-]", "", q)
     q = re.sub(r"-+", "-", q).strip("-")
