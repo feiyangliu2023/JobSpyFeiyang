@@ -63,18 +63,31 @@ class Glassdoor(Scraper):
         self.session = create_session(
             proxies=self.proxies, ca_cert=self.ca_cert, has_retry=True
         )
-        token = self._get_csrf_token()
-        headers["gd-csrf-token"] = token if token else fallback_token
+        # Apply browser-like headers (user-agent, sec-ch-ua, accept-language)
+        # to the session BEFORE the CSRF token request — Glassdoor blocks
+        # the default tls_client UA on the CSRF page, returning HTML without
+        # the embedded `"token":"..."` payload, which then makes us fall
+        # back to a possibly-stale baked-in token. Setting headers first
+        # is what gets us a fresh CSRF token reliably.
         if self.user_agent:
             headers["user-agent"] = self.user_agent
+        self.session.headers.update(headers)
+
+        token = self._get_csrf_token()
+        headers["gd-csrf-token"] = token if token else fallback_token
         self.session.headers.update(headers)
 
         location_id, location_type = self._get_location(
             scraper_input.location, scraper_input.is_remote
         )
         if location_type is None:
-            log.error("Glassdoor: location not parsed")
-            return JobResponse(jobs=[])
+            # Surface as exception rather than empty: a failure here
+            # means Glassdoor blocked us OR didn't recognize the city.
+            # Returning empty silently produced the SILENT classification
+            # in monitor health when the source was actually broken.
+            raise GlassdoorException(
+                f"location resolution failed for {scraper_input.location!r}"
+            )
         job_list: list[JobPost] = []
         cursor = None
 

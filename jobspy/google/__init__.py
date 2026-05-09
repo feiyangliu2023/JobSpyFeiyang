@@ -52,6 +52,17 @@ class Google(Scraper):
         )
         forward_cursor, job_list = self._get_initial_cursor_and_jobs()
         if forward_cursor is None:
+            # No cursor AND no jobs in the initial page is the diagnostic
+            # signature of an upstream block / parser drift (Google rotates
+            # the magic JSON key). Raising lets the monitor's health
+            # tracker classify the source as BROKEN instead of SILENT.
+            # If we DID get jobs from the first page, returning them is
+            # legitimate — the cursor only matters for pagination.
+            if not job_list:
+                raise ValueError(
+                    "Google: no cursor and no jobs on initial page — "
+                    "likely IP block or response-format change"
+                )
             log.warning(
                 "initial cursor not found, try changing your query or there was at most 10 results"
             )

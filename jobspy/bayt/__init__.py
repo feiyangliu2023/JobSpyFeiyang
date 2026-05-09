@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+import re
 import time
 
 from bs4 import BeautifulSoup
@@ -18,6 +19,29 @@ from jobspy.util import create_logger, create_session
 
 log = create_logger("Bayt")
 
+# Bayt 403's the default `python-requests/X.X` UA on the first request.
+# Setting a real Chrome UA (and matching Accept-Language) gets us past
+# the WAF for the search-results pages.
+_DEFAULT_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/138.0.0.0 Safari/537.36"
+)
+
+
+def _slugify_query(query: str) -> str:
+    """Bayt URL slugs are hyphenated lowercase (e.g. `software-engineer-jobs`).
+
+    Spaces in the path produce a 404 with no listings, which previously
+    showed up as a SILENT source. Lowercase, collapse whitespace to `-`,
+    drop characters Bayt's slug grammar doesn't accept.
+    """
+    q = (query or "").strip().lower()
+    q = re.sub(r"\s+", "-", q)
+    q = re.sub(r"[^a-z0-9\-]", "", q)
+    q = re.sub(r"-+", "-", q).strip("-")
+    return q
+
 
 class BaytScraper(Scraper):
     base_url = "https://www.bayt.com"
@@ -27,7 +51,7 @@ class BaytScraper(Scraper):
     def __init__(
         self, proxies: list[str] | str | None = None, ca_cert: str | None = None, user_agent: str | None = None
     ):
-        super().__init__(Site.BAYT, proxies=proxies, ca_cert=ca_cert)
+        super().__init__(Site.BAYT, proxies=proxies, ca_cert=ca_cert, user_agent=user_agent)
         self.scraper_input = None
         self.session = None
         self.country = "worldwide"
@@ -37,6 +61,18 @@ class BaytScraper(Scraper):
         self.session = create_session(
             proxies=self.proxies, ca_cert=self.ca_cert, is_tls=False, has_retry=True
         )
+        # Without a browser-like UA Bayt's WAF returns 403 to every
+        # request, which previously made every call silently return 0
+        # rows (classified as SILENT). Set a real Chrome UA on the
+        # session so the WAF lets the search pages through.
+        self.session.headers.update({
+            "User-Agent": self.user_agent or _DEFAULT_UA,
+            "Accept": (
+                "text/html,application/xhtml+xml,application/xml;"
+                "q=0.9,image/avif,image/webp,*/*;q=0.8"
+            ),
+            "Accept-Language": "en-US,en;q=0.9",
+        })
         job_list: list[JobPost] = []
         page = 1
         results_wanted = (
@@ -84,18 +120,26 @@ class BaytScraper(Scraper):
     def _fetch_jobs(self, query: str, page: int) -> list | None:
         """
         Grabs the job results for the given query and page number.
+
+        Errors are RAISED, not swallowed. Previously a 403/404 returned
+        None and the caller broke out of pagination, producing 0 rows
+        with no exception — which the monitor's health tracker
+        misclassifies as SILENT (IP block) when in fact every call
+        threw. Re-raising lets the monitor record an error and report
+        the source as BROKEN.
         """
-        try:
-            url = f"{self.base_url}/en/international/jobs/{query}-jobs/?page={page}"
-            response = self.session.get(url)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.text, "html.parser")
-            job_listings = soup.find_all("li", attrs={"data-js-job": ""})
-            log.debug(f"Found {len(job_listings)} job listing elements")
-            return job_listings
-        except Exception as e:
-            log.error(f"Bayt: Error fetching jobs - {str(e)}")
-            return None
+        slug = _slugify_query(query)
+        if not slug:
+            raise ValueError(
+                f"Bayt: empty query slug after sanitization (query={query!r})"
+            )
+        url = f"{self.base_url}/en/international/jobs/{slug}-jobs/?page={page}"
+        response = self.session.get(url)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        job_listings = soup.find_all("li", attrs={"data-js-job": ""})
+        log.debug(f"Found {len(job_listings)} job listing elements")
+        return job_listings
 
     def _extract_job_info(self, job: BeautifulSoup) -> JobPost | None:
         """
