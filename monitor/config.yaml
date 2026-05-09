@@ -74,7 +74,13 @@ cities:
 role_templates:
   - name: sde_junior
     sites: [indeed, linkedin, glassdoor, bayt]
-    sites_skip_in_ci: [linkedin]
+    # bayt + glassdoor blanket-403 from GitHub Actions IP ranges (and
+    # have produced 0 rows for every CI run since the monitor was set
+    # up). My code fixes for both are necessary but not sufficient —
+    # the WAF block is at the network edge, not in the response. Skip
+    # them in CI; they still run locally where the user's home IP has
+    # clean reputation.
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "software engineer new grad"
       - "junior software engineer"
@@ -82,6 +88,17 @@ role_templates:
       - "early career software engineer"
       - "associate software engineer"
       - "graduate programme software"
+      # Broader Indeed coverage — Indeed matches against the description
+      # text, so additional phrasings widen recall on roles that were
+      # tagged with non-standard titles. Cost is just more API calls
+      # to the one source that actually works in CI; dedup at the URL
+      # level handles any overlap.
+      - "software developer graduate"
+      - "graduate software developer"
+      - "entry level software engineer"
+      - "software engineer graduate scheme"
+      - "graduate sde"
+      - "swe new grad"
     site_search_terms:
       linkedin:
         - "graduate software engineer"
@@ -97,13 +114,22 @@ role_templates:
 
   - name: mle_junior
     sites: [indeed, linkedin, glassdoor, bayt]
-    sites_skip_in_ci: [linkedin]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "machine learning engineer new grad"
       - "junior machine learning engineer"
       - "graduate machine learning engineer"
       - "ai engineer new grad"
       - "graduate machine learning"
+      # Extra Indeed coverage — same rationale as sde_junior. ML titles
+      # are particularly varied at EMEA employers (some still call the
+      # role "data scientist" even when it's MLE-shaped); broaden the
+      # net to catch them.
+      - "junior ai engineer"
+      - "graduate ai engineer"
+      - "early career machine learning"
+      - "graduate data scientist machine learning"
+      - "entry level machine learning engineer"
     site_search_terms:
       linkedin:
         - "graduate machine learning engineer"
@@ -122,9 +148,17 @@ role_templates:
     # term because Amazon / Microsoft use that label for entry-level
     # MLE roles.
     sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin]
+    sites_skip_in_ci: [linkedin, glassdoor]
     search_terms:
       - "applied scientist"
+      # Broader Indeed coverage — applied-science track titles vary
+      # by employer ("applied scientist II" / "associate applied
+      # scientist" at Amazon; "Microsoft applied scientist" / etc).
+      # The seniority tokens are still gated by `exclude_titles`, so
+      # over-broad matches drop in apply_filters.
+      - "associate applied scientist"
+      - "applied scientist new grad"
+      - "applied scientist graduate"
     site_search_terms:
       linkedin:
         - "applied scientist"
@@ -140,12 +174,20 @@ role_templates:
     # are concentrated, not distributed. Bayt is dropped here — quant is
     # not a Middle-East category in our experience.
     sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin]
+    sites_skip_in_ci: [linkedin, glassdoor]
     search_terms:
       - "graduate trader"
       - "quantitative researcher new grad"
       - "graduate quantitative"
       - "junior quant developer"
+      # Broader quant coverage — common phrasings used by Jane Street,
+      # Citadel, Optiver, IMC, JPM Quant rotation programmes. These
+      # don't expand the role surface; they catch the same roles
+      # phrased differently.
+      - "quantitative developer graduate"
+      - "graduate quant trader"
+      - "junior quantitative researcher"
+      - "quant graduate"
     site_search_terms:
       linkedin:
         - "graduate quantitative"

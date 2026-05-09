@@ -30,10 +30,23 @@ importable as `jobspy`. The relevant API:
 - All 8 site values supported by JobSpy: `linkedin`, `indeed`, `glassdoor`,
   `google`, `bayt`, `zip_recruiter`, `naukri`, `bdjobs`.
 
-We currently use **5 of the 8** for EMEA: `indeed`, `linkedin`,
-`glassdoor`, `google`, `bayt`. zip_recruiter is US/CA only, naukri is
-India only, bdjobs is Bangladesh only — none of those help our EMEA
-focus. (NA is fed entirely by SimplifyJobs, no JobSpy needed there.)
+We currently use **4 of the 8** for EMEA: `indeed`, `linkedin`,
+`glassdoor`, `bayt`. zip_recruiter is US/CA only, naukri is India
+only, bdjobs is Bangladesh only — none of those help our EMEA focus.
+**Google was dropped** (config.yaml, May 2026): the upstream
+`speedyapply/JobSpy` Google scraper has been broken since 2025 (see
+issue #302), Google Jobs is heavily restricted in the EU/EEA from
+server-side IPs (DMA fallout), and 0 rows ever landed in `jobs.db`
+from it. (NA is fed entirely by SimplifyJobs, no JobSpy needed there.)
+
+**CI vs local matrix.** GitHub Actions IPs get blanket-403'd by
+LinkedIn / Glassdoor / Bayt's edge WAFs before the request reaches
+application code, regardless of UA / TLS fingerprint / per-source
+header tweaks. So `sites_skip_in_ci: [linkedin, glassdoor, bayt]` on
+every template — CI effectively runs Indeed + SimplifyJobs only, and
+the user runs locally to fold in LinkedIn / Glassdoor / Bayt.
+Setting `JOBSPY_PROXIES` would in principle re-enable them in CI but
+we deliberately don't bake a proxy provider into config.
 
 We keep `monitor/` separate from `jobspy/` so upstream pulls don't conflict.
 JobSpy rows are tagged `region='emea'` in `run.py` before upsert.
@@ -79,10 +92,14 @@ Per-run search counts (current config: 14 cities × 4 templates):
 LinkedIn aggressively blocks data-center IPs (GitHub Actions ranges
 included). The combination that gives us reasonable coverage:
 
-1. **`sites_skip_in_ci: [linkedin]`** in config — dropped automatically
-   when `GITHUB_ACTIONS=true` / `CI=true`. CI gets indeed/glassdoor/
-   google/bayt only; LinkedIn runs locally where the user's home IP
-   has clean reputation.
+1. **`sites_skip_in_ci: [linkedin, glassdoor, bayt]`** in config —
+   dropped automatically when `GITHUB_ACTIONS=true` / `CI=true`. CI
+   effectively runs **Indeed only** (plus the SimplifyJobs externals);
+   LinkedIn / Glassdoor / Bayt run locally where the user's home IP
+   has clean reputation. Glassdoor and Bayt were added to the skip
+   list in May 2026 after the post-fix CI run still produced 0 rows
+   from both — fixes for both are correct (PR #4) but the WAF block
+   is at the network edge, so code-level changes can't help.
 2. **`LINKEDIN_PER_SEARCH_DELAY`** env var (default 5s) — sleep AFTER
    each LinkedIn call to spread request density. 56 calls × 5s = ~5min
    added to local wall clock.
@@ -297,11 +314,11 @@ Wired through `run.py` via:
 
 ## Known issues
 
-- **LinkedIn blocks GitHub Actions IPs aggressively.** Mitigated by the
-  4-knob combo described in "LinkedIn stability" above: `sites_skip_in_ci`
-  drops LinkedIn from CI runs entirely, leaving CI to depend on
-  indeed/glassdoor/google/bayt; LinkedIn runs locally with pacing. If even
-  local fails, set `JOBSPY_PROXIES`. Do NOT make proxies a hardcoded default.
+- **LinkedIn / Glassdoor / Bayt block GitHub Actions IPs aggressively.**
+  Mitigated by `sites_skip_in_ci: [linkedin, glassdoor, bayt]` on every
+  template — CI runs Indeed + SimplifyJobs only; LinkedIn / Glassdoor /
+  Bayt run locally with pacing. If even local fails, set
+  `JOBSPY_PROXIES`. Do NOT make proxies a hardcoded default.
 - **Glassdoor location format quirk** — fixed. `run_search` strips
   `"City, Country"` to `"City"` only when calling Glassdoor; other
   sites still get the full string. The `_glassdoor_supported` check
