@@ -1,13 +1,13 @@
 # EMEA Entry-Level Roles
 
-Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles ([Internships](#intern) (47) · [New Grad](#newgrad) (277)) · 167 cross-source duplicates merged. Wider net than [JOBS.md](JOBS.md) — drops the curated company allowlist, keeps title/desc filters. Sources: SimplifyJobs feeds (intern + new-grad) and the EMEA JobSpy scrape.
+Last updated: **2026-05-09 15:51 UTC** · **339** active EMEA entry-level roles ([Internships](#intern) (58) · [New Grad](#newgrad) (281)) · 198 cross-source duplicates merged. Wider net than [JOBS.md](JOBS.md) — drops the curated company allowlist, keeps title/desc filters. Sources: SimplifyJobs feeds (intern + new-grad) and the EMEA JobSpy scrape.
 
 ---
 
 <a name="intern"></a>
 ## Internships
 
-**Sections:** [FAANG+ & AI Labs](#intern-faang) (4) · [Quant & Finance](#intern-quant) (4) · [Other](#intern-other) (39)
+**Sections:** [FAANG+ & AI Labs](#intern-faang) (14) · [Quant & Finance](#intern-quant) (4) · [Other](#intern-other) (40)
 
 <a name="intern-faang"></a>
 ### FAANG+ & AI Labs
@@ -19,6 +19,16 @@ Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles 
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 31d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 37d |
 | <a href="https://simplify.jobs/c/Amazon"><strong>Amazon</strong></a> | Data Engineer Internship - UK - Amazon University Talent Acquisition','Auta | London, UK | <a href="https://amazon.jobs/en/jobs/3183839/data-engineer-internship-uk-amazon-university-talent-acquisition-auta"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 80d |
+| <a href="https://uk.indeed.com/cmp/Amazon-Web-Services-05cb4ad1"><strong>Amazon Web Services</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Cambridge, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=d97dca6351802ec0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 176d |
+| <a href="https://uk.indeed.com/cmp/Amazon-Web-Services-05cb4ad1"><strong>Amazon Web Services</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=8bab35e4480a4191"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 176d |
+| <a href="https://uk.indeed.com/cmp/Amazon-Web-Services-05cb4ad1"><strong>Amazon Web Services</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Edinburgh, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=89229b56a96ab830"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 176d |
+| <a href="https://es.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=fff49868e9f4117d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 187d |
+| <a href="https://es.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=d4ccc6a6c800c5a7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 187d |
+| <a href="https://de.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=5ca51c54c98974d9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 197d |
+| <a href="https://de.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=39bd7c9ab02f75a7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 197d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Software Dev Engineer Intern - UK | Cambridge, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=f83b460620a452b9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 248d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Software Dev Engineer Intern - UK | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=a6bf3b07b46d509b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 248d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Software Dev Engineer Intern - UK | Edinburgh, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=06dadbe7f0422ca8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 248d |
 <!-- TABLE_EMEA_INTERN_FAANG_END -->
 
 <a name="intern-quant"></a>
@@ -39,6 +49,7 @@ Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles 
 <!-- TABLE_EMEA_INTERN_OTHER_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Boeing"><strong>The Boeing Company</strong></a> | Data Analytics Intern - Data Engineering - Business Intelligence and Analysis | Bristol, UK | <a href="https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/GBR---Bristol-UK/Data-Analytics-Internship--Summer-2026_JR2026508199"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://simplify.jobs/c/Snyk"><strong>Snyk</strong></a> | Software Engineer Intern - Code Rules - Developer Security Platform | London, UK | <a href="https://snyk.wd103.myworkdayjobs.com/External/job/United-Kingdom---London-Office/Software-Engineer-Intern_JR100494"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://simplify.jobs/c/MotorolaSolutions"><strong>Motorola</strong></a> | Software Engineering Intern | Edinburgh, UK · Glasgow, UK | <a href="https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Glasgow-UK-ZUK118/Software-Engineering-Internship_R64722"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://simplify.jobs/c/a64ca911-92ef-4bce-99ec-a890a343a30c"><strong>Covestro</strong></a> | Process Engineering Intern - Process Engineering / Chemical Engineering - Optimization & Data Analysis | Neukirchen-Vluyn, Germany | <a href="https://covestro.wd3.myworkdayjobs.com/cov_external/job/Leverkusen/Praktikant-in--m-w-d--im-Bereich-Verfahrenstechnik---Chemieingenieurwesen-zu-Prozesssimulation--Optimierung---Datenanalyse---mit-Gehaltsangabe_JR-2026-00780"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
@@ -85,7 +96,7 @@ Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles 
 <a name="newgrad"></a>
 ## New Grad
 
-**Sections:** [FAANG+ & AI Labs](#newgrad-faang) (16) · [Quant & Finance](#newgrad-quant) (8) · [Other](#newgrad-other) (253)
+**Sections:** [FAANG+ & AI Labs](#newgrad-faang) (21) · [Quant & Finance](#newgrad-quant) (8) · [Other](#newgrad-other) (252)
 
 <a name="newgrad-faang"></a>
 ### FAANG+ & AI Labs
@@ -104,10 +115,15 @@ Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles 
 | <a href="https://ie.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer, ML Navigators | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=05ba54d867fee2a4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 10d |
 | <a href="https://es.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Applied Scientist, EU INTech Consumer Selection Discovery, EU InTech Consumer Selection Discovery | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=302a08ac1c4f9635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 15d |
 | <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer, Data Center Builder Tools | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=3e4846cfd120489c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 19d |
-| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Applied Scientist, Amazon Transportation | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=08ceae08c0d9d4cd"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 46d |
+| <a href="https://ch.indeed.com/cmp/Amazon-Web-Services-05cb4ad1"><strong>Amazon Web Services</strong></a> | Delivery Consultant - Machine Learning (GenAI), ProServe EMEA | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=15ba1fbf1a9a0c3b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
 | <a href="https://simplify.jobs/c/Ultra-Intelligence-And-Communications"><strong>Ultra Intelligence and Communications</strong></a> | Graduate Software Engineer | Maidenhead, UK | <a href="https://ultra.wd3.myworkdayjobs.com/uiccareers/job/Foundation-Park-Maidenhead-UK/Graduate-Software-Engineer_REQ-11210-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://simplify.jobs/c/Google"><strong>Google</strong></a> | Software Engineer – Early Career - AI/ML - PhD | London, UK | <a href="https://www.google.com/about/careers/applications/jobs/results/92286686481785542"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 92d |
 | <a href="https://simplify.jobs/c/Apple"><strong>Apple</strong></a> | SWE – Early Career - User Land Security Researcher - Sear | Gloucester, UK | <a href="https://jobs.apple.com/en-us/details/200622968"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 171d |
+| <a href="https://es.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer – 2026 | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=43ebb050f8a5221e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 190d |
+| <a href="https://es.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer – 2026 | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=7b07fc5cd548fd69"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 190d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer – 2026 | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=265a39f35b05004c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 201d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer – 2026 | Cambridge, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=12a44066bf8d6f52"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 201d |
+| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | Software Development Engineer – 2026 | Edinburgh, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=3331338fbe788671"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 201d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Scientist Graduate - Tiktok Shop  DS - 2026 Start - BS/MS | London, UK | <a href="https://lifeattiktok.com/search/7535381998677739784"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 207d |
 <!-- TABLE_EMEA_NEWGRAD_FAANG_END -->
 
@@ -305,7 +321,6 @@ Last updated: **2026-05-09 15:25 UTC** · **324** active EMEA entry-level roles 
 | <a href="https://fr.indeed.com/cmp/Mirakl-SAS"><strong>MIRAKL SAS</strong></a> | Data Scientist GenAI | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=8fd5ade96951b67a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 16d |
 | <a href="https://simplify.jobs/c/Electronic-Arts"><strong>Electronic Arts</strong></a> | Reverse Engineer Anti-Cheat | Guildford, UK | <a href="https://jobs.ea.com/en_US/careers/JobDetail/Reverse-Engineer-Anti-Cheat/213132"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 16d |
 | <a href="https://simplify.jobs/c/Cummins"><strong>Cummins</strong></a> | Product Functional Test Technology Engineer | Cardiff, UK | <a href="https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2425374"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 16d |
-| <a href="https://uk.indeed.com/cmp/Ecmwf"><strong>ECMWF</strong></a> | Machine Learning Scientists and Machine Learning Engineers (3 positions) | Reading, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=bcef9af68fca4910"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
 | <a href="https://simplify.jobs/c/Cummins"><strong>Cummins</strong></a> | Product Engineering Specialist | Daventry, UK | <a href="https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2425317"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
 | <a href="https://simplify.jobs/c/Interact-Software"><strong>Interact Software</strong></a> | Graduate Software Engineer | Manchester, UK | <a href="https://interactsoftware.pinpointhq.com/en/postings/4695740f-20ab-4ee4-a942-1d8c8728186f?ats=pinpointhq"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 24d |
 | <a href="https://simplify.jobs/c/MARGO"><strong>MARGO</strong></a> | Rapid Application Developer - Java | London, UK | <a href="https://jobs.lever.co/margo-group/c23cae4d-bf0a-45ea-b1ba-8b201eac213c/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 25d |
