@@ -6,6 +6,7 @@ import requests
 from typing import Tuple
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import quote
 
 from jobspy.glassdoor.constant import fallback_token, query_template, headers
 from jobspy.glassdoor.util import (
@@ -63,18 +64,27 @@ class Glassdoor(Scraper):
         self.session = create_session(
             proxies=self.proxies, ca_cert=self.ca_cert, has_retry=True
         )
-        token = self._get_csrf_token()
-        headers["gd-csrf-token"] = token if token else fallback_token
+        # Build per-instance headers so concurrent scrapes don't trample
+        # each other's user-agent / csrf-token (the imported `headers`
+        # dict is module-global). Apply browser-like headers BEFORE the
+        # CSRF call — without them Glassdoor returns the page without
+        # the embedded `"token":"..."` payload and we'd silently fall
+        # back to a stale baked-in token.
+        session_headers = dict(headers)
         if self.user_agent:
-            headers["user-agent"] = self.user_agent
-        self.session.headers.update(headers)
+            session_headers["user-agent"] = self.user_agent
+        self.session.headers.update(session_headers)
+
+        token = self._get_csrf_token()
+        session_headers["gd-csrf-token"] = token if token else fallback_token
+        self.session.headers.update(session_headers)
+        # Stash on the instance for `_fetch_job_description` (which posts
+        # outside `self.session` via plain `requests.post`).
+        self._headers = session_headers
 
         location_id, location_type = self._get_location(
             scraper_input.location, scraper_input.is_remote
         )
-        if location_type is None:
-            log.error("Glassdoor: location not parsed")
-            return JobResponse(jobs=[])
         job_list: list[JobPost] = []
         cursor = None
 
@@ -120,7 +130,17 @@ class Glassdoor(Scraper):
                 exc_msg = f"bad response status code: {response.status_code}"
                 raise GlassdoorException(exc_msg)
             res_json = response.json()[0]
-            if "errors" in res_json:
+            # Glassdoor's `/graph` endpoint regularly returns valid job
+            # data alongside non-fatal `errors` on peripheral fields
+            # (e.g. 503 on `jobsPageSeoData`). Only treat the response
+            # as failed when `data.jobListings` is actually missing —
+            # otherwise we'd discard 30 valid jobs over a metadata
+            # hiccup. (Upstream fix: speedyapply/JobSpy#350.)
+            if "errors" in res_json and (
+                "data" not in res_json
+                or not res_json["data"]
+                or "jobListings" not in res_json["data"]
+            ):
                 raise ValueError("Error encountered in API response")
         except (
             requests.exceptions.ReadTimeout,
@@ -151,9 +171,14 @@ class Glassdoor(Scraper):
 
     def _get_csrf_token(self):
         """
-        Fetches csrf token needed for API by visiting a generic page
+        Fetches csrf token needed for API by visiting a generic page.
+
+        After Glassdoor's Next.js migration the previous landing page
+        (`/Job/computer-science-jobs.htm`) 404's — fetching the homepage
+        reliably returns the embedded `"token":"..."` payload.
+        (Upstream fix: speedyapply/JobSpy#347.)
         """
-        res = self.session.get(f"{self.base_url}/Job/computer-science-jobs.htm")
+        res = self.session.get(f"{self.base_url}/")
         pattern = r'"token":\s*"([^"]+)"'
         matches = re.findall(pattern, res.text)
         token = None
@@ -246,7 +271,11 @@ class Glassdoor(Scraper):
                 """,
             }
         ]
-        res = requests.post(url, json=body, headers=headers)
+        # Use the per-instance headers (with this scrape's CSRF token /
+        # UA) rather than the module-global `headers` dict, which would
+        # leak state across concurrent Glassdoor scrapes.
+        req_headers = getattr(self, "_headers", headers)
+        res = requests.post(url, json=body, headers=req_headers)
         if res.status_code != 200:
             return None
         data = res.json()[0]
@@ -258,18 +287,26 @@ class Glassdoor(Scraper):
     def _get_location(self, location: str, is_remote: bool) -> (int, str):
         if not location or is_remote:
             return "11047", "STATE"  # remote options
-        url = f"{self.base_url}/findPopularLocationAjax.htm?maxLocationsToReturn=10&term={location}"
+        # URL-encode the location term — locations with commas or spaces
+        # ("Nashville, TN", "London, United Kingdom") were interpolated
+        # raw and produced HTTP 400 from Glassdoor's typeahead.
+        # (Upstream fix: speedyapply/JobSpy#350.)
+        url = (
+            f"{self.base_url}/findPopularLocationAjax.htm"
+            f"?maxLocationsToReturn=10&term={quote(location)}"
+        )
         res = self.session.get(url)
         if res.status_code != 200:
+            # Raise with HTTP context so the monitor's health alert
+            # surfaces *why* the source went BROKEN (429 vs other), not
+            # a generic "location resolution failed" message.
             if res.status_code == 429:
-                err = f"429 Response - Blocked by Glassdoor for too many requests"
-                log.error(err)
-                return None, None
-            else:
-                err = f"Glassdoor response status code {res.status_code}"
-                err += f" - {res.text}"
-                log.error(f"Glassdoor response status code {res.status_code}")
-                return None, None
+                raise GlassdoorException(
+                    "429 Response - Blocked by Glassdoor for too many requests"
+                )
+            raise GlassdoorException(
+                f"Glassdoor response status code {res.status_code} - {res.text}"
+            )
         items = res.json()
 
         if not items:

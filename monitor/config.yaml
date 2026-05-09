@@ -73,7 +73,7 @@ cities:
 #   job_type: fulltime/intern  — JobSpy filter
 role_templates:
   - name: sde_junior
-    sites: [indeed, linkedin, glassdoor, google, bayt]
+    sites: [indeed, linkedin, glassdoor, bayt]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "software engineer new grad"
@@ -87,8 +87,6 @@ role_templates:
         - "graduate software engineer"
       glassdoor:
         - "graduate software engineer"
-      google:
-        - "graduate software engineer new grad"
       bayt:
         - "software engineer"
     results_wanted: 50
@@ -98,7 +96,7 @@ role_templates:
     job_type: fulltime
 
   - name: mle_junior
-    sites: [indeed, linkedin, glassdoor, google, bayt]
+    sites: [indeed, linkedin, glassdoor, bayt]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "machine learning engineer new grad"
@@ -111,8 +109,6 @@ role_templates:
         - "graduate machine learning engineer"
       glassdoor:
         - "graduate machine learning engineer"
-      google:
-        - "machine learning engineer new grad"
       bayt:
         - "machine learning engineer"
     results_wanted: 30
@@ -125,7 +121,7 @@ role_templates:
     # appropriate for this user. We still search the `applied scientist`
     # term because Amazon / Microsoft use that label for entry-level
     # MLE roles.
-    sites: [indeed, linkedin, glassdoor, google]
+    sites: [indeed, linkedin, glassdoor]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "applied scientist"
@@ -134,8 +130,6 @@ role_templates:
         - "applied scientist"
       glassdoor:
         - "applied scientist"
-      google:
-        - "applied scientist new grad"
     results_wanted: 30
     hours_old: 168
     job_type: fulltime
@@ -145,7 +139,7 @@ role_templates:
     # track (London especially). Keep results_wanted low — these roles
     # are concentrated, not distributed. Bayt is dropped here — quant is
     # not a Middle-East category in our experience.
-    sites: [indeed, linkedin, glassdoor, google]
+    sites: [indeed, linkedin, glassdoor]
     sites_skip_in_ci: [linkedin]
     search_terms:
       - "graduate trader"
@@ -157,8 +151,6 @@ role_templates:
         - "graduate quantitative"
       glassdoor:
         - "graduate quantitative"
-      google:
-        - "quantitative researcher new grad"
     results_wanted: 20
     hours_old: 168
     job_type: fulltime
