@@ -15,10 +15,10 @@ from __future__ import annotations
 
 import json
 import logging
-import urllib.request
 from datetime import datetime, timezone
 from typing import Iterable
 
+from monitor.external import build_headers, http_get
 from monitor.external.locations import classify_locations
 
 DEFAULT_URL = (
@@ -46,21 +46,24 @@ log = logging.getLogger(__name__)
 def fetch_listings(url: str = DEFAULT_URL, timeout: int = 60) -> list[dict]:
     """Download and parse the listings.json. Returns [] on any error.
 
-    Errors are logged but never raised — one bad fetch shouldn't kill the
-    whole monitor run, same as JobSpy's run_search.
+    Uses the shared http_get helper, so a transient connection blip or a
+    429 / 5xx gets up to 3 bounded retries (2s / 5s / 10s) before we
+    give up. Persistent failures still return [] — one bad fetch
+    shouldn't kill the whole monitor run, same as JobSpy's run_search.
     """
     log.info("simplify: GET %s", url)
     try:
-        req = urllib.request.Request(
-            url, headers={"User-Agent": "jobspy-monitor/1.0"}
+        result = http_get(
+            url,
+            source_label="simplify",
+            headers=build_headers(),
+            timeout=timeout,
         )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = resp.read()
     except Exception as e:
         log.exception("simplify: fetch failed: %s", e)
         return []
     try:
-        listings = json.loads(data)
+        listings = json.loads(result.body or b"")
     except Exception as e:
         log.exception("simplify: JSON parse failed: %s", e)
         return []

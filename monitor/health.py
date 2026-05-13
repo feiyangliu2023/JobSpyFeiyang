@@ -13,11 +13,19 @@ Status classifications (computed at end of run):
   - OK        — at least one call returned non-empty, no errors > 30% of attempts
   - DEGRADED  — some calls returned non-empty but success rate < 30%
                 (suggests a flaky source or partial rate-limit)
-  - SILENT    — every call returned 0 rows AND no exceptions thrown
-                (almost always means an IP block — nothing matched is
-                statistically unlikely across 50+ searches)
+  - SILENT    — at least `_SILENT_MIN_ATTEMPTS` calls all returned 0 rows
+                AND no exceptions thrown (almost always means an IP
+                block — nothing matched is statistically unlikely
+                across that many searches). Below the threshold we
+                classify as UNUSED instead, because naturally low-recall
+                pairings (e.g. Bayt + applied_scientist, single-attempt
+                direct scrapers) routinely return 0 on 1-2 calls and we
+                don't want those to fire a SILENT ntfy alert.
   - BROKEN    — every call threw (URL down, schema changed, etc.)
-  - UNUSED    — never invoked this run (config flag, sites_skip_in_ci, etc.)
+  - UNUSED    — either never invoked this run (config flag,
+                sites_skip_in_ci, etc.) OR invoked fewer than
+                `_SILENT_MIN_ATTEMPTS` times with 0 rows and no errors
+                (not enough signal to call a block).
 
 The renderer of the report is intentionally text-only — it goes to
 `run.log`, to `logs/health-latest.json` for grepability, and (if any
@@ -50,6 +58,16 @@ _STATUS_GLYPH = {
 # spotty matches, not broken".
 _DEGRADED_RATE = 0.30
 
+# Minimum attempts required before a 0-row, 0-error source can be
+# classified as SILENT (i.e. "looks blocked"). Below this we fall back
+# to UNUSED — single-attempt sources (per-company direct scrapers) and
+# naturally low-recall pairings (Bayt + applied_scientist) routinely
+# return 0 on 1-2 calls without being blocked, and we don't want those
+# to trigger a SILENT ntfy alert every run. 3 picked as the smallest
+# sample where "every call returned 0" starts to look statistically
+# suspicious rather than expected noise.
+_SILENT_MIN_ATTEMPTS = 3
+
 
 @dataclass
 class SourceStats:
@@ -76,7 +94,13 @@ class SourceStats:
             return "BROKEN"
         if self.successes == 0:
             # No call succeeded but not every call threw — most likely
-            # silent rate-limiting (LinkedIn classic pattern)
+            # silent rate-limiting (LinkedIn classic pattern). Require
+            # at least `_SILENT_MIN_ATTEMPTS` calls before we commit to
+            # that classification, otherwise a naturally low-recall
+            # source (single-call direct scraper, Bayt on niche queries)
+            # would fire a false SILENT every time it returned 0.
+            if self.attempts < _SILENT_MIN_ATTEMPTS:
+                return "UNUSED"
             return "SILENT"
         if self.success_rate() < _DEGRADED_RATE:
             return "DEGRADED"

@@ -11,3 +11,6 @@ dist
 
 # monitor/ — keep jobs.db committed for run-to-run persistence
 monitor/logs/
+# HTTP ETag / Last-Modified cache for direct scrapers — pure HTTP cache,
+# rebuilt on every cache-miss; nothing the repo needs to track.
+monitor/cache/
