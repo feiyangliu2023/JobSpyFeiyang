@@ -62,6 +62,72 @@ def classify(company: str) -> str:
     return "other"
 
 
+# Liveness-aware visibility. Four behaviors:
+#   - 'ok'                — render normally (verified live).
+#   - 'redirect' / NULL   — render with a "(?)" suffix on the apply cell
+#                           ("not yet verified or possibly stale"). NULL
+#                           covers rows we've never checked.
+#   - 'timeout' / 'error' — drop this render cycle entirely. They retry
+#                           next sweep; a transient network blip here
+#                           would otherwise hide an actually-live row
+#                           behind a "(?)" mark forever.
+#   - '404'               — drop, except within 24h of being marked
+#                           (transient-error grace window — matches the
+#                           rule from the original liveness wiring).
+_LIVENESS_HIDE_GRACE_HOURS = 24
+_LIVENESS_DROP_THIS_RENDER = ("timeout", "error")
+
+
+def _liveness_visible(r: dict, now: datetime | None = None) -> bool:
+    """True iff this row should appear in the rendered tables.
+
+    Drop the row when:
+      - liveness_status is 'timeout' / 'error' (this render cycle only)
+      - liveness_status is '404' AND liveness_checked_at is older than
+        24h (the grace window keeps freshly-dead rows visible in case
+        the 404 turns out to be transient)
+    Otherwise — 'ok', 'redirect', NULL, or fresh 404 — keep visible.
+    The apply-cell "(?)" decoration for unverified rows lives in
+    `_render_section`, not here.
+    """
+    status = (r.get("liveness_status") or "").lower()
+    if status in _LIVENESS_DROP_THIS_RENDER:
+        return False
+    if status != "404":
+        return True
+    checked_at = r.get("liveness_checked_at")
+    if not checked_at:
+        return True
+    try:
+        dt = datetime.fromisoformat(str(checked_at).replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    if now is None:
+        now = datetime.now(timezone.utc)
+    return dt >= now - timedelta(hours=_LIVENESS_HIDE_GRACE_HOURS)
+
+
+def _filter_liveness(rows: Iterable[dict]) -> list[dict]:
+    """Apply the liveness visibility filter to a row iterable."""
+    now = datetime.now(timezone.utc)
+    return [r for r in rows if _liveness_visible(r, now)]
+
+
+# Suffix appended to the apply-button cell for rows that aren't verified
+# 'ok'. Renders as a small superscript "(?)" with a tooltip. We deliberately
+# don't use a status-specific marker (different for redirect vs NULL) —
+# from the user's perspective they're both "not confirmed live".
+_LIVENESS_UNVERIFIED_MARKER = (
+    ' <sup title="not yet verified live — may be stale">(?)</sup>'
+)
+
+
+def _is_live(r: dict) -> bool:
+    return (r.get("liveness_status") or "").lower() == "ok"
+
+
 def days_since(iso: str | None) -> int:
     if not iso:
         return 0
@@ -156,6 +222,8 @@ def _render_section(rows: list[dict], has_salary: bool) -> str:
         "|" + "|".join(["---"] * len(headers)) + "|",
     ]
 
+    n_live = 0
+    n_unverified = 0
     for r in rows:
         company = _md_escape_cell(r.get("company") or "—")
         title = _md_escape_cell(r.get("title") or "")
@@ -166,7 +234,14 @@ def _render_section(rows: list[dict], has_salary: bool) -> str:
         cu = (r.get("company_url") or "").strip()
         if cu:
             company_cell = f'<a href="{cu}"><strong>{company}</strong></a>'
-        apply_cell = f'<a href="{url}">{_APPLY_IMG}</a>'
+
+        if _is_live(r):
+            n_live += 1
+            marker = ""
+        else:
+            n_unverified += 1
+            marker = _LIVENESS_UNVERIFIED_MARKER
+        apply_cell = f'<a href="{url}">{_APPLY_IMG}</a>{marker}'
 
         cells = [company_cell, title, location]
         if has_salary:
@@ -180,6 +255,14 @@ def _render_section(rows: list[dict], has_salary: bool) -> str:
             )
         cells += [apply_cell, f"{age}d"]
         lines.append("| " + " | ".join(cells) + " |")
+
+    # Per-table footer — helps the reader calibrate how much of the table
+    # has been validated. Live = a 2xx HEAD/GET within the last sweep
+    # cycle; unverified = NULL (never checked), 'redirect' (heuristic
+    # dead-page suspicion — kept visible so the user can judge), or fresh
+    # 404 inside the 24h grace window.
+    lines.append("")
+    lines.append(f"_{n_live} live, {n_unverified} unverified_")
     return "\n".join(lines)
 
 
@@ -362,6 +445,7 @@ def render_emea_entry_level(
     thing so this broader feed doesn't spam ntfy.
     """
     rows = [r for r in rows if (r.get("region") or "").lower() == "emea"]
+    rows = _filter_liveness(rows)
     has_salary = any(_has_salary(r) for r in rows)
 
     by_kind: dict[str, list[dict]] = {k: [] for k, _ in _EMEA_KIND_ORDER}
@@ -465,7 +549,7 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
     salary data (typical for EMEA Indeed scrapes), keeping every table
     consistently shaped.
     """
-    rows = list(active_rows)
+    rows = _filter_liveness(active_rows)
     has_salary = any(_has_salary(r) for r in rows)
 
     # Group by region first; anything with an unknown region tag falls
@@ -642,13 +726,18 @@ def render_slice(
     rows: Iterable[dict],
     slice_def: dict,
     output_path: str | Path,
-) -> dict[str, int]:
+) -> dict[str, int | str | None]:
     """Render one slice markdown file. Returns stats counts.
 
     Stats keys:
-      - total:    deduped row count written to the file
-      - new_24h:  rows with first_seen >= now-24h
-      - new_7d:   rows with now-7d <= first_seen < now-24h (exclusive bucket)
+      - total:               deduped row count written to the file
+      - new_24h:             rows with first_seen >= now-24h
+      - new_7d:              rows with now-7d <= first_seen < now-24h
+                             (exclusive bucket)
+      - last_liveness_sweep: max(liveness_checked_at) across the slice's
+                             rendered rows, ISO8601 string. None if no
+                             row has been checked yet.
+      - pct_verified:        round(100 * ok / total). 0 when total == 0.
 
     Callers wanting "new this week" should add new_24h + new_7d.
 
@@ -765,11 +854,28 @@ def render_slice(
         out.pop()
     out.append("")
 
+    # Liveness summary for INDEX.md — `last_liveness_sweep` is the most
+    # recent check across this slice's rows (ISO8601 string; sortable
+    # lexically), `pct_verified` is round(100 * ok / total). Both reflect
+    # the post-filter pool, so a slice with all-timeout rows simply has
+    # `last_liveness_sweep=None` and renders no liveness line in INDEX.
+    last_sweep: str | None = None
+    n_live = 0
+    for r in deduped:
+        at = r.get("liveness_checked_at")
+        if at and (last_sweep is None or str(at) > last_sweep):
+            last_sweep = str(at)
+        if _is_live(r):
+            n_live += 1
+    pct_verified = round(100 * n_live / len(deduped)) if deduped else 0
+
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
     return {
         "total": len(deduped),
         "new_24h": len(last_24h),
         "new_7d": len(last_7d),
+        "last_liveness_sweep": last_sweep,
+        "pct_verified": pct_verified,
     }
 
 
@@ -777,7 +883,7 @@ def render_slices(
     active_rows: Iterable[dict],
     slices_config: dict | list,
     output_dir: str | Path,
-) -> dict[str, dict[str, int]]:
+) -> dict[str, dict[str, int | str | None]]:
     """Render every slice defined in `slices_config` into `output_dir`.
 
     `slices_config` accepts either the full parsed slices.yaml (dict with
@@ -800,7 +906,10 @@ def render_slices(
 
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    rows = list(active_rows)
+    # Filter once at the slice-set level — every slice draws from the same
+    # liveness-filtered pool, so an old 404 doesn't sneak back through one
+    # slice that happens not to re-filter.
+    rows = _filter_liveness(active_rows)
 
     stats: dict[str, dict[str, int]] = {}
     for s in slices:
@@ -830,9 +939,26 @@ _INDEX_REGION_GROUPS: list[tuple[str, str]] = [
 ]
 
 
+def _fmt_liveness_sweep(iso: str | None) -> str | None:
+    """Format an ISO8601 sweep timestamp for INDEX.md (YYYY-MM-DD HH:MM UTC).
+
+    Returns None for falsy input so the caller can skip the line entirely
+    when no row has been checked yet.
+    """
+    if not iso:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except ValueError:
+        return str(iso)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.strftime("%Y-%m-%d %H:%M UTC")
+
+
 def render_index(
     slices_config: dict | list,
-    slices_stats: dict[str, dict[str, int]],
+    slices_stats: dict[str, dict[str, int | str | None]],
     output_path: str | Path,
     broader_emea_count: int | None = None,
 ) -> None:
@@ -890,12 +1016,18 @@ def render_index(
             label = s.get("index_label") or s.get("title") or name
             filename = s.get("filename") or f"{name}.md"
             st = slices_stats[name]
-            total = st.get("total", 0)
-            new_this_week = st.get("new_24h", 0) + st.get("new_7d", 0)
+            total = st.get("total", 0) or 0
+            new_this_week = (st.get("new_24h", 0) or 0) + (st.get("new_7d", 0) or 0)
             out.append(
                 f"- [{label}]({filename}) — {total} active, "
                 f"{new_this_week} new this week"
             )
+            sweep_str = _fmt_liveness_sweep(st.get("last_liveness_sweep"))
+            if sweep_str and total:
+                pct = st.get("pct_verified", 0) or 0
+                out.append(
+                    f"  - Last liveness sweep: {sweep_str}, {pct}% verified live"
+                )
         out.append("")
 
     if broader_emea_count is not None:

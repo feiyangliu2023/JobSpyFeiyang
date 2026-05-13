@@ -719,6 +719,16 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     parser.add_argument(
+        "--skip-liveness",
+        action="store_true",
+        help=(
+            "Skip the post-scrape URL liveness check. Use for fast local "
+            "iteration when you don't need dead-link pruning. The check is "
+            "rate-limited (~20 req/min/domain) and capped at 200 URLs per "
+            "run, so a normal run adds a few minutes at most."
+        ),
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help=(
@@ -846,6 +856,23 @@ def main(argv: list[str] | None = None) -> int:
             "done: scraped=%d, filtered=%d, new=%d, marked_gone=%d",
             total_scraped, total_filtered_in, total_new, gone,
         )
+
+        # Liveness check — catches dead apply URLs that the scrape pass
+        # didn't surface (a posting can disappear from the source feed
+        # AND get a 404 on its apply URL, but only the latter is visible
+        # to anyone clicking from JOBS.md). Runs after mark_gone so we
+        # only spend HTTP budget on rows still marked active.
+        if args.skip_liveness:
+            log.info("[liveness] --skip-liveness set; skipping")
+        else:
+            from monitor import liveness as liveness_mod
+            try:
+                liveness_mod.check_active_urls(conn)
+            except Exception as e:
+                # Liveness failures shouldn't fail the whole run — the
+                # render step that follows can still produce a valid (if
+                # slightly stale) JOBS.md from the existing data.
+                log.exception("[liveness] batch check failed: %s", e)
 
         # End-of-run health report — write to log + JSON + ntfy when
         # any source is non-OK. Order matters: log first (always), JSON

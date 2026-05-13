@@ -75,6 +75,13 @@ _MIGRATIONS = [
     "ALTER TABLE jobs ADD COLUMN region TEXT",
     "ALTER TABLE jobs ADD COLUMN source_category TEXT",
     "ALTER TABLE jobs ADD COLUMN signature TEXT",
+    # Liveness check columns — populated by monitor.liveness.check_active_urls.
+    # status ∈ {'ok','404','redirect','timeout','error'} or NULL when never
+    # checked; the renderer hides rows whose status is '404' AND whose
+    # checked_at is older than 24h (gives transient errors one cycle of grace).
+    "ALTER TABLE jobs ADD COLUMN liveness_status TEXT",
+    "ALTER TABLE jobs ADD COLUMN liveness_checked_at TEXT",
+    "ALTER TABLE jobs ADD COLUMN liveness_status_code INTEGER",
 ]
 
 
@@ -383,7 +390,8 @@ def fetch_active(conn: sqlite3.Connection) -> list[dict]:
         SELECT job_url, site, title, company, company_url, location, is_remote,
                date_posted, search_name, min_amount, max_amount, currency,
                salary_interval, region, source_category, signature,
-               first_seen, last_seen
+               first_seen, last_seen,
+               liveness_status, liveness_checked_at, liveness_status_code
           FROM jobs
          WHERE status = 'active'
          ORDER BY first_seen DESC, company, title
