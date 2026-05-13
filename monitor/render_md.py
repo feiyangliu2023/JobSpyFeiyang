@@ -307,9 +307,13 @@ def _sort_key(r: dict) -> tuple[str, str]:
 # SimplifyJobs entries usually point at the company's direct apply URL
 # (jobs.apple.com, careers.microsoft.com); JobSpy/Indeed entries are
 # referrals through indeed.com / linkedin.com — direct is better.
+# SimplifyJobs-schema forks (vanshb03_summer2026 etc.) sit at the same
+# tier as the canonical SimplifyJobs feeds — their URLs are equally
+# direct, they just cover slightly different sets of postings.
 _SOURCE_PRIORITY = [
     "simplify_newgrad",
     "simplify_intern",
+    "vanshb03_summer2026",
     "simplify",       # legacy label, kept for old DB rows
     "linkedin",
     "indeed",
@@ -402,15 +406,19 @@ _STAGE_RE = re.compile(r"(?<![\w-])stage(?![\w-])")
 def _classify_intern_or_newgrad(r: dict) -> str:
     """Return 'intern' or 'newgrad'. Used only for the EMEA entry-level view.
 
-    SimplifyJobs rows carry the answer in `site` (the upstream repo split is
-    intern vs new-grad). For JobSpy rows we substring-match the title; if no
-    intern token is present we default to 'newgrad' since the EMEA scrape's
-    `job_type=fulltime` filter biases toward new-grad anyway.
+    SimplifyJobs-shaped rows carry the answer in `site`. We substring-match
+    rather than equality-check so forks (vanshb03_summer2026, etc.) classify
+    naturally: any label containing 'intern' or 'summer202X' is intern;
+    any label containing 'newgrad' / 'new-grad' / 'new_grad' is new-grad.
+    For JobSpy rows the site is just `linkedin`/`indeed`/etc. — none of
+    those substrings match, so we fall through to a title-based check.
+    Default → 'newgrad' since the EMEA scrape's `job_type=fulltime` filter
+    biases toward new-grad anyway.
     """
     site = (r.get("site") or "").lower()
-    if site == "simplify_intern":
+    if "intern" in site or "summer202" in site:
         return "intern"
-    if site == "simplify_newgrad":
+    if "newgrad" in site or "new-grad" in site or "new_grad" in site:
         return "newgrad"
     title = (r.get("title") or "").lower()
     for tok in _INTERN_TITLE_TOKENS:

@@ -625,3 +625,18 @@ external_sources:
     allowed_regions: [emea, north_america]
     skip_filters:
       - min_description_chars
+
+  # vanshb03/Summer2026-Internships is a SimplifyJobs-schema fork with
+  # partially-overlapping but not-identical coverage of the same upstream
+  # space. Same dispatch path (`type: simplify_intern`), explicit URL
+  # override. The signature-based dedup in render_md.py collapses any
+  # role that appears in both this feed and SimplifyJobs's canonical
+  # feed; SimplifyJobs wins the tie because it ranks higher in
+  # `_SOURCE_PRIORITY`. Worth carrying for the ~10-20% non-overlapping
+  # postings vanshb03 surfaces that the canonical repo missed.
+  - name: vanshb03_summer2026
+    type: simplify_intern
+    url: "https://raw.githubusercontent.com/vanshb03/Summer2026-Internships/dev/.github/scripts/listings.json"
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars

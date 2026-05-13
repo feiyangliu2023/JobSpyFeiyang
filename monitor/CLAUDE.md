@@ -133,6 +133,45 @@ These two files together are the canonical upstream behind every
 public "new grad jobs tracker" repo (speedyapply, coderquad-simplify,
 etc.) — those repos don't scrape, they render this. We do the same.
 
+A third feed — **`vanshb03_summer2026`** → [vanshb03/Summer2026-Internships](https://github.com/vanshb03/Summer2026-Internships)
+(~1.3 MB, ~2100 records, ~150 EMEA after filter) — is wired in as a
+SimplifyJobs-schema fork. It uses `type: simplify_intern` with an
+explicit `url:` override (no new module needed; the schema is
+identical). The dispatch in `run.py` now sets `site_label = name or
+kind`, so this source's rows are tagged `site = "vanshb03_summer2026"`
+in jobs.db (provenance preserved) while existing rows keep their
+`simplify_intern` / `simplify_newgrad` labels (name == type today).
+
+Signature-based dedup in `render_md.py` collapses any posting that
+appears in both this feed and SimplifyJobs's canonical intern feed;
+SimplifyJobs wins the tie because it ranks higher in
+`_SOURCE_PRIORITY`. The value of the fork is the ~10-20% of postings
+that vanshb03 catches and the canonical repo doesn't — dedup surfaces
+those additively rather than as a duplicate explosion. The
+intern/newgrad classifier in `render_md._classify_intern_or_newgrad`
+uses substring matching (`"intern" in site`, `"summer202" in site`,
+`"newgrad" in site`) so future forks pick the right bucket without
+code changes.
+
+**Two other fork repos investigated and skipped (2026-05-14):**
+
+- **`Ouckah/Summer2026-Internships`** — does NOT exist. The Ouckah
+  GitHub user has 0 public repos; the repo returns 404 on both `dev`
+  and `main`. GitHub repo-search for `Summer2026-Internships` turns
+  up SimplifyJobs and a handful of unrelated smaller forks
+  (PrepAIJobs, summer2026internships, etc.) — none under Ouckah. Not
+  added.
+- **`coderquad/New-Grad-2026`** — does NOT exist. The `coderquad`
+  user only has `coderQuad/Spring2022-Internships`; no 2026 repo. Not
+  added.
+
+If either appears later under a different name, drop a new entry into
+`external_sources` with `type: simplify_intern` (interns) or
+`simplify_newgrad` (newgrads), an explicit `url:`, and a distinct
+`name:` so it gets its own site label. Also add the new name to
+`_SOURCE_PRIORITY` in `render_md.py` at the same tier as the existing
+SimplifyJobs entries.
+
 SimplifyJobs schema (verified by inspecting raw listings.json):
 `id, source, category, company_name, title, active, date_updated,
 date_posted (unix epoch), url, locations[], company_url, is_visible,

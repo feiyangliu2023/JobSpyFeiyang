@@ -581,9 +581,14 @@ def ingest_external_sources(
                             health_key, ValueError("missing url"))
                     continue
                 listings = simplify_mod.fetch_listings(url)
+                # site_label = source `name` (falls back to `kind`) so
+                # SimplifyJobs-schema forks (vanshb03_summer2026, etc.) are
+                # distinguishable in the DB from the canonical feed. Existing
+                # configs are unaffected because their `name` already matches
+                # their `kind` (e.g. `simplify_intern`).
                 rows = simplify_mod.to_rows(
                     listings,
-                    site_label=kind,
+                    site_label=(name or kind),
                     default_region=default_region,
                     allowed_regions=allowed,
                 )
