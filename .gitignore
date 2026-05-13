@@ -9,6 +9,11 @@
 .env
 dist
 
+# Claude Code tooling state (worktrees, session files). These have leaked
+# into commits before (see ".claude/worktrees/<name>" gitlinks in 9c1a36f);
+# blanket-ignore so it can't happen again.
+.claude/
+
 # monitor/ — keep jobs.db committed for run-to-run persistence
 monitor/logs/
 # HTTP ETag / Last-Modified cache for direct scrapers — pure HTTP cache,
