@@ -4,19 +4,25 @@ Two tables: `jobs` (one row per unique job_url, with first/last seen timestamps
 and active/gone status) and `runs` (one row per scrape run for diagnostics).
 
 Each `jobs` row also carries a `signature` — a normalized
-(company, title, location-city) hash used to dedupe the same posting
+(company, title, location-city, region) hash used to dedupe the same posting
 when it shows up in multiple sources (e.g. the same Apple London role
 appears in JobSpy/Indeed AND in SimplifyJobs/New-Grad-Positions). The
-URL stays the PK; the signature only matters at render time.
+URL stays the PK; the signature matters at render time and for the
+notification digest.
 """
 
 from __future__ import annotations
 
+import logging
 import re
 import sqlite3
 from contextlib import contextmanager
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable, Iterator
+
+
+log = logging.getLogger(__name__)
 
 
 # Tables only — indexes are created after migrations because some indexes
@@ -60,6 +66,8 @@ CREATE INDEX IF NOT EXISTS idx_jobs_first_seen ON jobs(first_seen);
 CREATE INDEX IF NOT EXISTS idx_jobs_status     ON jobs(status);
 CREATE INDEX IF NOT EXISTS idx_jobs_region     ON jobs(region);
 CREATE INDEX IF NOT EXISTS idx_jobs_signature  ON jobs(signature);
+CREATE INDEX IF NOT EXISTS idx_jobs_last_seen  ON jobs(last_seen);
+CREATE INDEX IF NOT EXISTS idx_runs_started_at ON runs(started_at);
 """
 
 # Columns added after the original schema. Each statement is idempotent —
@@ -109,8 +117,10 @@ def setup_db(path: str | Path) -> sqlite3.Connection:
     # Backfill: anything without a region tag predates the multi-region work
     # and was scraped by the JobSpy EMEA pipeline. Tag it accordingly.
     conn.execute("UPDATE jobs SET region = 'emea' WHERE region IS NULL")
-    # Backfill signatures for rows that predate the dedup work. Cheap to
-    # run on every startup — only operates on rows where signature IS NULL.
+    # Recompute signatures on every startup — the format includes `region`
+    # (added 2026-05) so older DB rows would otherwise carry stale 3-part
+    # signatures that don't compare against fresh 4-part ones. Cheap;
+    # bounded by retention.
     _backfill_signatures(conn)
     conn.commit()
     return conn
@@ -167,7 +177,11 @@ def _norm_first_city(s: str) -> str:
 
     Locations look like "London, UK", "London, ENG, GB", or
     "London, UK · Cambridge, UK". We split on `·` first (our renderer's
-    separator), then on `,`, and take the leftmost token.
+    separator), then on `,`, and take the leftmost token. The state /
+    country suffix is intentionally dropped so cross-source dedup matches
+    Indeed's "London, ENG, GB" against SimplifyJobs's "London, UK" — the
+    `region` column disambiguates Cambridge UK vs Cambridge MA further
+    down in `compute_signature`.
     """
     s = (s or "").lower()
     first = re.split(r"[·]", s)[0]
@@ -179,29 +193,52 @@ def compute_signature(row: dict) -> str:
     """Stable hash for cross-source dedup.
 
     Same role posted to multiple sources should collapse to the same
-    signature most of the time. Failure modes worth knowing:
-      - Different cities (London vs Cambridge) → different signatures
-        (correctly, these ARE different roles)
+    signature most of the time. Components:
+
+      - normalized company (corp suffixes stripped)
+      - normalized title (seniority/year/parenthetical noise stripped)
+      - first-city of the location string (letter-stripped)
+      - region tag ('emea' / 'north_america' / 'other')
+
+    `region` was added on 2026-05 because the first-city normaliser
+    can't tell "Cambridge, UK" (emea) from "Cambridge, MA"
+    (north_america) — both collapse to "cambridge" — but those are
+    obviously different roles. The region column carries the suffix-
+    biased classification result from `monitor/external/locations.py`
+    (or the hardcoded 'emea' for JobSpy rows), which is enough to keep
+    them in separate signature buckets.
+
+    Failure modes worth knowing:
       - Title with junior keyword on one side only ("Junior Software
         Engineer" vs "Software Engineer") → SAME signature (we strip
-        seniority words)
+        seniority words).
       - Brand-new company name format ("Apple Inc." vs "Apple LLC") →
-        SAME signature (we strip corp suffixes)
+        SAME signature (we strip corp suffixes).
+      - Year token ("Software Engineer 2026" vs "Software Engineer") →
+        SAME signature.
+      - Parenthetical suffix ("Software Engineer (All Genders)") → SAME
+        signature (parentheticals stripped wholesale).
     """
     return "|".join(
         (
             _norm_company(row.get("company", "")),
             _norm_title(row.get("title", "")),
             _norm_first_city(row.get("location", "")),
+            (row.get("region") or "").lower(),
         )
     )
 
 
 def _backfill_signatures(conn: sqlite3.Connection) -> int:
-    """One-shot fill of signatures for rows that predate the dedup work."""
+    """Recompute signatures for every row.
+
+    The signature format evolved (region added as a 4th component on
+    2026-05). Rather than maintain a schema_version table just for this,
+    we unconditionally rewrite all signatures at startup — O(rows) one
+    pass, bounded by retention so the DB stays small.
+    """
     rows = conn.execute(
-        "SELECT job_url, company, title, location FROM jobs "
-        "WHERE signature IS NULL OR signature = ''"
+        "SELECT job_url, company, title, location, region FROM jobs"
     ).fetchall()
     if not rows:
         return 0
@@ -232,8 +269,21 @@ def upsert_jobs(
 ) -> tuple[int, int]:
     """Insert new jobs / refresh last_seen on existing ones.
 
-    Returns (rows_scraped, rows_new). A row is "new" if its first_seen equals
-    the supplied run timestamp — that's how compute_diff finds net-new jobs.
+    Single-statement UPSERT per row: SQLite's `INSERT ... ON CONFLICT(...)
+    DO UPDATE SET ...` collapses the previous SELECT-then-branch into one
+    round-trip. The `RETURNING first_seen` clause lets us distinguish a
+    fresh INSERT from a refresh — on INSERT, `first_seen == run_started_at`;
+    on UPDATE, the old `first_seen` is preserved (we don't write that
+    column in the DO UPDATE branch), so it differs.
+
+    Returns (rows_scraped, rows_new). "new" means a fresh INSERT (the row
+    didn't exist before this run); the caller can compare against
+    `fetch_new_since(run_started_at)` to drive the ntfy digest.
+
+    UPDATE branch keeps COALESCE behavior: existing non-null values win
+    over null incoming values, so an Indeed re-scrape that returns
+    `description=None` doesn't clobber a SimplifyJobs description that
+    came in last run.
     """
     scraped = 0
     new = 0
@@ -243,88 +293,60 @@ def upsert_jobs(
             url = row.get("job_url")
             if not url:
                 continue
-            # Compute signature once per row — used both as cross-source
-            # dedup key at render time and for INSERT/UPDATE here.
             sig = compute_signature(row)
-            existing = conn.execute(
-                "SELECT job_url FROM jobs WHERE job_url = ?", (url,)
-            ).fetchone()
-            if existing:
-                conn.execute(
-                    """
-                    UPDATE jobs
-                       SET last_seen       = ?,
-                           status          = 'active',
-                           title           = COALESCE(?, title),
-                           company         = COALESCE(?, company),
-                           company_url     = COALESCE(?, company_url),
-                           location        = COALESCE(?, location),
-                           is_remote       = COALESCE(?, is_remote),
-                           date_posted     = COALESCE(?, date_posted),
-                           description     = COALESCE(?, description),
-                           search_name     = COALESCE(?, search_name),
-                           min_amount      = COALESCE(?, min_amount),
-                           max_amount      = COALESCE(?, max_amount),
-                           currency        = COALESCE(?, currency),
-                           salary_interval = COALESCE(?, salary_interval),
-                           region          = COALESCE(?, region),
-                           source_category = COALESCE(?, source_category),
-                           signature       = ?
-                     WHERE job_url = ?
-                    """,
-                    (
-                        run_started_at,
-                        row.get("title"),
-                        row.get("company"),
-                        row.get("company_url"),
-                        row.get("location"),
-                        _coerce_bool(row.get("is_remote")),
-                        row.get("date_posted"),
-                        row.get("description"),
-                        search_name,
-                        row.get("min_amount"),
-                        row.get("max_amount"),
-                        row.get("currency"),
-                        row.get("interval") or row.get("salary_interval"),
-                        row.get("region"),
-                        row.get("source_category"),
-                        sig,
-                        url,
-                    ),
-                )
-            else:
-                conn.execute(
-                    """
-                    INSERT INTO jobs
-                        (job_url, site, title, company, company_url, location,
-                         is_remote, date_posted, description, search_name,
-                         min_amount, max_amount, currency, salary_interval,
-                         region, source_category, signature,
-                         first_seen, last_seen, status)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
-                    """,
-                    (
-                        url,
-                        row.get("site"),
-                        row.get("title"),
-                        row.get("company"),
-                        row.get("company_url"),
-                        row.get("location"),
-                        _coerce_bool(row.get("is_remote")),
-                        row.get("date_posted"),
-                        row.get("description"),
-                        search_name,
-                        row.get("min_amount"),
-                        row.get("max_amount"),
-                        row.get("currency"),
-                        row.get("interval") or row.get("salary_interval"),
-                        row.get("region"),
-                        row.get("source_category"),
-                        sig,
-                        run_started_at,
-                        run_started_at,
-                    ),
-                )
+            cur = conn.execute(
+                """
+                INSERT INTO jobs
+                    (job_url, site, title, company, company_url, location,
+                     is_remote, date_posted, description, search_name,
+                     min_amount, max_amount, currency, salary_interval,
+                     region, source_category, signature,
+                     first_seen, last_seen, status)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
+                ON CONFLICT(job_url) DO UPDATE SET
+                    last_seen       = excluded.last_seen,
+                    status          = 'active',
+                    title           = COALESCE(excluded.title, jobs.title),
+                    company         = COALESCE(excluded.company, jobs.company),
+                    company_url     = COALESCE(excluded.company_url, jobs.company_url),
+                    location        = COALESCE(excluded.location, jobs.location),
+                    is_remote       = COALESCE(excluded.is_remote, jobs.is_remote),
+                    date_posted     = COALESCE(excluded.date_posted, jobs.date_posted),
+                    description     = COALESCE(excluded.description, jobs.description),
+                    search_name     = COALESCE(excluded.search_name, jobs.search_name),
+                    min_amount      = COALESCE(excluded.min_amount, jobs.min_amount),
+                    max_amount      = COALESCE(excluded.max_amount, jobs.max_amount),
+                    currency        = COALESCE(excluded.currency, jobs.currency),
+                    salary_interval = COALESCE(excluded.salary_interval, jobs.salary_interval),
+                    region          = COALESCE(excluded.region, jobs.region),
+                    source_category = COALESCE(excluded.source_category, jobs.source_category),
+                    signature       = excluded.signature
+                RETURNING first_seen
+                """,
+                (
+                    url,
+                    row.get("site"),
+                    row.get("title"),
+                    row.get("company"),
+                    row.get("company_url"),
+                    row.get("location"),
+                    _coerce_bool(row.get("is_remote")),
+                    row.get("date_posted"),
+                    row.get("description"),
+                    search_name,
+                    row.get("min_amount"),
+                    row.get("max_amount"),
+                    row.get("currency"),
+                    row.get("interval") or row.get("salary_interval"),
+                    row.get("region"),
+                    row.get("source_category"),
+                    sig,
+                    run_started_at,
+                    run_started_at,
+                ),
+            )
+            result = cur.fetchone()
+            if result is not None and result[0] == run_started_at:
                 new += 1
     return scraped, new
 
@@ -369,10 +391,19 @@ def record_run(
 
 
 def fetch_new_since(conn: sqlite3.Connection, run_started_at: str) -> list[dict]:
-    """Return jobs whose first_seen == this run's timestamp (i.e. net-new)."""
+    """Return jobs whose first_seen == this run's timestamp (i.e. net-new).
+
+    Signature-aware dedup: when the same role surfaces via multiple
+    sources in the same run (e.g. SimplifyJobs AND direct:anthropic),
+    only the higher-priority source is included so the ntfy digest
+    mentions each role once. The render-time dedup in
+    `render_md._dedupe_by_signature` is independent and operates on
+    active rows; this one operates on the net-new set.
+    """
     rows = conn.execute(
         """
-        SELECT job_url, site, title, company, location, date_posted, search_name
+        SELECT job_url, site, title, company, location, date_posted,
+               search_name, signature
           FROM jobs
          WHERE first_seen = ?
            AND status = 'active'
@@ -380,7 +411,27 @@ def fetch_new_since(conn: sqlite3.Connection, run_started_at: str) -> list[dict]
         """,
         (run_started_at,),
     ).fetchall()
-    return [dict(r) for r in rows]
+    rows = [dict(r) for r in rows]
+
+    # Lazy import to avoid a top-level render_md ↔ db cycle if either
+    # module grows new imports later. render_md doesn't currently import
+    # db, but keep this safe.
+    from monitor.render_md import _source_rank
+
+    by_sig: dict[str, dict] = {}
+    no_sig: list[dict] = []
+    for r in rows:
+        sig = (r.get("signature") or "").strip()
+        if not sig:
+            no_sig.append(r)
+            continue
+        prev = by_sig.get(sig)
+        if prev is None:
+            by_sig[sig] = r
+            continue
+        if _source_rank(r.get("site")) < _source_rank(prev.get("site")):
+            by_sig[sig] = r
+    return list(by_sig.values()) + no_sig
 
 
 def fetch_active(conn: sqlite3.Connection) -> list[dict]:
@@ -398,3 +449,61 @@ def fetch_active(conn: sqlite3.Connection) -> list[dict]:
         """
     ).fetchall()
     return [dict(r) for r in rows]
+
+
+# --------------------------------------------------------------------------- #
+# Retention pruning
+# --------------------------------------------------------------------------- #
+
+
+def prune_old(conn: sqlite3.Connection, retention_days: int) -> dict:
+    """Delete expired gone-rows and old run records, then VACUUM.
+
+    Two-phase cleanup so the .git size doesn't grow unboundedly:
+
+      - `jobs`: drop rows with status='gone' AND last_seen older than
+        `retention_days`. Active rows are NEVER pruned (they still appear
+        in JOBS.md).
+      - `runs`: drop rows older than `retention_days // 2`. The runs
+        table is purely diagnostic; we keep half the job-row window so
+        recent-run debugging still works without bloating the DB.
+
+    After the deletes we run `VACUUM` so the file actually shrinks on
+    disk — without it SQLite keeps the freed pages around for reuse and
+    the file size never drops.
+
+    Returns `{"jobs_pruned": N, "runs_pruned": M}` for telemetry; logs
+    counts and cutoff timestamps at INFO.
+    """
+    now = datetime.now(timezone.utc)
+    cutoff_jobs = (now - timedelta(days=retention_days)).isoformat(timespec="seconds")
+    cutoff_runs = (now - timedelta(days=max(1, retention_days // 2))).isoformat(timespec="seconds")
+
+    with transaction(conn):
+        cur_jobs = conn.execute(
+            "DELETE FROM jobs WHERE status = 'gone' AND last_seen < ?",
+            (cutoff_jobs,),
+        )
+        jobs_pruned = cur_jobs.rowcount or 0
+        cur_runs = conn.execute(
+            "DELETE FROM runs WHERE started_at < ?",
+            (cutoff_runs,),
+        )
+        runs_pruned = cur_runs.rowcount or 0
+
+    # VACUUM must execute outside an explicit transaction — sqlite3's
+    # default isolation autocommits this fine, but the contextmanager above
+    # has already committed by the time we get here.
+    if jobs_pruned or runs_pruned:
+        conn.execute("VACUUM")
+        log.info(
+            "prune_old: pruned %d gone jobs (last_seen < %s) and "
+            "%d run records (started_at < %s); VACUUMed",
+            jobs_pruned, cutoff_jobs, runs_pruned, cutoff_runs,
+        )
+    else:
+        log.info(
+            "prune_old: nothing to prune (cutoffs: jobs < %s, runs < %s)",
+            cutoff_jobs, cutoff_runs,
+        )
+    return {"jobs_pruned": jobs_pruned, "runs_pruned": runs_pruned}

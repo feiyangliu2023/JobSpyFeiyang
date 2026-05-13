@@ -519,7 +519,8 @@ def ingest_external_sources(
     run_started_at: str,
     health: HealthTracker | None = None,
     broader_sink: list[dict] | None = None,
-) -> tuple[int, int]:
+    seen_urls: set[str] | None = None,
+) -> tuple[int, int, int]:
     """Pull rows from each entry in cfg['external_sources'], filter, upsert.
 
     Dispatches by the `type` field. Currently supported types:
@@ -550,12 +551,17 @@ def ingest_external_sources(
     not gated by the curated allowlist. JOBS.md / jobs.db keep using
     the allowlist-filtered `filtered` set unchanged.
 
-    Returns (total_filtered_in, total_new). Errors per-source are
-    logged and swallowed.
+    `seen_urls` is shared with the JobSpy main loop so the same job_url
+    can't be upserted twice across both pipelines. Mutated in place; new
+    URLs added as we go, duplicates skipped before `upsert_jobs`.
+
+    Returns (total_filtered_in, total_new, total_intra_run_dups).
+    Errors per-source are logged and swallowed.
     """
     sources = cfg.get("external_sources") or []
     total_filtered = 0
     total_new = 0
+    total_dups = 0
     for src in sources:
         name = (src.get("name") or "").strip()
         # `type` is the dispatch key; falls back to `name` for backward
@@ -696,6 +702,30 @@ def ingest_external_sources(
         if health is not None:
             health.record_filtered(health_key, len(filtered))
 
+        # Intra-run URL dedup — shared with the JobSpy main loop. A job
+        # URL that already came through JobSpy this run shouldn't get
+        # re-upserted by SimplifyJobs / direct just because the same
+        # posting was indexed in both upstreams.
+        if seen_urls is not None:
+            deduped = []
+            dup_this_source = 0
+            for r in filtered:
+                u = r.get("job_url")
+                if not u:
+                    deduped.append(r)
+                    continue
+                if u in seen_urls:
+                    dup_this_source += 1
+                    continue
+                seen_urls.add(u)
+                deduped.append(r)
+            if dup_this_source:
+                log.info(
+                    "  deduped %d intra-run duplicates", dup_this_source
+                )
+                total_dups += dup_this_source
+            filtered = deduped
+
         scraped, new = dbmod.upsert_jobs(
             conn, filtered, run_started_at, f"external:{name or kind}"
         )
@@ -705,7 +735,7 @@ def ingest_external_sources(
         total_new += new
         if health is not None:
             health.record_new(health_key, new)
-    return total_filtered, total_new
+    return total_filtered, total_new, total_dups
 
 
 # --------------------------------------------------------------------------- #
@@ -871,6 +901,18 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     parser.add_argument(
+        "--retention-days",
+        type=int,
+        default=180,
+        help=(
+            "How many days to keep rows with status='gone' before pruning "
+            "them and VACUUMing the DB. Runs are kept for half this window "
+            "(diagnostic-only table). Default 180 — keeps a full "
+            "half-year of trailing data without letting jobs.db grow "
+            "unboundedly inside the git repo."
+        ),
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help=(
@@ -936,6 +978,16 @@ def main(argv: list[str] | None = None) -> int:
     # got skipped (missing slices.yaml, etc.).
     slice_stats: dict[str, dict[str, int]] = {}
 
+    # Intra-run URL dedup: the same job_url legitimately surfaces in
+    # multiple (city, template, site, term) batches — e.g. Indeed's
+    # "software engineer" and "swe" terms can both return it. Without
+    # this, each dup would re-fire `upsert_jobs` and ON CONFLICT-update
+    # the row, wasting writes. Tracked across the whole run (both JobSpy
+    # and external sources) so SimplifyJobs can't re-introduce the same
+    # URL either.
+    seen_urls: set[str] = set()
+    intra_run_dups = 0
+
     try:
         linkedin_delay = _linkedin_delay_seconds()
         for search in searches:
@@ -968,6 +1020,28 @@ def main(argv: list[str] | None = None) -> int:
             for r in broader:
                 r.setdefault("region", "emea")
             broader_rows.extend(broader)
+
+            # Drop intra-run URL duplicates before upsert — see the
+            # `seen_urls` declaration above for motivation.
+            deduped: list[dict] = []
+            dup_this_loop = 0
+            for r in filtered:
+                u = r.get("job_url")
+                if not u:
+                    deduped.append(r)
+                    continue
+                if u in seen_urls:
+                    dup_this_loop += 1
+                    continue
+                seen_urls.add(u)
+                deduped.append(r)
+            if dup_this_loop:
+                log.info(
+                    "  deduped %d intra-run duplicates", dup_this_loop
+                )
+                intra_run_dups += dup_this_loop
+            filtered = deduped
+
             scraped, new = dbmod.upsert_jobs(
                 conn, filtered, run_started_at, search["name"]
             )
@@ -988,19 +1062,40 @@ def main(argv: list[str] | None = None) -> int:
         # sink so SimplifyJobs's no-allowlist EMEA + NA cut joins the
         # JobSpy EMEA rows already collected above. Slice files
         # (emea-junior-sde.md, na-junior-sde.md, …) draw from this pool.
-        ext_filtered, ext_new = ingest_external_sources(
+        # `seen_urls` is shared so the dedup pass spans both pipelines.
+        ext_filtered, ext_new, ext_dups = ingest_external_sources(
             cfg, conn, run_started_at,
             health=health,
             broader_sink=broader_rows,
+            seen_urls=seen_urls,
         )
         total_filtered_in += ext_filtered
         total_new += ext_new
+        intra_run_dups += ext_dups
+
+        if intra_run_dups:
+            log.info(
+                "intra-run URL dedup: skipped %d duplicate upserts total",
+                intra_run_dups,
+            )
 
         gone = dbmod.mark_gone(conn, run_started_at)
         log.info(
             "done: scraped=%d, filtered=%d, new=%d, marked_gone=%d",
             total_scraped, total_filtered_in, total_new, gone,
         )
+
+        # Retention prune — drop expired gone-rows and stale run
+        # diagnostics. Runs AFTER mark_gone (so rows flipped this cycle
+        # have the right `last_seen` timestamp) and BEFORE rendering /
+        # liveness (so the renderer sees the smaller post-prune set).
+        # VACUUM happens inside prune_old when anything was deleted.
+        try:
+            dbmod.prune_old(conn, args.retention_days)
+        except Exception as e:
+            # Pruning failures shouldn't fail the whole run — JOBS.md
+            # can still render from the un-pruned set.
+            log.exception("[prune] failed: %s", e)
 
         # Liveness check — catches dead apply URLs that the scrape pass
         # didn't surface (a posting can disappear from the source feed
