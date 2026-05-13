@@ -83,9 +83,15 @@ tuple. A template has:
 - `sites_skip_in_ci: [list]` — sites to drop when `GITHUB_ACTIONS` /
   `CI` env var is set. LinkedIn is the only entry by default.
 
-Per-run search counts (current config: 14 cities × 4 templates):
-- **LOCAL** mode: 612 searches (476 indeed + 56 linkedin + 52 glassdoor + 28 bayt; LinkedIn paced 5s apart)
-- **CI** mode: 476 searches — Indeed only (linkedin/glassdoor/bayt all dropped via `sites_skip_in_ci`; SimplifyJobs externals run on top)
+Per-run search counts (current config: 26 cities × 4 templates):
+- **LOCAL** mode: ~1112 searches (884 indeed + 104 linkedin + 72 glassdoor + 52 bayt; LinkedIn paced 5s apart). Wall-clock ~20-25 min end to end — LinkedIn pacing alone contributes ~9 min (104 × 5s), Indeed dominates the rest.
+- **CI** mode: 884 searches — Indeed only (linkedin/glassdoor/bayt all dropped via `sites_skip_in_ci`; SimplifyJobs externals run on top)
+
+Glassdoor count covers 18 of 26 cities. The other 8 (Sweden, Denmark,
+Norway, Finland, Poland, Czech Republic, Portugal, Israel) auto-drop
+because their `Country` enum tuple has no Glassdoor TLD entry — see
+`_glassdoor_supported`. If JobSpy adds a TLD upstream, those cities
+re-enable with no config change here.
 
 #### LinkedIn stability — env-var knobs
 
@@ -101,7 +107,7 @@ included). The combination that gives us reasonable coverage:
    from both — fixes for both are correct (PR #4) but the WAF block
    is at the network edge, so code-level changes can't help.
 2. **`LINKEDIN_PER_SEARCH_DELAY`** env var (default 5s) — sleep AFTER
-   each LinkedIn call to spread request density. 56 calls × 5s = ~5min
+   each LinkedIn call to spread request density. 104 calls × 5s ≈ 9min
    added to local wall clock.
 3. **One efficient term per template** via `site_search_terms.linkedin`.
    Cuts LinkedIn calls from `cities × templates × full_term_list` to
@@ -322,8 +328,9 @@ Wired through `run.py` via:
 - **Glassdoor location format quirk** — fixed. `run_search` strips
   `"City, Country"` to `"City"` only when calling Glassdoor; other
   sites still get the full string. The `_glassdoor_supported` check
-  also drops cities whose country has no Glassdoor TLD (Sweden, Norway,
-  Finland, Denmark) — those get auto-skipped per-city in `expand_searches`.
+  also drops cities whose country has no Glassdoor TLD (currently
+  Sweden, Denmark, Norway, Finland, Poland, Czech Republic, Portugal,
+  Israel) — those get auto-skipped per-city in `expand_searches`.
 - **EMEA postings are often bilingual or non-English.** We rely on the fact
   that seniority terms in titles are usually English even at non-English
   companies. Substring filters work most of the time. Don't try to localize.

@@ -9,7 +9,12 @@
 # Edit `cities`, `role_templates`, and `filters` to retune. Keep this YAML —
 # `monitor/run.py` reads it at every run.
 
+# Glassdoor auto-drops per-city for countries whose JobSpy `Country` enum
+# tuple is only 2 elements (no Glassdoor TLD). Currently affects: Sweden,
+# Denmark, Norway, Finland, Poland, Czech Republic, Portugal, Israel.
+# See `_glassdoor_supported` in monitor/run.py.
 cities:
+  # ---- UK ----
   - name: london
     location: "London, United Kingdom"
     country_indeed: uk
@@ -19,15 +24,35 @@ cities:
   - name: cambridge_uk
     location: "Cambridge, United Kingdom"
     country_indeed: uk
+  - name: oxford
+    location: "Oxford, United Kingdom"
+    country_indeed: uk
+  - name: bristol
+    # HP, Graphcore, Toshiba have engineering presence here.
+    location: "Bristol, United Kingdom"
+    country_indeed: uk
   - name: manchester
     location: "Manchester, United Kingdom"
     country_indeed: uk
+
+  # ---- Ireland ----
   - name: dublin
     location: "Dublin, Ireland"
     country_indeed: ireland
+
+  # ---- Netherlands ----
   - name: amsterdam
     location: "Amsterdam, Netherlands"
     country_indeed: netherlands
+  - name: rotterdam
+    location: "Rotterdam, Netherlands"
+    country_indeed: netherlands
+  - name: eindhoven
+    # ASML hub.
+    location: "Eindhoven, Netherlands"
+    country_indeed: netherlands
+
+  # ---- DACH ----
   - name: berlin
     location: "Berlin, Germany"
     country_indeed: germany
@@ -37,21 +62,58 @@ cities:
   - name: zurich
     location: "Zurich, Switzerland"
     country_indeed: switzerland
+  - name: vienna
+    location: "Vienna, Austria"
+    country_indeed: austria
+
+  # ---- France / Iberia / Italy ----
   - name: paris
     location: "Paris, France"
     country_indeed: france
-  - name: stockholm
-    location: "Stockholm, Sweden"
-    country_indeed: sweden
+  - name: milan
+    location: "Milan, Italy"
+    country_indeed: italy
   - name: madrid
     location: "Madrid, Spain"
     country_indeed: spain
   - name: barcelona
     location: "Barcelona, Spain"
     country_indeed: spain
-  - name: vienna
-    location: "Vienna, Austria"
-    country_indeed: austria
+  - name: lisbon
+    # Glassdoor auto-skipped (no .pt TLD).
+    location: "Lisbon, Portugal"
+    country_indeed: portugal
+
+  # ---- CEE ----
+  - name: warsaw
+    # Glassdoor auto-skipped (no .pl TLD).
+    location: "Warsaw, Poland"
+    country_indeed: poland
+  - name: prague
+    # Glassdoor auto-skipped (no .cz TLD).
+    location: "Prague, Czech Republic"
+    country_indeed: "czech republic"
+
+  # ---- Nordics ----  (Glassdoor auto-skipped for all four — no TLDs)
+  - name: stockholm
+    location: "Stockholm, Sweden"
+    country_indeed: sweden
+  - name: copenhagen
+    location: "Copenhagen, Denmark"
+    country_indeed: denmark
+  - name: oslo
+    location: "Oslo, Norway"
+    country_indeed: norway
+  - name: helsinki
+    location: "Helsinki, Finland"
+    country_indeed: finland
+
+  # ---- Israel ----
+  - name: tel_aviv
+    # Glassdoor auto-skipped (no .il TLD). Bayt covers broader Middle
+    # East for junior SDE so we don't add other ME cities here.
+    location: "Tel Aviv, Israel"
+    country_indeed: israel
 
 # NOTE: Glassdoor was previously included but its location-resolution endpoint
 # 400's on every "City, Country" string we tried, and Indeed already covers
