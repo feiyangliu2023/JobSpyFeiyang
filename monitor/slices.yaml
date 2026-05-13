@@ -27,6 +27,13 @@
 # Sort: every section is first_seen DESC. No score-based sort.
 
 slices:
+  # ---- SDE slices ----
+  # title_keywords_any opts into the SDE-shaped surface, including the
+  # infra-adjacent titles ("platform engineer", "infrastructure engineer",
+  # "systems engineer") added to the global include in config.yaml. The
+  # global include is a gate, not a router — each slice still has to
+  # name the tokens it wants. Without these here, infra titles would
+  # only show up in JOBS.md, not in the dedicated SDE view.
   - name: emea_junior_sde
     filename: emea-junior-sde.md
     title: "EMEA Junior SDE Roles"
@@ -39,6 +46,9 @@ slices:
         - backend
         - sde
         - swe
+        - platform engineer
+        - infrastructure engineer
+        - systems engineer
       title_keywords_none:
         - senior
         - staff
@@ -46,6 +56,13 @@ slices:
         - principal
       kinds: [newgrad, intern]
 
+  # ---- MLE / Applied Scientist slices ----
+  # "research engineer" is in title_keywords_any here even though the
+  # token is *also* globally allowed (see config.yaml: it was removed
+  # from exclude_titles to surface Anthropic / Cohere / Mistral RE roles
+  # accessible to strong master's candidates). The SDE / quant slices
+  # don't match RE titles because their title_keywords_any names different
+  # tokens — so RE roles land here and in JOBS.md only.
   - name: emea_junior_mle
     filename: emea-junior-mle.md
     title: "EMEA Junior ML Engineer / Applied Scientist Roles"
@@ -58,6 +75,7 @@ slices:
         - applied scientist
         - ai engineer
         - data scientist
+        - research engineer
       title_keywords_none:
         - senior
         - staff
@@ -76,6 +94,9 @@ slices:
         - backend
         - sde
         - swe
+        - platform engineer
+        - infrastructure engineer
+        - systems engineer
       title_keywords_none:
         - senior
         - staff
@@ -95,25 +116,27 @@ slices:
         - applied scientist
         - ai engineer
         - data scientist
+        - research engineer
       title_keywords_none:
         - senior
         - staff
         - lead
       kinds: [newgrad, intern]
 
+  # ---- Internship slices ----
+  # title_keywords_any is intentionally absent. The active-rows pool that
+  # feeds slices has already been gated by the global include_title_keywords
+  # and min_description_chars filters in config.yaml, so we get a curated
+  # tech-shaped surface here without a slice-local title positive list.
+  # Dropping it widens the net to e.g. "summer analyst", "graduate
+  # intern", non-English intern titles, etc. title_keywords_none stays
+  # on as a safety net for the rare senior-prefixed intern title.
   - name: emea_intern_only
     filename: emea-internships.md
     title: "EMEA Internships"
     index_label: "Internships"
     filters:
       regions: [emea]
-      title_keywords_any:
-        - software
-        - engineer
-        - developer
-        - scientist
-        - machine learning
-        - ai
       title_keywords_none:
         - senior
         - staff
@@ -127,13 +150,6 @@ slices:
     index_label: "Internships"
     filters:
       regions: [north_america]
-      title_keywords_any:
-        - software
-        - engineer
-        - developer
-        - scientist
-        - machine learning
-        - ai
       title_keywords_none:
         - senior
         - staff

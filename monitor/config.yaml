@@ -294,13 +294,16 @@ filters:
     # II" / "Research Scientist, Foo" both match while a hypothetical
     # "Junior Research Scientist Assistant" still drops too (substring).
     - "research scientist"
-    # "Research Engineer" / "Research Software Engineer" titles ride
-    # the same PhD-track even at FAANG (Google Research SWE, Mistral
-    # Research Engineer, Citadel Quant Research Engineer). Drop the
-    # whole "research <engineer>" surface — substring match handles
-    # "AI Research Engineer", "Quantitative Research Engineer", etc.
-    - "research engineer"
+    # "Research Software Engineer" titles are PhD-track at Google
+    # Research / Microsoft Research / etc — keep excluded.
     - "research software"
+    # NOTE: "research engineer" was previously here but has been LIFTED
+    # globally so that Anthropic / Cohere / Mistral RE roles (some of
+    # which are accessible to strong master's candidates) can surface.
+    # Per-slice handling: emea_junior_mle / na_junior_mle add
+    # "research engineer" to their title_keywords_any so RE roles show
+    # up there; the SDE / quant slices key on different tokens and
+    # therefore won't match RE titles by accident.
 
   # POSITIVE filter — keep only titles that contain AT LEAST ONE of these
   # tokens (case-insensitive substring on the same space-padded title).
@@ -320,6 +323,20 @@ filters:
     - "data scientist"
     - "ai engineer"
     - "ml engineer"
+    # Infra-adjacent SDE titles. "platform engineer" and "infrastructure
+    # engineer" are tightly scoped. "systems engineer" is broader — it
+    # catches "ML Systems Engineer" / "Distributed Systems Engineer"
+    # (the wanted surface) but also industrial/electrical/aerospace
+    # "Systems Engineer" titles; the company allowlist downstream
+    # filters most of those out, and the SDE slice in slices.yaml
+    # opts into these tokens explicitly.
+    - "platform engineer"
+    - "infrastructure engineer"
+    - "systems engineer"
+    # "research engineer" — allowed globally (see exclude_titles note
+    # above). Anthropic / Cohere / Mistral RE roles surface in
+    # emea_junior_mle / na_junior_mle slices.
+    - "research engineer"
 
   # How `include_companies` is applied:
   #   enforce — drop any row whose company doesn't match a token on the list.
