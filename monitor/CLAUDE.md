@@ -295,30 +295,85 @@ All feeds share the same `mark_gone` pass — SimplifyJobs rows whose
 `active=false` upstream simply don't get re-ingested, so they age out via
 the same mechanism.
 
-### Two layers of dedup
+`upsert_jobs` uses SQLite's `INSERT ... ON CONFLICT(job_url) DO UPDATE
+SET ...` (UPSERT, available since SQLite 3.24). One statement per row,
+no per-row `SELECT` check. The UPDATE branch keeps the same COALESCE
+behavior as the previous if/else version — existing non-null values
+win over null incoming values, so an Indeed re-scrape that returns
+`description=None` doesn't clobber a SimplifyJobs description from a
+prior run. The statement uses `RETURNING first_seen` so the caller can
+still distinguish a fresh INSERT from a refresh (first_seen ==
+run_started_at iff inserted).
+
+### Three layers of dedup
 
 1. **Same-source / multi-run dedup** — the `job_url` PK. Re-running the
    monitor against unchanged upstream data refreshes `last_seen` instead
    of inserting duplicates. This is sqlite-level and automatic.
 
-2. **Cross-source dedup** — the `signature` column, computed by
+2. **Intra-run URL dedup** — `run.py` maintains a per-run `seen_urls`
+   set shared across the JobSpy main loop AND `ingest_external_sources`.
+   The same `job_url` legitimately surfaces in multiple `(city,
+   template, site, term)` batches (e.g. Indeed's "software engineer"
+   and "swe" terms can both return the same posting); without this, each
+   dup re-fires `upsert_jobs` and wastes ON CONFLICT-update writes.
+   Skipped rows are logged as `deduped N intra-run duplicates` and the
+   end-of-run summary reports the total.
+
+3. **Cross-source dedup** — the `signature` column, computed by
    `db.compute_signature` from a normalized `(company, title, first
-   location city)` tuple. Title normalization strips year tokens (2026),
-   seniority words (junior, new grad, graduate, etc.), and parenthetical
-   suffixes ("(All Genders)", "(f/m/x)") so the same Apple London role
-   produces the same signature whether it came from Indeed or SimplifyJobs.
-   The signature is stored on every row but the dedup itself happens at
-   render time (`render_md._dedupe_by_signature`) so we keep multi-source
-   provenance in the DB. When duplicates exist the renderer prefers the
-   higher-priority source — SimplifyJobs first (direct apply URLs),
-   then LinkedIn, then Indeed (Indeed is usually a referral chain).
+   location city, region)` tuple. Title normalization strips year tokens
+   (2026), seniority words (junior, new grad, graduate, etc.), and
+   parenthetical suffixes ("(All Genders)", "(f/m/x)") so the same Apple
+   London role produces the same signature whether it came from Indeed
+   or SimplifyJobs. The `region` component (added 2026-05) disambiguates
+   Cambridge UK from Cambridge MA — the first-city normaliser alone
+   collapses both to `"cambridge"`, but they're clearly different roles;
+   `region` is the suffix-biased location classifier's result from
+   `external/locations.py`. The signature is stored on every row but
+   the dedup is applied at two places:
+   - **Notify-time** (`db.fetch_new_since`) — collapses duplicate roles
+     in the ntfy digest so the user gets one entry per role even when
+     it surfaced via SimplifyJobs AND `direct:anthropic` in the same
+     run. Prefers the higher-priority source per
+     `render_md._SOURCE_PRIORITY` / `_DIRECT_PREFIX` (direct:* wins).
+   - **Render-time** (`render_md._dedupe_by_signature`) — same logic
+     for the rendered tables; rows with the same signature collapse to
+     the highest-priority source. Operates within a (region, tier) bucket.
 
 Columns added after the original schema (salary, company_url, is_remote,
 region, source_category, signature) live in `_MIGRATIONS`; `setup_db`
 runs `ALTER TABLE ADD COLUMN` statements wrapped in try/except so older
-DBs upgrade in place. Two backfills run on every startup (cheap, only
-touch `WHERE x IS NULL` rows): legacy region rows → 'emea', legacy
-signature rows → computed from existing fields.
+DBs upgrade in place. On every startup `setup_db` runs two cheap
+backfills: legacy region rows → 'emea', and an unconditional signature
+recompute for every row (the format evolved when `region` was added; we
+recompute rather than maintain a schema_version table just for this).
+
+### Retention (--retention-days, default 180)
+
+`db.prune_old(conn, retention_days)` runs once per run, called from
+`run.py` AFTER `mark_gone` and BEFORE the render step. Two deletes plus
+a VACUUM so the on-disk file actually shrinks (without VACUUM, SQLite
+keeps freed pages around for reuse and the file size never drops — that's
+why ~10 consecutive `chore(monitor): refresh` commits were dominating
+.git size growth):
+
+  - `jobs`: drop rows where `status='gone' AND last_seen < (now -
+    retention_days)`. Active rows are NEVER pruned — they still appear
+    in JOBS.md and the renderer needs them.
+  - `runs`: drop rows where `started_at < (now - retention_days // 2)`.
+    The runs table is purely diagnostic, so we keep half the window;
+    recent-run debugging still works without bloating the DB.
+
+VACUUM only runs when something was deleted (no point shuffling pages
+on a no-op run). Logs counts pruned per table at INFO. Pruning failures
+are swallowed — JOBS.md can still render from the un-pruned set if
+prune blows up, so we don't fail the whole run.
+
+The `--retention-days` argparse flag is the only knob. Default 180 days
+keeps a full half-year of trailing data, which matches how often we see
+roles come back under the same URL (rarely beyond ~3 months). Lower it
+locally if you want to inspect prune behavior on a fresh DB.
 
 ## JOBS.md (rendered table)
 
@@ -517,14 +572,16 @@ Toggles:
 - `config.yaml`      — search spec (cities, templates, filters, external_sources)
 - `run.py`           — entry point: `python -m monitor.run`
 - `db.py`            — sqlite3 helpers (`setup_db`, `upsert_jobs`, `mark_gone`,
-                      `record_run`, `fetch_new_since`, `fetch_active`)
+                      `record_run`, `fetch_new_since`, `fetch_active`, `prune_old`)
 - `health.py`        — per-source HealthTracker + SourceStats + classification
 - `notify.py`        — ntfy.sh JSON POST + digest body builder + health alert
 - `render_md.py`     — JOBS.md generator (Region × Tier grid + table render)
 - `external/`        — non-JobSpy ingestion modules
    `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
    `external/locations.py` — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.
-- `requirements.txt` — pyyaml + requests (JobSpy is editable-installed)
+- `tests/`           — pytest suite for `db.py` (signature edge cases, upsert,
+                      prune). Run with `python -m pytest monitor/tests/`.
+- `requirements.txt` — pyyaml + requests + pytest (JobSpy is editable-installed)
 - `jobs.db`          — committed SQLite state (do NOT gitignore)
 - `logs/`            — per-run log files (gitignored, uploaded as artifact on CI failure)
 

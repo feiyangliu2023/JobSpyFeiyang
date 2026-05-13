@@ -2,3 +2,6 @@
 # directory (`pip install -e ..`), which pulls in pandas/requests/etc.
 pyyaml>=6.0
 requests>=2.31.0
+
+# Test runner. Run with: `python -m pytest monitor/tests/`
+pytest>=8.0
