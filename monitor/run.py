@@ -525,12 +525,19 @@ def ingest_external_sources(
     Dispatches by the `type` field. Currently supported types:
       - `simplify_newgrad`  → SimplifyJobs/New-Grad-Positions listings.json
       - `simplify_intern`   → SimplifyJobs/Summer2026-Internships listings.json
+      - `direct`            → per-company scraper in monitor/external/direct/.
+                              Requires `module: <name>` (loaded as
+                              `monitor.external.direct.<name>`, must export
+                              `fetch_listings() -> list[dict]`).
 
-    Both share the SimplifyJobs schema and the same fetch/map module.
+    Both SimplifyJobs sources share the same fetch/map module. `direct`
+    sources are one tiny module per company; see
+    `monitor/external/direct/README.md` for the pattern.
+
     Region is auto-classified per listing (a London role lands in EMEA
-    regardless of repo). `allowed_regions` (set) lets a source ingest
-    only certain regions — typical config: `[emea, north_america]` to
-    drop APAC entirely.
+    regardless of where the source feed sits geographically).
+    `allowed_regions` (set) lets a source ingest only certain regions —
+    typical config: `[emea, north_america]` to drop APAC entirely.
 
     `skip_filters` lets a source opt out of individual filter blocks
     (e.g. `include_companies` because SimplifyJobs is curated and we
@@ -592,6 +599,48 @@ def ingest_external_sources(
                     default_region=default_region,
                     allowed_regions=allowed,
                 )
+            elif kind == "direct":
+                # Per-company careers-page scraper. `module` names a file
+                # under monitor/external/direct/; that module must export
+                # `fetch_listings() -> list[dict]` returning rows already in
+                # jobs.db shape (use the helpers in direct/__init__.py).
+                import importlib
+
+                module_name = (src.get("module") or "").strip()
+                if not module_name:
+                    log.warning(
+                        "direct source %r missing `module:` field; skipping",
+                        name,
+                    )
+                    if health is not None:
+                        health.record_error(
+                            health_key, ValueError("missing module")
+                        )
+                    continue
+                try:
+                    direct_mod = importlib.import_module(
+                        f"monitor.external.direct.{module_name}"
+                    )
+                except Exception as e:
+                    log.exception(
+                        "failed to import direct module %r: %s",
+                        module_name, e,
+                    )
+                    if health is not None:
+                        health.record_error(health_key, e)
+                    continue
+                rows = direct_mod.fetch_listings()
+                # Region filter mirrors simplify.to_rows. Rows already
+                # have `region` set by make_row(); just drop anything
+                # outside the allowlist.
+                if allowed is not None:
+                    before = len(rows)
+                    rows = [r for r in rows if r.get("region") in allowed]
+                    if before != len(rows):
+                        log.info(
+                            "  direct.%s: dropped %d rows outside allowed_regions",
+                            module_name, before - len(rows),
+                        )
             else:
                 log.warning(
                     "unknown external source type %r (name=%r) — skipping",
@@ -625,7 +674,7 @@ def ingest_external_sources(
         # We never write these to jobs.db — pure render input.
         if (
             broader_sink is not None
-            and kind in ("simplify_newgrad", "simplify_intern")
+            and kind in ("simplify_newgrad", "simplify_intern", "direct")
         ):
             broader_skip = set(skip) | {"include_companies"}
             broader = apply_filters(rows, cfg["filters"], skip=broader_skip)

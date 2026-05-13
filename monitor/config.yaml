@@ -603,6 +603,11 @@ filters:
 # Supported types:
 #   - simplify_newgrad → SimplifyJobs/New-Grad-Positions listings.json
 #   - simplify_intern  → SimplifyJobs/Summer2026-Internships listings.json
+#   - direct           → per-company careers-page scraper, picks up the
+#                        `module:` field as monitor/external/direct/<module>.py.
+#                        See monitor/external/direct/README.md for the
+#                        Greenhouse / Ashby pattern and the cheat sheet
+#                        for adding the next tier-1 company.
 external_sources:
   - name: simplify_newgrad
     type: simplify_newgrad
@@ -640,3 +645,37 @@ external_sources:
     allowed_regions: [emea, north_america]
     skip_filters:
       - min_description_chars
+
+  # ---- Direct careers-page scrapers (tier-1 targets) ----
+  #
+  # One HTTP request per company per run; refreshes within hours of a
+  # new posting going live instead of waiting for SimplifyJobs's
+  # curation lag. Dedup at render time prefers `direct:*` rows over
+  # simplify_* over JobSpy (see _SOURCE_PRIORITY in render_md.py).
+  #
+  # `min_description_chars` is skipped per-source because:
+  #   - Greenhouse's `/jobs` endpoint omits descriptions by default
+  #     (would need `?content=true` and a much larger response).
+  #   - Ashby's `descriptionPlain` IS returned, but skipping the gate
+  #     keeps behaviour uniform across direct scrapers.
+  - name: direct_anthropic
+    type: direct
+    module: anthropic
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: direct_openai
+    type: direct
+    module: openai
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  # DeepMind is on the allowlist but Google Careers can't be scraped
+  # without a headless browser, so there's NO `direct_deepmind` entry
+  # here on purpose — see `monitor/external/direct/deepmind.py` for the
+  # rationale + the two working fallback channels (SimplifyJobs + JobSpy
+  # with the "google deepmind" allowlist synonym). Registering a no-op
+  # source would trip the SILENT health flag on every run and push a
+  # noise ntfy alert; leaving it unregistered keeps the report clean.
