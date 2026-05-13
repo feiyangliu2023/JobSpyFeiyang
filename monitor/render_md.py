@@ -304,9 +304,20 @@ def _sort_key(r: dict) -> tuple[str, str]:
 
 # Source priority for cross-source dedup. Lower index = preferred when
 # the same posting (same signature) appears in multiple sources.
-# SimplifyJobs entries usually point at the company's direct apply URL
-# (jobs.apple.com, careers.microsoft.com); JobSpy/Indeed entries are
-# referrals through indeed.com / linkedin.com — direct is better.
+#
+# Ordering rationale, best → worst:
+#   1. `direct:*` — scraped straight off the company's ATS feed
+#      (Greenhouse / Ashby / Lever / etc). Zero aggregator lag, direct
+#      apply URL, machine-readable. See `monitor/external/direct/`.
+#   2. SimplifyJobs feeds — hand-curated by the upstream maintainers,
+#      usually link to the company's direct apply URL too, but with
+#      hours-to-days of human latency.
+#   3. JobSpy scrapers — referrals through indeed.com / linkedin.com /
+#      glassdoor.com (Indeed in particular is often a redirect chain).
+#
+# `direct:*` is matched as a PREFIX in `_source_rank` since the site
+# label encodes the company name (`direct:anthropic`, `direct:openai`).
+_DIRECT_PREFIX = "direct:"
 _SOURCE_PRIORITY = [
     "simplify_newgrad",
     "simplify_intern",
@@ -320,12 +331,17 @@ _SOURCE_PRIORITY = [
 
 def _source_rank(site: str | None) -> int:
     if not site:
-        return len(_SOURCE_PRIORITY) + 1
+        return len(_SOURCE_PRIORITY) + 2
     s = site.lower()
+    # `direct:*` always wins — promoted ABOVE everything in _SOURCE_PRIORITY
+    # by returning -1. The bare prefix with nothing after it gets ranked
+    # at the end (treat as unknown) so a malformed label doesn't sneak past.
+    if s.startswith(_DIRECT_PREFIX) and len(s) > len(_DIRECT_PREFIX):
+        return -1
     for i, name in enumerate(_SOURCE_PRIORITY):
         if s == name:
             return i
-    return len(_SOURCE_PRIORITY)
+    return len(_SOURCE_PRIORITY) + 1
 
 
 def _dedupe_by_signature(rows: list[dict]) -> tuple[list[dict], int]:
