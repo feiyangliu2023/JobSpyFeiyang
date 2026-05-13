@@ -800,8 +800,9 @@ def render_slice(
         f"Last updated: **{now_str}** · **{len(deduped)}** active roles · "
         f"[last 24h](#new-24h) ({len(last_24h)}) · "
         f"[last 7 days](#new-7d) ({len(last_7d)}){dedup_note}. "
-        "Generated from `monitor/jobs.db` after the latest scrape — see "
-        "[monitor/](monitor/) for how this works."
+        "Comprehensive view — every role that passes the title/desc "
+        "filters, allowlist gate dropped. See "
+        "[JOBS.md](JOBS.md) for the curated allowlist-gated table."
     )
     out.append("")
     out.append("---")
@@ -852,6 +853,20 @@ def render_slice(
 
     while out and out[-1] in ("", "---"):
         out.pop()
+
+    # Footer — make the comprehensive-view contract explicit at the bottom
+    # of every slice file so a reader who lands here from INDEX.md / a
+    # bookmark / a search engine understands why the row count is larger
+    # than JOBS.md's. Distinct from the header blurb so it's visible
+    # without scrolling back up after browsing a long table.
+    out.append("")
+    out.append("---")
+    out.append("")
+    out.append(
+        "_Comprehensive view — includes all companies, not just the "
+        "curated allowlist. See [JOBS.md](JOBS.md) for the "
+        "allowlist-gated version._"
+    )
     out.append("")
 
     # Liveness summary for INDEX.md — `last_liveness_sweep` is the most

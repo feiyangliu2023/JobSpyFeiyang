@@ -10,9 +10,13 @@
 #   ## All active
 #     ### FAANG+ & AI Labs / Quant & Finance / Other
 #
-# Slices draw from the currently-active rows in jobs.db, so the global
-# filters/allowlist that built JOBS.md already apply. Each slice's own
-# `filters` block then narrows that pool further.
+# Slices draw from the BROADER pool — every row that passes the global
+# title/desc/min_description filters from monitor/config.yaml, but with
+# the `include_companies` allowlist dropped. So a London Klarna or
+# Berlin Vinted SDE role surfaces here even though those companies
+# aren't on JOBS.md's allowlist. Each slice's own `filters` block then
+# narrows that pool further by region / title keywords / kind.
+# (JOBS.md continues to use the curated allowlist-gated set.)
 #
 # Filter fields (all optional — omit to disable the gate):
 #   regions: [emea, north_america]   — row.region must be in this set

@@ -518,7 +518,7 @@ def ingest_external_sources(
     conn,
     run_started_at: str,
     health: HealthTracker | None = None,
-    broader_emea_sink: list[dict] | None = None,
+    broader_sink: list[dict] | None = None,
 ) -> tuple[int, int]:
     """Pull rows from each entry in cfg['external_sources'], filter, upsert.
 
@@ -535,6 +535,13 @@ def ingest_external_sources(
     `skip_filters` lets a source opt out of individual filter blocks
     (e.g. `include_companies` because SimplifyJobs is curated and we
     don't want our EMEA-tuned allowlist to gate it).
+
+    `broader_sink` collects rows that pass title/desc filters but skip
+    the `include_companies` allowlist — all regions, region-tagged on
+    the rows themselves. These feed the comprehensive slice files
+    (emea-junior-sde.md, na-junior-sde.md, etc.) which are explicitly
+    not gated by the curated allowlist. JOBS.md / jobs.db keep using
+    the allowlist-filtered `filtered` set unchanged.
 
     Returns (total_filtered_in, total_new). Errors per-source are
     logged and swallowed.
@@ -605,19 +612,19 @@ def ingest_external_sources(
 
         filtered = apply_filters(rows, cfg["filters"], skip=skip)
 
-        # Broader EMEA-entry-level view (no company allowlist gate). The
-        # SimplifyJobs feeds are intrinsically intern + new-grad upstream,
-        # so a region=emea cut + the title/desc filters yields a usable
-        # wide-net feed. We never write these to jobs.db — pure render input.
+        # Broader view (no company allowlist gate). The SimplifyJobs feeds
+        # are intrinsically intern + new-grad upstream, so applying just
+        # the title/desc filters yields a usable wide-net feed across BOTH
+        # EMEA and NA — region tagging is preserved on each row so slice
+        # files (regions: [emea] / [north_america]) narrow correctly.
+        # We never write these to jobs.db — pure render input.
         if (
-            broader_emea_sink is not None
+            broader_sink is not None
             and kind in ("simplify_newgrad", "simplify_intern")
         ):
             broader_skip = set(skip) | {"include_companies"}
             broader = apply_filters(rows, cfg["filters"], skip=broader_skip)
-            broader_emea_sink.extend(
-                r for r in broader if (r.get("region") or "").lower() == "emea"
-            )
+            broader_sink.extend(broader)
 
         # Per-region row counts so we can see EMEA contribution at a glance
         by_region: dict[str, int] = {}
@@ -645,6 +652,87 @@ def ingest_external_sources(
         if health is not None:
             health.record_new(health_key, new)
     return total_filtered, total_new
+
+
+# --------------------------------------------------------------------------- #
+# Broader-pool DB enrichment (slice + emea-entry-level rendering)
+# --------------------------------------------------------------------------- #
+
+
+def _enrich_broader_rows_from_db(
+    conn, broader_rows: list[dict], run_started_at: str
+) -> None:
+    """In-place: copy DB-tracked fields onto broader rows that exist in jobs.db.
+
+    The broader pool is a superset of jobs.db — allowlisted rows live in
+    both, off-allowlist rows live only in memory. For the rendered slice
+    views we want `first_seen` (drives the 24h / 7d freshness buckets)
+    and the `liveness_*` columns (drive the "(?)" markers and 404 drop
+    logic) consistent with JOBS.md.
+
+    Behavior per row:
+      - DB hit by job_url → copy first_seen / last_seen / liveness_* if
+        the DB has a non-NULL value. We don't overwrite an existing
+        in-memory value (preserves anything the caller set deliberately).
+      - DB miss → off-allowlist row that never gets persisted. Use the
+        row's own `date_posted` as a fallback `first_seen` so freshness
+        buckets reflect the upstream posting date (good for SimplifyJobs
+        rows where date_posted is reliable). When date_posted is missing
+        (some JobSpy returns), fall back to `run_started_at` — but that
+        means the same role will keep showing as "new" each run. Liveness
+        stays NULL → rendered as "(?)".
+
+    Batched in chunks of 500 to stay under SQLite's default
+    SQLITE_MAX_VARIABLE_NUMBER (999) limit on parameterized IN-lists.
+    """
+    if not broader_rows:
+        return
+    urls = [r.get("job_url") for r in broader_rows if r.get("job_url")]
+    by_url: dict[str, dict] = {}
+    chunk = 500
+    for i in range(0, len(urls), chunk):
+        batch = urls[i:i + chunk]
+        placeholders = ",".join("?" * len(batch))
+        cur = conn.execute(
+            f"SELECT job_url, first_seen, last_seen, "
+            f"       liveness_status, liveness_checked_at, liveness_status_code "
+            f"  FROM jobs WHERE job_url IN ({placeholders})",
+            batch,
+        )
+        for row in cur.fetchall():
+            by_url[row["job_url"]] = dict(row)
+
+    enrich_keys = (
+        "first_seen", "last_seen",
+        "liveness_status", "liveness_checked_at", "liveness_status_code",
+    )
+    n_enriched = 0
+    n_fresh = 0
+    for r in broader_rows:
+        u = r.get("job_url")
+        db_row = by_url.get(u) if u else None
+        if db_row:
+            for k in enrich_keys:
+                v = db_row.get(k)
+                if v is not None and r.get(k) is None:
+                    r[k] = v
+            n_enriched += 1
+        else:
+            # Off-allowlist row: never upserted, so no DB-tracked
+            # first_seen. Use upstream date_posted when available so the
+            # 24h / 7d buckets reflect the real posting date rather than
+            # always tagging "new this run". JobSpy may emit None /
+            # date-only strings; both parse fine via datetime.fromisoformat
+            # in render_md._parse_iso.
+            fallback = r.get("date_posted") or run_started_at
+            r.setdefault("first_seen", fallback)
+            r.setdefault("last_seen", run_started_at)
+            n_fresh += 1
+    log.info(
+        "[broader] enriched %d rows from jobs.db; %d off-allowlist rows "
+        "treated as fresh-this-run",
+        n_enriched, n_fresh,
+    )
 
 
 # --------------------------------------------------------------------------- #
@@ -781,11 +869,13 @@ def main(argv: list[str] | None = None) -> int:
     total_filtered_in = 0
     total_new = 0
 
-    # Broader EMEA-entry-level view: rows that pass title/desc filters but
-    # NOT the company allowlist. Aggregated across both pipelines (JobSpy +
-    # SimplifyJobs); rendered to a parallel markdown file at end of run.
-    # Never written to jobs.db — purely a presentation feed.
-    broader_emea_rows: list[dict] = []
+    # Broader view: rows that pass title/desc filters but NOT the company
+    # allowlist, region-tagged on each row. Aggregated across both
+    # pipelines (JobSpy EMEA + SimplifyJobs EMEA/NA); fed to slice files
+    # AND emea-entry-level.md. Never written to jobs.db — purely a
+    # presentation feed. JOBS.md continues to render the curated/allowlist
+    # set out of jobs.db.
+    broader_rows: list[dict] = []
 
     # Populated only when render_slices runs. Declared up front so the
     # dry-run summary line can read it safely even if slice rendering
@@ -815,15 +905,15 @@ def main(argv: list[str] | None = None) -> int:
             total_scraped += len(rows)
             total_filtered_in += len(filtered)
 
-            # Broader EMEA capture — same row set, but skip the company
-            # allowlist. JobSpy's `region` isn't set on raw rows (only on
-            # the curated `filtered` list above), so tag here too.
+            # Broader capture — same row set, but skip the company
+            # allowlist. JobSpy is the EMEA pipeline; tag region here
+            # since `apply_filters` doesn't set it on raw rows.
             broader = apply_filters(
                 rows, cfg["filters"], skip={"include_companies"}
             )
             for r in broader:
                 r.setdefault("region", "emea")
-            broader_emea_rows.extend(broader)
+            broader_rows.extend(broader)
             scraped, new = dbmod.upsert_jobs(
                 conn, filtered, run_started_at, search["name"]
             )
@@ -841,12 +931,13 @@ def main(argv: list[str] | None = None) -> int:
 
         # External sources (SimplifyJobs etc.) — runs after the JobSpy
         # loop so mark_gone treats both feeds uniformly. Pass the broader
-        # sink so SimplifyJobs's no-allowlist EMEA cut joins the JobSpy
-        # rows already collected above for emea-entry-level.md.
+        # sink so SimplifyJobs's no-allowlist EMEA + NA cut joins the
+        # JobSpy EMEA rows already collected above. Slice files
+        # (emea-junior-sde.md, na-junior-sde.md, …) draw from this pool.
         ext_filtered, ext_new = ingest_external_sources(
             cfg, conn, run_started_at,
             health=health,
-            broader_emea_sink=broader_emea_rows,
+            broader_sink=broader_rows,
         )
         total_filtered_in += ext_filtered
         total_new += ext_new
@@ -912,14 +1003,24 @@ def main(argv: list[str] | None = None) -> int:
         n_rendered = render_md_mod.render_md(active, args.md)
         log.info("rendered %d active jobs to %s", n_rendered, args.md)
 
-        # Broader EMEA entry-level view. Signatures aren't auto-computed
-        # for rows that never hit upsert_jobs, so backfill them here so
-        # the renderer's cross-source dedup helper works the same way.
-        for r in broader_emea_rows:
+        # Broader pool prep — same set drives emea-entry-level.md AND
+        # all slice files. Two cleanup passes:
+        #   1. Signatures: rows that never hit upsert_jobs lack a
+        #      precomputed signature, so the renderer's dedup helper
+        #      would treat duplicates as distinct. Backfill here.
+        #   2. DB enrichment: where a broader row IS also in jobs.db
+        #      (i.e. an allowlisted row), copy `first_seen` and the
+        #      liveness fields onto the in-memory row so freshness
+        #      buckets + "(?)" markers match JOBS.md exactly. Off-
+        #      allowlist rows get first_seen=this run (treated as
+        #      freshly surfaced) and NULL liveness (rendered "(?)").
+        for r in broader_rows:
             if not r.get("signature"):
                 r["signature"] = dbmod.compute_signature(r)
+        _enrich_broader_rows_from_db(conn, broader_rows, run_started_at)
+
         n_emea = render_md_mod.render_emea_entry_level(
-            broader_emea_rows, args.md_emea_entry_level
+            broader_rows, args.md_emea_entry_level
         )
         log.info(
             "rendered %d EMEA entry-level rows to %s",
@@ -928,15 +1029,18 @@ def main(argv: list[str] | None = None) -> int:
 
         # Slice files — named, filtered views (EMEA junior SDE, NA interns,
         # quant, etc.). Additive to JOBS.md / emea-entry-level.md; driven
-        # by slices.yaml so non-code edits can add a new view. After the
-        # slices write, INDEX.md links them all with current counts.
+        # by slices.yaml so non-code edits can add a new view. Slices feed
+        # from the BROADER pool (no allowlist gate) so a London Klarna or
+        # Berlin Vinted role surfaces even though those companies aren't
+        # in `include_companies`. JOBS.md still uses the curated set above.
+        # After the slices write, INDEX.md links them all with current counts.
         slices_path = Path(args.slices_config)
         if slices_path.exists():
             try:
                 with open(slices_path, "r", encoding="utf-8") as f:
                     slices_cfg = yaml.safe_load(f) or {}
                 slice_stats = render_md_mod.render_slices(
-                    active, slices_cfg, args.slices_output_dir
+                    broader_rows, slices_cfg, args.slices_output_dir
                 )
                 if slice_stats:
                     summary = ", ".join(

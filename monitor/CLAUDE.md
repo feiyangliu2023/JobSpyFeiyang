@@ -309,12 +309,20 @@ Intern vs new-grad classification:
   `job_type=fulltime` filter biases that direction anyway).
 
 Wired through `run.py` via:
-- A `broader_emea_rows` list collected in the JobSpy main loop
-  (running `apply_filters` a second time with `skip={"include_companies"}`)
-  and passed as `broader_emea_sink` into `ingest_external_sources` (which
-  appends a parallel no-allowlist EMEA cut from each SimplifyJobs feed).
-- `render_emea_entry_level()` in `render_md.py` writes the file at end
-  of run, after `render_md()` produces JOBS.md.
+- A `broader_rows` list collected in the JobSpy main loop (running
+  `apply_filters` a second time with `skip={"include_companies"}`) and
+  passed as `broader_sink` into `ingest_external_sources` (which appends
+  a parallel no-allowlist EMEA + NA cut from each SimplifyJobs feed —
+  region tagging is preserved per-row so EMEA / NA slice files narrow
+  correctly downstream). Before rendering, `_enrich_broader_rows_from_db`
+  copies `first_seen` + liveness columns from jobs.db onto broader rows
+  that match an allowlisted row (off-allowlist rows get
+  `first_seen=this_run` and NULL liveness → rendered as "(?)").
+- `render_emea_entry_level()` filters this pool to EMEA and writes the
+  file at end of run, after `render_md()` produces JOBS.md.
+- The same `broader_rows` pool feeds `render_slices()` — slice files
+  (emea-junior-sde.md, na-junior-sde.md, …) are comprehensive views,
+  NOT allowlist-gated. JOBS.md remains the curated allowlist-gated table.
 - Path is overridable via `--md-emea-entry-level`; default is
   `<repo_root>/emea-entry-level.md` to mirror JOBS.md's location.
 
