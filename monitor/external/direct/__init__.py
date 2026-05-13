@@ -32,9 +32,9 @@ from __future__ import annotations
 
 import json
 import logging
-import urllib.request
 from typing import Any
 
+from monitor.external import build_headers, http_get, read_cache, write_cache
 from monitor.external.locations import classify_locations
 
 log = logging.getLogger(__name__)
@@ -121,26 +121,61 @@ def fetch_greenhouse(board_token: str, timeout: int = 60) -> list[dict]:
 
     `board_token` is the company's slug at greenhouse.io. The endpoint
     returns the entire active job list in one response — no pagination.
+
+    Bounded retry + ETag / Last-Modified caching: a 304 from upstream
+    means we serve the previously parsed jobs from
+    `monitor/cache/greenhouse_<board>.json` so a partial CDN block
+    keeps producing rows instead of going dark.
     """
     url = GREENHOUSE_BASE.format(board=board_token)
-    log.info("direct.greenhouse: GET %s", url)
+    cache_key = f"greenhouse_{board_token}"
+    source_label = f"direct.greenhouse:{board_token}"
+    log.info("%s: GET %s", source_label, url)
     try:
-        req = urllib.request.Request(
-            url, headers={"User-Agent": "jobspy-monitor/1.0"}
+        result = http_get(
+            url,
+            source_label=source_label,
+            headers=build_headers(
+                referer=f"https://boards.greenhouse.io/{board_token}"
+            ),
+            timeout=timeout,
+            cache_key=cache_key,
         )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = json.loads(resp.read())
     except Exception as e:
-        log.exception("direct.greenhouse %s: fetch failed: %s", board_token, e)
+        log.exception("%s: fetch failed: %s", source_label, e)
+        return []
+
+    if result.cached:
+        cache = read_cache(cache_key) or {}
+        jobs = cache.get("jobs") or []
+        log.info(
+            "%s: 304 not modified — %d jobs served from cache",
+            source_label, len(jobs),
+        )
+        return jobs if isinstance(jobs, list) else []
+
+    try:
+        data = json.loads(result.body or b"")
+    except Exception as e:
+        log.exception("%s: JSON parse failed: %s", source_label, e)
         return []
     jobs = data.get("jobs") if isinstance(data, dict) else None
     if not isinstance(jobs, list):
         log.warning(
-            "direct.greenhouse %s: unexpected payload shape: %r",
-            board_token, type(data).__name__,
+            "%s: unexpected payload shape: %r",
+            source_label, type(data).__name__,
         )
         return []
-    log.info("direct.greenhouse %s: %d jobs", board_token, len(jobs))
+
+    # Persist parsed jobs alongside the new validators so a future 304
+    # response can be resolved from local cache.
+    if result.etag or result.last_modified:
+        write_cache(cache_key, {
+            "etag": result.etag,
+            "last_modified": result.last_modified,
+            "jobs": jobs,
+        })
+    log.info("%s: %d jobs", source_label, len(jobs))
     return jobs
 
 
@@ -204,26 +239,59 @@ def fetch_ashby(board_name: str, timeout: int = 60) -> list[dict]:
 
     Note: the URL is bare `/job-board/{board}` — the `/jobs` suffix that
     some docs reference is for the *authenticated* API and 401's here.
+
+    Bounded retry + ETag / Last-Modified caching: a 304 from upstream
+    means we serve the previously parsed jobs from
+    `monitor/cache/ashby_<board>.json` so a partial CDN block keeps
+    producing rows instead of going dark.
     """
     url = ASHBY_BASE.format(board=board_name)
-    log.info("direct.ashby: GET %s", url)
+    cache_key = f"ashby_{board_name}"
+    source_label = f"direct.ashby:{board_name}"
+    log.info("%s: GET %s", source_label, url)
     try:
-        req = urllib.request.Request(
-            url, headers={"User-Agent": "jobspy-monitor/1.0"}
+        result = http_get(
+            url,
+            source_label=source_label,
+            headers=build_headers(
+                referer=f"https://jobs.ashbyhq.com/{board_name}"
+            ),
+            timeout=timeout,
+            cache_key=cache_key,
         )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = json.loads(resp.read())
     except Exception as e:
-        log.exception("direct.ashby %s: fetch failed: %s", board_name, e)
+        log.exception("%s: fetch failed: %s", source_label, e)
+        return []
+
+    if result.cached:
+        cache = read_cache(cache_key) or {}
+        jobs = cache.get("jobs") or []
+        log.info(
+            "%s: 304 not modified — %d jobs served from cache",
+            source_label, len(jobs),
+        )
+        return jobs if isinstance(jobs, list) else []
+
+    try:
+        data = json.loads(result.body or b"")
+    except Exception as e:
+        log.exception("%s: JSON parse failed: %s", source_label, e)
         return []
     jobs = data.get("jobs") if isinstance(data, dict) else None
     if not isinstance(jobs, list):
         log.warning(
-            "direct.ashby %s: unexpected payload shape: %r",
-            board_name, type(data).__name__,
+            "%s: unexpected payload shape: %r",
+            source_label, type(data).__name__,
         )
         return []
-    log.info("direct.ashby %s: %d jobs", board_name, len(jobs))
+
+    if result.etag or result.last_modified:
+        write_cache(cache_key, {
+            "etag": result.etag,
+            "last_modified": result.last_modified,
+            "jobs": jobs,
+        })
+    log.info("%s: %d jobs", source_label, len(jobs))
     return jobs
 
 

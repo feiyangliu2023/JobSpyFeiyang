@@ -121,6 +121,54 @@ included). The combination that gives us reasonable coverage:
    LinkedIn returns 0 rows for any search, with hints on how to recover.
    Easier to grep logs for "LinkedIn returned 0" than to silently lose data.
 
+#### External scrapers — anti-block knobs
+
+JobSpy is one half of the ingestion; the other half is everything
+under `monitor/external/` (SimplifyJobs feeds, direct ATS scrapers
+for Anthropic / OpenAI / etc). Those used to share nothing — each
+file had its own one-line urllib call with a fixed
+`jobspy-monitor/1.0` UA and no retry, so a single transient HTTP
+failure tanked the source and triggered a SILENT ntfy alert. The
+shared helper in `monitor/external/__init__.py` centralizes the
+following:
+
+1. **Bounded retry** — `http_get` retries 3 attempts at 2s / 5s / 10s,
+   but ONLY on connection errors, 5xx, and 429. Other 4xx (403, 404)
+   surface immediately because retrying a hard block just delays the
+   inevitable. Deliberately inline — we explicitly avoid `tenacity` /
+   `backoff` (see "Do NOT add" below). Wall-clock budget is bounded so
+   a hard block fails fast and the health report flags it.
+2. **Header pool** — `build_headers()` rotates over 4 recent Chrome
+   UAs (Win / macOS / Linux) per call and always sends a real
+   `Accept-Language: en-US,en;q=0.9`. Greenhouse and Ashby callers
+   additionally pass `Referer` pointing at the ATS board page so the
+   request looks like it came from someone browsing the careers site.
+   Cheap defenses against trivial UA-filter WAF rules; not pretending
+   to be a stealth scraper.
+3. **`If-None-Match` / `If-Modified-Since`** — only for `fetch_greenhouse`
+   and `fetch_ashby` (the boards that ship validators). Cache files
+   live at `monitor/cache/<scraper>.json` (gitignored) and store
+   `{etag, last_modified, jobs}`. On a 304 we serve the cached `jobs`
+   list; on 2xx we overwrite. Means a partial CDN block / soft 304
+   loop keeps producing rows instead of going dark. SimplifyJobs is
+   NOT cached this way — its upstream is raw.githubusercontent.com,
+   which doesn't honor conditional requests usefully, and a 1s GET
+   is fine.
+4. **SILENT threshold** — `monitor/health.py:_SILENT_MIN_ATTEMPTS = 3`.
+   A source with 0 successes and 0 errors now only classifies as
+   SILENT once it has been called at least 3 times; below that it
+   stays UNUSED. This prevents single-attempt sources (each `direct:*`
+   scraper, naturally low-recall pairings like Bayt + applied
+   scientist) from firing false SILENT ntfy alerts. The trade-off is
+   that a real block on a single-call source is no longer auto-
+   escalated — the per-source row in `health-latest.json` still shows
+   `attempts=1, successes=0`, just without the noisy alert.
+5. **`JOBSPY_HTTP_DEBUG=1`** env knob — when set, `http_get` logs one
+   INFO line per non-2xx response containing the first ~500 bytes of
+   the body. Off by default. Useful next time a CDN starts returning a
+   block page that looks like a normal failure: grep the log for
+   `[http-debug]` to see what the server actually said.
+
 ### Secondary feeds: SimplifyJobs (both repos)
 
 `monitor/external/simplify.py` handles two SimplifyJobs-format upstreams,
