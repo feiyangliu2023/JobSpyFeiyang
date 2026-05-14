@@ -660,17 +660,6 @@ def _parse_iso(s: str | None) -> datetime | None:
     return dt
 
 
-def _first_seen_sort_key(r: dict) -> str:
-    """Strict first_seen DESC ordering (used by slice views).
-
-    Differs from the JOBS.md `_sort_key` which falls back to date_posted —
-    slice files explicitly want pipeline-first-sighting order, so a stale
-    `date_posted` from a long-stale source doesn't outrank a freshly-found
-    row.
-    """
-    return r.get("first_seen") or ""
-
-
 def _matches_slice_filters(r: dict, sfilters: dict) -> bool:
     """Apply a slice's filter block (regions / title keywords / kinds).
 
@@ -727,7 +716,13 @@ def render_slice(
     sfilters = slice_def.get("filters") or {}
 
     matching = [r for r in rows if _matches_slice_filters(r, sfilters)]
-    deduped = _dedupe_and_sort(matching, _first_seen_sort_key)
+    # Sort by date_posted DESC (fallback first_seen) — matches the visible
+    # `Age` column, so the table reads top-to-bottom newest-to-oldest by
+    # the same signal the user reads off each row. Previously this used
+    # a strict first_seen-only key, which produced visible disorder when
+    # many rows shared a first_seen timestamp (e.g. on a freshly re-seeded
+    # DB).
+    deduped = _dedupe_and_sort(matching)
 
     # Per-slice cap overrides — slices.yaml may set max_rows / max_age_days
     # to override the module-level defaults. 0 / None disables that cap.
