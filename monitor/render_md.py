@@ -345,6 +345,78 @@ def _dedupe_and_sort(
     return deduped
 
 
+# Render-time caps on the SHAPE of MD output. Bounds the size of every
+# rendered section so JOBS.md / slice files / emea-entry-level.md stay
+# usable as the broader pool grows. Affects what gets written, NOT what
+# gets stored — the full row set stays in jobs.db until the normal
+# `prune_old` lifecycle (gone-rows past `retention_days`) catches it.
+#
+# Defaults are deliberately loose ("loose" was the user's pick): only the
+# worst-offender slices (na-junior-sde, na-internships) hit the row cap;
+# the age cut hides postings that have been re-listed for half a year.
+RENDER_MAX_ROWS = 500
+RENDER_MAX_AGE_DAYS = 180
+
+
+def _apply_render_caps(
+    rows: list[dict],
+    max_rows: int = RENDER_MAX_ROWS,
+    max_age_days: int = RENDER_MAX_AGE_DAYS,
+) -> tuple[list[dict], int, int]:
+    """Apply (age, count) caps to a sorted row list. Pure / no I/O.
+
+    Assumes `rows` is already sorted newest-first — we drop the tail when
+    the count cap kicks in. Pass `max_rows=0` or `max_age_days=0` (or any
+    non-positive) to disable that side of the cap.
+
+    Returns `(visible, n_dropped_age, n_dropped_overflow)`. Callers stitch
+    the dropped counts into a small footer line via `_render_cap_note`.
+    """
+    n_dropped_age = 0
+    if max_age_days and max_age_days > 0:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
+        kept: list[dict] = []
+        for r in rows:
+            ts = _parse_iso(r.get("first_seen"))
+            # Rows without a parseable first_seen are kept; we'd rather
+            # over-render than silently drop legacy rows missing the field.
+            if ts is None or ts >= cutoff:
+                kept.append(r)
+            else:
+                n_dropped_age += 1
+        rows = kept
+
+    n_dropped_overflow = 0
+    if max_rows and max_rows > 0 and len(rows) > max_rows:
+        n_dropped_overflow = len(rows) - max_rows
+        rows = rows[:max_rows]
+
+    return rows, n_dropped_age, n_dropped_overflow
+
+
+def _render_cap_note(
+    n_visible: int,
+    n_dropped_age: int,
+    n_dropped_overflow: int,
+    max_rows: int = RENDER_MAX_ROWS,
+    max_age_days: int = RENDER_MAX_AGE_DAYS,
+) -> str | None:
+    """Build the italicised footer line that explains a render cap.
+
+    Returns None when nothing was dropped (so the caller skips the
+    `out.append(...)` entirely and the table looks the same as before).
+    """
+    if not n_dropped_age and not n_dropped_overflow:
+        return None
+    parts: list[str] = []
+    if n_dropped_overflow:
+        total = n_visible + n_dropped_overflow
+        parts.append(f"showing newest {n_visible} of {total} active rows (cap {max_rows})")
+    if n_dropped_age:
+        parts.append(f"{n_dropped_age} hidden as first_seen >{max_age_days}d")
+    return f"_{'; '.join(parts)}. Full set in jobs.db._"
+
+
 # Title tokens that mark a row as an internship rather than a new-grad role.
 # Substring-matched against a lowercased title — leading prefixes are fine
 # (so `intern` matches `internship`/`interns`).
@@ -422,14 +494,24 @@ def render_emea_entry_level(
     for kind_key, _ in _EMEA_KIND_ORDER:
         kind_rows[kind_key] = _dedupe_and_sort(by_kind[kind_key])
 
-    visible_total = sum(len(v) for v in kind_rows.values())
+    # Per-kind render caps. Header / kind-summary counts continue to show
+    # the true active total; each table is capped to keep the file size
+    # bounded as the broader EMEA pool grows.
+    kind_active = {k: len(kind_rows[k]) for k, _ in _EMEA_KIND_ORDER}
+    kind_caps: dict[str, tuple[int, int]] = {}
+    for kind_key, _ in _EMEA_KIND_ORDER:
+        capped, n_age, n_overflow = _apply_render_caps(kind_rows[kind_key])
+        kind_rows[kind_key] = capped
+        kind_caps[kind_key] = (n_age, n_overflow)
+
+    visible_total = sum(kind_active.values())
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
     out.append("# EMEA Entry-Level Roles")
     out.append("")
     kind_summaries = [
-        f"[{heading}](#{kind_key}) ({len(kind_rows[kind_key])})"
+        f"[{heading}](#{kind_key}) ({kind_active[kind_key]})"
         for kind_key, heading in _EMEA_KIND_ORDER
     ]
     out.append(
@@ -448,6 +530,11 @@ def render_emea_entry_level(
         out.append(f"<!-- {marker}_START -->")
         out.append(_render_section(kind_rows[kind_key], has_salary))
         out.append(f"<!-- {marker}_END -->")
+        n_age, n_overflow = kind_caps[kind_key]
+        cap_note = _render_cap_note(len(kind_rows[kind_key]), n_age, n_overflow)
+        if cap_note:
+            out.append("")
+            out.append(cap_note)
         out.append("")
         out.append("---")
         out.append("")
@@ -492,8 +579,19 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
         for region_key, _, _ in _REGION_ORDER
     }
 
+    # Apply render caps PER REGION so JOBS.md stays browsable as the NA
+    # pool grows. The header still advertises the true active count
+    # (pre-cap); the per-region table shows the visible subset and the
+    # footer note explains what was hidden.
+    region_active = {k: len(region_rows[k]) for k, _, _ in _REGION_ORDER}
+    region_caps: dict[str, tuple[int, int]] = {}
+    for region_key, _, _ in _REGION_ORDER:
+        capped, n_age, n_overflow = _apply_render_caps(region_rows[region_key])
+        region_rows[region_key] = capped
+        region_caps[region_key] = (n_age, n_overflow)
+
     region_visible = {k: len(region_rows[k]) for k, _, _ in _REGION_ORDER}
-    visible_total = sum(region_visible.values())
+    visible_total = sum(region_active.values())
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
@@ -501,7 +599,7 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
     out.append("")
 
     region_summaries = [
-        f"[{heading}](#{anchor_prefix}) ({region_visible[region_key]})"
+        f"[{heading}](#{anchor_prefix}) ({region_active[region_key]})"
         for region_key, anchor_prefix, heading in _REGION_ORDER
     ]
     out.append(
@@ -526,6 +624,11 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
         out.append(f"<!-- {marker}_START -->")
         out.append(_render_section(region_rows[region_key], has_salary))
         out.append(f"<!-- {marker}_END -->")
+        n_age, n_overflow = region_caps[region_key]
+        cap_note = _render_cap_note(region_visible[region_key], n_age, n_overflow)
+        if cap_note:
+            out.append("")
+            out.append(cap_note)
         out.append("")
         out.append("---")
         out.append("")
@@ -626,18 +729,33 @@ def render_slice(
     matching = [r for r in rows if _matches_slice_filters(r, sfilters)]
     deduped = _dedupe_and_sort(matching, _first_seen_sort_key)
 
-    has_salary = any(_has_salary(r) for r in deduped)
+    # Per-slice cap overrides — slices.yaml may set max_rows / max_age_days
+    # to override the module-level defaults. 0 / None disables that cap.
+    slice_max_rows = slice_def.get("max_rows", RENDER_MAX_ROWS)
+    slice_max_age = slice_def.get("max_age_days", RENDER_MAX_AGE_DAYS)
+    n_total = len(deduped)
+    visible, n_age, n_overflow = _apply_render_caps(
+        deduped, slice_max_rows, slice_max_age,
+    )
+
+    has_salary = any(_has_salary(r) for r in visible)
     marker_token = _slice_marker_token(name)
     now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     out: list[str] = []
     out.append(f"# {title}")
     out.append("")
-    out.append(f"Last updated: **{now_str}** · **{len(deduped)}** active roles.")
+    out.append(f"Last updated: **{now_str}** · **{n_total}** active roles.")
     out.append("")
     out.append(f"<!-- TABLE_SLICE_{marker_token}_START -->")
-    out.append(_render_section(deduped, has_salary))
+    out.append(_render_section(visible, has_salary))
     out.append(f"<!-- TABLE_SLICE_{marker_token}_END -->")
+    cap_note = _render_cap_note(
+        len(visible), n_age, n_overflow, slice_max_rows, slice_max_age,
+    )
+    if cap_note:
+        out.append("")
+        out.append(cap_note)
     out.append("")
 
     # Liveness summary for INDEX.md — `last_liveness_sweep` is the most

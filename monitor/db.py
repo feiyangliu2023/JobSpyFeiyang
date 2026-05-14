@@ -456,7 +456,11 @@ def fetch_active(conn: sqlite3.Connection) -> list[dict]:
 # --------------------------------------------------------------------------- #
 
 
-def prune_old(conn: sqlite3.Connection, retention_days: int) -> dict:
+def prune_old(
+    conn: sqlite3.Connection,
+    retention_days: int,
+    runs_retention_days: int | None = None,
+) -> dict:
     """Delete expired gone-rows and old run records, then VACUUM.
 
     Two-phase cleanup so the .git size doesn't grow unboundedly:
@@ -464,9 +468,11 @@ def prune_old(conn: sqlite3.Connection, retention_days: int) -> dict:
       - `jobs`: drop rows with status='gone' AND last_seen older than
         `retention_days`. Active rows are NEVER pruned (they still appear
         in JOBS.md).
-      - `runs`: drop rows older than `retention_days // 2`. The runs
-        table is purely diagnostic; we keep half the job-row window so
-        recent-run debugging still works without bloating the DB.
+      - `runs`: drop rows older than `runs_retention_days` when set,
+        otherwise `retention_days // 2`. The runs table is purely
+        diagnostic; the default of 30d (when caller passes it explicitly
+        from run.py) keeps the table from snowballing — at ~30 city-site
+        combos × 2 runs/day, even a few months adds thousands of rows.
 
     After the deletes we run `VACUUM` so the file actually shrinks on
     disk — without it SQLite keeps the freed pages around for reuse and
@@ -477,7 +483,12 @@ def prune_old(conn: sqlite3.Connection, retention_days: int) -> dict:
     """
     now = datetime.now(timezone.utc)
     cutoff_jobs = (now - timedelta(days=retention_days)).isoformat(timespec="seconds")
-    cutoff_runs = (now - timedelta(days=max(1, retention_days // 2))).isoformat(timespec="seconds")
+    runs_window = (
+        runs_retention_days
+        if runs_retention_days is not None
+        else max(1, retention_days // 2)
+    )
+    cutoff_runs = (now - timedelta(days=max(1, runs_window))).isoformat(timespec="seconds")
 
     with transaction(conn):
         cur_jobs = conn.execute(

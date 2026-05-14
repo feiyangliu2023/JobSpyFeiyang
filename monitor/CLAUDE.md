@@ -361,19 +361,42 @@ why ~10 consecutive `chore(monitor): refresh` commits were dominating
   - `jobs`: drop rows where `status='gone' AND last_seen < (now -
     retention_days)`. Active rows are NEVER pruned — they still appear
     in JOBS.md and the renderer needs them.
-  - `runs`: drop rows where `started_at < (now - retention_days // 2)`.
-    The runs table is purely diagnostic, so we keep half the window;
-    recent-run debugging still works without bloating the DB.
+  - `runs`: drop rows where `started_at < (now - runs_retention_days)`.
+    The runs table is purely diagnostic and accumulates ~30-60 rows per
+    scrape (one per city-site combo), so it would dominate jobs.db
+    within a few months at the older `retention_days // 2` window.
+    `run.py` passes `--runs-retention-days` (default 30) explicitly;
+    callers that omit it fall back to `retention_days // 2` for
+    backwards compat with the existing tests.
 
 VACUUM only runs when something was deleted (no point shuffling pages
 on a no-op run). Logs counts pruned per table at INFO. Pruning failures
 are swallowed — JOBS.md can still render from the un-pruned set if
 prune blows up, so we don't fail the whole run.
 
-The `--retention-days` argparse flag is the only knob. Default 180 days
-keeps a full half-year of trailing data, which matches how often we see
-roles come back under the same URL (rarely beyond ~3 months). Lower it
-locally if you want to inspect prune behavior on a fresh DB.
+The `--retention-days` argparse flag controls the jobs window (default
+180 days — a full half-year, matches how often roles come back under
+the same URL, rarely beyond ~3 months). The `--runs-retention-days`
+flag controls the diagnostic runs window separately (default 30 days).
+Lower either locally to inspect prune behavior on a fresh DB.
+
+### Render caps (MD bloat guard)
+
+`render_md.RENDER_MAX_ROWS` (default 500) and `RENDER_MAX_AGE_DAYS`
+(default 180) bound the size of every rendered MD section so JOBS.md /
+slice files / emea-entry-level.md stay browsable as the broader pool
+grows. Applied via `_apply_render_caps(rows, ...)` in three call sites:
+`render_slice`, `render_md` (per region), `render_emea_entry_level`
+(per kind). Caps affect what gets WRITTEN, not what gets STORED — the
+full row set stays in jobs.db until the normal `prune_old` lifecycle
+catches it.
+
+When a cap drops rows, `_render_cap_note(...)` appends a one-line
+italic footer beneath the table explaining what was hidden. Section
+header counts continue to advertise the TRUE active count (pre-cap)
+so users can tell when a cap is in play. Per-slice overrides via
+`max_rows` / `max_age_days` in slices.yaml; 0 / None disables that side
+of the cap.
 
 ## JOBS.md (rendered table)
 
