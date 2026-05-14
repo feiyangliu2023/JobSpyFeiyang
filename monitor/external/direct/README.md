@@ -14,6 +14,11 @@ directory hits each company's ATS feed directly so a new role lands in
 | `__init__.py` | Shared helpers — `fetch_greenhouse`, `fetch_ashby`, `make_row`. |
 | `anthropic.py` | Greenhouse, board=`anthropic`. |
 | `openai.py`   | Ashby, board=`openai`. |
+| `mistral.py`   | Ashby, board=`mistral`. |
+| `cohere.py`    | Ashby, board=`cohere`. |
+| `scaleai.py`   | Ashby, board=`scaleai`. |
+| `stripe.py`     | Greenhouse, board=`stripe`. |
+| `databricks.py` | Greenhouse, board=`databricks`. |
 | `deepmind.py` | Stub. Google Careers is JS-rendered + bot-gated; see file for rationale. |
 
 Each company file is intentionally tiny (~10 lines) — all the parsing
@@ -92,19 +97,30 @@ cross-source dedup.
 
 That's it — no changes to `run.py` or `render_md.py` are needed.
 
-## ATS cheat sheet for the next 5 companies
+## ATS cheat sheet — next tier (Workday-gated, not yet added)
 
-| Company    | ATS         | Board token       | Helper |
-|------------|-------------|-------------------|--------|
-| Mistral    | Ashby       | `mistral`         | `fetch_ashby` |
-| Cohere     | Ashby       | `cohere`          | `fetch_ashby` |
-| Stripe     | Greenhouse  | `stripe`          | `fetch_greenhouse` |
-| Databricks | Greenhouse  | `databricks`      | `fetch_greenhouse` |
-| Scale AI   | Ashby       | `scaleai`         | `fetch_ashby` |
+The 5 companies the previous cheat sheet listed (Mistral, Cohere,
+Stripe, Databricks, Scale AI) have all been added as of May 2026 —
+they're listed in the "What lives here" table above.
+
+The remaining tier-1 NA companies are all behind Workday-style ATSes
+that need a headless browser:
+
+| Company   | ATS          | Why it's not here yet |
+|-----------|--------------|-----------------------|
+| Google    | Custom + JS  | See `deepmind.py` stub for rationale. |
+| Meta      | Workday      | Same problem class. |
+| Amazon    | Custom + JS  | amazon.jobs is reachable via SimplifyJobs new-grad only. |
+| Microsoft | Custom + JS  | Same. |
+| Apple     | Custom + JS  | Same. |
+
+Adding any of the above means standing up a Playwright/Selenium pipeline
+plus the maintenance cost of session/token rotation; out of scope until
+the demand justifies it. SimplifyJobs covers the new-grad slice; the
+senior slice for those companies stays a gap.
 
 **Verify the token before committing.** ATSes occasionally move
-companies between hostnames; the snapshot above is correct as of when
-this file was written. A 30-second smoke test is enough:
+companies between hostnames. A 30-second smoke test is enough:
 
 ```bash
 py -3 -c "from monitor.external.direct import fetch_greenhouse; \
