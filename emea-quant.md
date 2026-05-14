@@ -1,6 +1,6 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-05-14 23:06 UTC** · **1** active roles.
+Last updated: **2026-05-14 23:42 UTC** · **1** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
