@@ -5,25 +5,28 @@ Auto-generated tracker of junior tech roles in EMEA and North America. Updated t
 ## Browse by slice
 
 ### EMEA
-- [Junior SDE](emea-junior-sde.md) — 122 active, 61 new this week
-  - Last liveness sweep: 2026-05-14 08:08 UTC, 4% verified live
-- [Junior MLE / Applied Scientist](emea-junior-mle.md) — 71 active, 50 new this week
-  - Last liveness sweep: 2026-05-14 08:08 UTC, 6% verified live
-- [Internships](emea-internships.md) — 55 active, 26 new this week
-- [Quant & Finance](emea-quant.md) — 10 active, 5 new this week
-  - Last liveness sweep: 2026-05-14 00:23 UTC, 10% verified live
+- [Junior SDE](emea-junior-sde.md) — 121 active, 66 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 6% verified live
+- [Junior MLE / Applied Scientist](emea-junior-mle.md) — 76 active, 55 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 11% verified live
+- [Internships](emea-internships.md) — 54 active, 25 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 20% verified live
+- [Quant & Finance](emea-quant.md) — 8 active, 4 new this week
+  - Last liveness sweep: 2026-05-14 00:23 UTC, 12% verified live
 
 ### North America
-- [Junior SDE](na-junior-sde.md) — 1323 active, 538 new this week
-  - Last liveness sweep: 2026-05-14 08:08 UTC, 7% verified live
-- [Junior MLE / Applied Scientist](na-junior-mle.md) — 382 active, 233 new this week
-  - Last liveness sweep: 2026-05-14 08:08 UTC, 13% verified live
-- [Internships](na-internships.md) — 1711 active, 554 new this week
-- [Quant & Finance](na-quant.md) — 13 active, 4 new this week
+- [Junior SDE](na-junior-sde.md) — 1325 active, 538 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 13% verified live
+- [Junior MLE / Applied Scientist](na-junior-mle.md) — 384 active, 233 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 29% verified live
+- [Internships](na-internships.md) — 1721 active, 561 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 10% verified live
+- [Quant & Finance](na-quant.md) — 12 active, 3 new this week
+  - Last liveness sweep: 2026-05-14 16:03 UTC, 8% verified live
 
 ## Wider browse (no curated company allowlist)
 
-- [EMEA entry-level (all companies)](emea-entry-level.md) — 453 active roles, allowlist gate dropped
+- [EMEA entry-level (all companies)](emea-entry-level.md) — 467 active roles, allowlist gate dropped
 
 ## How this works
 
