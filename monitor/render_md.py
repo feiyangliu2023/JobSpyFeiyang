@@ -1,12 +1,8 @@
 """Render JOBS.md from the active rows in jobs.db.
 
-The output mirrors the layout of public new-grad-tracker repos: a header with
-section anchors, then three tables — FAANG+ & AI Labs / Quant & Finance /
-Other — each grouping the active jobs whose company falls into that tier.
-
-Tier classification is deliberately hardcoded here rather than configurable:
-the tiers are a presentation concern and shouldn't bloat config.yaml. If you
-want a fourth bucket, add a constant + classify branch below.
+Output layout: one comprehensive table per region (EMEA / North America),
+sorted newest-first. No tier sub-buckets, no freshness sub-sections —
+the Age column plus a date-descending sort is enough.
 """
 
 from __future__ import annotations
@@ -17,49 +13,11 @@ from pathlib import Path
 from typing import Callable, Iterable
 
 
-# Tier membership is matched as case-insensitive substring against the company
-# name. We don't reuse `_match_company` from run.py because the goal here is
-# different — at render time we just need a quick bucket label, not a strict
-# allowlist gate. A row with company "Google LLC" matches `google` here.
-_FAANG_TOKENS = (
-    "google", "meta", "facebook", "amazon", "aws", "microsoft", "apple",
-    "netflix", "nvidia", "openai", "anthropic", "deepmind", "mistral",
-    "hugging face", "cohere", "stability", "perplexity",
-    "oracle", "ibm", "intel", "amd", "salesforce", "adobe", "snap",
-    "tiktok", "bytedance", "uber", "airbnb", "spotify", "stripe",
-    "databricks", "snowflake", "datadog", "cloudflare", "atlassian",
-    "linkedin", "palantir",
-)
-
-_QUANT_TOKENS = (
-    "bloomberg", "two sigma", "jane street", "hudson river", "citadel",
-    "shaw", "millennium", "point72", "optiver", "imc", "flow traders",
-    "drw", "maven", "five rings",
-    "goldman sachs", "jpmorgan", "jp morgan", "morgan stanley",
-    "blackrock", "barclays", "hsbc", "deutsche bank", "ubs",
-    "bnp paribas", "santander", "ing bank", "nordea", "credit suisse",
-    "bank of america", "merrill lynch",
-)
-
-
 # External "Apply" button image, mirroring the SimplifyJobs new-grad repo.
 # If imgur ever rots we just see broken images — links still work.
 _APPLY_IMG = (
     '<img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/>'
 )
-
-
-def classify(company: str) -> str:
-    c = (company or "").lower()
-    if not c:
-        return "other"
-    for tok in _FAANG_TOKENS:
-        if tok in c:
-            return "faang"
-    for tok in _QUANT_TOKENS:
-        if tok in c:
-            return "quant"
-    return "other"
 
 
 # Liveness-aware visibility. Four behaviors:
@@ -266,12 +224,6 @@ def _render_section(rows: list[dict], has_salary: bool) -> str:
     return "\n".join(lines)
 
 
-_TIER_ORDER: list[tuple[str, str]] = [
-    ("faang", "FAANG+ & AI Labs"),
-    ("quant", "Quant & Finance"),
-    ("other", "Other"),
-]
-
 # Region rendering order. EMEA is the user's primary feed (their own
 # JobSpy scrape) and stays on top regardless of row count; North America
 # is a secondary feed pulled from SimplifyJobs.
@@ -350,9 +302,9 @@ def _source_rank(site: str | None) -> int:
 def _dedupe_by_signature(rows: list[dict]) -> tuple[list[dict], int]:
     """Collapse rows that share a signature, keep the higher-priority source.
 
-    Operates on a single tier within a region — we never collapse across
-    regions, since "Apple, Cupertino" and "Apple, London" are obviously
-    different roles even with similar titles.
+    Callers pass per-region row lists — we never collapse across regions,
+    since "Apple, Cupertino" and "Apple, London" are obviously different
+    roles even with similar titles.
 
     Returns (deduped_rows, num_collapsed).
     """
@@ -383,16 +335,14 @@ def _dedupe_by_signature(rows: list[dict]) -> tuple[list[dict], int]:
     return list(by_sig.values()) + no_sig, collapsed
 
 
-def _split_tiers(region_rows: list[dict]) -> dict[str, list[dict]]:
-    by_tier: dict[str, list[dict]] = {k: [] for k, _ in _TIER_ORDER}
-    for r in region_rows:
-        by_tier[classify(r.get("company") or "")].append(r)
-    for tier_key in by_tier:
-        # Dedup before sort — sort on the survivors only
-        deduped, _collapsed = _dedupe_by_signature(by_tier[tier_key])
-        deduped.sort(key=_sort_key, reverse=True)
-        by_tier[tier_key] = deduped
-    return by_tier
+def _dedupe_and_sort(
+    rows: list[dict],
+    sort_key: Callable[[dict], object] | None = None,
+) -> list[dict]:
+    """Dedup by signature then sort newest-first."""
+    deduped, _collapsed = _dedupe_by_signature(rows)
+    deduped.sort(key=sort_key or _sort_key, reverse=True)
+    return deduped
 
 
 # Title tokens that mark a row as an internship rather than a new-grad role.
@@ -456,16 +406,9 @@ def render_emea_entry_level(
     """Broader EMEA entry-level view — same row shape as JOBS.md but no
     company allowlist gate.
 
-    Produces a parallel file (default `emea-entry-level.md`) so the curated
-    `JOBS.md` stays small and ntfy-worthy while this file gives the user a
-    wide-net browse of every EMEA intern + new-grad role our pipelines saw.
-    Layout is Intern / New Grad at the top level, each split into the same
-    FAANG / Quant / Other tiers JOBS.md uses.
-
-    Stateless: caller hands in already-fetched rows (region == 'emea',
-    title/desc filters applied, `include_companies` skipped). We do not
-    touch jobs.db here — net-new alerting is intentionally a JOBS.md-only
-    thing so this broader feed doesn't spam ntfy.
+    One comprehensive table per kind (Internships / New Grad). Sorted
+    newest-first; the Age column carries freshness, so no separate 24h /
+    7d sections.
     """
     rows = [r for r in rows if (r.get("region") or "").lower() == "emea"]
     rows = _filter_liveness(rows)
@@ -475,66 +418,37 @@ def render_emea_entry_level(
     for r in rows:
         by_kind[_classify_intern_or_newgrad(r)].append(r)
 
-    kind_tiers: dict[str, dict[str, list[dict]]] = {}
-    kind_visible: dict[str, int] = {}
-    collapsed_total = 0
+    kind_rows: dict[str, list[dict]] = {}
     for kind_key, _ in _EMEA_KIND_ORDER:
-        tiers = _split_tiers(by_kind[kind_key])
-        kind_tiers[kind_key] = tiers
-        visible = sum(len(t) for t in tiers.values())
-        kind_visible[kind_key] = visible
-        collapsed_total += len(by_kind[kind_key]) - visible
+        kind_rows[kind_key] = _dedupe_and_sort(by_kind[kind_key])
 
-    visible_total = sum(kind_visible.values())
+    visible_total = sum(len(v) for v in kind_rows.values())
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
     out.append("# EMEA Entry-Level Roles")
     out.append("")
     kind_summaries = [
-        f"[{heading}](#{kind_key}) ({kind_visible[kind_key]})"
+        f"[{heading}](#{kind_key}) ({len(kind_rows[kind_key])})"
         for kind_key, heading in _EMEA_KIND_ORDER
     ]
-    dedup_note = (
-        f" · {collapsed_total} cross-source duplicates merged"
-        if collapsed_total
-        else ""
-    )
     out.append(
         f"Last updated: **{now}** · **{visible_total}** active EMEA "
-        f"entry-level roles ({' · '.join(kind_summaries)}){dedup_note}. "
-        "Wider net than [JOBS.md](JOBS.md) — drops the curated company "
-        "allowlist, keeps title/desc filters. Sources: SimplifyJobs feeds "
-        "(intern + new-grad) and the EMEA JobSpy scrape."
+        f"entry-level roles ({' · '.join(kind_summaries)})."
     )
     out.append("")
     out.append("---")
     out.append("")
 
     for kind_key, kind_heading in _EMEA_KIND_ORDER:
+        marker = f"TABLE_EMEA_{kind_key.upper()}"
         out.append(f'<a name="{kind_key}"></a>')
         out.append(f"## {kind_heading}")
         out.append("")
-
-        tiers = kind_tiers[kind_key]
-        toc_bits = [
-            f"[{tier_heading}](#{kind_key}-{tier_key}) ({len(tiers[tier_key])})"
-            for tier_key, tier_heading in _TIER_ORDER
-        ]
-        out.append("**Sections:** " + " · ".join(toc_bits))
+        out.append(f"<!-- {marker}_START -->")
+        out.append(_render_section(kind_rows[kind_key], has_salary))
+        out.append(f"<!-- {marker}_END -->")
         out.append("")
-
-        for tier_key, tier_heading in _TIER_ORDER:
-            anchor = f"{kind_key}-{tier_key}"
-            marker = f"TABLE_EMEA_{kind_key.upper()}_{tier_key.upper()}"
-            out.append(f'<a name="{anchor}"></a>')
-            out.append(f"### {tier_heading}")
-            out.append("")
-            out.append(f"<!-- {marker}_START -->")
-            out.append(_render_section(tiers[tier_key], has_salary))
-            out.append(f"<!-- {marker}_END -->")
-            out.append("")
-
         out.append("---")
         out.append("")
 
@@ -547,26 +461,15 @@ def render_emea_entry_level(
 
 
 def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
-    """Group `active_rows` into Region × Tier and write the markdown.
+    """Group `active_rows` by region and write the markdown.
 
-    Returns the total row count written. Always overwrites; the file is
-    intended to be committed by the workflow alongside jobs.db.
+    Layout: one comprehensive table per region (EMEA first since that's
+    the user's primary scraper, then North America). Sort is newest-first
+    so the Age column carries freshness without needing sub-sections.
 
-    Layout (single file, EMEA always first since that's the user's
-    primary scraper):
-
-        # Junior Tech Roles
-        [Last updated, totals, ToC]
-        ---
-        ## EMEA              (primary)
-          ### FAANG+ / Quant / Other  → 3 tables
-        ---
-        ## North America     (via SimplifyJobs)
-          ### FAANG+ / Quant / Other  → 3 tables
-
-    Each table is wrapped in `<!-- TABLE_<REGION>_<TIER>_START -->` /
-    `<!-- ..._END -->` HTML markers (mirroring SimplifyJobs / speedyapply)
-    so future tooling can do partial-replace on a hand-curated outer file.
+    Each table is wrapped in `<!-- TABLE_<REGION>_START -->` /
+    `<!-- TABLE_<REGION>_END -->` HTML markers so future tooling can do
+    partial-replace on a hand-curated outer file.
 
     The Salary column is hidden globally whenever no active row carries
     salary data (typical for EMEA Indeed scrapes), keeping every table
@@ -584,36 +487,26 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
             region = "emea"
         by_region[region].append(r)
 
-    region_tiers = {
-        region_key: _split_tiers(by_region[region_key])
+    region_rows = {
+        region_key: _dedupe_and_sort(by_region[region_key])
         for region_key, _, _ in _REGION_ORDER
     }
 
-    # Counts AFTER dedup — what the user actually sees.
-    region_visible = {
-        region_key: sum(len(t) for t in region_tiers[region_key].values())
-        for region_key, _, _ in _REGION_ORDER
-    }
+    region_visible = {k: len(region_rows[k]) for k, _, _ in _REGION_ORDER}
     visible_total = sum(region_visible.values())
-    collapsed = len(rows) - visible_total
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
     out.append("# Junior Tech Roles")
     out.append("")
 
-    region_summaries = []
-    for region_key, anchor_prefix, heading in _REGION_ORDER:
-        n = region_visible[region_key]
-        region_summaries.append(f"[{heading}](#{anchor_prefix}) ({n})")
-    dedup_note = (
-        f" · {collapsed} cross-source duplicates merged" if collapsed else ""
-    )
+    region_summaries = [
+        f"[{heading}](#{anchor_prefix}) ({region_visible[region_key]})"
+        for region_key, anchor_prefix, heading in _REGION_ORDER
+    ]
     out.append(
         f"Last updated: **{now}** · **{visible_total}** active roles "
-        f"({' · '.join(region_summaries)}){dedup_note}. Generated from "
-        f"`monitor/jobs.db` after the latest scrape — see "
-        f"[monitor/](monitor/) for how this works."
+        f"({' · '.join(region_summaries)})."
     )
     out.append("")
     out.append("---")
@@ -629,32 +522,14 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
             out.append(blurb)
             out.append("")
 
-        tiers = region_tiers[region_key]
-        toc_bits = []
-        for tier_key, tier_heading in _TIER_ORDER:
-            n = len(tiers[tier_key])
-            toc_bits.append(
-                f"[{tier_heading}](#{anchor_prefix}-{tier_key}) ({n})"
-            )
-        out.append("**Sections:** " + " · ".join(toc_bits))
+        marker = f"TABLE_{anchor_prefix.upper()}"
+        out.append(f"<!-- {marker}_START -->")
+        out.append(_render_section(region_rows[region_key], has_salary))
+        out.append(f"<!-- {marker}_END -->")
         out.append("")
-
-        for tier_key, tier_heading in _TIER_ORDER:
-            anchor = f"{anchor_prefix}-{tier_key}"
-            marker = f"TABLE_{anchor_prefix.upper()}_{tier_key.upper()}"
-            out.append(f'<a name="{anchor}"></a>')
-            out.append(f"### {tier_heading}")
-            out.append("")
-            out.append(f"<!-- {marker}_START -->")
-            out.append(_render_section(tiers[tier_key], has_salary))
-            out.append(f"<!-- {marker}_END -->")
-            out.append("")
-
         out.append("---")
         out.append("")
 
-    # Drop the trailing `---` separator so the file ends on a clean
-    # newline rather than a horizontal rule.
     while out and out[-1] in ("", "---"):
         out.pop()
     out.append("")
@@ -664,8 +539,8 @@ def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
 
 
 # --------------------------------------------------------------------------- #
-# Slice rendering — named, filtered views (e.g. EMEA Junior SDE) with
-# freshness-first layout (24h / 7d / All active). Driven by slices.yaml.
+# Slice rendering — named, filtered views (e.g. EMEA Junior SDE) as a single
+# date-sorted table per file. Driven by slices.yaml.
 # --------------------------------------------------------------------------- #
 
 
@@ -722,24 +597,6 @@ def _matches_slice_filters(r: dict, sfilters: dict) -> bool:
     return True
 
 
-def _bucket_tiers(
-    rows: list[dict],
-    sort_key: Callable[[dict], object],
-) -> dict[str, list[dict]]:
-    """Bucket rows into FAANG / Quant / Other and sort each bucket.
-
-    Assumes the caller already deduped at the slice level — we avoid the
-    per-tier dedup that `_split_tiers` does to keep cross-source duplicates
-    from sneaking back in via different tier classifications.
-    """
-    by_tier: dict[str, list[dict]] = {k: [] for k, _ in _TIER_ORDER}
-    for r in rows:
-        by_tier[classify(r.get("company") or "")].append(r)
-    for tier_key in by_tier:
-        by_tier[tier_key].sort(key=sort_key, reverse=True)
-    return by_tier
-
-
 def _slice_marker_token(name: str) -> str:
     """Convert a slice name into a safe HTML-comment marker token."""
     return re.sub(r"[^A-Za-z0-9]+", "_", name or "slice").strip("_").upper() or "SLICE"
@@ -750,153 +607,42 @@ def render_slice(
     slice_def: dict,
     output_path: str | Path,
 ) -> dict[str, int | str | None]:
-    """Render one slice markdown file. Returns stats counts.
+    """Render one slice markdown file as a single comprehensive table.
 
-    Stats keys:
+    Stats keys returned:
       - total:               deduped row count written to the file
-      - new_24h:             rows with first_seen >= now-24h
-      - new_7d:              rows with now-7d <= first_seen < now-24h
-                             (exclusive bucket)
       - last_liveness_sweep: max(liveness_checked_at) across the slice's
                              rendered rows, ISO8601 string. None if no
                              row has been checked yet.
       - pct_verified:        round(100 * ok / total). 0 when total == 0.
 
-    Callers wanting "new this week" should add new_24h + new_7d.
-
-    Layout:
-        # {title}
-        [last updated, totals, ToC]
-        ---
-        ## New in last 24h
-        ## New in last 7 days
-        ## All active
-          ### FAANG+ & AI Labs / Quant & Finance / Other
-
-    The 24h and 7d sections are deliberately at the top so freshness is
-    visible without scanning the Age column on a long table. Both are
-    subsets of "All active" — every row is also classified into a tier
-    bucket below.
-
-    Sort everywhere is first_seen DESC; we never reach for a score-based
-    or date_posted-based ordering here.
+    Sort is first_seen DESC; the Age column carries freshness so there
+    are no separate 24h / 7d sub-sections.
     """
     name = slice_def.get("name") or "slice"
     title = slice_def.get("title") or name
     sfilters = slice_def.get("filters") or {}
 
     matching = [r for r in rows if _matches_slice_filters(r, sfilters)]
-    # Dedup once at the slice level so the 24h, 7d, and All-active sections
-    # all draw from the same canonical pool.
-    deduped, collapsed = _dedupe_by_signature(matching)
-    deduped.sort(key=_first_seen_sort_key, reverse=True)
+    deduped = _dedupe_and_sort(matching, _first_seen_sort_key)
 
     has_salary = any(_has_salary(r) for r in deduped)
-
-    now = datetime.now(timezone.utc)
-    cutoff_24h = now - timedelta(hours=24)
-    cutoff_7d = now - timedelta(days=7)
-
-    last_24h: list[dict] = []
-    last_7d: list[dict] = []
-    for r in deduped:
-        dt = _parse_iso(r.get("first_seen"))
-        if dt is None:
-            continue
-        if dt >= cutoff_24h:
-            last_24h.append(r)
-        elif dt >= cutoff_7d:
-            last_7d.append(r)
-
-    by_tier = _bucket_tiers(deduped, _first_seen_sort_key)
     marker_token = _slice_marker_token(name)
-
-    now_str = now.strftime("%Y-%m-%d %H:%M UTC")
-    dedup_note = (
-        f" · {collapsed} cross-source duplicates merged" if collapsed else ""
-    )
+    now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     out: list[str] = []
     out.append(f"# {title}")
     out.append("")
-    out.append(
-        f"Last updated: **{now_str}** · **{len(deduped)}** active roles · "
-        f"[last 24h](#new-24h) ({len(last_24h)}) · "
-        f"[last 7 days](#new-7d) ({len(last_7d)}){dedup_note}. "
-        "Comprehensive view — every role that passes the title/desc "
-        "filters, allowlist gate dropped. See "
-        "[JOBS.md](JOBS.md) for the curated allowlist-gated table."
-    )
+    out.append(f"Last updated: **{now_str}** · **{len(deduped)}** active roles.")
     out.append("")
-    out.append("---")
-    out.append("")
-
-    out.append('<a name="new-24h"></a>')
-    out.append("## New in last 24h")
-    out.append("")
-    out.append(
-        f"<!-- TABLE_SLICE_{marker_token}_24H_START -->"
-    )
-    out.append(_render_section(last_24h, has_salary))
-    out.append(f"<!-- TABLE_SLICE_{marker_token}_24H_END -->")
-    out.append("")
-    out.append("---")
-    out.append("")
-
-    out.append('<a name="new-7d"></a>')
-    out.append("## New in last 7 days")
-    out.append("")
-    out.append(f"<!-- TABLE_SLICE_{marker_token}_7D_START -->")
-    out.append(_render_section(last_7d, has_salary))
-    out.append(f"<!-- TABLE_SLICE_{marker_token}_7D_END -->")
-    out.append("")
-    out.append("---")
-    out.append("")
-
-    out.append('<a name="all-active"></a>')
-    out.append("## All active")
-    out.append("")
-    toc_bits = [
-        f"[{tier_heading}](#all-{tier_key}) ({len(by_tier[tier_key])})"
-        for tier_key, tier_heading in _TIER_ORDER
-    ]
-    out.append("**Sections:** " + " · ".join(toc_bits))
-    out.append("")
-
-    for tier_key, tier_heading in _TIER_ORDER:
-        anchor = f"all-{tier_key}"
-        marker = f"TABLE_SLICE_{marker_token}_{tier_key.upper()}"
-        out.append(f'<a name="{anchor}"></a>')
-        out.append(f"### {tier_heading}")
-        out.append("")
-        out.append(f"<!-- {marker}_START -->")
-        out.append(_render_section(by_tier[tier_key], has_salary))
-        out.append(f"<!-- {marker}_END -->")
-        out.append("")
-
-    while out and out[-1] in ("", "---"):
-        out.pop()
-
-    # Footer — make the comprehensive-view contract explicit at the bottom
-    # of every slice file so a reader who lands here from INDEX.md / a
-    # bookmark / a search engine understands why the row count is larger
-    # than JOBS.md's. Distinct from the header blurb so it's visible
-    # without scrolling back up after browsing a long table.
-    out.append("")
-    out.append("---")
-    out.append("")
-    out.append(
-        "_Comprehensive view — includes all companies, not just the "
-        "curated allowlist. See [JOBS.md](JOBS.md) for the "
-        "allowlist-gated version._"
-    )
+    out.append(f"<!-- TABLE_SLICE_{marker_token}_START -->")
+    out.append(_render_section(deduped, has_salary))
+    out.append(f"<!-- TABLE_SLICE_{marker_token}_END -->")
     out.append("")
 
     # Liveness summary for INDEX.md — `last_liveness_sweep` is the most
     # recent check across this slice's rows (ISO8601 string; sortable
-    # lexically), `pct_verified` is round(100 * ok / total). Both reflect
-    # the post-filter pool, so a slice with all-timeout rows simply has
-    # `last_liveness_sweep=None` and renders no liveness line in INDEX.
+    # lexically), `pct_verified` is round(100 * ok / total).
     last_sweep: str | None = None
     n_live = 0
     for r in deduped:
@@ -910,8 +656,6 @@ def render_slice(
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
     return {
         "total": len(deduped),
-        "new_24h": len(last_24h),
-        "new_7d": len(last_7d),
         "last_liveness_sweep": last_sweep,
         "pct_verified": pct_verified,
     }
@@ -928,9 +672,9 @@ def render_slices(
     a top-level `slices:` key) or a bare list of slice definitions.
 
     Each slice writes one file named by its `filename` field (default
-    `<name>.md`). Returns `{slice_name: {total, new_24h, new_7d}}` so the
-    caller can build a summary line at end of run and feed counts into
-    INDEX.md without re-running the filter/dedup pass.
+    `<name>.md`). Returns `{slice_name: {total, last_liveness_sweep,
+    pct_verified}}` so the caller can build a summary line at end of run
+    and feed counts into INDEX.md without re-running the filter/dedup pass.
 
     Additive to render_md / render_emea_entry_level — slice files are a
     parallel surface, not a replacement.
@@ -1000,18 +744,15 @@ def render_index(
     output_path: str | Path,
     broader_emea_count: int | None = None,
 ) -> None:
-    """Render INDEX.md — generated table of contents for the rendered files.
+    """Render INDEX.md — table of contents for the rendered files.
 
     Groups slices by their primary `regions` entry, preserves the order
-    given in slices.yaml within each group, and links each entry with
-    `{total} active, {total_in_7d} new this week`. Slices missing from
-    `slices_stats` (e.g. malformed config rows) are silently skipped.
+    given in slices.yaml within each group, and links each entry with its
+    `{total} active` count. Slices missing from `slices_stats` (e.g.
+    malformed config rows) are silently skipped.
 
     `broader_emea_count` is the number of rows in `emea-entry-level.md`
     — passed in by the caller so INDEX.md can advertise the wider view.
-
-    INDEX.md is overwritten on every run; it's a generated artifact and
-    must NOT be hand-edited. README.md is the hand-maintained landing page.
     """
     if isinstance(slices_config, dict):
         slices = slices_config.get("slices") or []
@@ -1055,11 +796,7 @@ def render_index(
             filename = s.get("filename") or f"{name}.md"
             st = slices_stats[name]
             total = st.get("total", 0) or 0
-            new_this_week = (st.get("new_24h", 0) or 0) + (st.get("new_7d", 0) or 0)
-            out.append(
-                f"- [{label}]({filename}) — {total} active, "
-                f"{new_this_week} new this week"
-            )
+            out.append(f"- [{label}]({filename}) — {total} active")
             sweep_str = _fmt_liveness_sweep(st.get("last_liveness_sweep"))
             if sweep_str and total:
                 pct = st.get("pct_verified", 0) or 0
@@ -1077,16 +814,6 @@ def render_index(
         )
         out.append("")
 
-    out.append("## How this works")
-    out.append("")
-    out.append(
-        "Generated by `monitor/run.py` after each scheduled scrape — see "
-        "[`monitor/`](monitor/) for the pipeline. Per-slice files are "
-        "filtered views of `monitor/jobs.db`; [`JOBS.md`](JOBS.md) is the "
-        "full Region × Tier table that covers every active row. INDEX.md "
-        "is overwritten on every run."
-    )
-    out.append("")
     out.append("## Coverage")
     out.append("")
     out.append(

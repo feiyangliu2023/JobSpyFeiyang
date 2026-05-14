@@ -378,28 +378,20 @@ locally if you want to inspect prune behavior on a fresh DB.
 ## JOBS.md (rendered table)
 
 `render_md.render_md(active_rows, path)` writes `JOBS.md` at the repo root
-on every run. Layout is a single file (the user explicitly chose not to
-split per-region) with a Region × Tier grid:
+on every run. Layout is one comprehensive table per region:
 
 ```
-EMEA (primary)
-  ├─ FAANG+ & AI Labs
-  ├─ Quant & Finance
-  └─ Other
-North America (via SimplifyJobs)
-  ├─ FAANG+ & AI Labs
-  ├─ Quant & Finance
-  └─ Other
+EMEA (primary)               → 1 table, sorted newest-first
+North America (via SimplifyJobs) → 1 table, sorted newest-first
 ```
 
 EMEA always renders FIRST regardless of row counts — that's the user's
-primary feed. Tier classification is a hardcoded substring match in
-`render_md.py`; deliberately separate from the strict word-boundary
-`_match_company` allowlist gate, because at render time we just need a
-quick bucket label, not a precision filter.
+primary feed. Within each region the rows are deduped by signature and
+sorted by date (newest first); the Age column carries freshness without
+needing tier or time-bucket sub-sections.
 
-Each table is wrapped in `<!-- TABLE_<REGION>_<TIER>_START -->` /
-`<!-- TABLE_<REGION>_<TIER>_END -->` HTML comment markers (mirroring the
+Each table is wrapped in `<!-- TABLE_<REGION>_START -->` /
+`<!-- TABLE_<REGION>_END -->` HTML comment markers (mirroring the
 SimplifyJobs / speedyapply convention) so future tooling can do
 partial-replace on a hand-curated outer file. Today we still write the
 whole file; the markers are forward-compat.
@@ -428,10 +420,9 @@ Differences from `JOBS.md`:
   `include_companies`. So a London Klarna or Vinted role that's not on
   the curated allowlist still surfaces here.
 - **EMEA only.** All other regions are dropped client-side at render time.
-- **Layout: Intern / New Grad × FAANG / Quant / Other.** Top-level split
-  is intern vs new grad (more useful than tier alone for a wide-net
-  browse); each has the same FAANG / Quant / Other tier sub-tables JOBS.md
-  uses, so a reader switching between the two files sees consistent
+- **Layout: Intern / New Grad split, one table each.** Top-level split is
+  intern vs new grad (more useful than tier alone for a wide-net browse).
+  Within each kind the rows are deduped + sorted newest-first; no further
   bucketing.
 - **Stateless** — these rows do NOT go into `jobs.db`. The file is
   recomputed from in-memory data every run (JobSpy's pre-allowlist EMEA
@@ -575,7 +566,7 @@ Toggles:
                       `record_run`, `fetch_new_since`, `fetch_active`, `prune_old`)
 - `health.py`        — per-source HealthTracker + SourceStats + classification
 - `notify.py`        — ntfy.sh JSON POST + digest body builder + health alert
-- `render_md.py`     — JOBS.md generator (Region × Tier grid + table render)
+- `render_md.py`     — JOBS.md / slice / INDEX generator (per-region table render)
 - `external/`        — non-JobSpy ingestion modules
    `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
    `external/locations.py` — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.
