@@ -1,6 +1,6 @@
 # EMEA Internships
 
-Last updated: **2026-05-14 00:23 UTC** · **55** active roles · [last 24h](#new-24h) (16) · [last 7 days](#new-7d) (9) · 15 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
+Last updated: **2026-05-14 08:08 UTC** · **55** active roles · [last 24h](#new-24h) (17) · [last 7 days](#new-7d) (9) · 15 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
 
 ---
 
@@ -10,6 +10,7 @@ Last updated: **2026-05-14 00:23 UTC** · **55** active roles · [last 24h](#new
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_24H_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Cohere"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op | Canada · United Kingdom · United States | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/DRW-Holdings"><strong>DRW Holdings</strong></a> | Software Developer Intern - Industrial Placement | London, UK | <a href="https://job-boards.greenhouse.io/drwuniversityjobs/jobs/7364884"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 196d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 188d |
 | <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | AI Engineer Intern - BCG X | London, UK | <a href="https://careers.bcg.com/global/en/job/56635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 110d |
@@ -27,7 +28,7 @@ Last updated: **2026-05-14 00:23 UTC** · **55** active roles · [last 24h](#new
 | <a href="https://simplify.jobs/c/Boeing"><strong>The Boeing Company</strong></a> | Data Analytics Intern - Data Engineering - Business Intelligence and Analysis | Bristol, UK | <a href="https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/GBR---Bristol-UK/Data-Analytics-Internship--Summer-2026_JR2026508199"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Software Engineer, Safeguards Foundations (Internal Tooling) | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5191433008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 24d |
 
-_0 live, 16 unverified_
+_0 live, 17 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_24H_END -->
 
 ---
@@ -56,7 +57,7 @@ _0 live, 9 unverified_
 <a name="all-active"></a>
 ## All active
 
-**Sections:** [FAANG+ & AI Labs](#all-faang) (5) · [Quant & Finance](#all-quant) (3) · [Other](#all-other) (47)
+**Sections:** [FAANG+ & AI Labs](#all-faang) (6) · [Quant & Finance](#all-quant) (3) · [Other](#all-other) (46)
 
 <a name="all-faang"></a>
 ### FAANG+ & AI Labs
@@ -64,13 +65,14 @@ _0 live, 9 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_FAANG_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Cohere"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op | Canada · United Kingdom · United States | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 188d |
 | <a href="https://simplify.jobs/c/Amazon"><strong>Amazon</strong></a> | Data Engineer Internship - UK - Amazon University Talent Acquisition','Auta | London, UK | <a href="https://amazon.jobs/en/jobs/3183839/data-engineer-internship-uk-amazon-university-talent-acquisition-auta"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 85d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 42d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 36d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Software Engineer, Safeguards Foundations (Internal Tooling) | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5191433008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 24d |
 
-_0 live, 5 unverified_
+_0 live, 6 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_FAANG_END -->
 
 <a name="all-quant"></a>
@@ -132,7 +134,6 @@ _0 live, 3 unverified_
 | <a href="https://simplify.jobs/c/Leonardo"><strong>Leonardo</strong></a> | Industrial Placement Software Engineer | Southampton, UK | <a href="https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite/job/GB---Southampton/Industrial-Placement-Software-Engineer_R0022593"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
 | <a href="https://simplify.jobs/c/Graphcore"><strong>Graphcore</strong></a> | Software Engineering Intern | Bristol, UK | <a href="https://job-boards.greenhouse.io/graphcore/jobs/8441333002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
 | <a href="https://simplify.jobs/c/Graphcore"><strong>Graphcore</strong></a> | Software Engineering Intern - Drivers | Cambridge, UK | <a href="https://job-boards.greenhouse.io/graphcore/jobs/8441356002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
-| <a href="https://simplify.jobs/c/MotorolaSolutions"><strong>Motorola</strong></a> | Software Engineering Intern | Glasgow, UK · Edinburgh, UK | <a href="https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Glasgow-UK-ZUK118/Software-Engineering-Internship_R62644"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
 | <a href="https://simplify.jobs/c/Bose"><strong>Bose</strong></a> | Audio Machine Learning Co-op | London, UK · Stuttgart, Germany · Framingham, MA | <a href="https://boseallaboutme.wd503.myworkdayjobs.com/Bose_Careers/job/US-MA---Framingham/Audio-Machine-Learning-Co-op_R28708"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 91d |
 | <a href="https://simplify.jobs/c/Autodesk"><strong>Autodesk</strong></a> | Intern Software Engineer - C++/.Net - Months | Sheffield, UK | <a href="https://autodesk.wd1.myworkdayjobs.com/uni/job/Sheffield-GBP/Intern--Software-Engineer--C---NET----12-months_26WD95016-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 97d |
 | <a href="https://simplify.jobs/c/Squarepoint-Capital"><strong>Squarepoint Capital</strong></a> | Intern Software Developer - Summer 2026 | Montreal, QC, Canada · London, UK | <a href="https://boards.greenhouse.io/embed/job_app?token=7231006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 99d |
@@ -140,7 +141,7 @@ _0 live, 3 unverified_
 | <a href="https://simplify.jobs/c/Axon"><strong>Axon</strong></a> | 2026 UK Software Engineering Internship | London, UK | <a href="https://job-boards.greenhouse.io/axontalentcommunity/jobs/7122432003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 195d |
 | <a href="https://simplify.jobs/c/Verisk"><strong>Verisk</strong></a> | Internship Program - Data & Analytics Developer | London, UK | <a href="https://fa-ewmy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs/job/1597"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 213d |
 
-_0 live, 47 unverified_
+_0 live, 46 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_OTHER_END -->
 
 ---

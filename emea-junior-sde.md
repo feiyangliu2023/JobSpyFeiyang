@@ -1,6 +1,6 @@
 # EMEA Junior SDE Roles
 
-Last updated: **2026-05-14 00:23 UTC** · **124** active roles · [last 24h](#new-24h) (24) · [last 7 days](#new-7d) (38) · 71 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
+Last updated: **2026-05-14 08:08 UTC** · **122** active roles · [last 24h](#new-24h) (23) · [last 7 days](#new-7d) (38) · 70 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
 
 ---
 
@@ -10,12 +10,11 @@ Last updated: **2026-05-14 00:23 UTC** · **124** active roles · [last 24h](#ne
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_24H_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/Sierra"><strong>Sierra</strong></a> | Software Engineer – New Grad - Agent | London, UK | <a href="https://jobs.ashbyhq.com/Sierra/0ff928f7-cca0-4d2b-ae64-c07277ff5252/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 230d |
 | <a href="https://simplify.jobs/c/Apple"><strong>Apple</strong></a> | SWE – Early Career - User Land Security Researcher - Sear | Gloucester, UK | <a href="https://jobs.apple.com/en-us/details/200622968"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 176d |
 | <a href="https://simplify.jobs/c/Google"><strong>Google</strong></a> | Software Engineer – Early Career - AI/ML - PhD | London, UK | <a href="https://www.google.com/about/careers/applications/jobs/results/92286686481785542"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 97d |
 | <a href="https://simplify.jobs/c/Deliveroo"><strong>Deliveroo</strong></a> | Software Engineer – New Grad | London, UK | <a href="https://jobs.ashbyhq.com/deliveroo/2b69d23b-30b5-46c8-95e8-48258ec05636/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 71d |
-| <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Software Engineer - Python | London, UK · Chicago, IL · NYC | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7398013"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 100d |
-| <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Graduate Software Developer - C# | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Graduate-Software-Developer--C----2-year-Placement_3156191"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 44d |
+| <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Software Engineer - Python | London, UK · Chicago, IL · NYC | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7398013"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 100d |
+| <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Graduate Software Developer - C# | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Graduate-Software-Developer--C----2-year-Placement_3156191"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 44d |
 | <a href="https://simplify.jobs/c/DRW-Holdings"><strong>DRW Holdings</strong></a> | Software Developer Intern - Industrial Placement | London, UK | <a href="https://job-boards.greenhouse.io/drwuniversityjobs/jobs/7364884"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 196d |
 | <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Browser Software Engineer Intern | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Browser-Software-Engineer-Intern_3160410"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 64d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Systems Engineer Industrial Placement Intern | Hammersmith, London, UK | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-Kingdom-New-Malden/Systems-Engineer-Industrial-Placement_R10214355"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
@@ -35,7 +34,7 @@ Last updated: **2026-05-14 00:23 UTC** · **124** active roles · [last 24h](#ne
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Software Engineer, Codex Core Agents | San Francisco, United States · Seattle · New York City, United States | <a href="https://jobs.ashbyhq.com/openai/7ade7a12-845c-4e3a-af23-c028420bd181/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Software Engineer, Compute Infrastructure | San Francisco, United States · New York City, United States · Seattle | <a href="https://jobs.ashbyhq.com/openai/ca300a6d-a2a7-4580-aad7-323fbdfee7b1/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 17d |
 
-_4 live, 20 unverified_
+_5 live, 18 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_24H_END -->
 
 ---
@@ -56,8 +55,8 @@ _4 live, 20 unverified_
 | <a href="https://es.indeed.com/cmp/Gmv"><strong>GMV</strong></a> | .NET Software engineer (Intelligence Systems) | Tres Cantos, MD, ES | <a href="https://es.indeed.com/viewjob?jk=ccc90a918c2403a0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Gmv"><strong>GMV</strong></a> | .NET Software Developer (Intelligence Systems) | Tres Cantos, MD, ES | <a href="https://es.indeed.com/viewjob?jk=9d5dd7d366718bea"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://se.indeed.com/cmp/Visa"><strong>Visa</strong></a> | Software Engineer (Junior - Mid Level) | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=3fe92afe02c9a77a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://il.indeed.com/cmp/M%C3%BCnchener-R%C3%BCckversicherungs--gesellschaft"><strong>Münchener Rückversicherungs-Gesellschaft</strong></a> | Backend Software Engineer | כפר סבא, M, IL | <a href="https://il.indeed.com/viewjob?jk=0c5e445e1b62359b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://il.indeed.com/cmp/Next-Insurance"><strong>Next Insurance</strong></a> | Backend Software Engineer | כפר סבא, M, IL | <a href="https://il.indeed.com/viewjob?jk=ad619f2a60070b08"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
-| <a href="https://il.indeed.com/cmp/Varonis-Systems-1"><strong>Varonis Systems</strong></a> | Junior Backend Engineer | הרצליה, TA, IL | <a href="https://il.indeed.com/viewjob?jk=0c2e41d80f603c83"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://il.indeed.com/cmp/Applied-Materials"><strong>Applied Materials</strong></a> | Unibeam Backend Developer | רחובות, M, IL | <a href="https://il.indeed.com/viewjob?jk=921ee3aba3c8b57b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/London-Borough-of-Havering"><strong>LONDON BOROUGH OF HAVERING</strong></a> | Software Engineer | Romford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=0836228ef0863ecc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Imail-Comms-Ltd."><strong>Imail Comms Ltd.</strong></a> | Junior Software Developer | Coventry, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=ff8e6747a0921233"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -93,7 +92,7 @@ _0 live, 38 unverified_
 <a name="all-active"></a>
 ## All active
 
-**Sections:** [FAANG+ & AI Labs](#all-faang) (19) · [Quant & Finance](#all-quant) (2) · [Other](#all-other) (103)
+**Sections:** [FAANG+ & AI Labs](#all-faang) (19) · [Quant & Finance](#all-quant) (2) · [Other](#all-other) (101)
 
 <a name="all-faang"></a>
 ### FAANG+ & AI Labs
@@ -130,10 +129,10 @@ _2 live, 17 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Software Engineer - Python | London, UK · Chicago, IL · NYC | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7398013"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 100d |
+| <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Software Engineer - Python | London, UK · Chicago, IL · NYC | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7398013"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 100d |
 | <a href="https://simplify.jobs/c/DRW-Holdings"><strong>DRW Holdings</strong></a> | Software Developer Intern - Industrial Placement | London, UK | <a href="https://job-boards.greenhouse.io/drwuniversityjobs/jobs/7364884"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 196d |
 
-_0 live, 2 unverified_
+_1 live, 1 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_QUANT_END -->
 
 <a name="all-other"></a>
@@ -142,9 +141,8 @@ _0 live, 2 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_OTHER_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/Sierra"><strong>Sierra</strong></a> | Software Engineer – New Grad - Agent | London, UK | <a href="https://jobs.ashbyhq.com/Sierra/0ff928f7-cca0-4d2b-ae64-c07277ff5252/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 230d |
 | <a href="https://simplify.jobs/c/Deliveroo"><strong>Deliveroo</strong></a> | Software Engineer – New Grad | London, UK | <a href="https://jobs.ashbyhq.com/deliveroo/2b69d23b-30b5-46c8-95e8-48258ec05636/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 71d |
-| <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Graduate Software Developer - C# | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Graduate-Software-Developer--C----2-year-Placement_3156191"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 44d |
+| <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Graduate Software Developer - C# | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Graduate-Software-Developer--C----2-year-Placement_3156191"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 44d |
 | <a href="https://simplify.jobs/c/Hewlett-Packard"><strong>Hewlett Packard (HP)</strong></a> | Browser Software Engineer Intern | Cambridge, UK | <a href="https://hp.wd5.myworkdayjobs.com/EXTEU-AC-CareerSite/job/Cambridge-Cambridgeshire-United-Kingdom/Browser-Software-Engineer-Intern_3160410"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 64d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Systems Engineer Industrial Placement Intern | Hammersmith, London, UK | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-Kingdom-New-Malden/Systems-Engineer-Industrial-Placement_R10214355"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://uk.indeed.com/cmp/Blackstone-e1df3358"><strong>Blackstone</strong></a> | BXTI - Liquid Credit, Full Stack Software Engineer, Associate | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=6c83bc51ba419daa"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -156,8 +154,8 @@ _0 live, 2 unverified_
 | <a href="https://es.indeed.com/cmp/Gmv"><strong>GMV</strong></a> | .NET Software engineer (Intelligence Systems) | Tres Cantos, MD, ES | <a href="https://es.indeed.com/viewjob?jk=ccc90a918c2403a0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Gmv"><strong>GMV</strong></a> | .NET Software Developer (Intelligence Systems) | Tres Cantos, MD, ES | <a href="https://es.indeed.com/viewjob?jk=9d5dd7d366718bea"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://se.indeed.com/cmp/Visa"><strong>Visa</strong></a> | Software Engineer (Junior - Mid Level) | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=3fe92afe02c9a77a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://il.indeed.com/cmp/M%C3%BCnchener-R%C3%BCckversicherungs--gesellschaft"><strong>Münchener Rückversicherungs-Gesellschaft</strong></a> | Backend Software Engineer | כפר סבא, M, IL | <a href="https://il.indeed.com/viewjob?jk=0c5e445e1b62359b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://il.indeed.com/cmp/Next-Insurance"><strong>Next Insurance</strong></a> | Backend Software Engineer | כפר סבא, M, IL | <a href="https://il.indeed.com/viewjob?jk=ad619f2a60070b08"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
-| <a href="https://il.indeed.com/cmp/Varonis-Systems-1"><strong>Varonis Systems</strong></a> | Junior Backend Engineer | הרצליה, TA, IL | <a href="https://il.indeed.com/viewjob?jk=0c2e41d80f603c83"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://il.indeed.com/cmp/Applied-Materials"><strong>Applied Materials</strong></a> | Unibeam Backend Developer | רחובות, M, IL | <a href="https://il.indeed.com/viewjob?jk=921ee3aba3c8b57b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/London-Borough-of-Havering"><strong>LONDON BOROUGH OF HAVERING</strong></a> | Software Engineer | Romford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=0836228ef0863ecc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Imail-Comms-Ltd."><strong>Imail Comms Ltd.</strong></a> | Junior Software Developer | Coventry, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=ff8e6747a0921233"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -223,7 +221,6 @@ _0 live, 2 unverified_
 | <a href="https://simplify.jobs/c/Leonardo"><strong>Leonardo</strong></a> | Industrial Placement Software Engineer | Southampton, UK | <a href="https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite/job/GB---Southampton/Industrial-Placement-Software-Engineer_R0022593"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
 | <a href="https://simplify.jobs/c/Graphcore"><strong>Graphcore</strong></a> | Software Engineering Intern | Bristol, UK | <a href="https://job-boards.greenhouse.io/graphcore/jobs/8441333002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
 | <a href="https://simplify.jobs/c/Graphcore"><strong>Graphcore</strong></a> | Software Engineering Intern - Drivers | Cambridge, UK | <a href="https://job-boards.greenhouse.io/graphcore/jobs/8441356002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
-| <a href="https://simplify.jobs/c/MotorolaSolutions"><strong>Motorola</strong></a> | Software Engineering Intern | Glasgow, UK · Edinburgh, UK | <a href="https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Glasgow-UK-ZUK118/Software-Engineering-Internship_R62644"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
 | <a href="https://simplify.jobs/c/Clearer-Io"><strong>Clearer.io</strong></a> | Associate Software Engineer 1 | Leicester, UK | <a href="https://jobs.lever.co/Clearer/530ccee8-a05b-4511-9b0f-4296a8a489ef/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 84d |
 | <a href="https://simplify.jobs/c/Axon"><strong>Axon</strong></a> | Software Engineer 1 | London, UK | <a href="https://job-boards.greenhouse.io/axon/jobs/7620148003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 84d |
 | <a href="https://simplify.jobs/c/Visa"><strong>Visa</strong></a> | Software Engineer | Reading, UK | <a href="https://jobs.smartrecruiters.com/Visa/744000109487765"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 87d |
@@ -246,7 +243,7 @@ _0 live, 2 unverified_
 | <a href="https://simplify.jobs/c/Anaplan"><strong>Anaplan</strong></a> | Associate Software Engineer | Manchester, UK | <a href="https://job-boards.greenhouse.io/anaplan/jobs/8208697002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 214d |
 | <a href="https://simplify.jobs/c/Mthree"><strong>mthree</strong></a> | Junior Software Developer - Go Lang | United Kingdom | <a href="https://job-boards.greenhouse.io/mthreerecruitingportal/jobs/4604065006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 232d |
 
-_2 live, 101 unverified_
+_2 live, 99 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_OTHER_END -->
 
 ---

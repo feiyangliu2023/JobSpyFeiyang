@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-14 00:23 UTC** · **70** active roles · [last 24h](#new-24h) (18) · [last 7 days](#new-7d) (31) · 84 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
+Last updated: **2026-05-14 08:08 UTC** · **71** active roles · [last 24h](#new-24h) (19) · [last 7 days](#new-7d) (31) · 84 cross-source duplicates merged. Comprehensive view — every role that passes the title/desc filters, allowlist gate dropped. See [JOBS.md](JOBS.md) for the curated allowlist-gated table.
 
 ---
 
@@ -10,10 +10,11 @@ Last updated: **2026-05-14 00:23 UTC** · **70** active roles · [last 24h](#new
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_24H_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Cohere"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op | Canada · United Kingdom · United States | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Scientist Graduate - Tiktok Shop  DS - 2026 Start - BS/MS | London, UK | <a href="https://lifeattiktok.com/search/7535381998677739784"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 212d |
-| <a href="https://simplify.jobs/c/Thales"><strong>Thales</strong></a> | Embedded Software Research Engineer | Reading, UK | <a href="https://thales.wd3.myworkdayjobs.com/en-US/Careers/job/Reading/Junior-Embedded-Software-Research-Engineer_R0301491-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 53d |
-| <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 13d |
-| <a href="https://simplify.jobs/c/Roche"><strong>Roche</strong></a> | Real World Data Scientist | Welwyn Garden City, UK | <a href="https://roche.wd3.myworkdayjobs.com/roche-ext/job/Welwyn/Data-Scientist_202604-110731-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://simplify.jobs/c/Thales"><strong>Thales</strong></a> | Embedded Software Research Engineer | Reading, UK | <a href="https://thales.wd3.myworkdayjobs.com/en-US/Careers/job/Reading/Junior-Embedded-Software-Research-Engineer_R0301491-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 53d |
+| <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 13d |
+| <a href="https://simplify.jobs/c/Roche"><strong>Roche</strong></a> | Real World Data Scientist | Welwyn Garden City, UK | <a href="https://roche.wd3.myworkdayjobs.com/roche-ext/job/Welwyn/Data-Scientist_202604-110731-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 188d |
 | <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | AI Engineer Intern - BCG X | London, UK | <a href="https://careers.bcg.com/global/en/job/56635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 110d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 42d |
@@ -29,7 +30,7 @@ Last updated: **2026-05-14 00:23 UTC** · **70** active roles · [last 24h](#new
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Data Scientist, Integrity Measurement | London, UK | <a href="https://jobs.ashbyhq.com/openai/a7a326e7-6718-42ab-a4d8-b16d5021c99b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 70d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Applied AI Engineer, Codex Core Agent | San Francisco, United States · Seattle · New York City, United States | <a href="https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
 
-_1 live, 17 unverified_
+_4 live, 15 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_24H_END -->
 
 ---
@@ -80,7 +81,7 @@ _0 live, 31 unverified_
 <a name="all-active"></a>
 ## All active
 
-**Sections:** [FAANG+ & AI Labs](#all-faang) (14) · [Quant & Finance](#all-quant) (1) · [Other](#all-other) (55)
+**Sections:** [FAANG+ & AI Labs](#all-faang) (15) · [Quant & Finance](#all-quant) (1) · [Other](#all-other) (55)
 
 <a name="all-faang"></a>
 ### FAANG+ & AI Labs
@@ -88,6 +89,7 @@ _0 live, 31 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_FAANG_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Cohere"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op | Canada · United Kingdom · United States | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Scientist Graduate - Tiktok Shop  DS - 2026 Start - BS/MS | London, UK | <a href="https://lifeattiktok.com/search/7535381998677739784"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 212d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 188d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 42d |
@@ -103,7 +105,7 @@ _0 live, 31 unverified_
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Applied AI Engineer, Codex Core Agent | San Francisco, United States · Seattle · New York City, United States | <a href="https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
 | <a href="https://nl.indeed.com/cmp/Snappet"><strong>Snappet</strong></a> | Junior Data scientist | Utrecht, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=d69e2dc117158132"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 146d |
 
-_1 live, 13 unverified_
+_1 live, 14 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_FAANG_END -->
 
 <a name="all-quant"></a>
@@ -123,9 +125,9 @@ _0 live, 1 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_OTHER_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/Thales"><strong>Thales</strong></a> | Embedded Software Research Engineer | Reading, UK | <a href="https://thales.wd3.myworkdayjobs.com/en-US/Careers/job/Reading/Junior-Embedded-Software-Research-Engineer_R0301491-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 53d |
-| <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 13d |
-| <a href="https://simplify.jobs/c/Roche"><strong>Roche</strong></a> | Real World Data Scientist | Welwyn Garden City, UK | <a href="https://roche.wd3.myworkdayjobs.com/roche-ext/job/Welwyn/Data-Scientist_202604-110731-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://simplify.jobs/c/Thales"><strong>Thales</strong></a> | Embedded Software Research Engineer | Reading, UK | <a href="https://thales.wd3.myworkdayjobs.com/en-US/Careers/job/Reading/Junior-Embedded-Software-Research-Engineer_R0301491-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 53d |
+| <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 13d |
+| <a href="https://simplify.jobs/c/Roche"><strong>Roche</strong></a> | Real World Data Scientist | Welwyn Garden City, UK | <a href="https://roche.wd3.myworkdayjobs.com/roche-ext/job/Welwyn/Data-Scientist_202604-110731-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | AI Engineer Intern - BCG X | London, UK | <a href="https://careers.bcg.com/global/en/job/56635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 110d |
 | <a href="https://es.indeed.com/cmp/Verisure"><strong>Verisure</strong></a> | Data Scientist | Pozuelo de Alarcón, MD, ES | <a href="https://es.indeed.com/viewjob?jk=6b07b25e13be3130"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://se.indeed.com/cmp/Kth-Royal-Institute-of-Technology"><strong>KTH Royal Institute of Technology</strong></a> | Research Engineer in AI-Assisted Surface Water Dynamics Analysis | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=415fd51d52a81fc8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -179,7 +181,7 @@ _0 live, 1 unverified_
 | <a href="https://simplify.jobs/c/Graphcore"><strong>Graphcore</strong></a> | 2026 Graduate Machine Learning Engineer - Applied AI | Bristol, UK | <a href="https://job-boards.greenhouse.io/graphcore/jobs/8234675002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 190d |
 | <a href="https://simplify.jobs/c/Shift-Technology"><strong>Shift</strong></a> | Graduate Data Scientist | London, UK | <a href="https://job-boards.greenhouse.io/shifttechnology/jobs/5910904003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 197d |
 
-_0 live, 55 unverified_
+_3 live, 52 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_OTHER_END -->
 
 ---
