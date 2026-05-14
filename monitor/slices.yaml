@@ -196,3 +196,184 @@ slices:
         - lead
         - principal
       kinds: [newgrad, intern]
+
+  # ---- Data analyst slices (all seniority) ----
+  # Distinct from the MLE / data scientist slice — these are dbt-shaped
+  # / dashboard-shaped roles, not modelling-shaped. No seniority filter
+  # per user direction: junior and senior data-analyst roles both surface.
+  - name: emea_data_analyst
+    filename: emea-data-analyst.md
+    title: "EMEA Data Analyst Roles"
+    index_label: "Data Analyst"
+    filters:
+      regions: [emea]
+      title_keywords_any:
+        - data analyst
+        - analytics engineer
+        - business intelligence
+        - bi developer
+        - bi engineer
+        - data analytics
+
+  - name: na_data_analyst
+    filename: na-data-analyst.md
+    title: "North America Data Analyst Roles"
+    index_label: "Data Analyst"
+    filters:
+      regions: [north_america]
+      title_keywords_any:
+        - data analyst
+        - analytics engineer
+        - business intelligence
+        - bi developer
+        - bi engineer
+        - data analytics
+
+  # ---- 算法岗 / Algorithm slices (all seniority) ----
+  # Algorithm-shaped roles — search / ranking / recommendation / CV / NLP /
+  # bare "algorithm engineer". Overlaps the MLE slice but narrows the
+  # window to roles that explicitly call out an algorithmic specialism
+  # (which is the 算法岗 framing in zh-CN industry usage). The MLE slice
+  # remains the home for generic "ml engineer" / "applied scientist"
+  # titles.
+  - name: emea_algorithm
+    filename: emea-algorithm.md
+    title: "EMEA Algorithm Engineer Roles (算法岗)"
+    index_label: "Algorithm (算法岗)"
+    filters:
+      regions: [emea]
+      title_keywords_any:
+        - algorithm
+        - search engineer
+        - search scientist
+        - ranking engineer
+        - recommendation
+        - computer vision
+        - nlp engineer
+        - nlp scientist
+
+  - name: na_algorithm
+    filename: na-algorithm.md
+    title: "North America Algorithm Engineer Roles (算法岗)"
+    index_label: "Algorithm (算法岗)"
+    filters:
+      regions: [north_america]
+      title_keywords_any:
+        - algorithm
+        - search engineer
+        - search scientist
+        - ranking engineer
+        - recommendation
+        - computer vision
+        - nlp engineer
+        - nlp scientist
+
+  # ---- Solutions / Customer / DevOps slices (all seniority) ----
+  # Combined slice covering the user's "售前 / 售后 / devops" framing:
+  # pre-sales (solutions / sales engineer), post-sales (customer engineer /
+  # support / implementation), and operations (devops / sre / platform).
+  # Kept as one slice rather than three since the user phrased them
+  # together and the audience tends to view them as a single career lane.
+  - name: emea_solutions_devops
+    filename: emea-solutions-devops.md
+    title: "EMEA Solutions / Customer / DevOps Roles"
+    index_label: "Solutions / Customer / DevOps"
+    filters:
+      regions: [emea]
+      title_keywords_any:
+        - solutions engineer
+        - sales engineer
+        - pre-sales
+        - presales
+        - customer engineer
+        - customer success
+        - support engineer
+        - implementation engineer
+        - technical account
+        - field engineer
+        - devops
+        - " sre "
+        - site reliability
+
+  - name: na_solutions_devops
+    filename: na-solutions-devops.md
+    title: "North America Solutions / Customer / DevOps Roles"
+    index_label: "Solutions / Customer / DevOps"
+    filters:
+      regions: [north_america]
+      title_keywords_any:
+        - solutions engineer
+        - sales engineer
+        - pre-sales
+        - presales
+        - customer engineer
+        - customer success
+        - support engineer
+        - implementation engineer
+        - technical account
+        - field engineer
+        - devops
+        - " sre "
+        - site reliability
+
+  # ---- Senior SDE slices ----
+  # Specifically the senior IC SDE track. We list seniority-prefixed
+  # phrasings as multi-word tokens so a "Senior Software Engineer" matches
+  # but "Senior Data Scientist" does NOT (different role family — would
+  # land in a hypothetical senior MLE slice instead). Note that "Sr." /
+  # "II" / "L5" variants are STILL globally excluded by config.yaml —
+  # only "senior", "staff", "principal", "lead" were lifted; the Sr./II/L5
+  # signals stay excluded since updating every junior slice to also gate
+  # them would be a bigger churn. Most FAANG / AI-lab senior titles use
+  # "Senior" anyway, so coverage stays high.
+  - name: emea_senior_sde
+    filename: emea-senior-sde.md
+    title: "EMEA Senior SDE Roles"
+    index_label: "Senior SDE"
+    filters:
+      regions: [emea]
+      title_keywords_any:
+        - senior software engineer
+        - senior software developer
+        - senior backend
+        - senior frontend
+        - senior full stack
+        - senior full-stack
+        - senior fullstack
+        - senior sde
+        - senior swe
+        - senior platform engineer
+        - senior infrastructure engineer
+        - senior systems engineer
+        - staff software engineer
+        - staff engineer
+        - principal software engineer
+        - principal engineer
+        - lead software engineer
+        - lead engineer
+
+  - name: na_senior_sde
+    filename: na-senior-sde.md
+    title: "North America Senior SDE Roles"
+    index_label: "Senior SDE"
+    filters:
+      regions: [north_america]
+      title_keywords_any:
+        - senior software engineer
+        - senior software developer
+        - senior backend
+        - senior frontend
+        - senior full stack
+        - senior full-stack
+        - senior fullstack
+        - senior sde
+        - senior swe
+        - senior platform engineer
+        - senior infrastructure engineer
+        - senior systems engineer
+        - staff software engineer
+        - staff engineer
+        - principal software engineer
+        - principal engineer
+        - lead software engineer
+        - lead engineer

@@ -361,45 +361,60 @@ why ~10 consecutive `chore(monitor): refresh` commits were dominating
   - `jobs`: drop rows where `status='gone' AND last_seen < (now -
     retention_days)`. Active rows are NEVER pruned — they still appear
     in JOBS.md and the renderer needs them.
-  - `runs`: drop rows where `started_at < (now - retention_days // 2)`.
-    The runs table is purely diagnostic, so we keep half the window;
-    recent-run debugging still works without bloating the DB.
+  - `runs`: drop rows where `started_at < (now - runs_retention_days)`.
+    The runs table is purely diagnostic and accumulates ~30-60 rows per
+    scrape (one per city-site combo), so it would dominate jobs.db
+    within a few months at the older `retention_days // 2` window.
+    `run.py` passes `--runs-retention-days` (default 30) explicitly;
+    callers that omit it fall back to `retention_days // 2` for
+    backwards compat with the existing tests.
 
 VACUUM only runs when something was deleted (no point shuffling pages
 on a no-op run). Logs counts pruned per table at INFO. Pruning failures
 are swallowed — JOBS.md can still render from the un-pruned set if
 prune blows up, so we don't fail the whole run.
 
-The `--retention-days` argparse flag is the only knob. Default 180 days
-keeps a full half-year of trailing data, which matches how often we see
-roles come back under the same URL (rarely beyond ~3 months). Lower it
-locally if you want to inspect prune behavior on a fresh DB.
+The `--retention-days` argparse flag controls the jobs window (default
+180 days — a full half-year, matches how often roles come back under
+the same URL, rarely beyond ~3 months). The `--runs-retention-days`
+flag controls the diagnostic runs window separately (default 30 days).
+Lower either locally to inspect prune behavior on a fresh DB.
+
+### Render caps (MD bloat guard)
+
+`render_md.RENDER_MAX_ROWS` (default 500) and `RENDER_MAX_AGE_DAYS`
+(default 180) bound the size of every rendered MD section so JOBS.md /
+slice files / emea-entry-level.md stay browsable as the broader pool
+grows. Applied via `_apply_render_caps(rows, ...)` in three call sites:
+`render_slice`, `render_md` (per region), `render_emea_entry_level`
+(per kind). Caps affect what gets WRITTEN, not what gets STORED — the
+full row set stays in jobs.db until the normal `prune_old` lifecycle
+catches it.
+
+When a cap drops rows, `_render_cap_note(...)` appends a one-line
+italic footer beneath the table explaining what was hidden. Section
+header counts continue to advertise the TRUE active count (pre-cap)
+so users can tell when a cap is in play. Per-slice overrides via
+`max_rows` / `max_age_days` in slices.yaml; 0 / None disables that side
+of the cap.
 
 ## JOBS.md (rendered table)
 
 `render_md.render_md(active_rows, path)` writes `JOBS.md` at the repo root
-on every run. Layout is a single file (the user explicitly chose not to
-split per-region) with a Region × Tier grid:
+on every run. Layout is one comprehensive table per region:
 
 ```
-EMEA (primary)
-  ├─ FAANG+ & AI Labs
-  ├─ Quant & Finance
-  └─ Other
-North America (via SimplifyJobs)
-  ├─ FAANG+ & AI Labs
-  ├─ Quant & Finance
-  └─ Other
+EMEA (primary)               → 1 table, sorted newest-first
+North America (via SimplifyJobs) → 1 table, sorted newest-first
 ```
 
 EMEA always renders FIRST regardless of row counts — that's the user's
-primary feed. Tier classification is a hardcoded substring match in
-`render_md.py`; deliberately separate from the strict word-boundary
-`_match_company` allowlist gate, because at render time we just need a
-quick bucket label, not a precision filter.
+primary feed. Within each region the rows are deduped by signature and
+sorted by date (newest first); the Age column carries freshness without
+needing tier or time-bucket sub-sections.
 
-Each table is wrapped in `<!-- TABLE_<REGION>_<TIER>_START -->` /
-`<!-- TABLE_<REGION>_<TIER>_END -->` HTML comment markers (mirroring the
+Each table is wrapped in `<!-- TABLE_<REGION>_START -->` /
+`<!-- TABLE_<REGION>_END -->` HTML comment markers (mirroring the
 SimplifyJobs / speedyapply convention) so future tooling can do
 partial-replace on a hand-curated outer file. Today we still write the
 whole file; the markers are forward-compat.
@@ -428,10 +443,9 @@ Differences from `JOBS.md`:
   `include_companies`. So a London Klarna or Vinted role that's not on
   the curated allowlist still surfaces here.
 - **EMEA only.** All other regions are dropped client-side at render time.
-- **Layout: Intern / New Grad × FAANG / Quant / Other.** Top-level split
-  is intern vs new grad (more useful than tier alone for a wide-net
-  browse); each has the same FAANG / Quant / Other tier sub-tables JOBS.md
-  uses, so a reader switching between the two files sees consistent
+- **Layout: Intern / New Grad split, one table each.** Top-level split is
+  intern vs new grad (more useful than tier alone for a wide-net browse).
+  Within each kind the rows are deduped + sorted newest-first; no further
   bucketing.
 - **Stateless** — these rows do NOT go into `jobs.db`. The file is
   recomputed from in-memory data every run (JobSpy's pre-allowlist EMEA
@@ -465,6 +479,13 @@ Wired through `run.py` via:
 - The same `broader_rows` pool feeds `render_slices()` — slice files
   (emea-junior-sde.md, na-junior-sde.md, …) are comprehensive views,
   NOT allowlist-gated. JOBS.md remains the curated allowlist-gated table.
+- **Slice surface (May 2026)** — beyond junior SDE / MLE / intern /
+  quant, slices.yaml now defines per-region data-analyst, algorithm
+  (算法岗), solutions/customer/devops, and senior SDE views. The new
+  role-type slices are NOT junior-gated (they accept all seniority);
+  senior-SDE-only enumerates seniority-prefixed phrasings explicitly.
+  Existing junior slices keep their local `title_keywords_none` block,
+  so the senior tokens lifted from `exclude_titles` don't leak in.
 - Path is overridable via `--md-emea-entry-level`; default is
   `<repo_root>/emea-entry-level.md` to mirror JOBS.md's location.
 
@@ -575,7 +596,7 @@ Toggles:
                       `record_run`, `fetch_new_since`, `fetch_active`, `prune_old`)
 - `health.py`        — per-source HealthTracker + SourceStats + classification
 - `notify.py`        — ntfy.sh JSON POST + digest body builder + health alert
-- `render_md.py`     — JOBS.md generator (Region × Tier grid + table render)
+- `render_md.py`     — JOBS.md / slice / INDEX generator (per-region table render)
 - `external/`        — non-JobSpy ingestion modules
    `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
    `external/locations.py` — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.

@@ -906,10 +906,21 @@ def main(argv: list[str] | None = None) -> int:
         default=180,
         help=(
             "How many days to keep rows with status='gone' before pruning "
-            "them and VACUUMing the DB. Runs are kept for half this window "
-            "(diagnostic-only table). Default 180 — keeps a full "
+            "them and VACUUMing the DB. Default 180 — keeps a full "
             "half-year of trailing data without letting jobs.db grow "
             "unboundedly inside the git repo."
+        ),
+    )
+    parser.add_argument(
+        "--runs-retention-days",
+        type=int,
+        default=30,
+        help=(
+            "How many days to keep diagnostic rows in the `runs` table. "
+            "Default 30 — independent of --retention-days because the "
+            "runs table accumulates ~30-60 rows per scrape (one per "
+            "city-site combo) and would dominate jobs.db within a few "
+            "months at the older `retention_days // 2` window."
         ),
     )
     parser.add_argument(
@@ -1091,7 +1102,10 @@ def main(argv: list[str] | None = None) -> int:
         # liveness (so the renderer sees the smaller post-prune set).
         # VACUUM happens inside prune_old when anything was deleted.
         try:
-            dbmod.prune_old(conn, args.retention_days)
+            dbmod.prune_old(
+                conn, args.retention_days,
+                runs_retention_days=args.runs_retention_days,
+            )
         except Exception as e:
             # Pruning failures shouldn't fail the whole run — JOBS.md
             # can still render from the un-pruned set.

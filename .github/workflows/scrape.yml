@@ -62,8 +62,12 @@ jobs:
           git add monitor/jobs.db JOBS.md INDEX.md emea-entry-level.md \
                   emea-junior-sde.md emea-junior-mle.md \
                   emea-internships.md emea-quant.md \
+                  emea-data-analyst.md emea-algorithm.md \
+                  emea-solutions-devops.md emea-senior-sde.md \
                   na-junior-sde.md na-junior-mle.md \
-                  na-internships.md na-quant.md
+                  na-internships.md na-quant.md \
+                  na-data-analyst.md na-algorithm.md \
+                  na-solutions-devops.md na-senior-sde.md
           if git diff --cached --quiet; then
             echo "no changes to commit; skipping"
             exit 0
