@@ -267,13 +267,9 @@ filters:
   # but not "Hawaii"/"Israeli". Substring tokens without spaces (`senior`,
   # `staff`) still work like before.
   exclude_titles:
-    - senior
-    - staff
-    - principal
     - director
     - vp
     - head of
-    - lead
     - manager
     - architect
     # "Sr" variants — Indeed UK/US frequently uses "Sr." or "Sr "
@@ -289,6 +285,11 @@ filters:
     - "5+ years"
     - "7+ years"
     - "10+ years"
+    # Note on "senior" / "staff" / "principal" / "lead": previously
+    # excluded globally, lifted so the senior_sde slice can surface
+    # senior IC roles. Existing junior slices keep them in their local
+    # `title_keywords_none` block; emea-entry-level / JOBS.md are happy
+    # to surface senior roles per user direction.
     # Research Scientist tracks are PhD+ at every employer we monitor —
     # explicitly drop them. Note the trailing space so "Research Scientist
     # II" / "Research Scientist, Foo" both match while a hypothetical
@@ -337,6 +338,31 @@ filters:
     # above). Anthropic / Cohere / Mistral RE roles surface in
     # emea_junior_mle / na_junior_mle slices.
     - "research engineer"
+    # ---- Data analyst / analytics surface ----
+    # Bare "analyst" is too noisy (matches business/financial/HR analyst)
+    # so we use the multi-word phrasings. "analytics engineer" / "data
+    # analyst" cover the dbt-shaped + dashboard-shaped data roles.
+    - "data analyst"
+    - "analytics engineer"
+    - "business intelligence"
+    # ---- 算法岗 / Algorithm engineering surface ----
+    # "algorithm" catches bare "Algorithm Engineer" / "Algorithm
+    # Developer" titles. Search / recommendation / CV / NLP roles
+    # already pass via "engineer", but listing them keeps intent clear
+    # and rescues a few non-"engineer"-suffixed titles like
+    # "Computer Vision Scientist" or "NLP Researcher".
+    - "algorithm"
+    - "computer vision"
+    - "nlp"
+    - "recommendation"
+    # ---- DevOps / SRE surface ----
+    # "devops" catches bare DevOps titles without "engineer". " sre " has
+    # leading/trailing spaces because "sre" is short and would otherwise
+    # match unrelated tokens like "stress" — the title is space-padded
+    # before matching, so this gives us a word boundary.
+    - "devops"
+    - " sre "
+    - "site reliability"
 
   # How `include_companies` is applied:
   #   enforce — drop any row whose company doesn't match a token on the list.

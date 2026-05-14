@@ -456,6 +456,13 @@ Wired through `run.py` via:
 - The same `broader_rows` pool feeds `render_slices()` — slice files
   (emea-junior-sde.md, na-junior-sde.md, …) are comprehensive views,
   NOT allowlist-gated. JOBS.md remains the curated allowlist-gated table.
+- **Slice surface (May 2026)** — beyond junior SDE / MLE / intern /
+  quant, slices.yaml now defines per-region data-analyst, algorithm
+  (算法岗), solutions/customer/devops, and senior SDE views. The new
+  role-type slices are NOT junior-gated (they accept all seniority);
+  senior-SDE-only enumerates seniority-prefixed phrasings explicitly.
+  Existing junior slices keep their local `title_keywords_none` block,
+  so the senior tokens lifted from `exclude_titles` don't leak in.
 - Path is overridable via `--md-emea-entry-level`; default is
   `<repo_root>/emea-entry-level.md` to mirror JOBS.md's location.
 

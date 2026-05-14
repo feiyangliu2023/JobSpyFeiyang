@@ -1,6 +1,6 @@
 # EMEA Entry-Level Roles
 
-Last updated: **2026-05-14 17:05 UTC** · **92** active EMEA entry-level roles ([Internships](#intern) (16) · [New Grad](#newgrad) (76)).
+Last updated: **2026-05-14 19:25 UTC** · **92** active EMEA entry-level roles ([Internships](#intern) (16) · [New Grad](#newgrad) (76)).
 
 ---
 

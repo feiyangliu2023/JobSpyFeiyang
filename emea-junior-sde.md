@@ -1,6 +1,6 @@
 # EMEA Junior SDE Roles
 
-Last updated: **2026-05-14 17:05 UTC** · **25** active roles.
+Last updated: **2026-05-14 19:25 UTC** · **25** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |

@@ -778,8 +778,10 @@ def render_index(
     out.append("# Job Tracker")
     out.append("")
     out.append(
-        "Auto-generated tracker of junior tech roles in EMEA and North "
-        "America. Updated twice daily via GitHub Actions."
+        "Auto-generated tracker of tech roles in EMEA and North America "
+        "across junior, senior, and specialised tracks (data analyst, "
+        "algorithm, solutions / DevOps, quant). Updated twice daily via "
+        "GitHub Actions."
     )
     out.append("")
     out.append("## Browse by slice")
