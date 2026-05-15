@@ -1,10 +1,11 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-05-15 00:50 UTC** · **11** active roles.
+Last updated: **2026-05-15 16:09 UTC** · **12** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://dk.indeed.com/cmp/Mckinsey-&-Company"><strong>McKinsey & Company</strong></a> | Data Engineer - QuantumBlack, AI by McKinsey | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=7fe9f56aab23c2a4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://il.indeed.com/cmp/Drw-Trading-Group"><strong>DRW Trading Group</strong></a> | Site Reliability Engineer - Algorithmic Trading | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=b3234d5746460c9f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://il.indeed.com/cmp/Drw-Montreal"><strong>DRW Montreal</strong></a> | Site Reliability Engineer - Algorithmic Trading | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=729f971dc90c8509"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Squarepoint-Capital"><strong>Squarepoint Capital</strong></a> | Graduate Quant Developer | Montreal, QC, Canada · London, UK | <a href="https://boards.greenhouse.io/embed/job_app?token=7918610"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -16,7 +17,7 @@ Last updated: **2026-05-15 00:50 UTC** · **11** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 164d |
 
-_1 live, 9 unverified_
+_1 live, 10 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
