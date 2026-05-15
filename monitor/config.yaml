@@ -259,6 +259,82 @@ role_templates:
     hours_old: 168
     job_type: fulltime
 
+  # ---- senior_sde: feeds the senior_sde slice ----
+  # The senior IC SDE track. Search terms key on "Senior" / "Staff" /
+  # "Principal" / "Lead" prefixes — these are the seniority signals
+  # that survived the global `exclude_titles` cull (Sr. / II / III / L5
+  # variants still drop globally, since updating every junior slice's
+  # local exclusion to gate them would be a bigger churn).
+  - name: senior_sde
+    sites: [indeed, linkedin, glassdoor]
+    sites_skip_in_ci: [linkedin, glassdoor]
+    search_terms:
+      - "senior software engineer"
+      - "staff software engineer"
+      - "principal software engineer"
+      - "lead software engineer"
+      - "senior backend engineer"
+      - "senior frontend engineer"
+      - "senior full stack engineer"
+      - "senior platform engineer"
+    site_search_terms:
+      linkedin:
+        - "senior software engineer"
+      glassdoor:
+        - "senior software engineer"
+    # Higher than junior tier — senior IC roles are denser at the
+    # FAANG / AI-lab / scaleup employers we care about, and the hours_old
+    # window means we'd otherwise truncate the head of the listings.
+    results_wanted: 40
+    hours_old: 168
+    job_type: fulltime
+
+  # ---- data_analyst: feeds the data_analyst slice (all seniority) ----
+  # dbt-shaped + dashboard-shaped roles. Distinct from MLE / data
+  # scientist tracks. Search terms are deliberately narrow — bare
+  # "analyst" is too noisy (matches business/financial/HR analyst).
+  - name: data_analyst
+    sites: [indeed, linkedin, glassdoor]
+    sites_skip_in_ci: [linkedin, glassdoor]
+    search_terms:
+      - "data analyst"
+      - "senior data analyst"
+      - "analytics engineer"
+      - "business intelligence engineer"
+      - "business intelligence developer"
+    site_search_terms:
+      linkedin:
+        - "data analyst"
+      glassdoor:
+        - "data analyst"
+    results_wanted: 25
+    hours_old: 168
+    job_type: fulltime
+
+  # ---- devops_sre: feeds the solutions_devops slice (all seniority) ----
+  # Pre-sales (solutions / sales engineer) + post-sales (customer /
+  # support / implementation) + ops (devops / SRE / platform engineer).
+  # Combined per the slice's combined framing.
+  - name: devops_sre
+    sites: [indeed, linkedin, glassdoor]
+    sites_skip_in_ci: [linkedin, glassdoor]
+    search_terms:
+      - "devops engineer"
+      - "site reliability engineer"
+      - "platform engineer"
+      - "solutions engineer"
+      - "customer engineer"
+      - "support engineer"
+      - "implementation engineer"
+    site_search_terms:
+      linkedin:
+        - "devops engineer"
+      glassdoor:
+        - "devops engineer"
+    results_wanted: 30
+    hours_old: 168
+    job_type: fulltime
+
 filters:
   # Case-insensitive substring match on a SPACE-PADDED lowercased title (the
   # title is wrapped in leading/trailing spaces before matching). Tokens are
@@ -694,6 +770,56 @@ external_sources:
   - name: direct_openai
     type: direct
     module: openai
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  # ---- NA-senior-coverage tier (added May 2026) ----
+  #
+  # Motivation: NA pool previously came 100% from SimplifyJobs's New-Grad +
+  # Summer 2026 Intern feeds, both junior-by-definition. The na_senior_sde
+  # slice was structurally empty. Adding direct careers-page scrapers for
+  # Mistral / Cohere / Stripe / Databricks / Scale AI gets us senior-tier
+  # ICs at the AI-lab + data-infra companies that don't appear in the
+  # new-grad feeds. All five are already on `include_companies`. Region
+  # is auto-classified per posting so EMEA HQs (Cohere London, Mistral
+  # Paris) populate the EMEA slices alongside their NA postings.
+  #
+  # Companies on Workday-style ATSes (Google / Meta / Amazon / Microsoft)
+  # can't be added the same way — they need a headless browser. Out of
+  # scope for now; SimplifyJobs covers the new-grad slice there and the
+  # senior slice for those companies stays a gap.
+  - name: direct_mistral
+    type: direct
+    module: mistral
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: direct_cohere
+    type: direct
+    module: cohere
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: direct_stripe
+    type: direct
+    module: stripe
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: direct_databricks
+    type: direct
+    module: databricks
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: direct_scaleai
+    type: direct
+    module: scaleai
     allowed_regions: [emea, north_america]
     skip_filters:
       - min_description_chars
