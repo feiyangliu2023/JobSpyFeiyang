@@ -14,6 +14,13 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # Bound the whole job. Indeed occasionally throttles the runner IP
+    # in ways that turn ~14-minute runs into multi-hour hangs; without
+    # this we'd silently consume the 6-hour default and skip the commit
+    # step on timeout-cancellation. 60 min covers the worst observed
+    # legitimate run (1404 Indeed searches × heavy retry backoff) with
+    # headroom.
+    timeout-minutes: 60
     permissions:
       contents: write  # needed to commit jobs.db back to the branch
     steps:
