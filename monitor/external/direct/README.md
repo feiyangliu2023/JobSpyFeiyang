@@ -16,7 +16,7 @@ directory hits each company's ATS feed directly so a new role lands in
 | `openai.py`   | Ashby, board=`openai`. |
 | `mistral.py`   | Ashby, board=`mistral`. |
 | `cohere.py`    | Ashby, board=`cohere`. |
-| `scaleai.py`   | Ashby, board=`scaleai`. |
+| `scaleai.py`   | Greenhouse, board=`scaleai`. |
 | `stripe.py`     | Greenhouse, board=`stripe`. |
 | `databricks.py` | Greenhouse, board=`databricks`. |
 | `deepmind.py` | Stub. Google Careers is JS-rendered + bot-gated; see file for rationale. |
