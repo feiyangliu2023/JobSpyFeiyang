@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-05-15 16:09 UTC** · **40** active roles.
+Last updated: **2026-05-15 16:33 UTC** · **40** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -36,7 +36,7 @@ Last updated: **2026-05-15 16:09 UTC** · **40** active roles.
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Research Engineer - Robotics | Paris | <a href="https://jobs.ashbyhq.com/mistral/dbd4595f-a2e6-423f-bc9e-3cb6e8e3903e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 37d |
 | <a href="https://simplify.jobs/c/Thales"><strong>Thales</strong></a> | Embedded Software Research Engineer | Reading, UK | <a href="https://thales.wd3.myworkdayjobs.com/en-US/Careers/job/Reading/Junior-Embedded-Software-Research-Engineer_R0301491-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 54d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Science of Scaling | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5126127008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 71d |
-| <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
+| <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 78d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Pretraining | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5119713008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 88d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Production Model Post-Training | Zürich, CH | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5112018008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 92d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (Reinforcement Learning) | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5115935008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 93d |
@@ -46,5 +46,5 @@ Last updated: **2026-05-15 16:09 UTC** · **40** active roles.
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Research Engineer, Model Evaluation | Toronto, Canada · New York, United States · Seattle, United States | <a href="https://jobs.ashbyhq.com/cohere/cb5d588c-5637-423a-968b-bf637ee2caf9/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 311d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 410d |
 
-_8 live, 32 unverified_
+_9 live, 31 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
