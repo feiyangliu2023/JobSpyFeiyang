@@ -1139,10 +1139,22 @@ def main(argv: list[str] | None = None) -> int:
         except OSError as e:
             log.warning("[health] could not write JSON dump: %s", e)
 
-        new_jobs = dbmod.fetch_new_since(conn, run_started_at)
+        # Ntfy delivery is best-effort. A push outage is not a scrape
+        # failure — the user can still pull the rendered MD from the
+        # repo. Don't tank the workflow over a Slack-level annoyance.
+        try:
+            new_jobs = dbmod.fetch_new_since(conn, run_started_at)
+        except Exception as e:
+            log.exception("fetch_new_since failed: %s", e)
+            new_jobs = []
         if new_jobs and not args.dry_run:
-            sent = notify.send_digest(new_jobs, topic=os.environ.get("NTFY_TOPIC"))
-            log.info("notification sent=%s", sent)
+            try:
+                sent = notify.send_digest(
+                    new_jobs, topic=os.environ.get("NTFY_TOPIC")
+                )
+                log.info("notification sent=%s", sent)
+            except Exception as e:
+                log.exception("ntfy digest send failed: %s", e)
         elif new_jobs:
             log.info(
                 "DRY RUN: skipping ntfy digest (%d new jobs would have been sent)",
@@ -1155,16 +1167,25 @@ def main(argv: list[str] | None = None) -> int:
             if args.dry_run:
                 log.info("DRY RUN: skipping ntfy health alert")
             else:
-                sent_alert = notify.send_health_alert(
-                    health, topic=os.environ.get("NTFY_TOPIC")
-                )
-                log.info("[health] alert sent=%s", sent_alert)
+                try:
+                    sent_alert = notify.send_health_alert(
+                        health, topic=os.environ.get("NTFY_TOPIC")
+                    )
+                    log.info("[health] alert sent=%s", sent_alert)
+                except Exception as e:
+                    log.exception("ntfy health alert failed: %s", e)
 
         # Render JOBS.md from the current DB state regardless of whether this
-        # run added anything — gone-jobs disappear, ages tick up.
-        active = dbmod.fetch_active(conn)
-        n_rendered = render_md_mod.render_md(active, args.md)
-        log.info("rendered %d active jobs to %s", n_rendered, args.md)
+        # run added anything — gone-jobs disappear, ages tick up. Each
+        # render step is independently wrapped so a single failure (e.g.
+        # malformed row from an upstream schema drift) doesn't take out
+        # the rest of the renders and the workflow's commit step.
+        try:
+            active = dbmod.fetch_active(conn)
+            n_rendered = render_md_mod.render_md(active, args.md)
+            log.info("rendered %d active jobs to %s", n_rendered, args.md)
+        except Exception as e:
+            log.exception("render_md (JOBS.md) failed: %s", e)
 
         # Broader pool prep — same set drives emea-entry-level.md AND
         # all slice files. Two cleanup passes:
@@ -1177,18 +1198,25 @@ def main(argv: list[str] | None = None) -> int:
         #      buckets + "(?)" markers match JOBS.md exactly. Off-
         #      allowlist rows get first_seen=this run (treated as
         #      freshly surfaced) and NULL liveness (rendered "(?)").
-        for r in broader_rows:
-            if not r.get("signature"):
-                r["signature"] = dbmod.compute_signature(r)
-        _enrich_broader_rows_from_db(conn, broader_rows, run_started_at)
+        try:
+            for r in broader_rows:
+                if not r.get("signature"):
+                    r["signature"] = dbmod.compute_signature(r)
+            _enrich_broader_rows_from_db(conn, broader_rows, run_started_at)
+        except Exception as e:
+            log.exception("broader-row enrichment failed: %s", e)
 
-        n_emea = render_md_mod.render_emea_entry_level(
-            broader_rows, args.md_emea_entry_level
-        )
-        log.info(
-            "rendered %d EMEA entry-level rows to %s",
-            n_emea, args.md_emea_entry_level,
-        )
+        n_emea = 0
+        try:
+            n_emea = render_md_mod.render_emea_entry_level(
+                broader_rows, args.md_emea_entry_level
+            )
+            log.info(
+                "rendered %d EMEA entry-level rows to %s",
+                n_emea, args.md_emea_entry_level,
+            )
+        except Exception as e:
+            log.exception("render_emea_entry_level failed: %s", e)
 
         # Slice files — named, filtered views (EMEA junior SDE, NA interns,
         # quant, etc.). Additive to JOBS.md / emea-entry-level.md; driven
@@ -1197,6 +1225,7 @@ def main(argv: list[str] | None = None) -> int:
         # Berlin Vinted role surfaces even though those companies aren't
         # in `include_companies`. JOBS.md still uses the curated set above.
         # After the slices write, INDEX.md links them all with current counts.
+        slice_stats: dict = {}
         slices_path = Path(args.slices_config)
         if slices_path.exists():
             try:
