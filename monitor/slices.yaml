@@ -387,3 +387,26 @@ slices:
         - principal engineer
         - lead software engineer
         - lead engineer
+
+  # ---- Remote slice (cross-region, all seniority) ----
+  # Surfaces every remote-eligible posting from the broader pool (no
+  # company allowlist). Because slices already draw from the broader
+  # pool, startups that aren't on JOBS.md's curated allowlist surface
+  # here naturally — that's the user's "especially start ups and good
+  # jobs" framing. We deliberately leave `regions` unset so EMEA + NA
+  # remote roles share one file; the row's region tag still shows up
+  # via the Location column. `remote_only: true` is the gate (see
+  # `_row_is_remote` in render_md.py); it matches on word-boundary
+  # markers in the title and location string, not on the noisy
+  # `is_remote` boolean from Indeed.
+  - name: remote_jobs
+    filename: remote-jobs.md
+    title: "Remote Jobs (Startups & More)"
+    index_label: "Remote Jobs"
+    filters:
+      remote_only: true
+      title_keywords_none:
+        - staff
+        - principal
+        - director
+        - vp of
