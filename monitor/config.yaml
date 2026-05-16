@@ -707,6 +707,11 @@ filters:
 # Supported types:
 #   - simplify_newgrad → SimplifyJobs/New-Grad-Positions listings.json
 #   - simplify_intern  → SimplifyJobs/Summer2026-Internships listings.json
+#   - speedyapply      → speedyapply/2026-SWE-College-Jobs MD files. One
+#                        entry per file, picked via `file:` (intern_usa /
+#                        newgrad_usa / intern_intl / newgrad_intl). The
+#                        repo is a curated render of SimplifyJobs + extras
+#                        with a Salary column on new-grad rows.
 #   - direct           → per-company careers-page scraper, picks up the
 #                        `module:` field as monitor/external/direct/<module>.py.
 #                        See monitor/external/direct/README.md for the
@@ -746,6 +751,44 @@ external_sources:
   - name: vanshb03_summer2026
     type: simplify_intern
     url: "https://raw.githubusercontent.com/vanshb03/Summer2026-Internships/dev/.github/scripts/listings.json"
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  # ---- speedyapply/2026-SWE-College-Jobs ----
+  #
+  # Curated MD render of SimplifyJobs + extras. One source entry per file
+  # so each file gets its own `site` column in jobs.db; the substring
+  # ("intern" / "newgrad") routes rows into the right entry-level bucket
+  # via _classify_intern_or_newgrad in render_md.py. Signature-based dedup
+  # collapses any role that also appears in SimplifyJobs's canonical feed;
+  # SimplifyJobs wins the tie because it's the raw upstream. The value of
+  # carrying this feed is the ~10-20% of postings that haven't been picked
+  # up by the canonical feed yet, plus the Salary column on new-grad rows.
+  - name: speedyapply_intern_usa
+    type: speedyapply
+    file: intern_usa
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: speedyapply_newgrad_usa
+    type: speedyapply
+    file: newgrad_usa
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: speedyapply_intern_intl
+    type: speedyapply
+    file: intern_intl
+    allowed_regions: [emea, north_america]
+    skip_filters:
+      - min_description_chars
+
+  - name: speedyapply_newgrad_intl
+    type: speedyapply
+    file: newgrad_intl
     allowed_regions: [emea, north_america]
     skip_filters:
       - min_description_chars
