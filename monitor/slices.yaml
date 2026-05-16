@@ -230,12 +230,16 @@ slices:
         - data analytics
 
   # ---- 算法岗 / Algorithm slices (all seniority) ----
-  # Algorithm-shaped roles — search / ranking / recommendation / CV / NLP /
-  # bare "algorithm engineer". Overlaps the MLE slice but narrows the
-  # window to roles that explicitly call out an algorithmic specialism
-  # (which is the 算法岗 framing in zh-CN industry usage). The MLE slice
-  # remains the home for generic "ml engineer" / "applied scientist"
-  # titles.
+  # Algorithm-shaped roles. At big tech (Meta / Google / Amazon / MSR /
+  # ByteDance / TikTok) what zh-CN industry usage calls 算法岗 surfaces
+  # under three primary titles — "Research Scientist", "Machine Learning
+  # Engineer", "Applied Scientist" — alongside the more specialised
+  # search / ranking / recommendation / CV / NLP / "algorithm engineer"
+  # phrasings. We include both buckets here. This DELIBERATELY overlaps
+  # the MLE slice (which also matches ml engineer / applied scientist):
+  # the algorithm view is the 算法岗 reader's primary entry point, so
+  # the recall has to cover the actual big-tech title surface, not just
+  # roles whose title literally contains "algorithm".
   - name: emea_algorithm
     filename: emea-algorithm.md
     title: "EMEA Algorithm Engineer Roles (算法岗)"
@@ -243,6 +247,9 @@ slices:
     filters:
       regions: [emea]
       title_keywords_any:
+        - research scientist
+        - machine learning engineer
+        - applied scientist
         - algorithm
         - search engineer
         - search scientist
@@ -259,6 +266,9 @@ slices:
     filters:
       regions: [north_america]
       title_keywords_any:
+        - research scientist
+        - machine learning engineer
+        - applied scientist
         - algorithm
         - search engineer
         - search scientist

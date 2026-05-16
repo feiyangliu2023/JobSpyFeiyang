@@ -366,11 +366,13 @@ filters:
     # senior IC roles. Existing junior slices keep them in their local
     # `title_keywords_none` block; emea-entry-level / JOBS.md are happy
     # to surface senior roles per user direction.
-    # Research Scientist tracks are PhD+ at every employer we monitor —
-    # explicitly drop them. Note the trailing space so "Research Scientist
-    # II" / "Research Scientist, Foo" both match while a hypothetical
-    # "Junior Research Scientist Assistant" still drops too (substring).
-    - "research scientist"
+    # NOTE: "research scientist" was previously excluded here as PhD-only,
+    # but big-tech 算法岗 (Meta / Google / Amazon / ByteDance / TikTok)
+    # ships RS titles that ARE accessible to strong master's candidates
+    # — and the algorithm slice keys on this exact phrasing. So it's
+    # lifted globally and surfaced via the algorithm slices's
+    # `title_keywords_any`. PhD-only specialisms (alignment science /
+    # foundations / etc) still appear, but the user wants the recall.
     # "Research Software Engineer" titles are PhD-track at Google
     # Research / Microsoft Research / etc — keep excluded.
     - "research software"
