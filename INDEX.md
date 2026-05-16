@@ -5,43 +5,44 @@ Auto-generated tracker of tech roles in EMEA and North America across junior, se
 ## Browse by slice
 
 ### EMEA
-- [Junior SDE](emea-junior-sde.md) — 331 active
+- [Junior SDE](emea-junior-sde.md) — 324 active
   - Last liveness sweep: 2026-05-15 16:33 UTC, 7% verified live
-- [Junior MLE / Applied Scientist](emea-junior-mle.md) — 157 active
+- [Junior MLE / Applied Scientist](emea-junior-mle.md) — 152 active
   - Last liveness sweep: 2026-05-15 16:33 UTC, 12% verified live
-- [Internships](emea-internships.md) — 102 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 19% verified live
-- [Quant & Finance](emea-quant.md) — 12 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 17% verified live
-- [Data Analyst](emea-data-analyst.md) — 153 active
+- [Internships](emea-internships.md) — 92 active
+  - Last liveness sweep: 2026-05-15 16:33 UTC, 21% verified live
+- [Quant & Finance](emea-quant.md) — 13 active
+  - Last liveness sweep: 2026-05-15 16:33 UTC, 15% verified live
+- [Data Analyst](emea-data-analyst.md) — 145 active
   - Last liveness sweep: 2026-05-15 16:33 UTC, 3% verified live
-- [Algorithm (算法岗)](emea-algorithm.md) — 40 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 22% verified live
-- [Solutions / Customer / DevOps](emea-solutions-devops.md) — 248 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 3% verified live
-- [Senior SDE](emea-senior-sde.md) — 305 active
+- [Algorithm (算法岗)](emea-algorithm.md) — 37 active
+  - Last liveness sweep: 2026-05-15 16:33 UTC, 24% verified live
+- [Solutions / Customer / DevOps](emea-solutions-devops.md) — 238 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 3% verified live
+- [Senior SDE](emea-senior-sde.md) — 280 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 3% verified live
 
 ### North America
-- [Junior SDE](na-junior-sde.md) — 1293 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 31% verified live
-- [Junior MLE / Applied Scientist](na-junior-mle.md) — 393 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 50% verified live
-- [Internships](na-internships.md) — 1723 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 20% verified live
-- [Quant & Finance](na-quant.md) — 17 active
-  - Last liveness sweep: 2026-05-14 23:26 UTC, 12% verified live
-- [Data Analyst](na-data-analyst.md) — 148 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 5% verified live
-- [Algorithm (算法岗)](na-algorithm.md) — 120 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 62% verified live
-- [Solutions / Customer / DevOps](na-solutions-devops.md) — 63 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 38% verified live
-- [Senior SDE](na-senior-sde.md) — 37 active
-  - Last liveness sweep: 2026-05-15 16:33 UTC, 11% verified live
+- [Junior SDE](na-junior-sde.md) — 1197 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 33% verified live
+- [Junior MLE / Applied Scientist](na-junior-mle.md) — 368 active
+  - Last liveness sweep: 2026-05-15 16:33 UTC, 51% verified live
+- [Internships](na-internships.md) — 1568 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 22% verified live
+- [Quant & Finance](na-quant.md) — 15 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 13% verified live
+- [Data Analyst](na-data-analyst.md) — 129 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 7% verified live
+- [Algorithm (算法岗)](na-algorithm.md) — 119 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 66% verified live
+- [Solutions / Customer / DevOps](na-solutions-devops.md) — 61 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 41% verified live
+- [Senior SDE](na-senior-sde.md) — 36 active
+  - Last liveness sweep: 2026-05-16 07:58 UTC, 53% verified live
 
 ## Wider browse (no curated company allowlist)
 
-- [EMEA entry-level (all companies)](emea-entry-level.md) — 2702 active roles, allowlist gate dropped
+- [EMEA entry-level (all companies)](emea-entry-level.md) — 2561 active roles, allowlist gate dropped
 
 ## Coverage
 
