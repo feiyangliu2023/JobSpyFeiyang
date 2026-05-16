@@ -1184,6 +1184,21 @@ def main(argv: list[str] | None = None) -> int:
         except OSError as e:
             log.warning("[health] could not write JSON dump: %s", e)
 
+        # Dedicated "what failed" block — explicit per-source list of
+        # BROKEN / SILENT sources, logged at WARNING so it stands out
+        # in stdout even when summary_lines() scrolls past. DEGRADED
+        # sources are intentionally excluded here: they produced SOME
+        # data and are visible in the table above, so listing them
+        # under "failed" would muddle the signal. When nothing failed,
+        # log an explicit OK line so the absence of the banner is also
+        # easy to grep.
+        failed_lines = health.failed_sources_lines()
+        if failed_lines:
+            for line in failed_lines:
+                log.warning(line)
+        else:
+            log.info("[health] no failed sources this run")
+
         # Ntfy delivery is best-effort. A push outage is not a scrape
         # failure — the user can still pull the rendered MD from the
         # repo. Don't tank the workflow over a Slack-level annoyance.

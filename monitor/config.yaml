@@ -135,7 +135,13 @@ cities:
 #   job_type: fulltime/intern  — JobSpy filter
 role_templates:
   - name: sde_junior
-    sites: [indeed, linkedin, glassdoor, bayt]
+    # All 8 JobSpy scrapers enabled — health tracker logs which
+    # sources fail at end of run. Off-region scrapers (naukri = India,
+    # bdjobs = Bangladesh, zip_recruiter = US/CA) will typically return
+    # 0 rows for EMEA cities; they're kept to broaden coverage when an
+    # EMEA company happens to cross-post, and so the health report
+    # surfaces any unexpected drift in their availability.
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
     # bayt + glassdoor blanket-403 from GitHub Actions IP ranges (and
     # have produced 0 rows for every CI run since the monitor was set
     # up). My code fixes for both are necessary but not sufficient —
@@ -168,6 +174,17 @@ role_templates:
         - "graduate software engineer"
       bayt:
         - "software engineer"
+      # Single-term overrides for the regional scrapers — same pattern
+      # as LinkedIn (1 call per city × template) so we don't multiply
+      # the request budget for sources that mostly return 0 for EMEA.
+      google:
+        - "graduate software engineer"
+      naukri:
+        - "graduate software engineer"
+      bdjobs:
+        - "software engineer"
+      zip_recruiter:
+        - "graduate software engineer"
     results_wanted: 50
     # 168h = one week. The DB de-dupes by URL across runs so a wider
     # window costs ingest time, not duplicate rows.
@@ -175,7 +192,7 @@ role_templates:
     job_type: fulltime
 
   - name: mle_junior
-    sites: [indeed, linkedin, glassdoor, bayt]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
     sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "machine learning engineer new grad"
@@ -199,6 +216,14 @@ role_templates:
         - "graduate machine learning engineer"
       bayt:
         - "machine learning engineer"
+      google:
+        - "graduate machine learning engineer"
+      naukri:
+        - "graduate machine learning engineer"
+      bdjobs:
+        - "machine learning engineer"
+      zip_recruiter:
+        - "graduate machine learning engineer"
     results_wanted: 30
     hours_old: 168
     job_type: fulltime
@@ -209,8 +234,8 @@ role_templates:
     # appropriate for this user. We still search the `applied scientist`
     # term because Amazon / Microsoft use that label for entry-level
     # MLE roles.
-    sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin, glassdoor]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "applied scientist"
       # Broader Indeed coverage — applied-science track titles vary
@@ -226,6 +251,16 @@ role_templates:
         - "applied scientist"
       glassdoor:
         - "applied scientist"
+      bayt:
+        - "applied scientist"
+      google:
+        - "applied scientist"
+      naukri:
+        - "applied scientist"
+      bdjobs:
+        - "applied scientist"
+      zip_recruiter:
+        - "applied scientist"
     results_wanted: 30
     hours_old: 168
     job_type: fulltime
@@ -235,8 +270,8 @@ role_templates:
     # track (London especially). Keep results_wanted low — these roles
     # are concentrated, not distributed. Bayt is dropped here — quant is
     # not a Middle-East category in our experience.
-    sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin, glassdoor]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "graduate trader"
       - "quantitative researcher new grad"
@@ -255,6 +290,16 @@ role_templates:
         - "graduate quantitative"
       glassdoor:
         - "graduate quantitative"
+      bayt:
+        - "quantitative analyst"
+      google:
+        - "graduate quantitative"
+      naukri:
+        - "graduate quantitative"
+      bdjobs:
+        - "quantitative analyst"
+      zip_recruiter:
+        - "graduate quantitative"
     results_wanted: 20
     hours_old: 168
     job_type: fulltime
@@ -266,8 +311,8 @@ role_templates:
   # variants still drop globally, since updating every junior slice's
   # local exclusion to gate them would be a bigger churn).
   - name: senior_sde
-    sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin, glassdoor]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "senior software engineer"
       - "staff software engineer"
@@ -282,6 +327,16 @@ role_templates:
         - "senior software engineer"
       glassdoor:
         - "senior software engineer"
+      bayt:
+        - "senior software engineer"
+      google:
+        - "senior software engineer"
+      naukri:
+        - "senior software engineer"
+      bdjobs:
+        - "senior software engineer"
+      zip_recruiter:
+        - "senior software engineer"
     # Higher than junior tier — senior IC roles are denser at the
     # FAANG / AI-lab / scaleup employers we care about, and the hours_old
     # window means we'd otherwise truncate the head of the listings.
@@ -294,8 +349,8 @@ role_templates:
   # scientist tracks. Search terms are deliberately narrow — bare
   # "analyst" is too noisy (matches business/financial/HR analyst).
   - name: data_analyst
-    sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin, glassdoor]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "data analyst"
       - "senior data analyst"
@@ -307,6 +362,16 @@ role_templates:
         - "data analyst"
       glassdoor:
         - "data analyst"
+      bayt:
+        - "data analyst"
+      google:
+        - "data analyst"
+      naukri:
+        - "data analyst"
+      bdjobs:
+        - "data analyst"
+      zip_recruiter:
+        - "data analyst"
     results_wanted: 25
     hours_old: 168
     job_type: fulltime
@@ -316,8 +381,8 @@ role_templates:
   # support / implementation) + ops (devops / SRE / platform engineer).
   # Combined per the slice's combined framing.
   - name: devops_sre
-    sites: [indeed, linkedin, glassdoor]
-    sites_skip_in_ci: [linkedin, glassdoor]
+    sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt]
     search_terms:
       - "devops engineer"
       - "site reliability engineer"
@@ -330,6 +395,16 @@ role_templates:
       linkedin:
         - "devops engineer"
       glassdoor:
+        - "devops engineer"
+      bayt:
+        - "devops engineer"
+      google:
+        - "devops engineer"
+      naukri:
+        - "devops engineer"
+      bdjobs:
+        - "devops engineer"
+      zip_recruiter:
         - "devops engineer"
     results_wanted: 30
     hours_old: 168

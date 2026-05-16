@@ -272,3 +272,51 @@ class HealthTracker:
                     bits.append(f"{s.new_rows} new")
                 lines.append(" — ".join(bits))
         return lines
+
+    def failed_sources(self) -> list[tuple[str, str]]:
+        """Return [(name, status)] for every BROKEN / SILENT source.
+
+        Distinct from `alert_lines` in two ways: (1) it returns
+        structured tuples instead of pre-formatted strings, so callers
+        can route to different log levels per status; (2) it excludes
+        DEGRADED, which counts as partial-success — the end-of-run
+        "what failed" log is reserved for sources that produced zero
+        usable data so the user can see at a glance which scrapers
+        need attention without scanning the full status table.
+        """
+        out: list[tuple[str, str]] = []
+        for name in sorted(self.sources):
+            s = self.sources[name]
+            st = s.status()
+            if st in ("BROKEN", "SILENT"):
+                out.append((name, st))
+        return out
+
+    def failed_sources_lines(self) -> list[str]:
+        """End-of-run failure block printed verbatim to the log.
+
+        Returns a self-contained banner (header + per-source detail +
+        footer) listing every source that the run could not extract
+        data from. Empty list means nothing failed — caller can use
+        `if lines:` to gate the print.
+
+        Per-source line shape:
+            <name>  [<STATUS>]  attempts=N successes=0 errors=M
+              error: <first sample, truncated>
+        """
+        failed = self.failed_sources()
+        if not failed:
+            return []
+        lines: list[str] = []
+        lines.append("=" * 78)
+        lines.append(f"[health] FAILED SOURCES THIS RUN ({len(failed)}):")
+        for name, status in failed:
+            s = self.sources[name]
+            lines.append(
+                f"  - {name}  [{status}]  attempts={s.attempts} "
+                f"successes={s.successes} errors={s.errors}"
+            )
+            for err in s.error_samples:
+                lines.append(f"      error: {err}")
+        lines.append("=" * 78)
+        return lines
