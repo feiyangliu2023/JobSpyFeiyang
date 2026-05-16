@@ -870,6 +870,16 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     parser.add_argument(
+        "--md-na-entry-level",
+        default=str(
+            Path(__file__).parent.parent / "na-entry-level.md"
+        ),
+        help=(
+            "path to the broader North America entry-level markdown view "
+            "(intern + new grad, no company allowlist)"
+        ),
+    )
+    parser.add_argument(
         "--slices-config",
         default=str(Path(__file__).parent / "slices.yaml"),
         help=(
@@ -947,6 +957,7 @@ def main(argv: list[str] | None = None) -> int:
         dryrun_dir.mkdir(parents=True, exist_ok=True)
         args.md = str(dryrun_dir / "JOBS.md")
         args.md_emea_entry_level = str(dryrun_dir / "emea-entry-level.md")
+        args.md_na_entry_level = str(dryrun_dir / "na-entry-level.md")
         args.slices_output_dir = str(dryrun_dir)
         args.index_md = str(dryrun_dir / "INDEX.md")
 
@@ -1218,6 +1229,18 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as e:
             log.exception("render_emea_entry_level failed: %s", e)
 
+        n_na_entry = 0
+        try:
+            n_na_entry = render_md_mod.render_na_entry_level(
+                broader_rows, args.md_na_entry_level
+            )
+            log.info(
+                "rendered %d North America entry-level rows to %s",
+                n_na_entry, args.md_na_entry_level,
+            )
+        except Exception as e:
+            log.exception("render_na_entry_level failed: %s", e)
+
         # Slice files — named, filtered views (EMEA junior SDE, NA interns,
         # quant, etc.). Additive to JOBS.md / emea-entry-level.md; driven
         # by slices.yaml so non-code edits can add a new view. Slices feed
@@ -1249,6 +1272,7 @@ def main(argv: list[str] | None = None) -> int:
                             slice_stats,
                             args.index_md,
                             broader_emea_count=n_emea,
+                            broader_na_count=n_na_entry,
                         )
                         log.info("rendered INDEX.md to %s", args.index_md)
                     except Exception as e:
