@@ -605,6 +605,40 @@ def ingest_external_sources(
                     default_region=default_region,
                     allowed_regions=allowed,
                 )
+            elif kind == "speedyapply":
+                # speedyapply/2026-SWE-College-Jobs is a hand-curated MD
+                # render of SimplifyJobs + extras. One config entry per
+                # file (intern_usa / newgrad_usa / intern_intl / newgrad_intl);
+                # the `file:` field picks the URL + default region preset.
+                from monitor.external import speedyapply as speedyapply_mod
+
+                file_key = (src.get("file") or "").strip().lower()
+                preset = speedyapply_mod.SPEEDYAPPLY_PRESETS.get(file_key)
+                if not preset:
+                    log.warning(
+                        "speedyapply source %r has unknown file=%r; "
+                        "expected one of %s",
+                        name, file_key,
+                        sorted(speedyapply_mod.SPEEDYAPPLY_PRESETS),
+                    )
+                    if health is not None:
+                        health.record_error(
+                            health_key,
+                            ValueError(f"unknown file {file_key!r}"),
+                        )
+                    continue
+                _, _, preset_default_region = preset
+                # Use the file's preset default unless the config overrides it.
+                effective_default_region = (
+                    src.get("default_region") or preset_default_region
+                )
+                parsed = speedyapply_mod.fetch_listings(file_key)
+                rows = speedyapply_mod.to_rows(
+                    parsed,
+                    site_label=(name or f"speedyapply_{file_key}"),
+                    default_region=effective_default_region,
+                    allowed_regions=allowed,
+                )
             elif kind == "direct":
                 # Per-company careers-page scraper. `module` names a file
                 # under monitor/external/direct/; that module must export
@@ -680,7 +714,7 @@ def ingest_external_sources(
         # We never write these to jobs.db — pure render input.
         if (
             broader_sink is not None
-            and kind in ("simplify_newgrad", "simplify_intern", "direct")
+            and kind in ("simplify_newgrad", "simplify_intern", "direct", "speedyapply")
         ):
             broader_skip = set(skip) | {"include_companies"}
             broader = apply_filters(rows, cfg["filters"], skip=broader_skip)

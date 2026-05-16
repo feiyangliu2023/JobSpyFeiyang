@@ -220,6 +220,46 @@ If either appears later under a different name, drop a new entry into
 `_SOURCE_PRIORITY` in `render_md.py` at the same tier as the existing
 SimplifyJobs entries.
 
+### Tertiary feed: speedyapply (4 MD files)
+
+`monitor/external/speedyapply.py` parses the markdown tables in
+[speedyapply/2026-SWE-College-Jobs](https://github.com/speedyapply/2026-SWE-College-Jobs).
+The repo ships 4 hand-curated MD files; each is wired in as a separate
+`type: speedyapply` source with a `file:` discriminator
+(`intern_usa` / `newgrad_usa` / `intern_intl` / `newgrad_intl`).
+
+Each file becomes its own `site` label in jobs.db
+(`speedyapply_intern_usa`, …) so the substring routing in
+`_classify_intern_or_newgrad` ("intern" / "newgrad" in the site)
+picks the right bucket without a title regex fallback. Site labels
+also match the `speedyapply` token in `_row_is_curated_source`, so
+new-grad rows skip the batch-hire title gate (the upstream curation
+IS the signal, same as SimplifyJobs / vanshb03).
+
+speedyapply doesn't scrape — it's a curated render of SimplifyJobs +
+extras. Ranked BELOW `simplify_*` and `vanshb03_summer2026` in
+`_SOURCE_PRIORITY` so the raw upstreams win the signature-dedup tie;
+speedyapply rows only survive when they represent postings the
+canonical feeds haven't picked up yet. Value-adds:
+  - Salary column on new-grad rows (`min_amount` / `max_amount` /
+    `currency=USD` / `salary_interval=yearly`) — SimplifyJobs's
+    listings.json has no salary field.
+  - ~10-20% of postings that the canonical feed hasn't ingested yet
+    (same "non-overlapping coverage" rationale as vanshb03).
+
+Parser shape: each MD file has 1-3 GFM tables wrapped in
+`<!-- TABLE_*_START -->` / `<!-- TABLE_*_END -->` markers (FAANG /
+Quant / Other categories). Cells are HTML-flavoured (`<a><strong>`
+for company, `<a><img alt="Apply">` for the apply URL). The Age
+column ("11d") converts to `date_posted = today - 11 days`. The MD
+ships no description field, so `min_description_chars` must be in
+`skip_filters` (same as SimplifyJobs).
+
+USA files default `region=north_america` for unrecognised location
+strings ("Milwaukee Wisconsin United States of America" has no comma
+suffix the classifier can match); INTL files default `region=other`
+so APAC postings get dropped by `allowed_regions=[emea, north_america]`.
+
 SimplifyJobs schema (verified by inspecting raw listings.json):
 `id, source, category, company_name, title, active, date_updated,
 date_posted (unix epoch), url, locations[], company_url, is_visible,
@@ -449,10 +489,11 @@ Differences from `JOBS.md`:
 - **One file per region**, scoped via `render_region_entry_level`'s
   `region` argument (`emea` / `north_america`). Other regions are
   dropped client-side at render time.
-- **Layout: Intern / New Grad (Full-Time Entry-Level) split, one table
-  each.** Top-level split is intern vs new grad (more useful than tier
-  alone for a wide-net browse). Within each kind the rows are deduped +
-  sorted newest-first; no further bucketing.
+- **Layout: Internships / Full-Time New Grad split, one table each.**
+  Top-level split makes the two pipelines (part-time/co-op/summer vs.
+  full-time entry-level headcount) easy to scan separately. Within
+  each kind the rows are deduped + sorted newest-first; no further
+  bucketing. Anchors are still `#intern` / `#newgrad`.
 - **Stateless** — these rows do NOT go into `jobs.db`. Files are
   recomputed from in-memory data every run (JobSpy's pre-allowlist EMEA
   rows + a no-allowlist pass over the SimplifyJobs feeds). This keeps
@@ -647,8 +688,9 @@ Toggles:
 - `notify.py`        — ntfy.sh JSON POST + digest body builder + health alert
 - `render_md.py`     — JOBS.md / slice / INDEX generator (per-region table render)
 - `external/`        — non-JobSpy ingestion modules
-   `external/simplify.py` — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
-   `external/locations.py` — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.
+   `external/simplify.py`    — SimplifyJobs listings.json fetcher + schema mapper (handles both new-grad and intern repos)
+   `external/speedyapply.py` — speedyapply/2026-SWE-College-Jobs MD parser (4 files: USA / INTL × intern / newgrad)
+   `external/locations.py`   — location string → (country, region) classifier; suffix-biased to disambiguate Cambridge UK vs MA, Birmingham UK vs AL, etc.
 - `tests/`           — pytest suite for `db.py` (signature edge cases, upsert,
                       prune). Run with `python -m pytest monitor/tests/`.
 - `requirements.txt` — pyyaml + requests + pytest (JobSpy is editable-installed)

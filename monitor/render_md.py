@@ -276,6 +276,13 @@ _SOURCE_PRIORITY = [
     "simplify_newgrad",
     "simplify_intern",
     "vanshb03_summer2026",
+    # speedyapply renders FROM SimplifyJobs, so ranking it below means the
+    # raw upstream wins the dedup tie; speedyapply rows survive only when
+    # they represent postings the canonical feed hasn't picked up yet.
+    "speedyapply_newgrad_usa",
+    "speedyapply_intern_usa",
+    "speedyapply_newgrad_intl",
+    "speedyapply_intern_intl",
     "simplify",       # legacy label, kept for old DB rows
     "linkedin",
     "indeed",
@@ -745,6 +752,7 @@ def _row_is_curated_source(r: dict) -> bool:
         or "new_grad" in site
         or "summer202" in site
         or "vanshb03" in site
+        or "speedyapply" in site
     )
 
 
@@ -787,7 +795,7 @@ def _title_passes_entry_level_filter(r: dict, kind: str) -> bool:
 
 _ENTRY_LEVEL_KIND_ORDER: list[tuple[str, str]] = [
     ("intern", "Internships"),
-    ("newgrad", "New Grad (Full-Time Entry-Level)"),
+    ("newgrad", "Full-Time New Grad"),
 ]
 
 
@@ -861,8 +869,14 @@ def render_region_entry_level(
     ]
     out.append(
         f"Last updated: **{now}** · **{visible_total}** active "
-        f"{region_heading} entry-level roles "
-        f"({' · '.join(kind_summaries)})."
+        f"{region_heading} entry-level roles, split into "
+        f"{' · '.join(kind_summaries)}."
+    )
+    out.append("")
+    out.append(
+        "Split between **Internships** (typically part-time, co-op, or "
+        "summer) and **Full-Time New Grad** (entry-level full-time "
+        "headcount) so the two pipelines are easy to scan separately."
     )
     out.append("")
     out.append(
