@@ -110,6 +110,42 @@ def _glassdoor_supported(country_indeed: str) -> bool:
         return country_indeed.lower() not in _GLASSDOOR_UNAVAILABLE_COUNTRIES_FALLBACK
 
 
+# Regional JobSpy scrapers each index a single country's domestic board. Asking
+# them for an EMEA city returns 0 rows on every call — not a block, just an
+# out-of-scope query. We auto-skip per city, the same way `_glassdoor_supported`
+# does, so they get classified UNUSED (not SILENT) and stop showing up in the
+# "FAILED SOURCES" banner. If India / Bangladesh / US cities are added later,
+# they activate automatically.
+def _naukri_supported(country_indeed: str) -> bool:
+    """Naukri only indexes jobs posted on naukri.com — India only."""
+    return country_indeed.strip().lower() == "india"
+
+
+def _bdjobs_supported(country_indeed: str) -> bool:
+    """BDJobs only indexes jobs posted on bdjobs.com — Bangladesh only."""
+    return country_indeed.strip().lower() == "bangladesh"
+
+
+def _ziprecruiter_supported(country_indeed: str) -> bool:
+    """ZipRecruiter covers USA + Canada only (per JobSpy's Country.US_CANADA)."""
+    return country_indeed.strip().lower() in {
+        "usa", "us", "united states", "canada",
+    }
+
+
+# Map site name → (supported predicate, human-readable reason). Used by
+# expand_searches to drop sources whose target region doesn't match the city.
+# Keep this aligned with the scraper's own hardcoded `country` field — adding
+# a new entry requires the scraper to actually accept the country, not just
+# to be region-named.
+_SITE_COUNTRY_SUPPORTED: dict[str, tuple[Any, str]] = {
+    "glassdoor":     (_glassdoor_supported,     "no Glassdoor TLD"),
+    "naukri":        (_naukri_supported,        "Naukri is India-only"),
+    "bdjobs":        (_bdjobs_supported,        "BDJobs is Bangladesh-only"),
+    "zip_recruiter": (_ziprecruiter_supported,  "ZipRecruiter is USA/Canada-only"),
+}
+
+
 def _slim_cfg_for_dry_run(cfg: dict) -> dict:
     """Truncate cities and role_templates to the first 2 each.
 
@@ -174,12 +210,26 @@ def expand_searches(cfg: dict) -> list[dict]:
         for tpl in cfg["role_templates"]:
             sites = list(tpl.get("sites") or [])
 
-            if "glassdoor" in sites and not _glassdoor_supported(city["country_indeed"]):
-                log.info(
-                    "skipping glassdoor for %s (%s) — no Glassdoor TLD",
-                    city["name"], city["country_indeed"],
-                )
-                sites = [s for s in sites if s != "glassdoor"]
+            # Drop sources whose target country doesn't match this city.
+            # Glassdoor / naukri / bdjobs / zip_recruiter each only index a
+            # specific country's board; calling them for an out-of-region
+            # city returns 0 rows on every attempt and flagged them as
+            # SILENT in the health report. Auto-skip restores UNUSED.
+            kept: list[str] = []
+            for s in sites:
+                check = _SITE_COUNTRY_SUPPORTED.get(s)
+                if check is None:
+                    kept.append(s)
+                    continue
+                predicate, reason = check
+                if predicate(city["country_indeed"]):
+                    kept.append(s)
+                else:
+                    log.info(
+                        "skipping %s for %s (%s) — %s",
+                        s, city["name"], city["country_indeed"], reason,
+                    )
+            sites = kept
 
             if in_ci:
                 ci_skip = set(tpl.get("sites_skip_in_ci") or [])

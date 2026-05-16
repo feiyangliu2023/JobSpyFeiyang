@@ -137,18 +137,21 @@ role_templates:
   - name: sde_junior
     # All 8 JobSpy scrapers enabled — health tracker logs which
     # sources fail at end of run. Off-region scrapers (naukri = India,
-    # bdjobs = Bangladesh, zip_recruiter = US/CA) will typically return
-    # 0 rows for EMEA cities; they're kept to broaden coverage when an
-    # EMEA company happens to cross-post, and so the health report
-    # surfaces any unexpected drift in their availability.
+    # bdjobs = Bangladesh, zip_recruiter = US/CA) are auto-skipped per
+    # city by `_SITE_COUNTRY_SUPPORTED` in run.py, the same way Glassdoor
+    # is skipped for cities whose Country enum has no Glassdoor TLD;
+    # listing them here keeps the source set declarative and means
+    # India/Bangladesh/US cities would activate the right scrapers
+    # automatically if they're ever added to the city list.
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    # bayt + glassdoor blanket-403 from GitHub Actions IP ranges (and
-    # have produced 0 rows for every CI run since the monitor was set
-    # up). My code fixes for both are necessary but not sufficient —
-    # the WAF block is at the network edge, not in the response. Skip
-    # them in CI; they still run locally where the user's home IP has
-    # clean reputation.
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    # linkedin / glassdoor / bayt: blanket-403 from GitHub Actions IP
+    # ranges; the WAF block is at the network edge so code-level fixes
+    # can't help.
+    # google: heavily restricted in EU/EEA from server-side IPs (DMA
+    # fallout), 0 rows ever returned from CI runs. Skip in CI; the
+    # scraper still runs locally where the user's home IP has clean
+    # reputation.
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "software engineer new grad"
       - "junior software engineer"
@@ -193,7 +196,7 @@ role_templates:
 
   - name: mle_junior
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "machine learning engineer new grad"
       - "junior machine learning engineer"
@@ -235,7 +238,7 @@ role_templates:
     # term because Amazon / Microsoft use that label for entry-level
     # MLE roles.
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "applied scientist"
       # Broader Indeed coverage — applied-science track titles vary
@@ -271,7 +274,7 @@ role_templates:
     # are concentrated, not distributed. Bayt is dropped here — quant is
     # not a Middle-East category in our experience.
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "graduate trader"
       - "quantitative researcher new grad"
@@ -312,7 +315,7 @@ role_templates:
   # local exclusion to gate them would be a bigger churn).
   - name: senior_sde
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "senior software engineer"
       - "staff software engineer"
@@ -350,7 +353,7 @@ role_templates:
   # "analyst" is too noisy (matches business/financial/HR analyst).
   - name: data_analyst
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "data analyst"
       - "senior data analyst"
@@ -382,7 +385,7 @@ role_templates:
   # Combined per the slice's combined framing.
   - name: devops_sre
     sites: [indeed, linkedin, glassdoor, bayt, google, naukri, bdjobs, zip_recruiter]
-    sites_skip_in_ci: [linkedin, glassdoor, bayt]
+    sites_skip_in_ci: [linkedin, glassdoor, bayt, google]
     search_terms:
       - "devops engineer"
       - "site reliability engineer"
