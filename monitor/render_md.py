@@ -417,31 +417,49 @@ def _render_cap_note(
     return f"_{'; '.join(parts)}. Full set in jobs.db._"
 
 
-# Title tokens that mark a row as an internship rather than a new-grad role.
-# Substring-matched against a lowercased title — leading prefixes are fine
-# (so `intern` matches `internship`/`interns`).
-_INTERN_TITLE_TOKENS = (
-    "intern",        # "Intern", "Internship", "Software Engineer Intern"
-    "placement",     # UK industrial placement
-    "year in industry",
-    "industrial placement",
-    "praktikum",     # German
-    "stagiair",      # Dutch
-    "becario",       # Spanish
-    "tirocinante",   # Italian
-    "trainee",       # often (but not always) intern-shaped; close enough
+# Title-shape tokens that mark a row as an internship. Each entry is a
+# regex matched against the lowercased title. We use regex (not bare
+# substring) because the obvious naive match — `"intern" in title` —
+# also fires on `internal`, `international`, `internet`, which lands
+# senior / lead / SRE roles in the intern bucket of entry-level views.
+# Pattern shapes:
+#   - `intern` — `\bintern\w*\b` (matches Intern, Interns, Internship,
+#     Interning — but NOT Internal / International / Internet, which
+#     have an `a` / `e` immediately after `intern`).
+#   - `placement`, `praktikum`, `stagiair`, `becario`, `tirocinante`,
+#     `trainee` — bare word-boundary match.
+#   - `year in industry`, `industrial placement` — multi-word phrases,
+#     no word-boundary surprise (these don't substring into anything
+#     unrelated in practice).
+#   - `stage` (FR/IT for internship) — `(?<![\w-])stage(?![\w-])` so
+#     "Backstage Platform Engineer" and "Multi-stage Pipeline Engineer"
+#     don't false-match. Bare `\bstage\b` isn't enough because `\b`
+#     matches at hyphen boundaries.
+_INTERN_TITLE_PATTERNS = (
+    # `intern` plus only the allowed suffixes (`s`, `ship`, `ships`,
+    # `ing`). `\bintern\w*\b` was wrong — `\w*` is greedy and `\b` only
+    # marks the END of a word, so `Internal` / `International` /
+    # `Internet` would match. Explicit suffix list rules them out.
+    re.compile(r"\bintern(?:s|ship|ships|ing)?\b"),
+    re.compile(r"\bplacement\b"),
+    re.compile(r"\byear in industry\b"),
+    re.compile(r"\bindustrial placement\b"),
+    re.compile(r"\bpraktikum\b"),
+    re.compile(r"\bstagiaire?\b"),
+    re.compile(r"\bbecari[oa]\b"),
+    re.compile(r"\btirocinante\b"),
+    re.compile(r"\btrainee\b"),
+    re.compile(r"(?<![\w-])stage(?![\w-])"),
 )
-# `stage` is the French/Italian word for an internship. We can't substring-
-# match it because it would also match real titles like "Backstage Platform
-# Engineer" or "Multi-stage Pipeline Engineer". Bare `\bstage\b` isn't enough
-# either — `\b` matches at hyphen boundaries, so "Multi-stage" still hits.
-# Exclude word chars AND hyphens on either side so only the standalone word
-# (whitespace / punctuation / start-of-string boundaries) counts.
-_STAGE_RE = re.compile(r"(?<![\w-])stage(?![\w-])")
+
+
+def _title_has_intern_marker(title: str) -> bool:
+    """True iff the lowercased title contains an intern-shape token."""
+    return any(p.search(title) for p in _INTERN_TITLE_PATTERNS)
 
 
 def _classify_intern_or_newgrad(r: dict) -> str:
-    """Return 'intern' or 'newgrad'. Used only for the EMEA entry-level view.
+    """Return 'intern' or 'newgrad'. Used by the entry-level views.
 
     SimplifyJobs-shaped rows carry the answer in `site`. We substring-match
     rather than equality-check so forks (vanshb03_summer2026, etc.) classify
@@ -458,48 +476,375 @@ def _classify_intern_or_newgrad(r: dict) -> str:
     if "newgrad" in site or "new-grad" in site or "new_grad" in site:
         return "newgrad"
     title = (r.get("title") or "").lower()
-    for tok in _INTERN_TITLE_TOKENS:
-        if tok in title:
-            return "intern"
-    if _STAGE_RE.search(title):
+    if _title_has_intern_marker(title):
         return "intern"
     return "newgrad"
 
 
-_EMEA_KIND_ORDER: list[tuple[str, str]] = [
+# Tokens that mark a title as software/tech-shape — used by the
+# entry-level views to drop role families that aren't the audience for
+# JOBS.md (Vehicle Testing Engineer Internship, Process Engineering
+# Intern, etc.). Substring-matched against lowercased title. Multi-word
+# tokens cover the common "qualifier + role" pairings so we don't need
+# separate "junior X" / "X intern" entries; "software engineer" already
+# matches "Junior Software Engineer" and "Software Engineer Intern".
+_TECH_SHAPE_TITLE_TOKENS = (
+    "software engineer",
+    "software developer",
+    "software development",
+    "software design",
+    "backend",
+    "back-end",
+    "back end",
+    "frontend",
+    "front-end",
+    "front end",
+    "fullstack",
+    "full-stack",
+    "full stack",
+    "web developer",
+    "web engineer",
+    "mobile engineer",
+    "mobile developer",
+    "ios engineer",
+    "ios developer",
+    "android engineer",
+    "android developer",
+    "platform engineer",
+    "infrastructure engineer",
+    "systems engineer",
+    "security engineer",
+    "cloud engineer",
+    "cybersecurity",
+    "information security",
+    "devops",
+    "site reliability",
+    "machine learning",
+    "ml engineer",
+    "ml scientist",
+    "applied scientist",
+    "ai engineer",
+    "ai/ml",
+    "ai researcher",
+    "ai scientist",
+    "data scientist",
+    "data analyst",
+    "data engineer",
+    "data analytics",
+    "data science",
+    "analytics engineer",
+    "business intelligence",
+    "bi developer",
+    "bi engineer",
+    "research engineer",
+    "research scientist",
+    "algorithm",
+    "computer vision",
+    "nlp engineer",
+    "nlp scientist",
+    "application developer",
+    "applications engineer",
+    "application engineer",
+    "technical staff",         # MTS at Anthropic / OpenAI / etc.
+    "qa engineer",
+    "quality engineer",
+    "test engineer",
+    "automation engineer",
+    "release engineer",
+    "build engineer",
+    "embedded engineer",
+    "embedded software",
+    "embedded developer",
+    "firmware engineer",
+    "robotics engineer",
+    "robotics software",
+    "game developer",
+    "game engineer",
+    "game programmer",
+    "compiler engineer",
+    "kernel engineer",
+    "performance engineer",
+    "production engineer",
+    "developer experience",
+    "developer advocate",
+    "developer relations",
+    "growth engineer",
+    "search engineer",
+    "search scientist",
+    "ranking engineer",
+    "recommendation",
+    "deep learning",
+    "reinforcement learning",
+)
+# Bare initialisms — leading space to avoid mid-word false hits
+# (e.g. "INSIDE" → "side"). Trailing token is optional; "SWE" appears
+# both as " swe " and " swe," / " swe -" in titles.
+_TECH_SHAPE_PATTERNS = (
+    re.compile(r"(?<![\w-])(swe|sde|sdet)(?![\w-])"),
+    re.compile(r"(?<![\w-])sre(?![\w-])"),
+    # `ml` / `ai` standalone — catches "ML Systems", "AI Safety
+    # Research", "ML Performance" where the rest of the title doesn't
+    # match a longer token. Negative-lookarounds keep "html" / "xml" /
+    # "email" / "maintained" / "fail" from false-matching.
+    re.compile(r"(?<![\w-])(ml|ai)(?![\w-])"),
+)
+
+
+def _title_has_tech_shape(title: str) -> bool:
+    """True iff the lowercased title looks like a software / tech role.
+
+    Drops the "Vehicle Testing Engineer Internship", "Process Engineering
+    Intern", "Project Engineer (Graduate)" shape of postings that share
+    a region with our target roles but aren't part of the SWE / ML / data
+    audience. Matches substring tokens AND a few word-boundary regexes
+    for bare SWE/SDE/SRE initialisms.
+    """
+    if any(tok in title for tok in _TECH_SHAPE_TITLE_TOKENS):
+        return True
+    return any(p.search(title) for p in _TECH_SHAPE_PATTERNS)
+
+
+# Tokens that mark a new-grad posting as a batch-hire role (rather than
+# a single-headcount specific role). Used by the entry-level new-grad
+# section to mirror speedyapply's NEW_GRAD_USA.md shape: big companies
+# running named graduate programmes, university hiring tracks, "class
+# of 20XX" cohort hires, etc. Substring-matched against lowercased title.
+#
+# Some entries look loose ("graduate" alone) but are gated by the
+# tech-shape filter at the same time, so e.g. "Graduate Project Engineer"
+# is still dropped — graduate ✓, tech-shape ✗.
+_BATCH_HIRE_TITLE_TOKENS = (
+    "new grad",
+    "newgrad",
+    "new-grad",
+    "new graduate",
+    "graduate",
+    "early career",
+    "early-career",
+    "early in career",
+    "campus",
+    "university hire",
+    "university graduate",
+    "university talent",
+    "college hire",
+    "college graduate",
+    "associate software",
+    "associate engineer",
+    "associate developer",
+    "associate data",
+    "junior software",
+    "junior developer",
+    "junior data",
+    "junior ml",
+    "junior machine learning",
+    "junior ai",
+    "junior backend",
+    "junior frontend",
+    "junior full",
+    "junior research",
+    "entry level",
+    "entry-level",
+    "rotational",
+    "class of 20",
+    "fresh graduate",
+    "recent graduate",
+    "first job",
+    "apprenticeship",
+    "apprentice",
+    "trainee",
+    "scholarship",
+    "fellowship",
+    "fellows program",
+    "residency program",
+    "residency",
+    "internship program",
+)
+# "Software Engineer I", "Software Engineer 1", "SDE I" — the suffix
+# numeric / Roman "1" / "I" is the entry-level signal at Amazon / MSFT
+# / Bloomberg, but it's too short to substring-match without false
+# positives. Anchor on the role-shape immediately before.
+_BATCH_HIRE_LEVEL_RE = re.compile(
+    r"\b(?:engineer|developer|scientist|analyst|sde|swe)\s*[-,]?\s*(?:i|1|l1|level\s*1)\b"
+)
+
+
+def _title_has_batch_hire_marker(title: str) -> bool:
+    """True iff the lowercased title carries a batch-hire signal.
+
+    Recognises:
+      - explicit phrasings (`new grad`, `graduate`, `campus`, `university
+        hire`, `early career`, `entry level`, `class of 20XX`, ...)
+      - junior / associate / apprentice / trainee variants
+      - level suffixes (`Software Engineer I`, `SWE 1`, `SDE Level 1`)
+    """
+    if any(tok in title for tok in _BATCH_HIRE_TITLE_TOKENS):
+        return True
+    return bool(_BATCH_HIRE_LEVEL_RE.search(title))
+
+
+# Seniority tokens that disqualify a row from the entry-level views.
+# Substring-matched against lowercased title. We don't reuse the broader
+# `exclude_titles` from config.yaml here because that list also strips
+# tokens we WANT in entry-level (e.g. `internship` is technically an
+# excludable specifier for senior search-term recall but obviously must
+# stay for intern roles).
+_ENTRY_LEVEL_SENIORITY_DROP_TOKENS = (
+    "senior",
+    " sr.",
+    " sr ",
+    "staff",
+    "principal",
+    " lead ",
+    "lead engineer",
+    "lead software",
+    "lead developer",
+    "lead data",
+    "lead ml",
+    "lead ai",
+    "lead research",
+    "team lead",
+    "tech lead",
+    "manager",
+    "director",
+    "head of",
+    "vice president",
+    "vp ",
+    # Academic / non-batch roles — universities don't run batch SWE
+    # intake under these titles. Caught here because tech-shape can
+    # over-match ("Lecturer in Software Engineering" contains "software
+    # engineer" as a substring).
+    "lecturer",
+    "professor",
+    "postdoc",
+    "post-doc",
+    "postdoctoral",
+)
+
+
+def _row_is_curated_source(r: dict) -> bool:
+    """True iff the row came from a human-curated upstream feed (where
+    inclusion in the repo IS the new-grad / intern signal).
+
+    Includes SimplifyJobs / vanshb03 / similar tracker repos.
+
+    Excludes `direct:*` ATS scrapers — those pull every open role from
+    the company's career site without seniority curation. Companies
+    like Anthropic / OpenAI / Cohere list senior IC roles alongside
+    occasional new-grad programmes, and the title is the only signal
+    we get. Speedyapply's NEW_GRAD_*.md is a pure render of the
+    SimplifyJobs feed, so honouring SimplifyJobs's upstream curation
+    is what guarantees parity with that view.
+    """
+    site = (r.get("site") or "").lower()
+    if not site:
+        return False
+    return (
+        "simplify" in site
+        or "newgrad" in site
+        or "new-grad" in site
+        or "new_grad" in site
+        or "summer202" in site
+        or "vanshb03" in site
+    )
+
+
+def _title_passes_entry_level_filter(r: dict, kind: str) -> bool:
+    """Gate for the entry-level views: tech-shape + batch-hire + no senior.
+
+    Args:
+      r: row dict (uses `title` and `site`).
+      kind: 'intern' or 'newgrad'.
+
+    Two-tier gating, matched to the source's signal strength:
+      - Senior / lead / staff / principal — dropped for every row
+        regardless of source (these are obvious miscategorisations,
+        usually caused by the legacy "intern" substring matching
+        "Internal").
+      - Tech-shape (Software Engineer, ML, Data, AI, …) — required for
+        every row. Drops "Vehicle Testing Engineer Internship",
+        "Process Engineering Intern", "Graduate Project Engineer" —
+        roles that share keywords with our audience but aren't part
+        of the SWE / ML / data target.
+      - Batch-hire marker (graduate / new grad / university / campus /
+        early career / SWE I, …) — required only for new-grad rows
+        from raw JobSpy aggregators (Indeed / LinkedIn / Glassdoor).
+        Curated upstream feeds (SimplifyJobs / vanshb03 / `direct:*`)
+        skip this gate so we always include at least what speedyapply
+        renders.
+    """
+    title = (r.get("title") or "").lower()
+    if not title:
+        return False
+    if any(tok in title for tok in _ENTRY_LEVEL_SENIORITY_DROP_TOKENS):
+        return False
+    if not _title_has_tech_shape(title):
+        return False
+    if kind == "newgrad" and not _row_is_curated_source(r):
+        if not _title_has_batch_hire_marker(title):
+            return False
+    return True
+
+
+_ENTRY_LEVEL_KIND_ORDER: list[tuple[str, str]] = [
     ("intern", "Internships"),
-    ("newgrad", "New Grad"),
+    ("newgrad", "New Grad (Full-Time Entry-Level)"),
 ]
 
 
-def render_emea_entry_level(
-    rows: Iterable[dict], output_path: str | Path
+_ENTRY_LEVEL_REGION_HEADINGS = {
+    "emea": "EMEA",
+    "north_america": "North America",
+}
+
+
+def render_region_entry_level(
+    rows: Iterable[dict],
+    region: str,
+    output_path: str | Path,
 ) -> int:
-    """Broader EMEA entry-level view — same row shape as JOBS.md but no
-    company allowlist gate.
+    """Broader entry-level view for one region — same row shape as JOBS.md
+    but no company allowlist gate, scoped to a single region.
 
     One comprehensive table per kind (Internships / New Grad). Sorted
     newest-first; the Age column carries freshness, so no separate 24h /
     7d sections.
+
+    Title-level filter (`_title_passes_entry_level_filter`):
+      - Drops senior / lead / staff / principal titles.
+      - Requires tech-shape (Software / ML / AI / Data / SWE / …).
+      - For new-grad rows from raw JobSpy aggregators, also requires a
+        batch-hire marker (graduate / new grad / university / campus /
+        Software Engineer I / etc.) so single-headcount specific
+        postings don't crowd out the graduate-programme intake roles.
+        Curated upstream feeds (SimplifyJobs / vanshb03 / `direct:*`)
+        skip the marker gate — they're pre-vetted by humans, so passing
+        them through unmodified guarantees we cover at least what
+        speedyapply's NEW_GRAD_*.md renders.
     """
-    rows = [r for r in rows if (r.get("region") or "").lower() == "emea"]
+    region_key = (region or "").lower()
+    region_heading = _ENTRY_LEVEL_REGION_HEADINGS.get(region_key, region_key.upper() or "Unknown")
+
+    rows = [r for r in rows if (r.get("region") or "").lower() == region_key]
     rows = _filter_liveness(rows)
     has_salary = any(_has_salary(r) for r in rows)
 
-    by_kind: dict[str, list[dict]] = {k: [] for k, _ in _EMEA_KIND_ORDER}
+    by_kind: dict[str, list[dict]] = {k: [] for k, _ in _ENTRY_LEVEL_KIND_ORDER}
     for r in rows:
-        by_kind[_classify_intern_or_newgrad(r)].append(r)
+        kind = _classify_intern_or_newgrad(r)
+        if not _title_passes_entry_level_filter(r, kind):
+            continue
+        by_kind[kind].append(r)
 
     kind_rows: dict[str, list[dict]] = {}
-    for kind_key, _ in _EMEA_KIND_ORDER:
+    for kind_key, _ in _ENTRY_LEVEL_KIND_ORDER:
         kind_rows[kind_key] = _dedupe_and_sort(by_kind[kind_key])
 
     # Per-kind render caps. Header / kind-summary counts continue to show
     # the true active total; each table is capped to keep the file size
-    # bounded as the broader EMEA pool grows.
-    kind_active = {k: len(kind_rows[k]) for k, _ in _EMEA_KIND_ORDER}
+    # bounded as the broader pool grows.
+    kind_active = {k: len(kind_rows[k]) for k, _ in _ENTRY_LEVEL_KIND_ORDER}
     kind_caps: dict[str, tuple[int, int]] = {}
-    for kind_key, _ in _EMEA_KIND_ORDER:
+    for kind_key, _ in _ENTRY_LEVEL_KIND_ORDER:
         capped, n_age, n_overflow = _apply_render_caps(kind_rows[kind_key])
         kind_rows[kind_key] = capped
         kind_caps[kind_key] = (n_age, n_overflow)
@@ -508,22 +853,31 @@ def render_emea_entry_level(
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
-    out.append("# EMEA Entry-Level Roles")
+    out.append(f"# {region_heading} Entry-Level Roles")
     out.append("")
     kind_summaries = [
         f"[{heading}](#{kind_key}) ({kind_active[kind_key]})"
-        for kind_key, heading in _EMEA_KIND_ORDER
+        for kind_key, heading in _ENTRY_LEVEL_KIND_ORDER
     ]
     out.append(
-        f"Last updated: **{now}** · **{visible_total}** active EMEA "
-        f"entry-level roles ({' · '.join(kind_summaries)})."
+        f"Last updated: **{now}** · **{visible_total}** active "
+        f"{region_heading} entry-level roles "
+        f"({' · '.join(kind_summaries)})."
+    )
+    out.append("")
+    out.append(
+        "Filtered to tech-shape titles (software, ML, AI, data, etc.) "
+        "from batch-hire intake at big companies — mirrors the "
+        "[speedyapply](https://github.com/speedyapply/2026-SWE-College-Jobs) "
+        "NEW_GRAD shape. Senior / lead / staff postings excluded."
     )
     out.append("")
     out.append("---")
     out.append("")
 
-    for kind_key, kind_heading in _EMEA_KIND_ORDER:
-        marker = f"TABLE_EMEA_{kind_key.upper()}"
+    marker_prefix = "TABLE_NA" if region_key == "north_america" else f"TABLE_{region_key.upper()}"
+    for kind_key, kind_heading in _ENTRY_LEVEL_KIND_ORDER:
+        marker = f"{marker_prefix}_{kind_key.upper()}"
         out.append(f'<a name="{kind_key}"></a>')
         out.append(f"## {kind_heading}")
         out.append("")
@@ -545,6 +899,25 @@ def render_emea_entry_level(
 
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
     return visible_total
+
+
+def render_emea_entry_level(
+    rows: Iterable[dict], output_path: str | Path
+) -> int:
+    """Back-compat alias — renders the EMEA entry-level view.
+
+    New callers should use `render_region_entry_level(rows, 'emea', path)`
+    directly. Kept so `monitor/run.py` doesn't need to change in step
+    with this refactor.
+    """
+    return render_region_entry_level(rows, "emea", output_path)
+
+
+def render_na_entry_level(
+    rows: Iterable[dict], output_path: str | Path
+) -> int:
+    """Render the North America entry-level view."""
+    return render_region_entry_level(rows, "north_america", output_path)
 
 
 def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
@@ -856,6 +1229,7 @@ def render_index(
     slices_stats: dict[str, dict[str, int | str | None]],
     output_path: str | Path,
     broader_emea_count: int | None = None,
+    broader_na_count: int | None = None,
 ) -> None:
     """Render INDEX.md — table of contents for the rendered files.
 
@@ -864,8 +1238,9 @@ def render_index(
     `{total} active` count. Slices missing from `slices_stats` (e.g.
     malformed config rows) are silently skipped.
 
-    `broader_emea_count` is the number of rows in `emea-entry-level.md`
-    — passed in by the caller so INDEX.md can advertise the wider view.
+    `broader_emea_count` / `broader_na_count` are the row counts in
+    `emea-entry-level.md` / `na-entry-level.md` — passed in by the
+    caller so INDEX.md can advertise the wider views.
     """
     if isinstance(slices_config, dict):
         slices = slices_config.get("slices") or []
@@ -920,13 +1295,19 @@ def render_index(
                 )
         out.append("")
 
-    if broader_emea_count is not None:
+    if broader_emea_count is not None or broader_na_count is not None:
         out.append("## Wider browse (no curated company allowlist)")
         out.append("")
-        out.append(
-            f"- [EMEA entry-level (all companies)](emea-entry-level.md) — "
-            f"{broader_emea_count} active roles, allowlist gate dropped"
-        )
+        if broader_emea_count is not None:
+            out.append(
+                f"- [EMEA entry-level (all companies)](emea-entry-level.md) — "
+                f"{broader_emea_count} active roles, allowlist gate dropped"
+            )
+        if broader_na_count is not None:
+            out.append(
+                f"- [North America entry-level (all companies)](na-entry-level.md) — "
+                f"{broader_na_count} active roles, allowlist gate dropped"
+            )
         out.append("")
 
     out.append("## Coverage")
