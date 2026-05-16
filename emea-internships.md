@@ -1,6 +1,6 @@
 # EMEA Internships
 
-Last updated: **2026-05-16 15:10 UTC** · **78** active roles.
+Last updated: **2026-05-16 15:36 UTC** · **74** active roles.
 
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_START -->
 | Company | Position | Location | Posting | Age |
@@ -63,7 +63,6 @@ Last updated: **2026-05-16 15:10 UTC** · **78** active roles.
 | <a href="https://simplify.jobs/c/DP-World"><strong>DP World</strong></a> | Business Intelligence Apprentice | Thurrock, UK | <a href="https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/23989"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
 | <a href="https://fr.indeed.com/cmp/AXA-France-3f726005"><strong>AXA / France</strong></a> | Juillet - Septembre - Stage - Software Engineer Amélioration des performances du moteur tarifaire à l’aide de la librairie Polars | Suresnes, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=4ab1be13e438ecc3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 62d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Project Intern | London, UK | <a href="https://lifeattiktok.com/search/7616659899507591477"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 64d |
-| <a href="https://simplify.jobs/c/Meta"><strong>Meta</strong></a> | Research Scientist Intern - AI/ML - Core Ads Growth | London, UK | <a href="https://www.metacareers.com/jobs/771948392580541"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
 | <a href="https://simplify.jobs/c/Leonardo"><strong>Leonardo</strong></a> | Software Graduate Apprentice | Edinburgh, UK | <a href="https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite/job/GB---Edinburgh/Software-Graduate-Apprentice_R0022244-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 74d |
 | <a href="https://simplify.jobs/c/Leonardo"><strong>Leonardo</strong></a> | Industrial Placement Software Engineer | Southampton, UK | <a href="https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite/job/GB---Southampton/Industrial-Placement-Software-Engineer_R0022593"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 74d |
 | <a href="https://simplify.jobs/c/Deliveroo"><strong>Deliveroo</strong></a> | Software Engineer | London, UK | <a href="https://jobs.ashbyhq.com/deliveroo/3e0440a9-7abc-45b0-8520-d3e13083d0f3/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 79d |
@@ -74,14 +73,11 @@ Last updated: **2026-05-16 15:10 UTC** · **78** active roles.
 | <a href="https://simplify.jobs/c/Squarepoint-Capital"><strong>Squarepoint Capital</strong></a> | Intern Software Developer - Summer 2026 | Montreal, QC, Canada · London, UK | <a href="https://boards.greenhouse.io/embed/job_app?token=7231006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 101d |
 | <a href="https://simplify.jobs/c/WTW"><strong>WTW</strong></a> | Software Developer Intern | Dorking, UK | <a href="https://eedu.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1003/job/202600804"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 103d |
 | <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | AI Engineer Intern - BCG X | London, UK | <a href="https://careers.bcg.com/global/en/job/56635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 112d |
-| <a href="https://uk.indeed.com/cmp/Amazon-Web-Services-05cb4ad1"><strong>Amazon Web Services</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Edinburgh, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=59721955518633f4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 183d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 190d |
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | 2026 Machine Learning Center of Excellence – Summer Associate - NLP | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210664814"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 197d |
 | <a href="https://simplify.jobs/c/DRW-Holdings"><strong>DRW Holdings</strong></a> | Software Developer Intern - Industrial Placement | London, UK | <a href="https://job-boards.greenhouse.io/drwuniversityjobs/jobs/7364884"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 198d |
-| <a href="https://de.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Applied Scientist Intern, Amazon University Talent Acquisition | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=9d7e69b7f583ef4a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 204d |
-| <a href="https://uk.indeed.com/cmp/Amazon.com"><strong>Amazon.com</strong></a> | 2026 Software Dev Engineer Intern - UK | Edinburgh, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=8007204743cb024d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 255d |
 
-_15 live, 60 unverified_
+_15 live, 56 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
