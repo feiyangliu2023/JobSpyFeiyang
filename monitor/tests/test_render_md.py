@@ -340,3 +340,101 @@ class TestRenderRegionEntryLevel:
         n = render_md.render_emea_entry_level(rows, path)
         assert n == 1
         assert "EMEA Entry-Level Roles" in path.read_text(encoding="utf-8")
+
+
+# --------------------------------------------------------------------------- #
+# Remote-jobs slice — _row_is_remote + the remote_only slice filter
+# --------------------------------------------------------------------------- #
+
+
+class TestRowIsRemote:
+    @pytest.mark.parametrize(
+        "title, location",
+        [
+            ("Software Engineer", "Remote · USA"),
+            ("Software Engineer", "Remote in Canada · Toronto, ON"),
+            ("AI Engineer - US Remote", "New York, NY"),
+            ("Senior Backend Engineer", "Anywhere"),
+            ("Platform Engineer", "Work from home"),
+            ("Backend Engineer", "WFH · Berlin"),
+            ("ML Engineer", "Fully Remote, EU"),
+            ("SWE", "Remote-first · London"),
+        ],
+    )
+    def test_remote_markers_match(self, title, location):
+        assert render_md._row_is_remote(_row(title, location=location))
+
+    @pytest.mark.parametrize(
+        "title, location",
+        [
+            ("Software Engineer", "London, UK"),
+            ("Internal Platform Engineer", "Berlin, Germany"),
+            ("Promoter Engineer", "Madrid, Spain"),
+            ("International Customer Engineer", "Cheltenham, ENG, GB"),
+            ("Software Engineer", "Cambridge, MA"),
+        ],
+    )
+    def test_non_remote_does_not_match(self, title, location):
+        """Substring traps: 'Internal', 'Promoter', 'International'
+        all contain the literal letters 'remote'/'wfh' adjacent to other
+        letters or as part of a larger token — word-boundary regex must
+        not match them.
+        """
+        assert not render_md._row_is_remote(
+            _row(title, location=location)
+        )
+
+
+class TestRemoteOnlyFilter:
+    def test_remote_only_keeps_only_remote_rows(self):
+        sfilters = {"remote_only": True}
+        remote_row = _row("Software Engineer", location="Remote · USA")
+        onsite_row = _row("Software Engineer", location="London, UK")
+        assert render_md._matches_slice_filters(remote_row, sfilters)
+        assert not render_md._matches_slice_filters(onsite_row, sfilters)
+
+    def test_remote_only_combines_with_other_filters(self):
+        """remote_only is additive — other filters still apply on top."""
+        sfilters = {
+            "remote_only": True,
+            "title_keywords_none": ["staff"],
+        }
+        remote_jr = _row("Junior Software Engineer", location="Remote · USA")
+        remote_staff = _row("Staff Software Engineer", location="Remote · USA")
+        assert render_md._matches_slice_filters(remote_jr, sfilters)
+        assert not render_md._matches_slice_filters(remote_staff, sfilters)
+
+    def test_remote_slice_renders_cross_region(self, tmp_path):
+        rows = [
+            _row(
+                "Software Engineer",
+                region="emea",
+                company="EU Startup",
+                location="Remote · EU",
+            ),
+            _row(
+                "Backend Engineer",
+                region="north_america",
+                company="US Startup",
+                location="Remote · USA",
+            ),
+            _row(
+                "Software Engineer",
+                region="emea",
+                company="OnsiteCo",
+                location="London, UK",
+            ),
+        ]
+        slice_def = {
+            "name": "remote_jobs",
+            "title": "Remote Jobs (Startups & More)",
+            "filters": {"remote_only": True},
+        }
+        path = tmp_path / "remote-jobs.md"
+        stats = render_md.render_slice(rows, slice_def, path)
+        body = path.read_text(encoding="utf-8")
+
+        assert stats["total"] == 2
+        assert "EU Startup" in body
+        assert "US Startup" in body
+        assert "OnsiteCo" not in body

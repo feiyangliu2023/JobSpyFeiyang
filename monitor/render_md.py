@@ -1047,8 +1047,45 @@ def _parse_iso(s: str | None) -> datetime | None:
     return dt
 
 
+# Word-boundary remote markers used by `_row_is_remote`. We deliberately
+# do NOT trust the upstream `is_remote` column on its own — Indeed flips
+# it True whenever the description merely mentions remote work as a
+# benefit, which produces obvious false positives (e.g. Apple Cheltenham
+# SWE roles tagged remote). Location- and title-level markers are the
+# reliable signal: SimplifyJobs explicitly writes "Remote" / "Remote in
+# USA" into its location strings, and titles like "AI Engineer - US
+# Remote" are unambiguous.
+_REMOTE_MARKER_RE = re.compile(
+    r"\b("
+    r"remote"
+    r"|wfh"
+    r"|work[\s-]from[\s-]home"
+    r"|fully[\s-]remote"
+    r"|remote[\s-]first"
+    r"|anywhere"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def _row_is_remote(r: dict) -> bool:
+    """True iff this row looks like a remote-eligible posting.
+
+    Checks the title and location strings for remote markers. The upstream
+    `is_remote` boolean is checked only as a secondary signal AND is
+    additionally required to coincide with a location/title marker — on
+    its own it's too noisy (see comment on `_REMOTE_MARKER_RE`).
+    """
+    title = r.get("title") or ""
+    location = r.get("location") or ""
+    if _REMOTE_MARKER_RE.search(title) or _REMOTE_MARKER_RE.search(location):
+        return True
+    return False
+
+
 def _matches_slice_filters(r: dict, sfilters: dict) -> bool:
-    """Apply a slice's filter block (regions / title keywords / kinds).
+    """Apply a slice's filter block (regions / title keywords / kinds /
+    remote_only).
 
     Reuses `_classify_intern_or_newgrad` for the kinds gate so intern
     detection stays consistent with emea-entry-level.md.
@@ -1072,6 +1109,9 @@ def _matches_slice_filters(r: dict, sfilters: dict) -> bool:
         wanted_kinds = {(k or "").lower() for k in kinds if k}
         if _classify_intern_or_newgrad(r) not in wanted_kinds:
             return False
+
+    if sfilters.get("remote_only") and not _row_is_remote(r):
+        return False
 
     return True
 
@@ -1217,7 +1257,7 @@ def render_slices(
 _INDEX_REGION_GROUPS: list[tuple[str, str]] = [
     ("emea", "EMEA"),
     ("north_america", "North America"),
-    ("other", "Other"),
+    ("other", "Remote / Cross-region"),
 ]
 
 
