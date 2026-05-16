@@ -1,6 +1,6 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-05-16 15:36 UTC** · **58** active roles.
+Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
@@ -15,7 +15,11 @@ Last updated: **2026-05-16 15:36 UTC** · **58** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Principal Solutions Engineer, Enterprise | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4689909005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Site Reliability Engineer, Infrastructure - Analytics Platform | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/c67f7d61-ff12-4041-96a2-12702f5f306d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
 | <a href="https://simplify.jobs/c/Skydio"><strong>Skydio</strong></a> | Product Support Engineer Intern | San Mateo, CA | <a href="https://jobs.ashbyhq.com/skydio/8df0689e-a489-4c72-a1f7-09dfe59745b8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 30d |
+| <a href="https://www.daifuku.com"><strong>Daifuku</strong></a> | Software Implementation Engineer I | US | <a href="https://careers-daifuku-america.icims.com/jobs/21278/ilus---software-implementation-engineer-i/job"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 30d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | IT Support Engineer | New York, United States | <a href="https://jobs.ashbyhq.com/cohere/43e8ed06-4f3b-460e-aa8a-a0bde93f7bb5/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
+| <a href="https://www.resurgent.com/"><strong>Resurgent Capital Services</strong></a> | DevOps Engineer I - Software Development | OH Cincinnati | <a href="https://resurgent.wd1.myworkdayjobs.com/en-US/resurgent/job/OH-Cincinnati/DevOps-Engineer-I--Software-Development_R0001262-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 43d |
+| <a href="https://www.kbr.com"><strong>KBR</strong></a> | Junior Cloud DevOps Engineer | Sioux Falls, South Dakota | <a href="https://kbr.wd5.myworkdayjobs.com/en-US/kbr_careers/job/Sioux-Falls-South-Dakota/Junior-Cloud-DevOps-Engineer_R2121346"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 43d |
+| <a href="http://www.ball.com/aerospace"><strong>Ball Aerospace</strong></a> | Software Test Solutions Engineer I | Nashua, New Hampshire, United States | <a href="https://jobs.baesystems.com/global/en/job/BAE1US123211BREXTERNAL/Software-Test-Solutions-Engineer-I"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 44d |
 | <a href="https://simplify.jobs/c/Vertiv"><strong>Vertiv</strong></a> | Customer Engineer 1 | Kansas City, MO | <a href="https://egup.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/20265198"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 50d |
 | <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer 1 | Normal, IL | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/FE-1-Bloomington--Illinois_R4037216-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 56d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | DevOps Engineer, Infrastructure & Security | Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4674863005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 59d |
@@ -49,7 +53,7 @@ Last updated: **2026-05-16 15:36 UTC** · **58** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 389d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Field Engineer, Public Sector | Baltimore, MD; Colorado Springs, CO; Hampton Roads, VA; Tampa, FL; Tucson,AZ; San Francisco, CA; New York, NY; Honolulu, Hawaii, St. Louis, MO; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4518690005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 482d |
 
-_33 live, 10 unverified_
+_33 live, 14 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _15 hidden as first_seen >180d. Full set in jobs.db._

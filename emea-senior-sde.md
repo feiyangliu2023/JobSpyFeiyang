@@ -1,11 +1,12 @@
 # EMEA Senior SDE Roles
 
-Last updated: **2026-05-16 15:36 UTC** · **270** active roles.
+Last updated: **2026-05-16 19:08 UTC** · **273** active roles.
 
 <!-- TABLE_SLICE_EMEA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://uk.indeed.com/cmp/Jpmorganchase-2"><strong>JPMorganChase</strong></a> | Lead Software Engineer - Python / Java | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=4f0fa1341d378c33"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://uk.indeed.com/cmp/Jpmorganchase-2"><strong>JPMorganChase</strong></a> | Lead Software Engineer - Python/Java & AWS | Glasgow, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=4edd3692dbdc2fb6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Great-Ormond-Street-Hospital"><strong>GREAT ORMOND STREET HOSPITAL</strong></a> | Principal Engineer - Electrical | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=529ffe2ee293cf4f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Zynga"><strong>Zynga</strong></a> | Principal Software Engineer - Gram Games | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=f1ba11982098e279"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://at.indeed.com/cmp/Wrisk"><strong>Wrisk</strong></a> | Senior Fullstack Developer - Kotlin | Wien, W, AT | <a href="https://at.indeed.com/viewjob?jk=0dab33d7de9df883"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -216,11 +217,13 @@ Last updated: **2026-05-16 15:36 UTC** · **270** active roles.
 | <a href="https://il.indeed.com/cmp/Applied-Materials"><strong>Applied Materials</strong></a> | Senior Software Engineer | רחובות, M, IL | <a href="https://il.indeed.com/viewjob?jk=cf8c66be2e9f5992"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://il.indeed.com/cmp/Aidoc"><strong>AIDOC</strong></a> | AI Principal Software Engineer, ML Platform | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=89a64171e9d1514c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://il.indeed.com/cmp/Aidoc"><strong>AIDOC</strong></a> | AI Senior Software Engineer, ML Platform | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=8667b7e5157f740d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
+| <a href="https://www.appcast.io/"><strong>Appcast</strong></a> | Staff Software Engineer I | London, EUROPE, gb | <a href="https://jobs.smartrecruiters.com/StepStoneGroup/744000125288199-staff-software-engineer-i?oga=true"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Node Infra | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5211498008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
 | <a href="https://uk.indeed.com/cmp/4c-Strategies"><strong>4C Strategies</strong></a> | Staff Engineer | Warminster, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=c2ee4b4dc0b76d33"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://de.indeed.com/cmp/Infineon-Technologies"><strong>Infineon Technologies</strong></a> | Senior Staff Engineer Digital Concept (f/m/div) | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=fbc0fc80ef447b2c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 10d |
 | <a href="https://it.indeed.com/cmp/D--orbit-Spa"><strong>D-ORBIT SPA</strong></a> | Senior Project Lead Engineer | Lomazzo, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=0c606c6dfc8d57ec"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 10d |
 | <a href="https://pt.indeed.com/cmp/Big-Sales"><strong>big sales</strong></a> | Staff Software Engineer | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=ce3245a4e26dcc69"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 19d |
+| <a href="https://uk.indeed.com/cmp/Centric-Software"><strong>Centric Software</strong></a> | Senior Software Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=96bb9d66a7c05017"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://de.indeed.com/cmp/Sos-Software-Service-Gmbh"><strong>SOS Software Service GmbH</strong></a> | Lead Engineer – Internal Platforms & AI (m/w/d) | Augsburg, BY, DE | <a href="https://de.indeed.com/viewjob?jk=b0c3d8765e9c2629"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 25d |
 | <a href="https://it.indeed.com/cmp/D--orbit-Spa"><strong>D-ORBIT SPA</strong></a> | Project Lead Engineer - Ground Software | Lomazzo, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=fe258e034376a320"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 26d |
 | <a href="https://no.indeed.com/cmp/Unleash"><strong>Unleash</strong></a> | Team Lead Engineering | Oslo, N03, NO | <a href="https://no.indeed.com/viewjob?jk=39c6920ff03428ca"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 31d |
@@ -265,7 +268,7 @@ Last updated: **2026-05-16 15:36 UTC** · **270** active roles.
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | Senior Staff Software Engineer - Delta | Berlin, Germany | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=7319791002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 772d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | Principal Engineer - Privacy | Amsterdam, Netherlands | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=7274875002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 801d |
 
-_29 live, 230 unverified_
+_29 live, 233 unverified_
 <!-- TABLE_SLICE_EMEA_SENIOR_SDE_END -->
 
 _11 hidden as first_seen >180d. Full set in jobs.db._
