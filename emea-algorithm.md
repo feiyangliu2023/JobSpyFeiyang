@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
+Last updated: **2026-05-16 22:49 UTC** · **64** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -33,6 +33,7 @@ Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 | <a href="https://uk.indeed.com/cmp/Ai-Security-Institute"><strong>AI Security Institute</strong></a> | Research Engineer - Societal Impacts | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=e8bbbd06d82847bb"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Applied AI, Forward Deployed Machine Learning Engineer - EMEA | Paris | <a href="https://jobs.ashbyhq.com/mistral/3bb6e854-4c46-42c3-a77b-f6db4ebd0abd/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/Hawk-Eye-Innovations"><strong>Hawk-Eye Innovations</strong></a> | Computer Vision Engineer - Algorithms | London, UK · Basingstoke, UK · Bristol, UK | <a href="https://jobs.ashbyhq.com/hawkeyeinnovations/1d03c3ad-5612-496a-ac3c-0d49a16523bb/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://il.indeed.com/cmp/Eitan-Medical"><strong>Eitan Medical</strong></a> | Research Engineer (PHD) | נתניה, M, IL | <a href="https://il.indeed.com/viewjob?jk=e7255e879202eee7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://se.indeed.com/cmp/Coody-Io-Ab"><strong>Coody IO AB</strong></a> | Machine Learning Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=659e9035dd67dbdf"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://uk.indeed.com/cmp/Catapult-Sports"><strong>Catapult Sports</strong></a> | Principal Computer Vision Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=3e29c9b7f94f5259"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research engineer - hardware/software co-design to improve non-functional metrics in embedded systems (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=a7ef7835cad27401"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -44,6 +45,7 @@ Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Research Engineer, Data Infrastructure | Paris | <a href="https://jobs.ashbyhq.com/mistral/8c71b069-0eda-40d1-8cb1-4094fd9c81de/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Open-Source Software, Machine Learning Engineer | Paris | <a href="https://jobs.ashbyhq.com/mistral/b52dc2f5-3113-47cf-9960-340a79ad2487/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 24d |
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Research Engineer, Machine Learning - Paris/London/Zurich/Warsaw | Paris | <a href="https://jobs.ashbyhq.com/mistral/c9dc32da-f5b1-4162-9506-4372aa347503/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 26d |
+| <a href="https://simplify.jobs/c/MBDA"><strong>MBDA</strong></a> | Algorithm Developer - Weapon Systems | Bristol, UK | <a href="https://mbda.wd3.myworkdayjobs.com/MBDA-UK/job/Bristol/Algorithm-Developer--Weapon-Systems-_R34922-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 33d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer (Internship) | Paris | <a href="https://jobs.ashbyhq.com/mistral/d22fcb76-4256-48a0-85b8-181d781f991d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Research Engineer - Robotics | Paris | <a href="https://jobs.ashbyhq.com/mistral/dbd4595f-a2e6-423f-bc9e-3cb6e8e3903e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
@@ -67,7 +69,7 @@ Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 411d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 745d |
 
-_27 live, 34 unverified_
+_27 live, 36 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

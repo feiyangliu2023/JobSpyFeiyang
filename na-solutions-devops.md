@@ -1,6 +1,6 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
+Last updated: **2026-05-16 22:49 UTC** · **63** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
@@ -22,6 +22,7 @@ Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 | <a href="http://www.ball.com/aerospace"><strong>Ball Aerospace</strong></a> | Software Test Solutions Engineer I | Nashua, New Hampshire, United States | <a href="https://jobs.baesystems.com/global/en/job/BAE1US123211BREXTERNAL/Software-Test-Solutions-Engineer-I"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 44d |
 | <a href="https://simplify.jobs/c/Vertiv"><strong>Vertiv</strong></a> | Customer Engineer 1 | Kansas City, MO | <a href="https://egup.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/20265198"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 50d |
 | <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer 1 | Normal, IL | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/FE-1-Bloomington--Illinois_R4037216-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 56d |
+| <a href="https://simplify.jobs/c/Hendrick-Motorsports"><strong>Hendrick Motorsports</strong></a> | Project and Race Support Engineer | Charlotte, NC | <a href="https://hendrick.wd5.myworkdayjobs.com/HMSCareers/job/Hendrick-Motorsports/Project-and-Race-Support-Engineer-Intern_R-77456"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 58d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | DevOps Engineer, Infrastructure & Security | Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4674863005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 59d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | AI Support Engineer, Government - Washington, D.C. | Washington, DC | <a href="https://jobs.ashbyhq.com/openai/b505a83d-68c1-46cc-a754-5deacb3c6e3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 61d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | IT Solutions Engineer | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/6c6c1ace-12d6-48f0-88f0-488ff8521571/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 71d |
@@ -53,7 +54,7 @@ Last updated: **2026-05-16 19:08 UTC** · **62** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 389d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Field Engineer, Public Sector | Baltimore, MD; Colorado Springs, CO; Hampton Roads, VA; Tampa, FL; Tucson,AZ; San Francisco, CA; New York, NY; Honolulu, Hawaii, St. Louis, MO; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4518690005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 482d |
 
-_33 live, 14 unverified_
+_33 live, 15 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _15 hidden as first_seen >180d. Full set in jobs.db._
