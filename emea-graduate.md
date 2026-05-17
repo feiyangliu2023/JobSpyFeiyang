@@ -1,6 +1,6 @@
 # EMEA Graduate Roles
 
-Last updated: **2026-05-17 15:07 UTC** · **164** active EMEA full-time new-grad roles.
+Last updated: **2026-05-17 15:36 UTC** · **165** active EMEA full-time new-grad roles.
 
 Filtered to tech-shape titles (software, ML, AI, data, etc.) from batch-hire intake at big companies — mirrors the [speedyapply](https://github.com/speedyapply/2026-SWE-College-Jobs) NEW_GRAD shape. Senior / lead / staff postings excluded. For internships, see the per-region internship slice files.
 
@@ -28,7 +28,8 @@ Filtered to tech-shape titles (software, ML, AI, data, etc.) from batch-hire int
 | <a href="https://uk.indeed.com/cmp/Compare-the-Market-2"><strong>Compare The Market</strong></a> | Graduate Machine Learning Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=21bfc28cf5c23848"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Bradford-Metropolitan-District-Council"><strong>Bradford Metropolitan District Council</strong></a> | Graduate Data Analyst | Bradford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9f231c6d39e0aad5"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://se.indeed.com/cmp/Visa"><strong>Visa</strong></a> | Graduate Software Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=6b59c6b737a4b277"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://es.indeed.com/cmp/Uriach"><strong>URIACH</strong></a> | Junior Data Analyst | Sant Cugat del Vallès, CT, ES | <a href="https://es.indeed.com/viewjob?jk=1827c07da7beea8d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
+| <a href="https://es.indeed.com/cmp/Uriach"><strong>URIACH</strong></a> | Junior Data Analyst | CT, ES | <a href="https://es.indeed.com/viewjob?jk=1827c07da7beea8d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
+| <a href="https://es.indeed.com/cmp/Uriach"><strong>URIACH</strong></a> | Junior Data Analyst | Sant Cugat del Vallès, CT, ES | <a href="https://es.indeed.com/viewjob?jk=8ddd54ea9c555856"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Graduate Software Developer | London, UK | <a href="https://careers-sig.icims.com/jobs/10929/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://ie.indeed.com/cmp/Rws"><strong>RWS</strong></a> | Junior Full Stack Developer | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=e2fcc210808bf477"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Qinetiq"><strong>QinetiQ</strong></a> | Systems Engineer Graduate - Malvern | Malvern, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=f07785a20cd2ac87"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -159,7 +160,7 @@ Filtered to tech-shape titles (software, ML, AI, data, etc.) from batch-hire int
 | <a href="https://simplify.jobs/c/ElevenLabs"><strong>ElevenLabs</strong></a> | Full-Stack Engineer - Front-End Leaning | Boston, MA · Washington, DC · LA | <a href="https://jobs.ashbyhq.com/elevenlabs/ada7cd2c-8b9f-4f19-a88b-7c2ca1be1fde/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 198d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Scientist Graduate - Tiktok Shop  DS - 2026 Start - BS/MS | London, UK | <a href="https://lifeattiktok.com/search/7535381998677739784"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 215d |
 
-_25 live, 124 unverified_
+_25 live, 125 unverified_
 <!-- TABLE_EMEA_GRADUATE_END -->
 
 _15 hidden as first_seen >180d. Full set in jobs.db._

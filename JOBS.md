@@ -1,6 +1,6 @@
 # Junior Tech Roles
 
-Last updated: **2026-05-17 15:07 UTC** · **1453** active roles ([EMEA](#emea) (243) · [North America](#na) (1210)).
+Last updated: **2026-05-17 15:36 UTC** · **1453** active roles ([EMEA](#emea) (243) · [North America](#na) (1210)).
 
 ---
 

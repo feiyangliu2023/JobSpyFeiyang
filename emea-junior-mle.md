@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-17 15:07 UTC** · **144** active roles.
+Last updated: **2026-05-17 15:36 UTC** · **142** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -67,7 +67,6 @@ Last updated: **2026-05-17 15:07 UTC** · **144** active roles.
 | <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Applied AI, Forward Deployed Machine Learning Engineer - (Internship) | Paris | <a href="https://jobs.ashbyhq.com/mistral/5bc5437b-5d0b-47e6-866f-345b8aebe274/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://cz.indeed.com/cmp/Msd"><strong>MSD</strong></a> | Junior Machine Learning Engineer - Part time for a student | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=bdc296a158ea294c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://es.indeed.com/cmp/Logicalis"><strong>Logicalis</strong></a> | Data Scientist / IA Engineer | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=e17811e2158873e2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| <a href="https://il.indeed.com/cmp/Ludeo"><strong>LUDEO</strong></a> | Backend GenAi Engineer | יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=5dc37c39aecdc6e0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://se.indeed.com/cmp/Kth-Royal-Institute-of-Technology"><strong>KTH Royal Institute of Technology</strong></a> | Research Engineer in Geospatial Analysis & Socio-Ecological Modeling | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=0a8bf6f663878824"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://nl.indeed.com/cmp/Gte-00e4047d"><strong>GTE</strong></a> | Junior AI Engineer (Dutch-speaker) | Nieuwegein, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=c925f0180fe03cec"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://pl.indeed.com/cmp/Equinix"><strong>Equinix</strong></a> | Principal ML/AI Engineer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=d38db1b778c409aa"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -87,7 +86,6 @@ Last updated: **2026-05-17 15:07 UTC** · **144** active roles.
 | <a href="https://it.indeed.com/cmp/Mia--platform"><strong>Mia-Platform</strong></a> | AI Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=678d99b76cf17e9a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://nl.indeed.com/cmp/Knmi"><strong>KNMI</strong></a> | Data scientist | De Bilt, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=b6e97afcd1a0daae"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://pt.indeed.com/cmp/Itds-Portugal"><strong>ITDS PORTUGAL</strong></a> | Junior AI Data Engineer – Machine Learning & Data Processing | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=307dc7734d7f714c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
-| <a href="https://il.indeed.com/cmp/Eitan-Medical"><strong>Eitan Medical</strong></a> | Research Engineer (PHD) | נתניה, M, IL | <a href="https://il.indeed.com/viewjob?jk=e7255e879202eee7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://nl.indeed.com/cmp/Data-Consulting-Group"><strong>Data Consulting Group</strong></a> | Consultant Data Scientist (fulltime) | Utrecht, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=f18a88dcd633617e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://se.indeed.com/cmp/Coody-Io-Ab"><strong>Coody IO AB</strong></a> | Machine Learning Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=659e9035dd67dbdf"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research engineer - hardware/software co-design to improve non-functional metrics in embedded systems (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=a7ef7835cad27401"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
@@ -144,7 +142,7 @@ Last updated: **2026-05-17 15:07 UTC** · **144** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 746d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 746d |
 
-_39 live, 99 unverified_
+_39 live, 97 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._
