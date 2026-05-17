@@ -75,7 +75,8 @@ jobs:
                   na-junior-sde.md na-junior-mle.md \
                   na-internships.md na-quant.md \
                   na-data-analyst.md na-algorithm.md \
-                  na-solutions-devops.md na-senior-sde.md
+                  na-solutions-devops.md na-senior-sde.md \
+                  remote-jobs.md
           if git diff --cached --quiet; then
             echo "no changes to commit; skipping"
             exit 0
