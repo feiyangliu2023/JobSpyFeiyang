@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-05-17 08:07 UTC** · **64** active roles.
+Last updated: **2026-05-17 15:07 UTC** · **63** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -11,7 +11,6 @@ Last updated: **2026-05-17 08:07 UTC** · **64** active roles.
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer- AI for Air Quality Downscaling (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=85831ed5fa7a943b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | Machine Learning Engineer / MLOps Engineer AWS - Freelance H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=450bc0a0da6742e1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Tesco-40b6123a"><strong>Tesco</strong></a> | Machine Learning Engineer | Welwyn Garden City, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=596da0cfcd425384"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://il.indeed.com/cmp/Mobileye"><strong>Mobileye</strong></a> | Algorithm Analyst Student - Temporary Position | ירושלים, JM, IL | <a href="https://il.indeed.com/viewjob?jk=613bef2082435c07"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://cz.indeed.com/cmp/Gen-Digital-Inc."><strong>Gen Digital Inc.</strong></a> | Research Engineer Intern, Cyber Safety AI | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=bd6933771bb0ab14"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **—** | Research Scientist - Tooting | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=f328471c527150ee"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | ML Ops Engineer / Machine Learning Engineer – Supply Chain - Freelance H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=683d3648fd5a7cf3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -58,7 +57,7 @@ Last updated: **2026-05-17 08:07 UTC** · **64** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Production Model Post-Training | Zürich, CH | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5112018008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 94d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (Reinforcement Learning) | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5115935008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 95d |
 | <a href="https://simplify.jobs/c/Prior-Labs"><strong>Prior Labs</strong></a> | Research Scientist Intern - PhD | Freiburg im Breisgau, Germany · NYC · Berlin, Germany | <a href="https://jobs.ashbyhq.com/prior-labs/09410424-8e94-4747-8155-bbcd0b1d4f6e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 101d |
-| <a href="https://www.dowjones.com"><strong>Dow Jones</strong></a> | Summer 2026 Internship - Backend Search Engineer Intern | Barcelona, Spain | <a href="https://dowjones.wd1.myworkdayjobs.com/en-US/dow_jones_career/job/Spain---Barcelona/Summer-2026-Internship---Backend-Search-Engineer-Intern_Job_Req_51116"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 114d |
+| <a href="https://www.dowjones.com"><strong>Dow Jones</strong></a> | Summer 2026 Internship - Backend Search Engineer Intern | Barcelona, Spain | <a href="https://dowjones.wd1.myworkdayjobs.com/en-US/dow_jones_career/job/Spain---Barcelona/Summer-2026-Internship---Backend-Search-Engineer-Intern_Job_Req_51116"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 115d |
 | <a href="https://simplify.jobs/c/Entrust"><strong>Entrust</strong></a> | Applied Scientist 1 | London, UK | <a href="https://entrust.wd1.myworkdayjobs.com/entrustcareers/job/United-Kingdom---London-Onfido/Applied-Scientist-I_R003921"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 144d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer – Internship | London, UK · Paris, France | <a href="https://jobs.lever.co/mistral/426ef8c0-eb26-4004-a690-f33c62b445a7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 191d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Research Scientist, Model Evaluation | Toronto, Canada · New York, United States · Seattle, United States | <a href="https://jobs.ashbyhq.com/cohere/830c613b-d4bf-4673-ab33-46ccc12cc415/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 207d |
@@ -69,7 +68,7 @@ Last updated: **2026-05-17 08:07 UTC** · **64** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 412d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 746d |
 
-_27 live, 36 unverified_
+_27 live, 35 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
