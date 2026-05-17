@@ -13,30 +13,48 @@ package is still vendored at [`jobspy/`](jobspy/) and used as a library.
 
 ## Browse the jobs
 
-Start at **[INDEX.md](INDEX.md)** for live counts. The slices below are
-overwritten on every run; ages and links are current as of the last scrape
-(roughly every 8 hours).
+Start at **[INDEX.md](INDEX.md)** for the live table of contents with current
+active counts and last-liveness timestamps next to every slice. The slices
+below are overwritten on every run (roughly every 8 hours).
 
 ### Curated, allowlist-gated (FAANG+, AI labs, quant, scaleups)
 
-- **[JOBS.md](JOBS.md)** — one big Region × Tier table; the canonical view.
+- **[JOBS.md](JOBS.md)** — one big region-grouped table; the canonical view.
 
-### Comprehensive slices (no company allowlist, title-filtered only)
+### Slices by track (no company allowlist, title-filtered only)
 
-| Slice | EMEA | North America |
+Pick the row that matches the kind of role you're hunting for, then click the
+region you care about.
+
+| Track | EMEA | North America |
 |---|---|---|
 | Junior SDE | [emea-junior-sde.md](emea-junior-sde.md) | [na-junior-sde.md](na-junior-sde.md) |
 | Junior MLE / Applied Scientist | [emea-junior-mle.md](emea-junior-mle.md) | [na-junior-mle.md](na-junior-mle.md) |
 | Internships | [emea-internships.md](emea-internships.md) | [na-internships.md](na-internships.md) |
+| Senior SDE | [emea-senior-sde.md](emea-senior-sde.md) | [na-senior-sde.md](na-senior-sde.md) |
+| Data Analyst | [emea-data-analyst.md](emea-data-analyst.md) | [na-data-analyst.md](na-data-analyst.md) |
+| Algorithm (算法岗) | [emea-algorithm.md](emea-algorithm.md) | [na-algorithm.md](na-algorithm.md) |
 | Quant & Finance | [emea-quant.md](emea-quant.md) | [na-quant.md](na-quant.md) |
+| Solutions / Customer / DevOps | [emea-solutions-devops.md](emea-solutions-devops.md) | [na-solutions-devops.md](na-solutions-devops.md) |
 
-Plus **[emea-entry-level.md](emea-entry-level.md)** — the widest browse, every
-EMEA intern + new-grad role that passes the title filter regardless of
-company.
+### Widest browse (no allowlist, no track filter)
+
+- **[emea-entry-level.md](emea-entry-level.md)** — every EMEA intern +
+  new-grad role that passes the title filter, regardless of company.
+- **[na-entry-level.md](na-entry-level.md)** — same, for North America.
+
+### Cross-region
+
+- **[remote-jobs.md](remote-jobs.md)** — remote-eligible postings across
+  EMEA and NA, including smaller startups outside the curated allowlist.
 
 Each table includes a "New in last 24h" and "New in last 7d" section at the
 top, an apply link, and a liveness indicator — `(?)` means the URL hasn't yet
 been verified to still be live.
+
+> Slice definitions (which titles match what) live in
+> [`monitor/slices.yaml`](monitor/slices.yaml). If a slice doesn't surface the
+> roles you expect, that file is where the title-keyword gates are tuned.
 
 ## Sources
 
@@ -65,7 +83,8 @@ GitHub Actions cron at **07:00 UTC** and **15:00 UTC** runs
 2. Upserts results into `monitor/jobs.db` (committed back to the repo for
    state across runs; pruned to 180 days).
 3. Marks any previously-active row not seen this run as `gone`.
-4. Re-renders `JOBS.md`, `INDEX.md`, and all eight slice files.
+4. Re-renders `JOBS.md`, `INDEX.md`, the per-region entry-level files, and
+   every slice listed in [`monitor/slices.yaml`](monitor/slices.yaml).
 5. Sends a single per-run digest of net-new postings to my phone via
    [ntfy.sh](https://ntfy.sh) (no notification when nothing new — no spam).
 6. Emits a per-source health alert if any feed silently stops returning
@@ -83,8 +102,8 @@ The pipeline isn't EMEA / junior-specific; everything that filters is in
 - `cities` — swap in your own hubs (each city becomes a JobSpy search bucket).
 - `role_templates` — change `search_terms` and add per-site overrides.
 - `filters.include_companies` — the allowlist that feeds `JOBS.md`. Slice
-  files and `emea-entry-level.md` ignore this gate, so they keep working even
-  if you delete the allowlist entirely.
+  files and the two `*-entry-level.md` files ignore this gate, so they keep
+  working even if you delete the allowlist entirely.
 - `filters.exclude_titles` — currently tuned to drop senior / staff / lead /
   L5+ wording; relax or invert if you're searching for those instead.
 - `external_sources` — add more SimplifyJobs-schema feeds or write a new
