@@ -46,8 +46,8 @@ Auto-generated tracker of tech roles in EMEA and North America across junior, se
 
 ## Wider browse (no curated company allowlist)
 
-- [EMEA entry-level (all companies)](emea-entry-level.md) — 275 active roles, allowlist gate dropped
-- [North America entry-level (all companies)](na-entry-level.md) — 2510 active roles, allowlist gate dropped
+- [EMEA graduate (all companies)](emea-graduate.md) — 162 active roles, allowlist gate dropped
+- [North America graduate (all companies)](na-graduate.md) — 2510 active roles, allowlist gate dropped
 
 ## Coverage
 

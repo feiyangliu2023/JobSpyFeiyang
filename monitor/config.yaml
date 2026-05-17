@@ -442,7 +442,7 @@ filters:
     # Note on "senior" / "staff" / "principal" / "lead": previously
     # excluded globally, lifted so the senior_sde slice can surface
     # senior IC roles. Existing junior slices keep them in their local
-    # `title_keywords_none` block; emea-entry-level / JOBS.md are happy
+    # `title_keywords_none` block; emea-graduate / JOBS.md are happy
     # to surface senior roles per user direction.
     # NOTE: "research scientist" was previously excluded here as PhD-only,
     # but big-tech 算法岗 (Meta / Google / Amazon / ByteDance / TikTok)

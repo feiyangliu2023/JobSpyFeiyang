@@ -1,9 +1,10 @@
 """Tests for monitor/render_md.py — entry-level filter + classifier.
 
 Targets the bug where ``"intern" in title`` matched ``Internal`` and
-sent Senior / Lead / SRE roles into the intern bucket of
-emea-entry-level.md, plus the new tech-shape + batch-hire title gate
-that mirrors speedyapply's NEW_GRAD_*.md shape.
+sent Senior / Lead / SRE roles into the intern bucket of the prior
+emea-entry-level view, plus the tech-shape + batch-hire title gate
+that mirrors speedyapply's NEW_GRAD_*.md shape and the
+emea-graduate.md / na-graduate.md graduate-only renderers.
 """
 
 from __future__ import annotations
@@ -218,7 +219,8 @@ class TestBatchHireMarker:
 
 class TestEntryLevelFilter:
     def test_drops_senior_even_with_intern_marker(self):
-        # Real case from emea-entry-level.md: bug-routed senior into intern.
+        # Real case from the prior emea-entry-level view: bug-routed
+        # senior into intern.
         r = _row(
             "Senior Full Stack Engineer (Copilot Agents & Internal Productivity Products)"
         )
@@ -273,11 +275,11 @@ class TestEntryLevelFilter:
 
 
 # --------------------------------------------------------------------------- #
-# render_region_entry_level — end-to-end smoke test
+# render_region_graduate — end-to-end smoke test
 # --------------------------------------------------------------------------- #
 
 
-class TestRenderRegionEntryLevel:
+class TestRenderRegionGraduate:
     def test_emea_renders_and_filters(self, tmp_path):
         rows = [
             _row("Graduate Software Engineer", region="emea", company="UK Co"),
@@ -288,24 +290,31 @@ class TestRenderRegionEntryLevel:
                 region="emea",
                 company="X",
             ),
-            _row("Software Engineer", region="north_america", company="US Co"),
+            _row(
+                "Software Engineer, New Grad",
+                region="north_america",
+                site="simplify_newgrad",
+                company="US Co",
+            ),
         ]
-        path = tmp_path / "emea-entry-level.md"
-        n = render_md.render_region_entry_level(rows, "emea", path)
+        path = tmp_path / "emea-graduate.md"
+        n = render_md.render_region_graduate(rows, "emea", path)
         body = path.read_text(encoding="utf-8")
 
         # Header is region-specific.
-        assert "EMEA Entry-Level Roles" in body
+        assert "EMEA Graduate Roles" in body
         # NA-tagged row never reaches EMEA.
         assert "US Co" not in body
         # Non-tech and senior rows are filtered.
         assert "Vehicle Testing Engineer" not in body
         assert "Senior Full Stack Engineer" not in body
-        # Real entry-level roles render.
+        # Intern row is dropped entirely from the graduate view.
+        assert "Software Engineer Intern" not in body
+        assert "Intern Co" not in body
+        # Real graduate role renders.
         assert "Graduate Software Engineer" in body
-        assert "Software Engineer Intern" in body
-        # Sanity: two rows passed for EMEA.
-        assert n == 2
+        # Sanity: only one row passed for EMEA (the new-grad title).
+        assert n == 1
 
     def test_na_renders_separately(self, tmp_path):
         rows = [
@@ -323,23 +332,24 @@ class TestRenderRegionEntryLevel:
             ),
             _row("Graduate Software Engineer", region="emea", company="EU Co"),
         ]
-        path = tmp_path / "na-entry-level.md"
-        n = render_md.render_na_entry_level(rows, path)
+        path = tmp_path / "na-graduate.md"
+        n = render_md.render_na_graduate(rows, path)
         body = path.read_text(encoding="utf-8")
 
-        assert "North America Entry-Level Roles" in body
+        assert "North America Graduate Roles" in body
         assert "Stripe US" in body
-        assert "Snowflake" in body
+        # Intern row is dropped from the graduate view.
+        assert "Snowflake" not in body
         # EMEA row doesn't leak into NA.
         assert "EU Co" not in body
-        assert n == 2
-
-    def test_emea_back_compat_alias(self, tmp_path):
-        rows = [_row("Graduate Software Engineer", region="emea")]
-        path = tmp_path / "emea-entry-level.md"
-        n = render_md.render_emea_entry_level(rows, path)
         assert n == 1
-        assert "EMEA Entry-Level Roles" in path.read_text(encoding="utf-8")
+
+    def test_emea_renderer(self, tmp_path):
+        rows = [_row("Graduate Software Engineer", region="emea")]
+        path = tmp_path / "emea-graduate.md"
+        n = render_md.render_emea_graduate(rows, path)
+        assert n == 1
+        assert "EMEA Graduate Roles" in path.read_text(encoding="utf-8")
 
 
 # --------------------------------------------------------------------------- #

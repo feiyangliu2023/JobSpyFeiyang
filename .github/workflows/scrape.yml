@@ -62,11 +62,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Stage first so this works whether the files are newly created
           # (untracked) or just modified — `git diff` alone doesn't see
-          # untracked files. emea-entry-level.md, INDEX.md, and the slice
+          # untracked files. emea-graduate.md, INDEX.md, and the slice
           # files are stateless renders — not backed by jobs.db, but
           # committed so GitHub renders the latest snapshot at the URLs
           # the user shares.
-          git add monitor/jobs.db JOBS.md INDEX.md emea-entry-level.md \
+          git add monitor/jobs.db JOBS.md INDEX.md \
+                  emea-graduate.md na-graduate.md \
                   emea-junior-sde.md emea-junior-mle.md \
                   emea-internships.md emea-quant.md \
                   emea-data-analyst.md emea-algorithm.md \

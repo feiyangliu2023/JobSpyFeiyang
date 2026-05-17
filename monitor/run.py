@@ -823,7 +823,7 @@ def ingest_external_sources(
 
 
 # --------------------------------------------------------------------------- #
-# Broader-pool DB enrichment (slice + emea-entry-level rendering)
+# Broader-pool DB enrichment (slice + emea-graduate rendering)
 # --------------------------------------------------------------------------- #
 
 
@@ -944,23 +944,23 @@ def main(argv: list[str] | None = None) -> int:
         help="path to the rendered markdown table (committed by CI)",
     )
     parser.add_argument(
-        "--md-emea-entry-level",
+        "--md-emea-graduate",
         default=str(
-            Path(__file__).parent.parent / "emea-entry-level.md"
+            Path(__file__).parent.parent / "emea-graduate.md"
         ),
         help=(
-            "path to the broader EMEA entry-level markdown view "
-            "(intern + new grad, no company allowlist)"
+            "path to the broader EMEA graduate / new-grad markdown view "
+            "(no company allowlist)"
         ),
     )
     parser.add_argument(
-        "--md-na-entry-level",
+        "--md-na-graduate",
         default=str(
-            Path(__file__).parent.parent / "na-entry-level.md"
+            Path(__file__).parent.parent / "na-graduate.md"
         ),
         help=(
-            "path to the broader North America entry-level markdown view "
-            "(intern + new grad, no company allowlist)"
+            "path to the broader North America graduate / new-grad "
+            "markdown view (no company allowlist)"
         ),
     )
     parser.add_argument(
@@ -1040,8 +1040,8 @@ def main(argv: list[str] | None = None) -> int:
         dryrun_dir = Path("/tmp/jobs-dryrun")
         dryrun_dir.mkdir(parents=True, exist_ok=True)
         args.md = str(dryrun_dir / "JOBS.md")
-        args.md_emea_entry_level = str(dryrun_dir / "emea-entry-level.md")
-        args.md_na_entry_level = str(dryrun_dir / "na-entry-level.md")
+        args.md_emea_graduate = str(dryrun_dir / "emea-graduate.md")
+        args.md_na_graduate = str(dryrun_dir / "na-graduate.md")
         args.slices_output_dir = str(dryrun_dir)
         args.index_md = str(dryrun_dir / "INDEX.md")
 
@@ -1074,7 +1074,7 @@ def main(argv: list[str] | None = None) -> int:
     # Broader view: rows that pass title/desc filters but NOT the company
     # allowlist, region-tagged on each row. Aggregated across both
     # pipelines (JobSpy EMEA + SimplifyJobs EMEA/NA); fed to slice files
-    # AND emea-entry-level.md. Never written to jobs.db — purely a
+    # AND emea-graduate.md. Never written to jobs.db — purely a
     # presentation feed. JOBS.md continues to render the curated/allowlist
     # set out of jobs.db.
     broader_rows: list[dict] = []
@@ -1297,7 +1297,7 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as e:
             log.exception("render_md (JOBS.md) failed: %s", e)
 
-        # Broader pool prep — same set drives emea-entry-level.md AND
+        # Broader pool prep — same set drives emea-graduate.md AND
         # all slice files. Two cleanup passes:
         #   1. Signatures: rows that never hit upsert_jobs lack a
         #      precomputed signature, so the renderer's dedup helper
@@ -1318,30 +1318,30 @@ def main(argv: list[str] | None = None) -> int:
 
         n_emea = 0
         try:
-            n_emea = render_md_mod.render_emea_entry_level(
-                broader_rows, args.md_emea_entry_level
+            n_emea = render_md_mod.render_emea_graduate(
+                broader_rows, args.md_emea_graduate
             )
             log.info(
-                "rendered %d EMEA entry-level rows to %s",
-                n_emea, args.md_emea_entry_level,
+                "rendered %d EMEA graduate rows to %s",
+                n_emea, args.md_emea_graduate,
             )
         except Exception as e:
-            log.exception("render_emea_entry_level failed: %s", e)
+            log.exception("render_emea_graduate failed: %s", e)
 
-        n_na_entry = 0
+        n_na_grad = 0
         try:
-            n_na_entry = render_md_mod.render_na_entry_level(
-                broader_rows, args.md_na_entry_level
+            n_na_grad = render_md_mod.render_na_graduate(
+                broader_rows, args.md_na_graduate
             )
             log.info(
-                "rendered %d North America entry-level rows to %s",
-                n_na_entry, args.md_na_entry_level,
+                "rendered %d North America graduate rows to %s",
+                n_na_grad, args.md_na_graduate,
             )
         except Exception as e:
-            log.exception("render_na_entry_level failed: %s", e)
+            log.exception("render_na_graduate failed: %s", e)
 
         # Slice files — named, filtered views (EMEA junior SDE, NA interns,
-        # quant, etc.). Additive to JOBS.md / emea-entry-level.md; driven
+        # quant, etc.). Additive to JOBS.md / emea-graduate.md; driven
         # by slices.yaml so non-code edits can add a new view. Slices feed
         # from the BROADER pool (no allowlist gate) so a London Klarna or
         # Berlin Vinted role surfaces even though those companies aren't
@@ -1371,7 +1371,7 @@ def main(argv: list[str] | None = None) -> int:
                             slice_stats,
                             args.index_md,
                             broader_emea_count=n_emea,
-                            broader_na_count=n_na_entry,
+                            broader_na_count=n_na_grad,
                         )
                         log.info("rendered INDEX.md to %s", args.index_md)
                     except Exception as e:

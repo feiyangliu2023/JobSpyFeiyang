@@ -39,9 +39,12 @@ region you care about.
 
 ### Widest browse (no allowlist, no track filter)
 
-- **[emea-entry-level.md](emea-entry-level.md)** — every EMEA intern +
+- **[emea-graduate.md](emea-graduate.md)** — every EMEA full-time
   new-grad role that passes the title filter, regardless of company.
-- **[na-entry-level.md](na-entry-level.md)** — same, for North America.
+- **[na-graduate.md](na-graduate.md)** — same, for North America.
+  Internships are split out into the per-region internship slices
+  ([emea-internships.md](emea-internships.md) /
+  [na-internships.md](na-internships.md)) above.
 
 ### Cross-region
 
@@ -83,7 +86,7 @@ GitHub Actions cron at **07:00 UTC** and **15:00 UTC** runs
 2. Upserts results into `monitor/jobs.db` (committed back to the repo for
    state across runs; pruned to 180 days).
 3. Marks any previously-active row not seen this run as `gone`.
-4. Re-renders `JOBS.md`, `INDEX.md`, the per-region entry-level files, and
+4. Re-renders `JOBS.md`, `INDEX.md`, the per-region graduate files, and
    every slice listed in [`monitor/slices.yaml`](monitor/slices.yaml).
 5. Sends a single per-run digest of net-new postings to my phone via
    [ntfy.sh](https://ntfy.sh) (no notification when nothing new — no spam).
@@ -102,7 +105,7 @@ The pipeline isn't EMEA / junior-specific; everything that filters is in
 - `cities` — swap in your own hubs (each city becomes a JobSpy search bucket).
 - `role_templates` — change `search_terms` and add per-site overrides.
 - `filters.include_companies` — the allowlist that feeds `JOBS.md`. Slice
-  files and the two `*-entry-level.md` files ignore this gate, so they keep
+  files and the two `*-graduate.md` files ignore this gate, so they keep
   working even if you delete the allowlist entirely.
 - `filters.exclude_titles` — currently tuned to drop senior / staff / lead /
   L5+ wording; relax or invert if you're searching for those instead.

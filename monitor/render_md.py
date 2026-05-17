@@ -353,7 +353,7 @@ def _dedupe_and_sort(
 
 
 # Render-time caps on the SHAPE of MD output. Bounds the size of every
-# rendered section so JOBS.md / slice files / emea-entry-level.md stay
+# rendered section so JOBS.md / slice files / emea-graduate.md stay
 # usable as the broader pool grows. Affects what gets written, NOT what
 # gets stored — the full row set stays in jobs.db until the normal
 # `prune_old` lifecycle (gone-rows past `retention_days`) catches it.
@@ -793,119 +793,84 @@ def _title_passes_entry_level_filter(r: dict, kind: str) -> bool:
     return True
 
 
-_ENTRY_LEVEL_KIND_ORDER: list[tuple[str, str]] = [
-    ("intern", "Internships"),
-    ("newgrad", "Full-Time New Grad"),
-]
-
-
-_ENTRY_LEVEL_REGION_HEADINGS = {
+_GRADUATE_REGION_HEADINGS = {
     "emea": "EMEA",
     "north_america": "North America",
 }
 
 
-def render_region_entry_level(
+def render_region_graduate(
     rows: Iterable[dict],
     region: str,
     output_path: str | Path,
 ) -> int:
-    """Broader entry-level view for one region — same row shape as JOBS.md
-    but no company allowlist gate, scoped to a single region.
+    """Broader graduate / new-grad view for one region — same row shape
+    as JOBS.md but no company allowlist gate, scoped to a single region.
 
-    One comprehensive table per kind (Internships / New Grad). Sorted
-    newest-first; the Age column carries freshness, so no separate 24h /
-    7d sections.
+    One comprehensive table of full-time new-grad roles. Sorted newest-
+    first; the Age column carries freshness, so no separate 24h / 7d
+    sections. Internship rows are dropped entirely.
 
     Title-level filter (`_title_passes_entry_level_filter`):
       - Drops senior / lead / staff / principal titles.
       - Requires tech-shape (Software / ML / AI / Data / SWE / …).
-      - For new-grad rows from raw JobSpy aggregators, also requires a
-        batch-hire marker (graduate / new grad / university / campus /
-        Software Engineer I / etc.) so single-headcount specific
-        postings don't crowd out the graduate-programme intake roles.
-        Curated upstream feeds (SimplifyJobs / vanshb03 / `direct:*`)
-        skip the marker gate — they're pre-vetted by humans, so passing
-        them through unmodified guarantees we cover at least what
-        speedyapply's NEW_GRAD_*.md renders.
+      - For rows from raw JobSpy aggregators, also requires a batch-hire
+        marker (graduate / new grad / university / campus / Software
+        Engineer I / etc.) so single-headcount specific postings don't
+        crowd out the graduate-programme intake roles. Curated upstream
+        feeds (SimplifyJobs / vanshb03 / `direct:*`) skip the marker
+        gate — they're pre-vetted by humans.
     """
     region_key = (region or "").lower()
-    region_heading = _ENTRY_LEVEL_REGION_HEADINGS.get(region_key, region_key.upper() or "Unknown")
+    region_heading = _GRADUATE_REGION_HEADINGS.get(region_key, region_key.upper() or "Unknown")
 
     rows = [r for r in rows if (r.get("region") or "").lower() == region_key]
     rows = _filter_liveness(rows)
     has_salary = any(_has_salary(r) for r in rows)
 
-    by_kind: dict[str, list[dict]] = {k: [] for k, _ in _ENTRY_LEVEL_KIND_ORDER}
+    newgrad_rows: list[dict] = []
     for r in rows:
         kind = _classify_intern_or_newgrad(r)
+        if kind != "newgrad":
+            continue
         if not _title_passes_entry_level_filter(r, kind):
             continue
-        by_kind[kind].append(r)
+        newgrad_rows.append(r)
 
-    kind_rows: dict[str, list[dict]] = {}
-    for kind_key, _ in _ENTRY_LEVEL_KIND_ORDER:
-        kind_rows[kind_key] = _dedupe_and_sort(by_kind[kind_key])
+    newgrad_rows = _dedupe_and_sort(newgrad_rows)
 
-    # Per-kind render caps. Header / kind-summary counts continue to show
-    # the true active total; each table is capped to keep the file size
-    # bounded as the broader pool grows.
-    kind_active = {k: len(kind_rows[k]) for k, _ in _ENTRY_LEVEL_KIND_ORDER}
-    kind_caps: dict[str, tuple[int, int]] = {}
-    for kind_key, _ in _ENTRY_LEVEL_KIND_ORDER:
-        capped, n_age, n_overflow = _apply_render_caps(kind_rows[kind_key])
-        kind_rows[kind_key] = capped
-        kind_caps[kind_key] = (n_age, n_overflow)
-
-    visible_total = sum(kind_active.values())
+    visible_total = len(newgrad_rows)
+    capped, n_age, n_overflow = _apply_render_caps(newgrad_rows)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     out: list[str] = []
-    out.append(f"# {region_heading} Entry-Level Roles")
+    out.append(f"# {region_heading} Graduate Roles")
     out.append("")
-    kind_summaries = [
-        f"[{heading}](#{kind_key}) ({kind_active[kind_key]})"
-        for kind_key, heading in _ENTRY_LEVEL_KIND_ORDER
-    ]
     out.append(
         f"Last updated: **{now}** · **{visible_total}** active "
-        f"{region_heading} entry-level roles, split into "
-        f"{' · '.join(kind_summaries)}."
-    )
-    out.append("")
-    out.append(
-        "Split between **Internships** (typically part-time, co-op, or "
-        "summer) and **Full-Time New Grad** (entry-level full-time "
-        "headcount) so the two pipelines are easy to scan separately."
+        f"{region_heading} full-time new-grad roles."
     )
     out.append("")
     out.append(
         "Filtered to tech-shape titles (software, ML, AI, data, etc.) "
         "from batch-hire intake at big companies — mirrors the "
         "[speedyapply](https://github.com/speedyapply/2026-SWE-College-Jobs) "
-        "NEW_GRAD shape. Senior / lead / staff postings excluded."
+        "NEW_GRAD shape. Senior / lead / staff postings excluded. "
+        "For internships, see the per-region internship slice files."
     )
     out.append("")
     out.append("---")
     out.append("")
 
     marker_prefix = "TABLE_NA" if region_key == "north_america" else f"TABLE_{region_key.upper()}"
-    for kind_key, kind_heading in _ENTRY_LEVEL_KIND_ORDER:
-        marker = f"{marker_prefix}_{kind_key.upper()}"
-        out.append(f'<a name="{kind_key}"></a>')
-        out.append(f"## {kind_heading}")
+    marker = f"{marker_prefix}_GRADUATE"
+    out.append(f"<!-- {marker}_START -->")
+    out.append(_render_section(capped, has_salary))
+    out.append(f"<!-- {marker}_END -->")
+    cap_note = _render_cap_note(len(capped), n_age, n_overflow)
+    if cap_note:
         out.append("")
-        out.append(f"<!-- {marker}_START -->")
-        out.append(_render_section(kind_rows[kind_key], has_salary))
-        out.append(f"<!-- {marker}_END -->")
-        n_age, n_overflow = kind_caps[kind_key]
-        cap_note = _render_cap_note(len(kind_rows[kind_key]), n_age, n_overflow)
-        if cap_note:
-            out.append("")
-            out.append(cap_note)
-        out.append("")
-        out.append("---")
-        out.append("")
+        out.append(cap_note)
 
     while out and out[-1] in ("", "---"):
         out.pop()
@@ -915,23 +880,18 @@ def render_region_entry_level(
     return visible_total
 
 
-def render_emea_entry_level(
+def render_emea_graduate(
     rows: Iterable[dict], output_path: str | Path
 ) -> int:
-    """Back-compat alias — renders the EMEA entry-level view.
-
-    New callers should use `render_region_entry_level(rows, 'emea', path)`
-    directly. Kept so `monitor/run.py` doesn't need to change in step
-    with this refactor.
-    """
-    return render_region_entry_level(rows, "emea", output_path)
+    """Render the EMEA graduate / new-grad view."""
+    return render_region_graduate(rows, "emea", output_path)
 
 
-def render_na_entry_level(
+def render_na_graduate(
     rows: Iterable[dict], output_path: str | Path
 ) -> int:
-    """Render the North America entry-level view."""
-    return render_region_entry_level(rows, "north_america", output_path)
+    """Render the North America graduate / new-grad view."""
+    return render_region_graduate(rows, "north_america", output_path)
 
 
 def render_md(active_rows: Iterable[dict], output_path: str | Path) -> int:
@@ -1088,7 +1048,7 @@ def _matches_slice_filters(r: dict, sfilters: dict) -> bool:
     remote_only).
 
     Reuses `_classify_intern_or_newgrad` for the kinds gate so intern
-    detection stays consistent with emea-entry-level.md.
+    detection stays consistent with the graduate view.
     """
     regions = sfilters.get("regions")
     if regions:
@@ -1216,7 +1176,7 @@ def render_slices(
     pct_verified}}` so the caller can build a summary line at end of run
     and feed counts into INDEX.md without re-running the filter/dedup pass.
 
-    Additive to render_md / render_emea_entry_level — slice files are a
+    Additive to render_md / render_emea_graduate — slice files are a
     parallel surface, not a replacement.
     """
     if isinstance(slices_config, dict):
@@ -1293,8 +1253,8 @@ def render_index(
     malformed config rows) are silently skipped.
 
     `broader_emea_count` / `broader_na_count` are the row counts in
-    `emea-entry-level.md` / `na-entry-level.md` — passed in by the
-    caller so INDEX.md can advertise the wider views.
+    `emea-graduate.md` / `na-graduate.md` — passed in by the caller
+    so INDEX.md can advertise the wider views.
     """
     if isinstance(slices_config, dict):
         slices = slices_config.get("slices") or []
@@ -1354,12 +1314,12 @@ def render_index(
         out.append("")
         if broader_emea_count is not None:
             out.append(
-                f"- [EMEA entry-level (all companies)](emea-entry-level.md) — "
+                f"- [EMEA graduate (all companies)](emea-graduate.md) — "
                 f"{broader_emea_count} active roles, allowlist gate dropped"
             )
         if broader_na_count is not None:
             out.append(
-                f"- [North America entry-level (all companies)](na-entry-level.md) — "
+                f"- [North America graduate (all companies)](na-graduate.md) — "
                 f"{broader_na_count} active roles, allowlist gate dropped"
             )
         out.append("")
