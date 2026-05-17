@@ -40,6 +40,10 @@ Auto-generated tracker of tech roles in EMEA and North America across junior, se
 - [Senior SDE](na-senior-sde.md) — 42 active
   - Last liveness sweep: 2026-05-16 19:08 UTC, 83% verified live
 
+### Remote / Cross-region
+- [Remote Jobs](remote-jobs.md) — 42 active
+  - Cross-region (EMEA + NA); surfaces startups & off-allowlist roles. Counts refresh on the next cron run.
+
 ## Wider browse (no curated company allowlist)
 
 - [EMEA entry-level (all companies)](emea-entry-level.md) — 258 active roles, allowlist gate dropped
