@@ -1,10 +1,11 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-05-17 15:36 UTC** · **63** active roles.
+Last updated: **2026-05-17 20:35 UTC** · **64** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://uk.indeed.com/cmp/Epinal-Ltd"><strong>Epinal Ltd</strong></a> | Biosensor Devices Research Scientist/Engineer | Bristol, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=3731d9f793f6ee8e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/UK-Research-and-Innovation-1"><strong>UK Research and Innovation</strong></a> | Postdoctoral Research Scientist | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=afc91ed723567e03"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://il.indeed.com/cmp/Retym"><strong>Retym</strong></a> | DSP Algorithm Engineer | רמת גן, TA, IL | <a href="https://il.indeed.com/viewjob?jk=6b4fc8681082ad1f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Faculty-2"><strong>Faculty</strong></a> | Lead Machine Learning Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=52d3069a980a74a0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -68,7 +69,7 @@ Last updated: **2026-05-17 15:36 UTC** · **63** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 412d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 746d |
 
-_27 live, 35 unverified_
+_27 live, 36 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

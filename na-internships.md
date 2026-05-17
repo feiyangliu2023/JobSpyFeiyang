@@ -1,6 +1,6 @@
 # North America Internships
 
-Last updated: **2026-05-17 15:36 UTC** · **1861** active roles.
+Last updated: **2026-05-17 20:35 UTC** · **1869** active roles.
 
 <!-- TABLE_SLICE_NA_INTERN_ONLY_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -412,7 +412,7 @@ Last updated: **2026-05-17 15:36 UTC** · **1861** active roles.
 | <a href="https://simplify.jobs/c/NVIDIA"><strong>NVIDIA</strong></a> | Software Engineering Intern | Santa Clara, CA |  | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Software-Engineering-Intern--JAX---Fall-2026_JR2009745"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 23d |
 | <a href="https://simplify.jobs/c/Microchip-Technology"><strong>Microchip Technology</strong></a> | Engineering Intern - Business Intelligence | Chandler, AZ |  | <a href="https://wd5.myworkdaysite.com/recruiting/microchiphr/External/job/AZ---Chandler/Intern---Engineering--Business-Intelligence-_R1727-26"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
 | <a href="http://www.magna.com"><strong>Magna International</strong></a> | Intern - Software Engineering | Auburn Hills, Michigan, United States of America |  | <a href="https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Auburn-Hills-Michigan-US/Intern---Engineering_R00235425"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
-| <a href="https://www.magna.com"><strong>Magna</strong></a> | Intern - Software Engineering | Auburn Hills, Michigan, US |  | <a href="https://magna.wd3.myworkdayjobs.com/en-US/magna/job/Auburn-Hills-Michigan-US/Intern---Engineering_R00235425"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
+| <a href="https://simplify.jobs/c/Magna"><strong>Magna</strong></a> | Software Engineering Intern | Auburn Hills, MI |  | <a href="https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Auburn-Hills-Michigan-US/Intern---Engineering_R00235425"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
 | <a href="https://simplify.jobs/c/Leidos"><strong>Leidos</strong></a> | Software Developer Intern | Annapolis Junction, MD |  | <a href="https://leidos.wd5.myworkdayjobs.com/External/job/Annapolis-Junction-MD/Software-Developer-Intern_R-00181646"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
 | <a href="https://simplify.jobs/c/KBR"><strong>KBR</strong></a> | National Security Solutions – Software Engineering Intern - Nss | Columbia, MD |  | <a href="https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Columbia-Maryland/National-Security-Solutions--NSS----Software-Engineering-Internship_R2122608"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
 | <a href="https://simplify.jobs/c/IEM"><strong>IEM</strong></a> | Application Engineering Co-Op | Surrey, BC, Canada |  | <a href="https://job-boards.greenhouse.io/industrialelectricmanufacturing/jobs/4232212009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
@@ -509,4 +509,4 @@ Last updated: **2026-05-17 15:36 UTC** · **1861** active roles.
 _62 live, 438 unverified_
 <!-- TABLE_SLICE_NA_INTERN_ONLY_END -->
 
-_showing newest 500 of 1327 active rows (cap 500); 534 hidden as first_seen >180d. Full set in jobs.db._
+_showing newest 500 of 1335 active rows (cap 500); 534 hidden as first_seen >180d. Full set in jobs.db._
