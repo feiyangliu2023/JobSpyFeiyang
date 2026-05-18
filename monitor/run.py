@@ -689,6 +689,34 @@ def ingest_external_sources(
                     default_region=effective_default_region,
                     allowed_regions=allowed,
                 )
+            elif kind == "remotive":
+                # Remotive's free public JSON API. Every posting is
+                # remote-only by definition, so no remote filter is
+                # needed downstream — the slice's `remote_only` gate
+                # passes trivially on these rows.
+                from monitor.external import remotive as remotive_mod
+
+                url = src.get("url") or remotive_mod.DEFAULT_URL
+                listings = remotive_mod.fetch_listings(url)
+                rows = remotive_mod.to_rows(
+                    listings,
+                    site_label=(name or "remotive"),
+                    allowed_regions=allowed,
+                )
+            elif kind == "remoteok":
+                # RemoteOK's free public JSON API. Same remote-only
+                # semantics as Remotive. Heavier crypto/web3 noise —
+                # the curated-allowlist slice filter handles quality
+                # downstream.
+                from monitor.external import remoteok as remoteok_mod
+
+                url = src.get("url") or remoteok_mod.DEFAULT_URL
+                listings = remoteok_mod.fetch_listings(url)
+                rows = remoteok_mod.to_rows(
+                    listings,
+                    site_label=(name or "remoteok"),
+                    allowed_regions=allowed,
+                )
             elif kind == "direct":
                 # Per-company careers-page scraper. `module` names a file
                 # under monitor/external/direct/; that module must export
@@ -764,7 +792,10 @@ def ingest_external_sources(
         # We never write these to jobs.db — pure render input.
         if (
             broader_sink is not None
-            and kind in ("simplify_newgrad", "simplify_intern", "direct", "speedyapply")
+            and kind in (
+                "simplify_newgrad", "simplify_intern", "direct",
+                "speedyapply", "remotive", "remoteok",
+            )
         ):
             broader_skip = set(skip) | {"include_companies"}
             broader = apply_filters(rows, cfg["filters"], skip=broader_skip)
@@ -1353,8 +1384,14 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 with open(slices_path, "r", encoding="utf-8") as f:
                     slices_cfg = yaml.safe_load(f) or {}
+                # Forward the curated company allowlist so slices that
+                # opt into `companies_split: true` (remote-jobs today)
+                # render two tables: curated up top, others below.
+                _filters_block = cfg.get("filters") or {}
+                _allowlist = _filters_block.get("include_companies") or []
                 slice_stats = render_md_mod.render_slices(
-                    broader_rows, slices_cfg, args.slices_output_dir
+                    broader_rows, slices_cfg, args.slices_output_dir,
+                    companies_allowlist=_allowlist,
                 )
                 if slice_stats:
                     summary = ", ".join(

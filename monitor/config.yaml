@@ -871,6 +871,33 @@ external_sources:
     skip_filters:
       - min_description_chars
 
+  # ---- Remote-only job boards ----
+  #
+  # Remotive + RemoteOK are public JSON APIs dedicated to remote roles.
+  # Every posting is remote-eligible by definition, so the
+  # `remote_jobs` slice's `remote_only` filter passes trivially on
+  # these rows. `allowed_regions: [emea, north_america, other]`
+  # includes "Worldwide" / "Anywhere" postings — region is classified
+  # from the source's location string (`candidate_required_location`
+  # for Remotive, `location` for RemoteOK).
+  #
+  # `min_description_chars` is skipped because both sources' description
+  # fields are HTML and inconsistently populated. `include_companies` is
+  # enforced for the curated half of the hybrid render; the broader
+  # slice render still includes off-allowlist rows in a second table
+  # (see slices.yaml: remote_jobs.companies_split).
+  - name: remotive
+    type: remotive
+    allowed_regions: [emea, north_america, other]
+    skip_filters:
+      - min_description_chars
+
+  - name: remoteok
+    type: remoteok
+    allowed_regions: [emea, north_america, other]
+    skip_filters:
+      - min_description_chars
+
   # ---- Direct careers-page scrapers (tier-1 targets) ----
   #
   # One HTTP request per company per run; refreshes within hours of a
