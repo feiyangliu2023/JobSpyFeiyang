@@ -448,3 +448,107 @@ class TestRemoteOnlyFilter:
         assert "EU Startup" in body
         assert "US Startup" in body
         assert "OnsiteCo" not in body
+
+
+class TestRemoteHybridRender:
+    """The `companies_split: true` flag splits the remote slice into
+    two tables — curated (matches include_companies) on top, others
+    below. Same allowlist semantics as JOBS.md.
+    """
+
+    def _rows(self):
+        return [
+            _row("Senior Software Engineer", region="other",
+                 company="OpenAI", location="Remote · USA"),
+            _row("Research Engineer", region="other",
+                 company="Anthropic", location="Remote · USA"),
+            _row("Software Engineer", region="other",
+                 company="Some Random Startup", location="Remote · USA"),
+            _row("Backend Engineer", region="other",
+                 company="Another Off-Allowlist Co", location="Remote · USA"),
+            _row("Onsite Software Engineer", region="emea",
+                 company="OpenAI", location="London, UK"),
+        ]
+
+    def _slice(self):
+        return {
+            "name": "remote_jobs",
+            "title": "Remote Jobs",
+            "companies_split": True,
+            "filters": {"remote_only": True},
+        }
+
+    def test_hybrid_renders_two_tables(self, tmp_path):
+        allowlist = ["openai", "anthropic"]
+        path = tmp_path / "remote-jobs.md"
+        stats = render_md.render_slice(
+            self._rows(), self._slice(), path,
+            companies_allowlist=allowlist,
+        )
+        body = path.read_text(encoding="utf-8")
+
+        assert "<!-- TABLE_SLICE_REMOTE_JOBS_CURATED_START -->" in body
+        assert "<!-- TABLE_SLICE_REMOTE_JOBS_OTHER_START -->" in body
+        assert "Curated companies" in body
+        assert "All other remote roles" in body
+        # The curated table appears BEFORE the other table.
+        assert body.index("CURATED_START") < body.index("OTHER_START")
+        # 2 curated (OpenAI/Anthropic remote) + 2 other (off-allowlist remote)
+        # The onsite OpenAI role is filtered out by remote_only.
+        assert stats["total"] == 4
+        assert stats["curated_total"] == 2
+
+    def test_hybrid_routes_companies_to_correct_table(self, tmp_path):
+        allowlist = ["openai", "anthropic"]
+        path = tmp_path / "remote-jobs.md"
+        render_md.render_slice(
+            self._rows(), self._slice(), path,
+            companies_allowlist=allowlist,
+        )
+        body = path.read_text(encoding="utf-8")
+        curated_start = body.index("CURATED_START")
+        curated_end = body.index("CURATED_END")
+        others_start = body.index("OTHER_START")
+        others_end = body.index("OTHER_END")
+        curated_section = body[curated_start:curated_end]
+        others_section = body[others_start:others_end]
+
+        # Allowlisted companies appear ONLY in the curated table.
+        assert "OpenAI" in curated_section
+        assert "Anthropic" in curated_section
+        assert "OpenAI" not in others_section
+        assert "Anthropic" not in others_section
+        # Off-allowlist companies appear ONLY in the other table.
+        assert "Some Random Startup" in others_section
+        assert "Another Off-Allowlist Co" in others_section
+        assert "Some Random Startup" not in curated_section
+
+    def test_hybrid_falls_back_to_single_table_without_allowlist(self, tmp_path):
+        """`companies_split: true` is a no-op when no allowlist is supplied
+        — we render a single table instead of crashing or rendering empty
+        curated section."""
+        path = tmp_path / "remote-jobs.md"
+        stats = render_md.render_slice(
+            self._rows(), self._slice(), path,
+            companies_allowlist=None,
+        )
+        body = path.read_text(encoding="utf-8")
+
+        assert "<!-- TABLE_SLICE_REMOTE_JOBS_START -->" in body
+        assert "CURATED_START" not in body
+        assert "curated_total" not in stats
+
+    def test_hybrid_off_means_no_split(self, tmp_path):
+        """Slice without `companies_split: true` ignores the allowlist."""
+        slice_def = dict(self._slice())
+        slice_def["companies_split"] = False
+        path = tmp_path / "remote-jobs.md"
+        render_md.render_slice(
+            self._rows(), slice_def, path,
+            companies_allowlist=["openai", "anthropic"],
+        )
+        body = path.read_text(encoding="utf-8")
+        assert "CURATED_START" not in body
+        # All 4 remote rows in one table; allowlist not consulted.
+        assert "OpenAI" in body
+        assert "Some Random Startup" in body

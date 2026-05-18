@@ -1081,12 +1081,46 @@ def _slice_marker_token(name: str) -> str:
     return re.sub(r"[^A-Za-z0-9]+", "_", name or "slice").strip("_").upper() or "SLICE"
 
 
+def _row_company_in_allowlist(
+    r: dict, companies_allowlist: list | None,
+) -> bool:
+    """Word-boundary company match using the same matcher run.py uses
+    for `include_companies`.
+
+    Deferred import: `monitor.run` imports this module, so importing it
+    at module load would be circular. By the time any slice render
+    runs, both modules are fully loaded.
+    """
+    if not companies_allowlist:
+        return False
+    from monitor.run import _match_company
+
+    return _match_company(r.get("company") or "", companies_allowlist)
+
+
 def render_slice(
     rows: Iterable[dict],
     slice_def: dict,
     output_path: str | Path,
+    *,
+    companies_allowlist: list | None = None,
 ) -> dict[str, int | str | None]:
-    """Render one slice markdown file as a single comprehensive table.
+    """Render one slice markdown file.
+
+    Default layout is one comprehensive table sorted newest-first. When
+    `slice_def["companies_split"] is True` AND a `companies_allowlist`
+    is supplied, the slice renders two tables instead:
+
+      1. **Curated** — rows whose `company` matches the allowlist.
+      2. **All other** — everything else that passed the slice filter.
+
+    The hybrid form is used by the remote-jobs slice: Remotive +
+    RemoteOK + JobSpy + SimplifyJobs collectively surface 1000s of
+    remote roles per run, and the curated half lets the user scan
+    OpenAI / Anthropic / Stripe / etc. first without losing the
+    broader long tail. The allowlist is shared with JOBS.md's
+    `filters.include_companies` so the two surfaces agree on what
+    counts as "worth applying to".
 
     Stats keys returned:
       - total:               deduped row count written to the file
@@ -1094,6 +1128,8 @@ def render_slice(
                              rendered rows, ISO8601 string. None if no
                              row has been checked yet.
       - pct_verified:        round(100 * ok / total). 0 when total == 0.
+      - curated_total:       count of curated-table rows (split mode only,
+                             absent otherwise).
 
     Sort is first_seen DESC; the Age column carries freshness so there
     are no separate 24h / 7d sub-sections.
@@ -1105,40 +1141,106 @@ def render_slice(
     matching = [r for r in rows if _matches_slice_filters(r, sfilters)]
     # Sort by date_posted DESC (fallback first_seen) — matches the visible
     # `Age` column, so the table reads top-to-bottom newest-to-oldest by
-    # the same signal the user reads off each row. Previously this used
-    # a strict first_seen-only key, which produced visible disorder when
-    # many rows shared a first_seen timestamp (e.g. on a freshly re-seeded
-    # DB).
+    # the same signal the user reads off each row.
     deduped = _dedupe_and_sort(matching)
 
     # Per-slice cap overrides — slices.yaml may set max_rows / max_age_days
     # to override the module-level defaults. 0 / None disables that cap.
     slice_max_rows = slice_def.get("max_rows", RENDER_MAX_ROWS)
     slice_max_age = slice_def.get("max_age_days", RENDER_MAX_AGE_DAYS)
-    n_total = len(deduped)
-    visible, n_age, n_overflow = _apply_render_caps(
-        deduped, slice_max_rows, slice_max_age,
-    )
-
-    has_salary = any(_has_salary(r) for r in visible)
     marker_token = _slice_marker_token(name)
     now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    companies_split = bool(
+        slice_def.get("companies_split") and companies_allowlist
+    )
 
     out: list[str] = []
     out.append(f"# {title}")
     out.append("")
-    out.append(f"Last updated: **{now_str}** · **{n_total}** active roles.")
-    out.append("")
-    out.append(f"<!-- TABLE_SLICE_{marker_token}_START -->")
-    out.append(_render_section(visible, has_salary))
-    out.append(f"<!-- TABLE_SLICE_{marker_token}_END -->")
-    cap_note = _render_cap_note(
-        len(visible), n_age, n_overflow, slice_max_rows, slice_max_age,
-    )
-    if cap_note:
+
+    if companies_split:
+        curated = [
+            r for r in deduped
+            if _row_company_in_allowlist(r, companies_allowlist)
+        ]
+        others = [
+            r for r in deduped
+            if not _row_company_in_allowlist(r, companies_allowlist)
+        ]
+
+        curated_visible, c_age, c_over = _apply_render_caps(
+            curated, slice_max_rows, slice_max_age,
+        )
+        others_visible, o_age, o_over = _apply_render_caps(
+            others, slice_max_rows, slice_max_age,
+        )
+
+        has_salary = any(
+            _has_salary(r) for r in (curated_visible + others_visible)
+        )
+
+        out.append(
+            f"Last updated: **{now_str}** · "
+            f"**{len(curated)} curated** + **{len(others)} other** "
+            f"= **{len(deduped)}** active remote roles."
+        )
         out.append("")
-        out.append(cap_note)
-    out.append("")
+        out.append("## Curated companies (matches the JOBS.md allowlist)")
+        out.append("")
+        out.append(
+            "Roles at companies on the curated `filters.include_companies` "
+            "list in `monitor/config.yaml` — AI labs, scaleups, quant, "
+            "consulting. These are the 'worth applying to' shortlist."
+        )
+        out.append("")
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_CURATED_START -->")
+        out.append(_render_section(curated_visible, has_salary))
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_CURATED_END -->")
+        cap_note = _render_cap_note(
+            len(curated_visible), c_age, c_over, slice_max_rows, slice_max_age,
+        )
+        if cap_note:
+            out.append("")
+            out.append(cap_note)
+        out.append("")
+        out.append("## All other remote roles")
+        out.append("")
+        out.append(
+            "Everything else that surfaced from Remotive / RemoteOK / "
+            "JobSpy / SimplifyJobs — off-allowlist companies, startups "
+            "without name recognition yet, and the long tail."
+        )
+        out.append("")
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_OTHER_START -->")
+        out.append(_render_section(others_visible, has_salary))
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_OTHER_END -->")
+        cap_note = _render_cap_note(
+            len(others_visible), o_age, o_over, slice_max_rows, slice_max_age,
+        )
+        if cap_note:
+            out.append("")
+            out.append(cap_note)
+        out.append("")
+    else:
+        n_total = len(deduped)
+        visible, n_age, n_overflow = _apply_render_caps(
+            deduped, slice_max_rows, slice_max_age,
+        )
+        has_salary = any(_has_salary(r) for r in visible)
+
+        out.append(f"Last updated: **{now_str}** · **{n_total}** active roles.")
+        out.append("")
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_START -->")
+        out.append(_render_section(visible, has_salary))
+        out.append(f"<!-- TABLE_SLICE_{marker_token}_END -->")
+        cap_note = _render_cap_note(
+            len(visible), n_age, n_overflow, slice_max_rows, slice_max_age,
+        )
+        if cap_note:
+            out.append("")
+            out.append(cap_note)
+        out.append("")
 
     # Liveness summary for INDEX.md — `last_liveness_sweep` is the most
     # recent check across this slice's rows (ISO8601 string; sortable
@@ -1154,27 +1256,42 @@ def render_slice(
     pct_verified = round(100 * n_live / len(deduped)) if deduped else 0
 
     Path(output_path).write_text("\n".join(out), encoding="utf-8")
-    return {
+    stats: dict[str, int | str | None] = {
         "total": len(deduped),
         "last_liveness_sweep": last_sweep,
         "pct_verified": pct_verified,
     }
+    if companies_split:
+        stats["curated_total"] = sum(
+            1 for r in deduped
+            if _row_company_in_allowlist(r, companies_allowlist)
+        )
+    return stats
 
 
 def render_slices(
     active_rows: Iterable[dict],
     slices_config: dict | list,
     output_dir: str | Path,
+    *,
+    companies_allowlist: list | None = None,
 ) -> dict[str, dict[str, int | str | None]]:
     """Render every slice defined in `slices_config` into `output_dir`.
 
     `slices_config` accepts either the full parsed slices.yaml (dict with
     a top-level `slices:` key) or a bare list of slice definitions.
 
+    `companies_allowlist` is forwarded to each `render_slice` call; only
+    slices with `companies_split: true` consult it (currently just the
+    remote-jobs slice). Pass `cfg["filters"]["include_companies"]` from
+    config.yaml so the curated half of the hybrid render uses the same
+    allowlist as JOBS.md.
+
     Each slice writes one file named by its `filename` field (default
     `<name>.md`). Returns `{slice_name: {total, last_liveness_sweep,
-    pct_verified}}` so the caller can build a summary line at end of run
-    and feed counts into INDEX.md without re-running the filter/dedup pass.
+    pct_verified, [curated_total]}}` so the caller can build a summary
+    line at end of run and feed counts into INDEX.md without re-running
+    the filter/dedup pass.
 
     Additive to render_md / render_emea_graduate — slice files are a
     parallel surface, not a replacement.
@@ -1201,7 +1318,10 @@ def render_slices(
         if not name:
             continue
         filename = s.get("filename") or f"{name}.md"
-        stats[name] = render_slice(rows, s, out_dir / filename)
+        stats[name] = render_slice(
+            rows, s, out_dir / filename,
+            companies_allowlist=companies_allowlist,
+        )
     return stats
 
 

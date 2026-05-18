@@ -388,21 +388,32 @@ slices:
         - lead software engineer
         - lead engineer
 
-  # ---- Remote slice (cross-region, all seniority) ----
-  # Surfaces every remote-eligible posting from the broader pool (no
-  # company allowlist). Because slices already draw from the broader
-  # pool, startups that aren't on JOBS.md's curated allowlist surface
-  # here naturally — that's the user's "especially start ups and good
-  # jobs" framing. We deliberately leave `regions` unset so EMEA + NA
-  # remote roles share one file; the row's region tag still shows up
-  # via the Location column. `remote_only: true` is the gate (see
-  # `_row_is_remote` in render_md.py); it matches on word-boundary
-  # markers in the title and location string, not on the noisy
-  # `is_remote` boolean from Indeed.
+  # ---- Remote slice (cross-region, all seniority, hybrid render) ----
+  # Surfaces every remote-eligible posting AND opts into the hybrid
+  # two-table layout (see `companies_split: true`):
+  #
+  #   1. Curated table — companies on `filters.include_companies` from
+  #      monitor/config.yaml (OpenAI, Anthropic, Stripe, AI labs,
+  #      scaleups, quant). The "worth applying to" shortlist.
+  #   2. All other remote roles — everything else that matches the
+  #      remote filter; startups, smaller companies, the long tail.
+  #
+  # Data sources feeding this slice:
+  #   - JobSpy rows whose title/location markers indicate remote
+  #   - SimplifyJobs / vanshb03 / speedyapply rows tagged remote
+  #   - direct/* ATS scrapers (Anthropic, OpenAI, etc.)
+  #   - Remotive — public JSON API, ~1500 remote-only postings
+  #   - RemoteOK — public JSON API, ~1000 remote-only postings
+  #
+  # Region is intentionally unset: remote roles aren't location-bound.
+  # `remote_only: true` is the title/location-marker gate (see
+  # `_row_is_remote` in render_md.py); the curated allowlist is
+  # applied at render time by render_slice when companies_split is on.
   - name: remote_jobs
     filename: remote-jobs.md
-    title: "Remote Jobs (Startups & More)"
+    title: "Remote Jobs"
     index_label: "Remote Jobs"
+    companies_split: true
     filters:
       remote_only: true
       title_keywords_none:
