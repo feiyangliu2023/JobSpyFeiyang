@@ -1,17 +1,17 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-05-18 16:27 UTC** · **66** active roles.
+Last updated: **2026-05-18 19:59 UTC** · **66** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | Global Product Support Engineer New Grad | Santa Clara, CA | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/Global-Product-Support--GPS--Engineer-New-College-Grad---Masters-Degree--Santa-Clara--CA-_R2619290"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
-| <a href="https://mistral.ai/"><strong>Mistral AI</strong></a> | Site Reliability Engineer - NYC | New York, NY | <a href="https://jobs.ashbyhq.com/mistral/f9356f17-4a18-456f-a39f-d3448cc91829/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 13d |
 | <a href="https://simplify.jobs/c/Geotab"><strong>Geotab</strong></a> | Data Analyst Intern - Customer Success Operations | Toronto, ON, Canada · Burnaby, BC, Canada · Oakville, ON, Canada | <a href="https://job-boards.greenhouse.io/internshiplist2000/jobs/5185496008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://simplify.jobs/c/Geotab"><strong>Geotab</strong></a> | Support Engineer Intern | Oakville, ON, Canada | <a href="https://job-boards.greenhouse.io/internshiplist2000/jobs/5185232008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://simplify.jobs/c/d23f73c9-8777-484f-ac15-8f08c61b003c"><strong>Alegeus</strong></a> | Application Support Engineer 1 | Boston, MA · Altamonte Springs, FL · Milwaukee, WI | <a href="https://alegeus.wd1.myworkdayjobs.com/en-US/Alegeus_External_Careers/job/Maitland/Application-Support-Engineer-I_R-101221"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineering, Ads Solutions | New York City, United States | <a href="https://jobs.ashbyhq.com/openai/9f179118-5df6-4ccb-b8d1-cfb0642fba37/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 17d |
 | **Axiomatic AI** | Software Engineering Internship – Platform/DevOps | Boston, MA | <a href="https://job-boards.eu.greenhouse.io/axiomaticai/jobs/4848128101"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 17d |
+| **Lemon.io** | Senior DevOps Engineer | Remote · Americas, Europe, Asia, Oceania | <a href="https://remotive.com/remote-jobs/devops/senior-devops-engineer-2090002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Field Engineer | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/d8ebcb30-c789-4e75-bf9b-a1e3fb09dd2f/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 19d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Principal Solutions Engineer, Enterprise | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4689909005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 20d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Site Reliability Engineer, Infrastructure - Analytics Platform | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/c67f7d61-ff12-4041-96a2-12702f5f306d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 20d |
@@ -57,7 +57,7 @@ Last updated: **2026-05-18 16:27 UTC** · **66** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | IT Support Engineer | San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4802076008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 301d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 391d |
 
-_32 live, 19 unverified_
+_31 live, 20 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _15 hidden as first_seen >180d. Full set in jobs.db._
