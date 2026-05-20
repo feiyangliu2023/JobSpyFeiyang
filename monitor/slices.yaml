@@ -53,6 +53,22 @@ slices:
         - platform engineer
         - infrastructure engineer
         - systems engineer
+        # AI agent / AI application development. These are software-shaped
+        # AI roles (building LLM apps / agents / RAG pipelines) rather than
+        # the modelling-shaped MLE / applied-scientist track, so they belong
+        # in the SDE surface. Deliberately overlaps the MLE slice's
+        # "ai engineer" token — same rationale as the algorithm slice
+        # overlapping MLE: a reader looking at the SDE view should still see
+        # them. "ai application" catches "AI Application Engineer/Developer";
+        # "agent engineer" / "ai agent" catch the agent-builder titles.
+        - ai engineer
+        - ai application
+        - applied ai
+        - agent engineer
+        - ai agent
+        - genai
+        - generative ai
+        - llm engineer
       title_keywords_none:
         - senior
         - staff
@@ -101,6 +117,22 @@ slices:
         - platform engineer
         - infrastructure engineer
         - systems engineer
+        # AI agent / AI application development. These are software-shaped
+        # AI roles (building LLM apps / agents / RAG pipelines) rather than
+        # the modelling-shaped MLE / applied-scientist track, so they belong
+        # in the SDE surface. Deliberately overlaps the MLE slice's
+        # "ai engineer" token — same rationale as the algorithm slice
+        # overlapping MLE: a reader looking at the SDE view should still see
+        # them. "ai application" catches "AI Application Engineer/Developer";
+        # "agent engineer" / "ai agent" catch the agent-builder titles.
+        - ai engineer
+        - ai application
+        - applied ai
+        - agent engineer
+        - ai agent
+        - genai
+        - generative ai
+        - llm engineer
       title_keywords_none:
         - senior
         - staff
@@ -361,6 +393,12 @@ slices:
         - principal engineer
         - lead software engineer
         - lead engineer
+        # Senior AI agent / AI application engineering — the senior IC
+        # counterpart of the AI tokens added to the junior SDE slice.
+        - senior ai engineer
+        - staff ai engineer
+        - principal ai engineer
+        - lead ai engineer
 
   - name: na_senior_sde
     filename: na-senior-sde.md
@@ -387,6 +425,12 @@ slices:
         - principal engineer
         - lead software engineer
         - lead engineer
+        # Senior AI agent / AI application engineering — the senior IC
+        # counterpart of the AI tokens added to the junior SDE slice.
+        - senior ai engineer
+        - staff ai engineer
+        - principal ai engineer
+        - lead ai engineer
 
   # ---- Remote slice (cross-region, all seniority, hybrid render) ----
   # Surfaces every remote-eligible posting AND opts into the hybrid
