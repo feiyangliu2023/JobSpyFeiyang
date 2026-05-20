@@ -170,6 +170,14 @@ role_templates:
       - "software engineer graduate scheme"
       - "graduate sde"
       - "swe new grad"
+      # AI agent / AI application engineering — software-shaped AI roles
+      # (LLM apps, agents, RAG) that the user wants folded into the SDE
+      # surface. The "ai engineer" variants are already covered by the
+      # mle_junior template, so we only add the AI-application / agent
+      # phrasings here that mle_junior doesn't search.
+      - "ai application engineer"
+      - "ai agent engineer"
+      - "generative ai engineer"
     site_search_terms:
       linkedin:
         - "graduate software engineer"
@@ -325,6 +333,10 @@ role_templates:
       - "senior frontend engineer"
       - "senior full stack engineer"
       - "senior platform engineer"
+      # Senior AI agent / AI application engineering — IC counterpart of
+      # the AI tokens in the junior SDE template.
+      - "senior ai engineer"
+      - "staff ai engineer"
     site_search_terms:
       linkedin:
         - "senior software engineer"
@@ -480,6 +492,19 @@ filters:
     - "data scientist"
     - "ai engineer"
     - "ml engineer"
+    # ---- AI agent / AI application engineering surface ----
+    # Software-shaped AI roles (LLM apps, agents, RAG). Most pass via
+    # "engineer" / "developer" already, but these tightly-scoped multi-word
+    # tokens make the intent explicit and rescue the rare non-suffixed
+    # title ("GenAI Specialist", "Agent Builder"). The SDE slices in
+    # slices.yaml opt into these tokens via title_keywords_any.
+    - "ai application"
+    - "applied ai"
+    - "agent engineer"
+    - "ai agent"
+    - "genai"
+    - "generative ai"
+    - "llm engineer"
     # Infra-adjacent SDE titles. "platform engineer" and "infrastructure
     # engineer" are tightly scoped. "systems engineer" is broader — it
     # catches "ML Systems Engineer" / "Distributed Systems Engineer"

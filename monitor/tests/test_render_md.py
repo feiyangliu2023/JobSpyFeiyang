@@ -135,6 +135,13 @@ class TestTechShape:
             "ios developer",
             "algorithm engineer",
             "computer vision engineer",
+            "ai application engineer",
+            "agent engineer",
+            "ai agent developer",
+            "genai engineer",
+            "generative ai engineer",
+            "llm engineer",
+            "applied ai engineer",
         ],
     )
     def test_tech_shape_titles(self, title):

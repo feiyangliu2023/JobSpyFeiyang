@@ -534,6 +534,17 @@ _TECH_SHAPE_TITLE_TOKENS = (
     "ai/ml",
     "ai researcher",
     "ai scientist",
+    # AI agent / AI application development — software-shaped AI roles.
+    # "ai application" + "application engineer" (below) cover the AI app
+    # titles; "agent engineer" / "ai agent" cover the agent-builder shape
+    # ("Agent Engineer" doesn't hit the bare-`ai` regex on its own).
+    "ai application",
+    "applied ai",
+    "agent engineer",
+    "ai agent",
+    "genai",
+    "generative ai",
+    "llm engineer",
     "data scientist",
     "data analyst",
     "data engineer",
