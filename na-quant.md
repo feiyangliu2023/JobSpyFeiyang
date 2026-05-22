@@ -1,21 +1,20 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-05-21 16:24 UTC** · **15** active roles.
+Last updated: **2026-05-22 08:27 UTC** · **14** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| **NVIDIA** | Quantum Research Scientist Intern | Santa Clara, CA | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 2d |
-| <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Trading System Engineering Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10837/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 28d |
-| <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | AI Application Engineer for Quantum Development Intern - Masters/PhD | Santa Clara, CA | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/AI-Application-Enginer-for-Quantum-Development-Intern--Masters-PhD---Santa-Clara--CA-_R2616483"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
-| <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 120d |
-| <a href="https://simplify.jobs/c/Infleqtion"><strong>Infleqtion</strong></a> | Quantum Software Engineer | Chicago, IL | <a href="https://apply.workable.com/coldquanta/j/00EC28A7E5/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 163d |
-| **Hudson River Trading** | Algorithm Trader Intern | New York, NY | <a href="https://www.hudsonrivertrading.com/hrt-job/algorithm-trader-quantitative-trader-internship-summer-2026/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 285d |
-| **Hudson River Trading** | Algorithm Development Quant Research Intern | New York, NY | <a href="https://www.hudsonrivertrading.com/hrt-job/algorithm-development-quant-research-internship-summer-2026-2/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 297d |
-| **Point72** | Quantitative Research Intern (NLP) | New York, NY | <a href="https://careers.point72.com/CSJobDetail?jobName=quantitative-research-intern-nlp-&jobCode=CSS-0013383"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 353d |
-| **Point72** | Quantitative Developer Intern | New York, NY | <a href="https://job-boards.greenhouse.io/point72/jobs/7297613002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 362d |
+| <a href="https://simplify.jobs/c/ChicagoTradingCo"><strong>Chicago Trading Company</strong></a> | Associate Engineer - Quantitative Research - Trading Technology | Chicago, IL | <a href="https://job-boards.greenhouse.io/chicagotrading/jobs/4698402005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| **NVIDIA** | Quantum Research Scientist Intern | Santa Clara, CA | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
+| <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Trading System Engineering Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10837/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 29d |
+| <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | AI Application Engineer for Quantum Development Intern - Masters/PhD | Santa Clara, CA | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/AI-Application-Enginer-for-Quantum-Development-Intern--Masters-PhD---Santa-Clara--CA-_R2616483"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 50d |
+| <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 121d |
+| <a href="https://simplify.jobs/c/Infleqtion"><strong>Infleqtion</strong></a> | Quantum Software Engineer | Chicago, IL | <a href="https://apply.workable.com/coldquanta/j/00EC28A7E5/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 164d |
+| **Point72** | Quantitative Research Intern (NLP) | New York, NY | <a href="https://careers.point72.com/CSJobDetail?jobName=quantitative-research-intern-nlp-&jobCode=CSS-0013383"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 354d |
+| **Point72** | Quantitative Developer Intern | New York, NY | <a href="https://job-boards.greenhouse.io/point72/jobs/7297613002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 363d |
 
-_3 live, 6 unverified_
+_3 live, 5 unverified_
 <!-- TABLE_SLICE_NA_QUANT_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._
