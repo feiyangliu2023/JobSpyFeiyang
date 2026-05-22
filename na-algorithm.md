@@ -1,6 +1,6 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-05-22 08:27 UTC** · **301** active roles.
+Last updated: **2026-05-22 16:09 UTC** · **299** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -15,7 +15,6 @@ Last updated: **2026-05-22 08:27 UTC** · **301** active roles.
 | **NVIDIA** | Quantum Research Scientist Intern | Santa Clara, CA |  | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Research Scientist, Safety Post Training | San Francisco, CA; New York, NY |  | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4696595005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
 | <a href="https://simplify.jobs/c/Adobe"><strong>Adobe</strong></a> | Machine Learning Engineer | Seattle, WA |  | <a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Seattle/XMLNAME-2026-University-Graduate---Machine-Learning-Engineer_R160133"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
-| <a href="https://simplify.jobs/c/Adobe"><strong>Adobe</strong></a> | Research Scientist/Engineer Intern | Seattle, WA · Toronto, ON, Canada · SF |  | <a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/XMLNAME-2026-Intern---Research-Scientist-Engineer_R160317"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Tiktok-Data-Search-Local Service | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7457274634057615624"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 7d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Local Services Search | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7639825798757222661"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 7d |
 | **Trata** | Research Scientist Intern | San Francisco, CA · New York, NY |  | <a href="https://www.workatastartup.com/jobs/94620"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
@@ -28,7 +27,6 @@ Last updated: **2026-05-22 08:27 UTC** · **301** active roles.
 | <a href="https://www.kinaxis.com/"><strong>Kinaxis</strong></a> | Co-op/Intern Software Developer - Core Algorithms | CA ON Ottawa |  | <a href="https://careers-kinaxis.icims.com/jobs/34701/co-op-intern-software-developer%2c-core-algorithms/job"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/Kinaxis"><strong>Kinaxis</strong></a> | Software Developer Co-op/Intern - Core Algorithms | Ottawa, ON, Canada |  | <a href="https://careers-kinaxis.icims.com/jobs/34701/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
 | <a href="https://simplify.jobs/c/Kinaxis"><strong>Kinaxis</strong></a> | Software Developer Co-op/Intern - Core Algorithms - Life Sciences | Ottawa, ON, Canada |  | <a href="https://careers-kinaxis.icims.com/jobs/34704/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
-| <a href="https://simplify.jobs/c/AeroVironment"><strong>AeroVironment</strong></a> | Machine Learning Engineer 2 | Centreville, VA · Minneapolis, MN |  | <a href="https://avav.wd1.myworkdayjobs.com/en-US/avav/job/Centreville-VA/Machine-Learning-Engineer_7437"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 20d |
 | <a href="https://simplify.jobs/c/Parspec"><strong>Parspec</strong></a> | Machine Learning Engineer - 1 | San Mateo, CA |  | <a href="https://jobs.ashbyhq.com/parspec/526bdff4-893e-4d57-a139-95072ba51f90/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - Tiktok Recommendation - Nextgen LLM | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7633605978976520453"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 23d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - Nextgen LLM | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7633668061979543813"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 23d |
@@ -295,7 +293,7 @@ Last updated: **2026-05-22 08:27 UTC** · **301** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 793d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Machine Learning Engineer, Public Sector | San Francisco, CA; New York, NY; Washington, DC |  | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4281519005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1078d |
 
-_241 live, 48 unverified_
+_240 live, 47 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _12 hidden as first_seen >180d. Full set in jobs.db._

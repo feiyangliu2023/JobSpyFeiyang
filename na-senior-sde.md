@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-05-22 08:27 UTC** · **50** active roles.
+Last updated: **2026-05-22 16:09 UTC** · **48** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -10,8 +10,6 @@ Last updated: **2026-05-22 08:27 UTC** · **50** active roles.
 | **Lemon.io** | Senior Full-stack React Developer | Remote · Americas, Europe, Asia, Oceania | <a href="https://remotive.com/remote-jobs/software-development/senior-full-stack-react-developer-2088711"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | **Phaidra** | Senior Software Engineer | Remote - United States | <a href="https://remoteOK.com/remote-jobs/remote-senior-software-engineer-phaidra-1131567"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Staff Software Engineer | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5204401008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 10d |
-| **Clariti Cloud, Inc.** | Senior Software Engineer I | Remote · Canada | <a href="https://remoteOK.com/remote-jobs/remote-senior-software-engineer-i-clariti-cloud-inc-1131527"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 13d |
-| **CSC Generation** | Lead Software Engineer | Remote - Canada | <a href="https://remoteOK.com/remote-jobs/remote-lead-software-engineer-csc-generation-1131529"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 13d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Kubernetes Platform | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5211241008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 16d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Software Engineer / Principal Software Engineer - Simulation | Melbourne, FL · Oklahoma City, OK | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Oklahoma-Oklahoma-City/Software-Engineer---Principal-Software-Engineer---Simulation_R10231372"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 21d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Principal Engineer System Safety | Huntsville, AL | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Alabama-Huntsville/Engineer-System-Safety-Principal-Engineer-System-Safety_R10231509"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
@@ -56,5 +54,5 @@ Last updated: **2026-05-22 08:27 UTC** · **50** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Accessibility | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4673416008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 381d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 463d |
 
-_37 live, 13 unverified_
+_37 live, 11 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->

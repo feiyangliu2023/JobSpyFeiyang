@@ -1,10 +1,12 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-05-22 08:27 UTC** · **23** active roles.
+Last updated: **2026-05-22 16:09 UTC** · **24** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | Data Engineer - Energy Trading - Permanent H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=ec1b0191ce793e8d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://ch.indeed.com/cmp/Scor"><strong>SCOR</strong></a> | Quant DevOps Engineer | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=08c467089a2eabd6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Teza-Technologies"><strong>Teza Technologies</strong></a> | Trading Operations Developer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=cf2592c7d067db18"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Cobblestone"><strong>COBBLESTONE</strong></a> | SOFTWARE ENGINEER AUTOMATED TRADING - Phuket, Thailand | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=f0db3c06eba881a0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=2fc5caf476a17019"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -17,7 +19,6 @@ Last updated: **2026-05-22 08:27 UTC** · **23** active roles.
 | <a href="https://es.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=781130a55d763d30"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://pt.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=e98043f37db91050"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://cz.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=ae9fcbdbdb82ab67"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://se.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=d6fb0f70c3c1c43a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://dk.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=397291f5781289a7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://no.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | Oslo, N03, NO | <a href="https://no.indeed.com/viewjob?jk=cee1854c5ac83e20"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://il.indeed.com/cmp/Tether-Operations-Limited"><strong>Tether Operations Limited</strong></a> | AI Research Engineer (Model Compression & Quantization) - 100% Remote Worldwide | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=e6152f1eb2548097"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -28,7 +29,7 @@ Last updated: **2026-05-22 08:27 UTC** · **23** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 85d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 171d |
 
-_2 live, 20 unverified_
+_2 live, 21 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
