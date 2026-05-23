@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-23 08:03 UTC** · **165** active roles.
+Last updated: **2026-05-23 15:45 UTC** · **164** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -112,7 +112,6 @@ Last updated: **2026-05-23 08:03 UTC** · **165** active roles.
 | **—** | (Security) Machine Learning Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=acbcefcbca4562b2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://uk.indeed.com/cmp/%EF%BC%AB%EF%BD%89"><strong>ＫＩ</strong></a> | Data Scientist | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=bb2b45e6ba390254"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://uk.indeed.com/cmp/University-of-Bath"><strong>University of Bath</strong></a> | Machine Learning Engineer (KTP Associate) | Bath, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=b2cab01b4e96dbaf"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| <a href="https://simplify.jobs/c/SSC"><strong>SS&C</strong></a> | Machine Learning Intern | London, UK | <a href="https://ssctech.wd1.myworkdayjobs.com/ssctechnologies/job/London---1-Ropemaker-Street/Machine-Learning-Intern--London_R42634"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://pl.indeed.com/cmp/Match-Trade-Technologies"><strong>Match–Trade Technologies</strong></a> | Junior AI Engineer - Agents & SDLC (FinTech/ Crypto) Warszawa | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=1f465eb532d2fcbe"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://uk.indeed.com/cmp/Leisure-Employment-Services"><strong>Leisure Employment Services</strong></a> | Data Scientist | Hemel Hempstead, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=d0955ce62515f121"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.com/cmp/Interactionlabs"><strong>InteractionLabs</strong></a> | ML Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=69471931171c0385"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -134,7 +133,7 @@ Last updated: **2026-05-23 08:03 UTC** · **165** active roles.
 | <a href="https://simplify.jobs/c/Avis-Budget-Group"><strong>Avis Budget Group</strong></a> | AI Engineer Intern | Bracknell, UK | <a href="https://avisbudget.wd1.myworkdayjobs.com/abg_careers/job/Avis-Budget-House-HQ/AI-Engineer-Intern---Summer-2026_R0188401"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
 | <a href="https://pt.indeed.com/cmp/Movilges-IT-Consulting"><strong>Movilges IT Consulting</strong></a> | ML Research Engineer | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=53cc1473b45efa63"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
-| <a href="https://www.amazon.com"><strong>Amazon</strong></a> | Software Dev Engineer Intern Machine Learning - Amazon Robotics | Berlin, Berlin, DEU | <a href="https://www.amazon.jobs/jobs/10401402/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 28d |
+| <a href="https://www.amazon.com"><strong>Amazon</strong></a> | Software Dev Engineer Intern Machine Learning - Amazon Robotics | Berlin, Berlin, DEU | <a href="https://www.amazon.jobs/jobs/10401402/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 29d |
 | <a href="https://simplify.jobs/c/Halliburton"><strong>Halliburton</strong></a> | Data Scientist Intern | Oxford, UK | <a href="https://jobs.halliburton.com/job/Abingdon-Abingdon_Data-Scientist-Internship-OXF-OX14-4RW/1384809800/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 30d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 45d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 51d |
@@ -167,7 +166,7 @@ Last updated: **2026-05-23 08:03 UTC** · **165** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 752d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 752d |
 
-_30 live, 131 unverified_
+_30 live, 130 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

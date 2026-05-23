@@ -1,6 +1,6 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-05-23 08:03 UTC** · **13** active roles.
+Last updated: **2026-05-23 15:45 UTC** · **13** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
