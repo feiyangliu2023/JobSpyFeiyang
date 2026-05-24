@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-05-24 08:11 UTC** · **118** active roles.
+Last updated: **2026-05-24 15:49 UTC** · **119** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| **Aisle and Abroad** | Data Analyst | Remote · California, California, United States | <a href="https://remoteOK.com/remote-jobs/remote-data-analyst-aisle-and-abroad-1131982"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Sanofi"><strong>Sanofi</strong></a> | External Manufacturing & Supply Business Data Analyst - VIE Contract | Cambridge, MA · Framingham, MA | <a href="https://sanofi.wd3.myworkdayjobs.com/SanofiCareers/job/Framingham-MA/External-Manufacturing---Supply-Business-Data-Analyst---VIE-Contract_R2856066"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 2d |
 | <a href="https://simplify.jobs/c/Royal-Bank-Of-Canada"><strong>Royal Bank of Canada</strong></a> | Student Intern - Data Analyst - Personal Banking | Toronto, ON, Canada | <a href="https://rbc.wd3.myworkdayjobs.com/ExternalPrivatePostingStudents/job/TORONTO-Ontario-Canada/Fall-2026-Student---Data-Analyst--Personal-Banking--4---8-months-_R-0000168782"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/HF-Sinclair"><strong>HF Sinclair</strong></a> | Data Analyst - Procurement | Dallas, TX | <a href="https://careers.hfsinclair.com/job/Dallas-Data-Analyst-Procurement-TX-75219/1393548600/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -118,7 +119,7 @@ Last updated: **2026-05-24 08:11 UTC** · **118** active roles.
 | **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 269d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 935d |
 
-_15 live, 97 unverified_
+_15 live, 98 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._

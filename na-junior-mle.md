@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-24 08:11 UTC** · **333** active roles.
+Last updated: **2026-05-24 15:49 UTC** · **334** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -35,6 +35,7 @@ Last updated: **2026-05-24 08:11 UTC** · **333** active roles.
 | <a href="https://simplify.jobs/c/Jade-Global"><strong>Jade Global</strong></a> | Data/AI Engineer Intern | Ogden, UT | <a href="https://jadeglobal.wd5.myworkdayjobs.com/en-US/jade_careers/job/Ogden-UT/Data-Ai-Engineer-Intern_R-103685"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Graduate Machine Learning Scientist | Seattle, WA · San Jose, CA | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/Washington---Seattle-Campus/Machine-Learning-Science-Graduate---Masters---2026---San-Jose--Seattle_R-98586"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
 | <a href="https://simplify.jobs/c/Adobe"><strong>Adobe</strong></a> | Machine Learning Engineer | Seattle, WA | <a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Seattle/XMLNAME-2026-University-Graduate---Machine-Learning-Engineer_R160133"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
+| <a href="https://simplify.jobs/c/Adobe"><strong>Adobe</strong></a> | AI/ML Intern – Machine Learning Engineer/Researcher Intern | Seattle, WA · SF · San Jose, CA | <a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/XMLNAME-2026-AI-ML-Intern---Machine-Learning-Engineer-Intern_R160706"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
 | <a href="https://simplify.jobs/c/85ed65fb-d411-473a-a950-b4d5c8ad7bdf"><strong>Vizient</strong></a> | Associate AI/ML Engineer | Hopkins, MN · Chicago, IL | <a href="https://vizient.wd1.myworkdayjobs.com/Vizient_Careers/job/Edina-MN-55435/Associate-AI-ML-Engineer_33536R"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Tiktok-Data-Search-Local Service | Seattle, WA | <a href="https://lifeattiktok.com/search/7457274634057615624"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Local Services Search | Seattle, WA | <a href="https://lifeattiktok.com/search/7639825798757222661"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
@@ -328,7 +329,7 @@ Last updated: **2026-05-24 08:11 UTC** · **333** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 761d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 795d |
 
-_199 live, 123 unverified_
+_200 live, 123 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _11 hidden as first_seen >180d. Full set in jobs.db._
