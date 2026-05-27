@@ -1,6 +1,6 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-05-27 08:40 UTC** · **14** active roles.
+Last updated: **2026-05-27 16:34 UTC** · **13** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
@@ -13,11 +13,10 @@ Last updated: **2026-05-27 08:40 UTC** · **14** active roles.
 | **NVIDIA** | Quantum Research Scientist Intern | Santa Clara, CA | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Trading System Engineering Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10837/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 34d |
 | **Point72** | Quantitative Developer Intern | New York, NY | <a href="https://careers.point72.com/CSJobDetail?jobName=summer-2027-quantitative-developer-internship&jobCode=CSS-0012293"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
-| <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | AI Application Engineer for Quantum Development Intern - Masters/PhD | Santa Clara, CA | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/AI-Application-Enginer-for-Quantum-Development-Intern--Masters-PhD---Santa-Clara--CA-_R2616483"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 55d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 126d |
 | <a href="https://simplify.jobs/c/Infleqtion"><strong>Infleqtion</strong></a> | Quantum Software Engineer | Chicago, IL | <a href="https://apply.workable.com/coldquanta/j/00EC28A7E5/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 169d |
 
-_2 live, 9 unverified_
+_2 live, 8 unverified_
 <!-- TABLE_SLICE_NA_QUANT_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
