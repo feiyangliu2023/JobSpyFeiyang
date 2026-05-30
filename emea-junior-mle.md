@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-30 08:10 UTC** · **166** active roles.
+Last updated: **2026-05-30 15:50 UTC** · **163** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -118,9 +118,7 @@ Last updated: **2026-05-30 08:10 UTC** · **166** active roles.
 | <a href="https://il.indeed.com/cmp/Palo-Alto-Networks"><strong>Palo Alto Networks</strong></a> | Principal AI Engineer (Prisma Browser - Agents Platform) | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=152c6d6c5b3a3564"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.com/cmp/Licorne-Society-2"><strong>Licorne Society</strong></a> | Consultant Data Scientist/AI Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=b2148c6ecee353e1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.com/cmp/Lydia-Solutions"><strong>LYDIA Solutions</strong></a> | Data Scientist F/H | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=e6781aaa6a477d5a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| <a href="https://it.indeed.com/cmp/Cerved-Group-S.p.a"><strong>Cerved Group S.p.A</strong></a> | AI Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=e79bc8f8900b8e6e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://se.indeed.com/cmp/Adavo"><strong>Adavo</strong></a> | AI Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=007007b2d14b55d2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| <a href="https://nl.indeed.comNone"><strong>—</strong></a> | AI Engineer | Utrecht, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=9da70aa706ac2158"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://simplify.jobs/c/Loveholidays"><strong>loveholidays</strong></a> | Conversational AI Engineer | London, UK | <a href="https://jobs.ashbyhq.com/loveholidays/80aef5f9-efe1-459f-aea6-2d86f5280bea/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://uk.indeed.com/cmp/Travtus"><strong>Travtus</strong></a> | AI Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=11302732e4aadfdd"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | Spain | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8560407002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
@@ -128,7 +126,6 @@ Last updated: **2026-05-30 08:10 UTC** · **166** active roles.
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | Amsterdam, Netherlands | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8560401002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | Paris, France | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8551533002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
 | <a href="https://simplify.jobs/c/Melotech"><strong>Melotech</strong></a> | AI/ML Engineer Intern | London, UK · NYC · Berlin, Germany | <a href="https://jobs.ashbyhq.com/melotech/e99207bd-8a2f-4641-a463-08a6633a7073/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 11d |
-| <a href="https://simplify.jobs/c/SSC"><strong>SS&C</strong></a> | Machine Learning Intern | London, UK | <a href="https://ssctech.wd1.myworkdayjobs.com/ssctechnologies/job/London---1-Ropemaker-Street/Machine-Learning-Intern--London_R42634"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 12d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Data Scientist, Safety | London, UK | <a href="https://jobs.ashbyhq.com/openai/666119c9-ff97-4e81-9805-94d7525bd633/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 15d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | London, United Kingdom | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8551531002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 15d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op  (Fall, 2026) | Canada, Canada · United States, United States · Europe, European Union | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 17d |
@@ -168,7 +165,7 @@ Last updated: **2026-05-30 08:10 UTC** · **166** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 759d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 759d |
 
-_31 live, 131 unverified_
+_31 live, 128 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._
