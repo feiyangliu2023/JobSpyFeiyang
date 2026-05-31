@@ -1,11 +1,10 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-31 08:29 UTC** · **162** active roles.
+Last updated: **2026-05-31 15:48 UTC** · **160** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://uk.indeed.com/cmp/Xtx-Markets"><strong>XTX Markets</strong></a> | Machine Learning Performance Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=bd21da9f466cdbb0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://nl.indeed.com/cmp/Tennet-2"><strong>TenneT</strong></a> | Data Scientist | Arnhem, GE, NL | <a href="https://nl.indeed.com/viewjob?jk=1d1eb2ea6a728d1e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://fr.indeed.com/cmp/Equativ-1"><strong>EQUATIV</strong></a> | AI Engineer [Feelance] | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=315bc36c514218b7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | AI Engineer – IA Générative et Agentique - Freelance H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=efbb88560419c737"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -67,7 +66,6 @@ Last updated: **2026-05-31 08:29 UTC** · **162** active roles.
 | **—** | Founding CTO / AI Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=2a2bdb53b93b3ea8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://pt.indeed.com/cmp/Icapital"><strong>icapital</strong></a> | Agentic AI Engineer - Assistant Vice President / Vice President | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=552250f896912744"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | Founding AI Engineer (CDI) \| Startup IA– Paris - CDI H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=b934df0c6de62034"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| <a href="https://il.indeed.com/cmp/Uveye"><strong>UVEye</strong></a> | Robotics AI Engineer | תל אביב -יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=d0fb8b461dc24552"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://pl.indeed.com/cmp/T--Mobile"><strong>T-Mobile</strong></a> | T-Hub - AI Engineer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=22514ce6a0d65fcc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://se.indeed.com/cmp/Rebtel"><strong>Rebtel</strong></a> | AI/ML Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=302df83ce955b896"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://se.indeed.com/cmp/Raysearch-Laboratories-Ab"><strong>Raysearch Laboratories AB</strong></a> | Research Engineer - Image Analysis | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=7cb344361d509b51"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -136,7 +134,7 @@ Last updated: **2026-05-31 08:29 UTC** · **162** active roles.
 | <a href="https://simplify.jobs/c/Iambic-Therapeutics"><strong>Iambic Therapeutics</strong></a> | Machine Learning Scientist - Large multimodal models | Boston, MA · Bristol, UK · Remote in USA | <a href="https://jobs.ashbyhq.com/iambic-therapeutics/bccc58b8-6022-49d4-865b-931176a88b8e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 25d |
 | <a href="https://de.indeed.com/cmp/Remerge"><strong>Remerge</strong></a> | Machine Learning Engineer | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=45588eb52aaebdee"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 30d |
 | <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Data Scientist 1 - Analytics | London, UK | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/UK---London/Data-Scientist-I--Analytics_R-105457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 30d |
-| <a href="https://www.amazon.com"><strong>Amazon</strong></a> | Software Dev Engineer Intern Machine Learning - Amazon Robotics | Berlin, Berlin, DEU | <a href="https://www.amazon.jobs/jobs/10401402/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 36d |
+| <a href="https://www.amazon.com"><strong>Amazon</strong></a> | Software Dev Engineer Intern Machine Learning - Amazon Robotics | Berlin, Berlin, DEU | <a href="https://www.amazon.jobs/jobs/10401402/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 37d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 53d |
 | <a href="https://simplify.jobs/c/Snap"><strong>Snap</strong></a> | Machine Learning Engineer Intern | London, UK | <a href="https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/London-United-Kingdom/Machine-Learning-Engineering-Intern_R0045123"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 59d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Applied AI Engineer, Codex Core Agent | San Francisco, United States · Seattle, United States · New York City, United States | <a href="https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
@@ -165,7 +163,7 @@ Last updated: **2026-05-31 08:29 UTC** · **162** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 760d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 760d |
 
-_31 live, 128 unverified_
+_31 live, 126 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._

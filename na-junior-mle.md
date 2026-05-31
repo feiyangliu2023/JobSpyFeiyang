@@ -1,11 +1,12 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-05-31 08:29 UTC** · **258** active roles.
+Last updated: **2026-05-31 15:48 UTC** · **259** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://www.halo-industries.com"><strong>Halo Industries</strong></a> | Software Engineer Intern - Machine Learning Workflow | Santa Clara, California, US | <a href="https://apply.workable.com/halo-industries/j/29728B1DAF/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Data Scientist, GTM | New York City, NY; San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5196852008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
+| <a href="https://www.halo-industries.com"><strong>Halo Industries</strong></a> | Software Engineer Intern - Machine Learning Workflow | Santa Clara, California, US | <a href="https://apply.workable.com/halo-industries/j/29728B1DAF/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/University-Of-Wisconsin-Madison"><strong>University of Wisconsin-Madison</strong></a> | DHS-Embedded Data Scientist 1 | Madison, WI | <a href="https://wisconsin.wd1.myworkdayjobs.com/UW_Madison/job/Madison-WI/Wisconsin-DHS-Embedded-Data-Scientist-I_JR10011392"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Machine Learning Engineer, Capital Underwriting | US | <a href="https://stripe.com/jobs/search?gh_jid=7952048"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Data Scientist, FinEng | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/082f4d82-499f-4150-892f-0b0d1105fffe/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
@@ -257,7 +258,7 @@ Last updated: **2026-05-31 08:29 UTC** · **258** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 768d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 802d |
 
-_170 live, 81 unverified_
+_171 live, 81 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _7 hidden as first_seen >180d. Full set in jobs.db._
