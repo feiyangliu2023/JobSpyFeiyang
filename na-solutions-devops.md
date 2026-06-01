@@ -1,6 +1,6 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-06-01 09:11 UTC** · **43** active roles.
+Last updated: **2026-06-01 17:08 UTC** · **42** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
@@ -43,12 +43,11 @@ Last updated: **2026-06-01 09:11 UTC** · **43** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Software Engineer Intern - Global Site Reliability Engineer | San Jose, CA | <a href="https://lifeattiktok.com/search/7536042624604997896"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 137d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Robotics | San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4640096005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 172d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Site Reliability Engineer, Frontier Systems Infrastructure | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/ad2cf782-15a4-48c7-9133-1788e3f33bbb/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 210d |
-| <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineer- Startups | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/26fa0f98-b834-4c1a-9a53-8a6e6bba6934/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 215d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineer, Pre-Sales | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/98a36c10-3497-4955-9cc0-a6f211e4dc1b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 287d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | IT Support Engineer | Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4802076008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 315d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 405d |
 
-_27 live, 15 unverified_
+_26 live, 15 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

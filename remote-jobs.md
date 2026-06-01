@@ -1,6 +1,6 @@
 # Remote Jobs
 
-Last updated: **2026-06-01 09:11 UTC** · **33 curated** + **43 other** = **76** active remote roles.
+Last updated: **2026-06-01 17:08 UTC** · **33 curated** + **43 other** = **76** active remote roles.
 
 ## Curated companies (matches the JOBS.md allowlist)
 
@@ -53,12 +53,12 @@ Everything else that surfaced from Remotive / RemoteOK / JobSpy / SimplifyJobs �
 <!-- TABLE_SLICE_REMOTE_JOBS_OTHER_START -->
 | Company | Position | Location | Salary | Posting | Age |
 |---|---|---|---|---|---|
+| <a href="https://fr.indeed.com/cmp/Dailymotion"><strong>Dailymotion</strong></a> | Senior MLOps Engineer (Full Remote from France) | Paris, A8, FR |  | <a href="https://fr.indeed.com/viewjob?jk=6f6fe51336aa216b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA · Remote in USA |  | <a href="https://apply.workable.com/connectprep/j/65F6D2C32E/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://ie.indeed.com/cmp/Abusix"><strong>abusix</strong></a> | Senior Fullstack Engineer (Remote in EU) | Dublin, D, IE |  | <a href="https://ie.indeed.com/viewjob?jk=d59fc7943eae4460"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://dk.indeed.com/cmp/Abusix"><strong>abusix</strong></a> | Senior Fullstack Engineer (Remote in EU) | København, D84, DK |  | <a href="https://dk.indeed.com/viewjob?jk=e0eea832fd3c4398"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://de.indeed.com/cmp/Prodig-Gmbh-1"><strong>ProDIG GmbH</strong></a> | FPGA Developer (m/f/d) near Regensburg 95% remote | München, BY, DE |  | <a href="https://de.indeed.com/viewjob?jk=b47cdca43cf3cc6d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **Gameplay Galaxy** | Senior Backend Engineer | Remote · Worldwide | $60k-80k/yr | <a href="https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-gameplay-galaxy-1132512"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://fr.indeed.com/cmp/Dailymotion"><strong>Dailymotion</strong></a> | Senior MLOps Engineer (Full Remote from France) | Paris, A8, FR |  | <a href="https://fr.indeed.com/viewjob?jk=6f6fe51336aa216b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://www.cambiumlearning.com/"><strong>Cambium Learning Group</strong></a> | Software Engineer Intern - AI Applications | Remote |  | <a href="https://cambiumlearning.wd1.myworkdayjobs.com/en-US/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4461"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="http://www.iherb.com"><strong>iHerb</strong></a> | Software Development Engineer - Intern | Remote |  | <a href="https://job-boards.greenhouse.io/iherb/jobs/7747518003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://torc.ai"><strong>Torc Robotics</strong></a> | Software Engineer I - Metrics for Release Implementation | Remote, US |  | <a href="https://job-boards.greenhouse.io/torcrobotics/jobs/8554811002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
