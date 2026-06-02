@@ -1,6 +1,6 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-06-02 08:50 UTC** · **11** active roles.
+Last updated: **2026-06-02 16:46 UTC** · **12** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
@@ -14,9 +14,10 @@ Last updated: **2026-06-02 08:50 UTC** · **11** active roles.
 | <a href="https://simplify.jobs/c/DV-Trading"><strong>DV Trading</strong></a> | Quantitative Developer - DV Equities | London, UK | <a href="https://job-boards.greenhouse.io/dvtrading/jobs/4694127005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 21d |
 | <a href="https://simplify.jobs/c/Intropic"><strong>Intropic</strong></a> | Quantrepreneur - Engineering | London, UK | <a href="https://jobs.lever.co/intropic/1427876a-fb80-4ee1-96da-79cac32a7803/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 71d |
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 96d |
+| <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | Full Stack Python / Quant / Scientific Software Engineer - Freelance H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=ecdc1306bb158872"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 116d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 182d |
 
-_2 live, 8 unverified_
+_2 live, 9 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

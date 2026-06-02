@@ -1,6 +1,6 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-02 08:50 UTC** · **200** active roles.
+Last updated: **2026-06-02 16:46 UTC** · **198** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -58,7 +58,6 @@ Last updated: **2026-06-02 08:50 UTC** · **200** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer - E-commerce Feed Recommendation | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7236829563632257337"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 47d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7534641634584185095"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 48d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Multiple Teams | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7534641209890588946"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 48d |
-| <a href="https://stripe.com/"><strong>Stripe</strong></a> | Machine Learning Engineer, Support Experience | Toronto, Canada |  | <a href="https://stripe.com/jobs/search?gh_jid=7813942"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 48d |
 | <a href="https://simplify.jobs/c/Mariana-Minerals"><strong>Mariana Minerals</strong></a> | Machine Learning Engineering Intern | SF · Ann Arbor, MI |  | <a href="https://jobs.ashbyhq.com/marianaminerals/7974b67d-92d8-49a5-bef5-079320962aee/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | General Hire – Machine Learning Scientist Graduate - TikTok Recommendation | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7516697794956478738"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 50d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - Nextgen Recommendation | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7519768631745087752"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 50d |
@@ -131,7 +130,6 @@ Last updated: **2026-06-02 08:50 UTC** · **200** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Scientist Intern - TikTok Recommendation | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7519241729582516487"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 166d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Intern - Trust and Safety - CV/NLP/Multimodal LLM | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7527589875165563143"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 166d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Privacy | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/cc434f5b-dc0b-42fd-97ec-e0171545c6e9/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 167d |
-| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Reward Models Platform | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5024831008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 167d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Research Scientist, Reward Models | Remote-Friendly (Travel Required) · San Francisco, CA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5024835008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 167d |
 | <a href="https://simplify.jobs/c/Netflix"><strong>Netflix</strong></a> | Software Engineer PhD Intern - Streaming Algorithms - Summer 2026 | Los Gatos, CA |  | <a href="https://explore.jobs.netflix.net/careers/job/790313241540"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 174d |
 | <a href="https://simplify.jobs/c/Microsoft"><strong>Microsoft</strong></a> | Research Intern - Computer Vision and Deep Learning | Redmond, WA |  | <a href="https://apply.careers.microsoft.com/careers/job/1970393556621779"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 174d |
@@ -203,7 +201,7 @@ Last updated: **2026-06-02 08:50 UTC** · **200** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 804d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Machine Learning Engineer, Public Sector | San Francisco, CA; New York, NY; Washington, DC |  | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4281519005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1089d |
 
-_157 live, 40 unverified_
+_155 live, 40 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._

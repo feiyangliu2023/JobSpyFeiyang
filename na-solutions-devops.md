@@ -1,13 +1,12 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-06-02 08:50 UTC** · **42** active roles.
+Last updated: **2026-06-02 16:46 UTC** · **40** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineering, Ads Solutions | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/9f179118-5df6-4ccb-b8d1-cfb0642fba37/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://relaypro.com"><strong>Relay</strong></a> | Associate Software Engineer - Site Reliability Engineering | Raleigh, NC | <a href="https://job-boards.greenhouse.io/relaypro/jobs/7950142"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| <a href="https://simplify.jobs/c/Amazon"><strong>Amazon</strong></a> | Support Engineer 1 | Denver, CO | <a href="https://amazon.jobs/en/jobs/10432506/its-support-engineer-i"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/Amazon"><strong>Amazon</strong></a> | ITS Support Engineer 1 | Tempe, AZ | <a href="https://amazon.jobs/en/jobs/10432510/its-support-engineer-i"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://guidehouse.com"><strong>Guidehouse</strong></a> | Junior Cloud DevOps Engineer | US DC, Washington | <a href="https://guidehouse.wd1.myworkdayjobs.com/en-US/external/job/US---DC-Washington/Junior-Cloud-DevOps-Engineer_39338"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Support Engineer | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5228463008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 11d |
@@ -19,7 +18,6 @@ Last updated: **2026-06-02 08:50 UTC** · **42** active roles.
 | **Axiomatic AI** | Software Engineering Internship – Platform/DevOps | Boston, MA | <a href="https://job-boards.eu.greenhouse.io/axiomaticai/jobs/4848128101"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 32d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Principal Solutions Engineer, Enterprise | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4689909005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 35d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Site Reliability Engineer, Infrastructure - Analytics Platform | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/c67f7d61-ff12-4041-96a2-12702f5f306d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 35d |
-| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | MR Field Engineer 1 | Florida · West Palm Beach, FL | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/MR---Field-Engineer-1_R4039398-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 47d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | IT Support Engineer | New York, United States | <a href="https://jobs.ashbyhq.com/cohere/43e8ed06-4f3b-460e-aa8a-a0bde93f7bb5/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 55d |
 | <a href="https://www.kbr.com"><strong>KBR</strong></a> | Junior Cloud DevOps Engineer | Sioux Falls, South Dakota | <a href="https://kbr.wd5.myworkdayjobs.com/en-US/kbr_careers/job/Sioux-Falls-South-Dakota/Junior-Cloud-DevOps-Engineer_R2121346"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 60d |
 | <a href="https://simplify.jobs/c/Vertiv"><strong>Vertiv</strong></a> | Customer Engineer 1 | Kansas City, MO | <a href="https://egup.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/20265198"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 67d |
@@ -47,7 +45,7 @@ Last updated: **2026-06-02 08:50 UTC** · **42** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | IT Support Engineer | Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4802076008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 316d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 406d |
 
-_27 live, 14 unverified_
+_26 live, 13 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
