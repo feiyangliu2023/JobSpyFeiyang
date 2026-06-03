@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-03 08:56 UTC** · **93** active roles.
+Last updated: **2026-06-03 16:51 UTC** · **95** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -11,9 +11,11 @@ Last updated: **2026-06-03 08:56 UTC** · **93** active roles.
 | <a href="https://simplify.jobs/c/Flatiron-Health"><strong>Flatiron Health</strong></a> | Data Analyst - Evidence Solutions | Durham, NC | <a href="https://flatiron.com/careers/open-positions/job?gh_jid=7834645"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | **Diptyque Paris** | Data Analyst | Remote · Prince George's County, Prince George's County, Maryland, United States | <a href="https://remoteOK.com/remote-jobs/remote-data-analyst-diptyque-paris-1132684"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Caterpillar-Inc"><strong>Caterpillar Inc.</strong></a> | Business Intelligence Analyst | Peoria, IL · Chicago, IL | <a href="https://cat.wd5.myworkdayjobs.com/CaterpillarCareers/job/Chicago-Illinois/Business-Intelligence-Analyst_R0000372161"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
+| <a href="https://simplify.jobs/c/Andrew-Morgan"><strong>Andrew Morgan</strong></a> | Business Data Analyst 1 | Arlington, VA | <a href="https://andrew-morgan.com/current-openings/?gh_jid=5232507008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/DNV"><strong>DNV</strong></a> | Power BI Developer Intern | Corvallis, OR | <a href="https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/6809"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA · Remote in USA | <a href="https://apply.workable.com/connectprep/j/65F6D2C32E/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Walmart"><strong>Walmart</strong></a> | Senior Data Analyst - Data Analyst | Bentonville, AR | <a href="https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/Bentonville-AR/XMLNAME--USA--Senior--Data-Analyst_R-2507704"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
+| <a href="https://simplify.jobs/c/Osaic"><strong>Osaic</strong></a> | Financial Business Intelligence Analyst 1 | Scottsdale, AZ | <a href="https://advisorgroup.wd1.myworkdayjobs.com/advisor_career_site/job/Scottsdale-AZ/Financial-Business-Intelligence-Analyst_R0004650"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/CIBC"><strong>CIBC</strong></a> | Data Analyst Co-op | Toronto, ON, Canada | <a href="https://cibc.wd3.myworkdayjobs.com/campus/job/Toronto-ON/Data-Analyst-Co-op_2611574"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/University-Of-Miami"><strong>University of Miami</strong></a> | Data Analyst 1 | Coral Gables, FL | <a href="https://umiami.wd1.myworkdayjobs.com/UMCareerStaff/job/Coral-Gables-FL/Data-Analyst-1_R100097433"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://simplify.jobs/c/Zone-5-Technologies"><strong>Zone 5 Technologies</strong></a> | Manufacturing Data Analyst Intern | San Luis Obispo, CA | <a href="https://job-boards.greenhouse.io/zone5technologies/jobs/5231405008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
@@ -95,7 +97,7 @@ Last updated: **2026-06-03 08:56 UTC** · **93** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - Tiktok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 232d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 945d |
 
-_12 live, 77 unverified_
+_12 live, 79 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

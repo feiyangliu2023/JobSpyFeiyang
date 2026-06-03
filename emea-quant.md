@@ -1,10 +1,12 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-06-03 08:56 UTC** · **12** active roles.
+Last updated: **2026-06-03 16:51 UTC** · **14** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://uk.indeed.com/cmp/Jpmorganchase-2"><strong>JPMorganChase</strong></a> | Python Quant Data Engineer - Systematic Trading Technology | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=a05e4e36b04438b7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://uk.indeed.com/cmp/Jpmorganchase-2"><strong>JPMorganChase</strong></a> | Front Office Trading Engineer | Glasgow, SCT, GB | <a href="https://uk.indeed.com/viewjob?jk=c0c22aa1bd2c1d79"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://se.indeed.com/cmp/Tibber"><strong>Tibber</strong></a> | Quantitative Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=29fccc924d36851b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://dk.indeed.com/cmp/K%C3%B8benhavns-Universitet"><strong>Københavns Universitet</strong></a> | Light Systems Control Engineer for Neutral Atoms Quantum Computing | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=b8331fe455345359"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | **—** | Quantum Algorithms Researcher/ Engineer | Helsinki, F19, FI | <a href="https://fi.indeed.com/viewjob?jk=6ac6886e83aacf11"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -17,7 +19,7 @@ Last updated: **2026-06-03 08:56 UTC** · **12** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 97d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 183d |
 
-_2 live, 9 unverified_
+_2 live, 11 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
