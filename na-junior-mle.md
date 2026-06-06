@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-06 08:15 UTC** · **274** active roles.
+Last updated: **2026-06-06 15:45 UTC** · **272** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -100,7 +100,6 @@ Last updated: **2026-06-06 08:15 UTC** · **274** active roles.
 | <a href="https://simplify.jobs/c/NVIDIA"><strong>NVIDIA</strong></a> | Machine Learning Applications and Compiler Engineer New Grad | Santa Clara, CA | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Applications-and-Compiler-Engineer--LPX---New-College-Grad-2026_JR2016939"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 32d |
 | <a href="https://simplify.jobs/c/NVIDIA"><strong>NVIDIA</strong></a> | Machine Learning Applications and Compiler Engineer | Toronto, ON, Canada · Remote in Canada | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Canada-Toronto/Machine-Learning-Applications-and-Compiler-Engineer--LPX---New-College-Grad-2026_JR2016937"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 32d |
 | **TMEIC** | Intern - Applications, AI and Machine Learning | Roanoke, VA | <a href="https://apply.workable.com/tmeic-corporation-americas/j/FD4C9770FF/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 36d |
-| <a href="https://simplify.jobs/c/Stripe"><strong>Stripe</strong></a> | PhD Data Scientist Intern | Seattle, WA · SF · Chicago, IL | <a href="https://stripe.com/jobs/search?gh_jid=7874965"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 36d |
 | **Figma** | Data Scientist, Core Data | New York, NY · San Francisco, CA | <a href="https://job-boards.greenhouse.io/figma/jobs/5976930004?gh_jid=5976930004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 36d |
 | <a href="https://simplify.jobs/c/Parspec"><strong>Parspec</strong></a> | Machine Learning Engineer - 1 | San Mateo, CA | <a href="https://jobs.ashbyhq.com/parspec/526bdff4-893e-4d57-a139-95072ba51f90/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 37d |
 | <a href="https://simplify.jobs/c/d-Matrix"><strong>d-Matrix</strong></a> | Applied AI Engineering Intern | Santa Clara, CA | <a href="https://jobs.ashbyhq.com/d-Matrix/93a6e6ee-3391-4437-8459-e28eb05eace7/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 38d |
@@ -132,7 +131,6 @@ Last updated: **2026-06-06 08:15 UTC** · **274** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | General Hire – Machine Learning Engineer Intern | San Jose, CA | <a href="https://lifeattiktok.com/search/7625929879091300613"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 54d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Scientist | Seattle, WA | <a href="https://stripe.com/jobs/search?gh_jid=7809414"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 54d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer - Data Search TikTok | San Jose, CA | <a href="https://lifeattiktok.com/search/7515277586445322503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 56d |
-| <a href="https://simplify.jobs/c/Adobe"><strong>Adobe</strong></a> | AI/ML Intern - Machine Learning Engineer | Seattle, WA · SF · Austin, TX | <a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/XMLNAME-2026-AI-ML-Intern---Machine-Learning-Engineer_R158493"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 56d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Machine Learning Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10785/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 58d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Scientist Graduate - Global E-commerce Content Recommendation | San Jose, CA | <a href="https://lifeattiktok.com/search/7553175919393802503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 59d |
 | <a href="https://simplify.jobs/c/ITradeNetwork"><strong>iTradeNetwork</strong></a> | Software Engineer Intern - Machine Learning | Oakland, CA · Charlotte, NC · Denver, CO | <a href="https://www.itradenetwork.com/jobs/5171428008?gh_jid=5171428008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
@@ -273,7 +271,7 @@ Last updated: **2026-06-06 08:15 UTC** · **274** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 774d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 808d |
 
-_174 live, 93 unverified_
+_172 live, 93 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _7 hidden as first_seen >180d. Full set in jobs.db._

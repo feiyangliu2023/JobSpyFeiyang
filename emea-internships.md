@@ -1,11 +1,11 @@
 # EMEA Internships
 
-Last updated: **2026-06-06 08:15 UTC** · **125** active roles.
+Last updated: **2026-06-06 15:45 UTC** · **124** active roles.
 
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://nl.indeed.com/cmp/Nxp-Semiconductors"><strong>NXP Semiconductors</strong></a> | Software, Electrical, Industrial or Computer Engineering AI Internship | Eindhoven, NB, NL | <a href="https://nl.indeed.com/viewjob?jk=5166c3faf9e44b44"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://www.nxp.com"><strong>NXP Semiconductors</strong></a> | Software - Electrical - Industrial or Computer Engineering AI Internship | Eindhoven | <a href="https://nxp.wd3.myworkdayjobs.com/en-US/careers/job/Eindhoven/Software--Electrical--Industrial-or-Computer-Engineering-AI-Internship_R-10063487"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://de.indeed.com/cmp/Unicredit-Group-1"><strong>UniCredit Group</strong></a> | Trainee Data Scientist – Agentic AI & Banking (w/m/d) - UniCredit Graduate Program | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=05b024b707dd9d2d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="http://tomtom.com/careers"><strong>TomTom</strong></a> | Maps Feedback & Resolutions - Software Engineer Internship - Lodz | Lodz, Poland | <a href="https://jobs.eu.lever.co/tomtom/876c33a5-cb7d-4d3d-8d76-892527988c7d/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Sirti-S.p.a-1"><strong>Sirti S.p.A</strong></a> | Business Intelligence & Management Controlling Analyst Internship | LOM, IT | <a href="https://it.indeed.com/viewjob?jk=ac34ef355e17ccd3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -112,7 +112,6 @@ Last updated: **2026-06-06 08:15 UTC** · **125** active roles.
 | <a href="https://simplify.jobs/c/DP-World"><strong>DP World</strong></a> | Business Intelligence Apprentice | Thurrock, UK | <a href="https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/23989"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 82d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Project Intern | London, UK | <a href="https://lifeattiktok.com/search/7616659899507591477"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 85d |
 | <a href="https://www.hp.com"><strong>HP</strong></a> | Browser Software Engineer Intern | Cambridge, Cambridgeshire, United Kingdom | <a href="https://hp.wd5.myworkdayjobs.com/en-US/externalcareersite/job/Cambridge-Cambridgeshire-United-Kingdom/Browser-Software-Engineer-Intern_3160410-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 86d |
-| <a href="https://www.nxp.com"><strong>NXP Semiconductors</strong></a> | AI Software Student/Intern | Brno | <a href="https://nxp.wd3.myworkdayjobs.com/en-US/careers/job/Brno/AI-Software-Student-Intern_R-10062130"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 88d |
 | <a href="https://simplify.jobs/c/Roku"><strong>Roku</strong></a> | Software Engineer - Mobile | Manchester, UK | <a href="https://www.weareroku.com/jobs/7621771?gh_jid=7621771"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 93d |
 | <a href="https://simplify.jobs/c/Leonardo"><strong>Leonardo</strong></a> | Industrial Placement Software Engineer | Southampton, UK | <a href="https://leonardocompany.wd3.myworkdayjobs.com/LeonardoCareerSite/job/GB---Southampton/Industrial-Placement-Software-Engineer_R0022593"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 95d |
 | <a href="https://simplify.jobs/c/Deliveroo"><strong>Deliveroo</strong></a> | Software Engineer | London, UK | <a href="https://jobs.ashbyhq.com/deliveroo/3e0440a9-7abc-45b0-8520-d3e13083d0f3/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 100d |
@@ -131,5 +130,5 @@ Last updated: **2026-06-06 08:15 UTC** · **125** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | 2026 Machine Learning Center of Excellence – Summer Associate - NLP | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210664814"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 218d |
 | <a href="https://simplify.jobs/c/DRW-Holdings"><strong>DRW Holdings</strong></a> | Software Developer Intern - Industrial Placement | London, UK | <a href="https://job-boards.greenhouse.io/drwuniversityjobs/jobs/7364884"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 219d |
 
-_25 live, 100 unverified_
+_25 live, 99 unverified_
 <!-- TABLE_SLICE_EMEA_INTERN_ONLY_END -->
