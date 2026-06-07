@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-07 08:27 UTC** · **168** active roles.
+Last updated: **2026-06-07 15:47 UTC** · **169** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -109,6 +109,7 @@ Last updated: **2026-06-07 08:27 UTC** · **168** active roles.
 | <a href="https://se.indeed.com/cmp/Avalanche-Studios"><strong>Avalanche Studios</strong></a> | DevOps & AI Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=01c50d4c928d0f83"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://il.indeed.com/cmp/Applied-Materials"><strong>Applied Materials</strong></a> | Data Scientist | רחובות, M, IL | <a href="https://il.indeed.com/viewjob?jk=5e631e2e9110fbc6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.com/cmp/Alten"><strong>ALTEN</strong></a> | IA Engineer / Data Scientist – Générative AI (H/F) | Boulogne-Billancourt, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=9983aec4e2c5f445"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://de.indeed.com/cmp/4flow"><strong>4flow</strong></a> | AI Engineer (d/w/m) - im Bereich Consulting | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=4e1faf9518c53525"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.com/cmp/Wemanity"><strong>WEMANITY</strong></a> | AI Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=0aa57a3f795c3bc9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://dk.indeed.com/cmp/Trustpilot"><strong>Trustpilot</strong></a> | Machine Learning Engineer | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=3c86825ba8421ce0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://il.indeed.com/cmp/Similarweb"><strong>SimilarWeb</strong></a> | Product Data Scientist (Customer-facing) | יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=c83b43a8008990d9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
@@ -171,7 +172,7 @@ Last updated: **2026-06-07 08:27 UTC** · **168** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 767d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 767d |
 
-_22 live, 143 unverified_
+_22 live, 144 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
