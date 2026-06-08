@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-08 08:53 UTC** · **85** active roles.
+Last updated: **2026-06-08 16:44 UTC** · **85** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -11,7 +11,6 @@ Last updated: **2026-06-08 08:53 UTC** · **85** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Analytics Engineer, Safety Systems | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/23662a5c-43c3-4754-a6e0-30f8cbf6d681/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
 | <a href="https://simplify.jobs/c/Ivy-Tech-Community-College"><strong>Ivy Tech Community College</strong></a> | Data Analyst Intern | Indianapolis, IN | <a href="https://ivytech.wd1.myworkdayjobs.com/ivy_tech_careers/job/Indianapolis-IN/Data-Analyst-Intern_JR0000108706"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/GXO-Logistics"><strong>GXO Logistics</strong></a> | Business Intelligence Engineer | Union City, GA | <a href="https://jobs.gxo.com/job/Union-City-Business-Intelligence-Engineer-1st-Shift-GA-30291-5200/1384699900/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://simplify.jobs/c/Cummins"><strong>Cummins</strong></a> | Business Intelligence Analyst | Troy, MI | <a href="https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2430796"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/The-Home-Depot"><strong>The Home Depot</strong></a> | Data Analyst Supply Chain | Atlanta, GA | <a href="https://homedepot.wd5.myworkdayjobs.com/careerdepot/job/STORE-SUPPORT-CENTER-ATLANTA---9090/Data-Analyst-Supply-Chain_Req182635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | **TELUS Digital** | Online Data Analyst Canada (French Language) | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-french-language-2090945"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | **TELUS Digital** | Online Data Analyst United States Spanish speakers | Remote · USA | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-united-states-spanish-speakers-2090946"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -85,6 +84,7 @@ Last updated: **2026-06-08 08:53 UTC** · **85** active roles.
 | <a href="https://simplify.jobs/c/Paccar"><strong>Paccar</strong></a> | Data Analyst Intern Fall 2026 | Columbus, MS | <a href="https://jobs.paccar.com/job/Columbus-Data-Analyst-Intern-Fall-2026-MS-39701/1283451401/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 144d |
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 208d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - Tiktok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 237d |
+| **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 284d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 950d |
 
 _11 live, 70 unverified_
