@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-09 08:33 UTC** · **85** active roles.
+Last updated: **2026-06-09 16:22 UTC** · **84** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -16,7 +16,6 @@ Last updated: **2026-06-09 08:33 UTC** · **85** active roles.
 | <a href="https://simplify.jobs/c/The-Home-Depot"><strong>The Home Depot</strong></a> | Data Analyst Supply Chain | Atlanta, GA | <a href="https://homedepot.wd5.myworkdayjobs.com/careerdepot/job/STORE-SUPPORT-CENTER-ATLANTA---9090/Data-Analyst-Supply-Chain_Req182635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | **TELUS Digital** | Online Data Analyst Canada (French Language) | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-french-language-2090945"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | **TELUS Digital** | Online Data Analyst United States Spanish speakers | Remote · USA | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-united-states-spanish-speakers-2090946"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| <a href="https://openai.com/"><strong>OpenAI</strong></a> | Partner Business Intelligence | Seattle, United States · San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/d07c4fb4-8235-4da5-98b4-d08fc41d1a1a/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/Harris-Williams"><strong>Harris Williams</strong></a> | Talent Data Analyst | Richmond, VA | <a href="https://pnc.wd5.myworkdayjobs.com/HarrisWilliams/job/VA---Richmond-23219/Talent-Data-Analyst_R224832"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/CHS"><strong>CHS</strong></a> | Business Process and Data Analyst | Cottage Grove, MN | <a href="https://careers.chsinc.com/job/Inver-Grove-Heights-Business-Process-and-Data-Analyst-MN-55077-1721/1396161700/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA · Remote in USA | <a href="https://apply.workable.com/connectprep/j/65F6D2C32E/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
@@ -86,7 +85,7 @@ Last updated: **2026-06-09 08:33 UTC** · **85** active roles.
 | **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 285d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 951d |
 
-_11 live, 69 unverified_
+_10 live, 69 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _5 hidden as first_seen >180d. Full set in jobs.db._

@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-06-09 08:33 UTC** · **45** active roles.
+Last updated: **2026-06-09 16:22 UTC** · **46** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -12,11 +12,11 @@ Last updated: **2026-06-09 08:33 UTC** · **45** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Staff Software Engineer, Identity Infrastructure Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/72a58872-70e2-4340-a259-e9bea3596883/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 7d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Principal Software Engineer | Oklahoma City, OK | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Oklahoma-Oklahoma-City/Principal-Software-Engineer_R10234806"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
 | <a href="https://simplify.jobs/c/Q2Software"><strong>Q2</strong></a> | Senior Software Engineer | Austin, TX | <a href="https://q2ebanking.wd5.myworkdayjobs.com/Q2/job/Austin-TX/Senior-Software-Engineer_REQ-12451"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
-| <a href="https://www.confluent.io/"><strong>Confluent</strong></a> | Staff Software Engineer I | Austin, Texas | <a href="https://jobs.ashbyhq.com/confluent/b070fb23-7041-4336-bee9-b8f31204dac4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
+| <a href="https://www.confluent.io/"><strong>Confluent</strong></a> | Staff Software Engineer I | Austin, Texas | <a href="https://jobs.ashbyhq.com/confluent/b070fb23-7041-4336-bee9-b8f31204dac4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 19d |
 | **Lemon.io** | Senior Full-stack React Developer | Remote · Americas, Europe, Asia, Oceania | <a href="https://remotive.com/remote-jobs/software-development/senior-full-stack-react-developer-2088711"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 25d |
 | <a href="https://simplify.jobs/c/Google"><strong>Google</strong></a> | Senior Software Engineer - Google Cloud Storage | Raleigh, NC · Durham, NC | <a href="https://www.google.com/about/careers/applications/jobs/results/72254370065851078"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 28d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Staff Software Engineer | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5204401008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 28d |
-| <a href="https://owner.com"><strong>Owner</strong></a> | Staff Software Engineer - Backend - Grader | Remote | <a href="https://jobs.ashbyhq.com/owner/03e2288e-b2dc-4430-ac02-af1731630c93"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 46d |
+| <a href="https://owner.com"><strong>Owner</strong></a> | Staff Software Engineer - Backend - Grader | Remote | <a href="https://jobs.ashbyhq.com/owner/03e2288e-b2dc-4430-ac02-af1731630c93"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 47d |
 | <a href="https://simplify.jobs/c/Uhaul"><strong>Uhaul</strong></a> | Senior Software Developer | Phoenix, AZ | <a href="https://uhaul.wd1.myworkdayjobs.com/UhaulJobs/job/Phoenix-Arizona/Senior-Software-Developer_R239934"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 53d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Software Engineer, Engineering Acceleration \| Consumer Devices | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/ae3a32af-b862-45db-838c-7fb49d4bc27e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 53d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Software Engineer, Full-stack | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5174743008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 62d |
@@ -35,6 +35,7 @@ Last updated: **2026-06-09 08:33 UTC** · **45** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff + Senior Software Engineer, Inference Deployment | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5111745008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 124d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Full Stack Engineer, Education | San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5098565008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 130d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer - Internal Tools & Productivity | San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4654897005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 131d |
+| <a href="https://simplify.jobs/c/Google"><strong>Google</strong></a> | Senior Software Engineer - Infrastructure - Google Cloud Compute Infrastructure | Seattle, WA · Kirkland, WA · Sunnyvale, CA | <a href="https://www.google.com/about/careers/applications/jobs/results/118541857264149190"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 144d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Data Platform | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4649903005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 145d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Software Engineer, Security Agents | Toronto, Canada · San Francisco, United States · New York, United States | <a href="https://jobs.ashbyhq.com/cohere/a5bbd015-65a9-48a1-aab1-b266bdbc9905/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 145d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer,  Full-Stack – Scale GP | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4637484005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 186d |
@@ -50,7 +51,7 @@ Last updated: **2026-06-09 08:33 UTC** · **45** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Accessibility | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4673416008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 399d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 481d |
 
-_38 live, 6 unverified_
+_39 live, 6 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
