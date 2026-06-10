@@ -1,10 +1,11 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-06-10 08:42 UTC** · **12** active roles.
+Last updated: **2026-06-10 16:36 UTC** · **13** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Walleye-Capital"><strong>Walleye Capital</strong></a> | Quantitative Developer Intern | Boston, MA | <a href="https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679168006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Base-Power"><strong>Base Power</strong></a> | Quantitative Developer Intern | Austin, TX | <a href="https://jobs.ashbyhq.com/base-power/b6b2332e-1226-4575-b2c9-9e5258f2540e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | **Voloridge Investment Management** | Quantitative Developer Intern | Jupiter, FL | <a href="https://voloridge-investment-management.hiringthing.com/job/1013126/quantitative-developer-intern-2027?s=lif&jr_id=69eaa8e4dc35f7132c4ab803"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
 | **Cubist Systematic Strategies** | Quantitative Developer Intern | New York, NY | <a href="https://job-boards.greenhouse.io/embed/job_app?for=point72&jr_id=6a07069024dcb03739f1ec72&token=7297613002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
@@ -15,7 +16,7 @@ Last updated: **2026-06-10 08:42 UTC** · **12** active roles.
 | **Point72** | Quantitative Developer Intern | New York, NY | <a href="https://careers.point72.com/CSJobDetail?jobName=summer-2027-quantitative-developer-internship&jobCode=CSS-0012293"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 52d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 140d |
 
-_2 live, 7 unverified_
+_2 live, 8 unverified_
 <!-- TABLE_SLICE_NA_QUANT_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._

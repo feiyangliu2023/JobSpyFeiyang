@@ -1,10 +1,13 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-06-10 08:42 UTC** · **14** active roles.
+Last updated: **2026-06-10 16:36 UTC** · **17** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://fr.indeed.com/cmp/Collectivework"><strong>collectivework</strong></a> | Data Engineer – Finance Quantitative / Portefeuilles (F/H) - Freelance | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=45277de437944b5b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://uk.indeed.com/cmp/Talan"><strong>Talan</strong></a> | Application Support Engineer - Trading Platform | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=20082834ac9f9657"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://uk.indeed.com/cmp/Jpmorganchase-2"><strong>JPMorganChase</strong></a> | Python Quant Data Engineer - Systematic Trading Technology | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=453c615fe02a3b9d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Talan"><strong>Talan</strong></a> | eTrading Python Developer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=a306eeeba04162b7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://de.indeed.com/cmp/Iqm-Finland-Oy"><strong>IQM Finland Oy</strong></a> | Quantum Engineer, Calibration Automation (mid-level) | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=f019c754de460c28"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Citi"><strong>Citi</strong></a> | Full-stack Java Developer for Systematic & Credit Portfolio Trading Tools, Assistant Vice President | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=432aeb7b0d4c5948"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -19,7 +22,7 @@ Last updated: **2026-06-10 08:42 UTC** · **14** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 104d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 190d |
 
-_2 live, 11 unverified_
+_2 live, 14 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

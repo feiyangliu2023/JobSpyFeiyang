@@ -1,11 +1,13 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-10 08:42 UTC** · **87** active roles.
+Last updated: **2026-06-10 16:36 UTC** · **88** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/Werfen"><strong>Werfen</strong></a> | Data Analyst | Bedford, MA | <a href="https://careers-werfen.icims.com/jobs/10472/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://simplify.jobs/c/Rogue-Fitness"><strong>Rogue Fitness</strong></a> | Data Analyst | Columbus, OH | <a href="https://roguefitness.wd1.myworkdayjobs.com/RogueFitness_External_Careers/job/Columbus-Ohio/Data-Analyst_R-102760"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://simplify.jobs/c/Further"><strong>Further</strong></a> | Graduate Data Analyst | Cleveland, OH | <a href="https://job-boards.greenhouse.io/furtherearlycareer/jobs/8384017002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| **Ollie** | Data Analyst Retention | Remote · Emeryville, Emeryville, California, United States | <a href="https://remoteOK.com/remote-jobs/remote-data-analyst-retention-ollie-1133083"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Breeze-Airways"><strong>Breeze Airways</strong></a> | Data Analyst Intern | Cottonwood Heights, UT | <a href="https://job-boards.greenhouse.io/breezeairways/jobs/7767219003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | **Fusemachines** | Data Analyst | Remote · Toronto, Toronto, Ontario, Canada | <a href="https://remoteOK.com/remote-jobs/remote-data-analyst-fusemachines-1133041"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Flex"><strong>Flex</strong></a> | Data Analyst | Austin, TX | <a href="https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-TX-Austin/Data-Analyst_WD221318"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -36,7 +38,6 @@ Last updated: **2026-06-10 08:42 UTC** · **87** active roles.
 | <a href="https://simplify.jobs/c/First-Financial"><strong>First Financial</strong></a> | Data Analyst 1 | Stamford, TX | <a href="https://ffin.wd1.myworkdayjobs.com/First_Financial_Bank/job/Operations-Center/Data-Analyst-I_JR102692"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 21d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Analytics Engineer, SMB | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/c3f437e7-034b-4ea0-a29e-c62eb23ca24f/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
 | <a href="https://simplify.jobs/c/Mass-General-Brigham"><strong>Mass General Brigham</strong></a> | Data Analyst - Neuromodulation Lab | Cambridge, MA | <a href="https://massgeneralbrigham.wd1.myworkdayjobs.com/mgbexternal/job/Cambridge-MA/Data-Analyst---Neuromodulation-Lab_RQ4065027"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
-| <a href="https://simplify.jobs/c/CAE"><strong>CAE</strong></a> | Data Analyst Intern | Montreal, QC, Canada | <a href="https://cae.wd3.myworkdayjobs.com/career/job/Montreal-St-Laurent/C-IT-105-Data-Analyst--Intern---_120935"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://simplify.jobs/c/IHeartMedia"><strong>iHeartMedia</strong></a> | Digital Data Analyst | San Antonio, TX · NYC | <a href="https://iheartmedia.wd5.myworkdayjobs.com/External_iHM/job/New-York-NY-55th-St/Digital-Data-Analyst_Req38532-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 23d |
 | <a href="https://simplify.jobs/c/University-Of-Rochester"><strong>University of Rochester</strong></a> | Data Analyst 1 - Ambulatory Pharmacy Operations | Rochester, NY | <a href="https://rochester.wd5.myworkdayjobs.com/UR_Staff/job/Strong-Memorial-Hospital/Data-Analyst-I---Ambulatory-Pharmacy-Operations_R271054-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 25d |
 | <a href="https://simplify.jobs/c/IEM"><strong>IEM</strong></a> | Data Analyst - Switchgear | Surrey, BC, Canada | <a href="https://job-boards.greenhouse.io/industrialelectricmanufacturing/jobs/4249312009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 26d |
@@ -87,7 +88,7 @@ Last updated: **2026-06-10 08:42 UTC** · **87** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - Tiktok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 239d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 952d |
 
-_10 live, 71 unverified_
+_10 live, 72 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._
