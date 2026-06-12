@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-12 08:47 UTC** · **82** active roles.
+Last updated: **2026-06-12 16:25 UTC** · **81** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -76,13 +76,12 @@ Last updated: **2026-06-12 08:47 UTC** · **82** active roles.
 | <a href="https://simplify.jobs/c/Oracle"><strong>Oracle</strong></a> | Data Analyst Intern | Nashville, TN | <a href="https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/326682"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 120d |
 | <a href="https://simplify.jobs/c/Medpace-Inc"><strong>Medpace, Inc.</strong></a> | Business Intelligence Analyst - Data Engineering | Cincinnati, OH | <a href="https://careers.medpace.com/jobs/12564?lang=en-us&icims=1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
 | <a href="https://simplify.jobs/c/WR-Berkley"><strong>W.R. Berkley</strong></a> | Business and Data Analyst Intern | Farmington, CT | <a href="https://careers-berkley.icims.com/jobs/13507/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 130d |
-| <a href="https://simplify.jobs/c/Thermo-Fisher-Scientific"><strong>Thermo Fisher Scientific</strong></a> | Data Analyst Intern | Morrisville, NC · Waltham, MA | <a href="https://thermofisher.wd5.myworkdayjobs.com/ThermoFisherCareers/job/Morrisville-North-Carolina-USA/Data-Analyst-Intern_R-01341180"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 130d |
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 134d |
 | <a href="https://simplify.jobs/c/Paccar"><strong>Paccar</strong></a> | Data Analyst Intern Fall 2026 | Columbus, MS | <a href="https://jobs.paccar.com/job/Columbus-Data-Analyst-Intern-Fall-2026-MS-39701/1283451401/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 148d |
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 212d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 954d |
 
-_9 live, 67 unverified_
+_9 live, 66 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._
