@@ -1,12 +1,13 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-06-13 08:23 UTC** · **41** active roles.
+Last updated: **2026-06-13 15:52 UTC** · **41** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Illinois-Tool-Works"><strong>Illinois Tool Works</strong></a> | Product Support Engineer | Norwood, MA | <a href="https://careers.itw.com/global/en/job/JR7595"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer Apprentice | San Antonio, TX | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/Field-Engineer-Apprentice--San-Antonio--TX-_R4042305-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://guidehouse.com"><strong>Guidehouse</strong></a> | Junior Cloud DevOps Engineer | US DC, Washington | <a href="https://guidehouse.wd1.myworkdayjobs.com/en-US/external/job/US---DC-Washington/Junior-Cloud-DevOps-Engineer_40228-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Software Engineer / Principal Software Engineer - DevOps | Melbourne, FL | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Florida-Melbourne/Software-Engineer---Principal-Software-Engineer---DevOps_R10235430"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://www.kbr.com"><strong>KBR</strong></a> | Junior Cloud DevOps Engineer | Sioux Falls, South Dakota | <a href="https://kbr.wd5.myworkdayjobs.com/en-US/kbr_careers/job/Sioux-Falls-South-Dakota/Junior-Cloud-DevOps-Engineer_R2124667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineering, Ads Solutions | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/9f179118-5df6-4ccb-b8d1-cfb0642fba37/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 11d |
 | <a href="https://simplify.jobs/c/Daifuku"><strong>Daifuku</strong></a> | Software Implementation Engineer 1 | St. Charles, IL | <a href="https://careers-daifuku-america.icims.com/jobs/21278/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 11d |
@@ -22,7 +23,6 @@ Last updated: **2026-06-13 08:23 UTC** · **41** active roles.
 | <a href="https://simplify.jobs/c/L3Harris-Technologies"><strong>L3Harris Technologies</strong></a> | Associate – Field Engineering | Melbourne, FL | <a href="https://jobs.l3harris.com/job/Melbourne-Associate,-Field-Engineering-(Melbourne,-FL)-FL-32919/1382918300/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 46d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | IT Support Engineer | New York, United States | <a href="https://jobs.ashbyhq.com/cohere/43e8ed06-4f3b-460e-aa8a-a0bde93f7bb5/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
 | <a href="https://simplify.jobs/c/Vertiv"><strong>Vertiv</strong></a> | Customer Engineer 1 | Kansas City, MO | <a href="https://egup.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/20265198"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
-| <a href="https://simplify.jobs/c/Hendrick-Motorsports"><strong>Hendrick Motorsports</strong></a> | Project and Race Support Engineer | Charlotte, NC | <a href="https://hendrick.wd5.myworkdayjobs.com/HMSCareers/job/Hendrick-Motorsports/Project-and-Race-Support-Engineer-Intern_R-77456"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 86d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | AI Support Engineer, Government - Washington, D.C. | Washington, DC | <a href="https://jobs.ashbyhq.com/openai/b505a83d-68c1-46cc-a754-5deacb3c6e3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 89d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | IT Solutions Engineer | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/6c6c1ace-12d6-48f0-88f0-488ff8521571/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 99d |
 | <a href="https://simplify.jobs/c/SA-Technologies"><strong>SA Technologies</strong></a> | Support Engineer - Python | Wayzata, MN | <a href="https://jobs.smartrecruiters.com/SATechnologiesInc4/85774799"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 107d |
@@ -46,7 +46,7 @@ Last updated: **2026-06-13 08:23 UTC** · **41** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 417d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Field Engineer, Public Sector | Colorado Springs, CO; St. Louis, MO; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4518690005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 510d |
 
-_26 live, 14 unverified_
+_25 live, 15 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
