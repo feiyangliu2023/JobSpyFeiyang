@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-14 08:44 UTC** · **61** active roles.
+Last updated: **2026-06-14 15:58 UTC** · **60** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -48,7 +48,6 @@ Last updated: **2026-06-14 08:44 UTC** · **61** active roles.
 | <a href="https://uk.indeed.com/cmp/Cambridge-University-Press-&-Assessment"><strong>Cambridge University Press & Assessment</strong></a> | Machine Learning Research Engineer | Cambridge, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=210921cf5a8f3fe0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Bizaway-Srl"><strong>BizAway Srl</strong></a> | Senior Machine Learning Engineer | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=62ace1765cd1779c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer – Probabilistic WCET Analysis (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=86c64d0a6fd22586"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
-| <a href="https://il.indeed.com/cmp/Samsung-Electronics-9"><strong>Samsung Electronics</strong></a> | Senior Engineer, ML & Computer Vision | הרצליה, TA, IL | <a href="https://il.indeed.com/viewjob?jk=3d0ab8a52895b0a9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 67d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Science of Scaling | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5126127008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 101d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Research Scientist, Pre-training | Zürich, CH | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5135168008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 107d |
@@ -67,5 +66,5 @@ Last updated: **2026-06-14 08:44 UTC** · **61** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 440d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 774d |
 
-_15 live, 46 unverified_
+_15 live, 45 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->

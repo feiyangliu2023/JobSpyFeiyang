@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-14 08:44 UTC** · **134** active roles.
+Last updated: **2026-06-14 15:58 UTC** · **134** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
