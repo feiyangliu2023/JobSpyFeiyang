@@ -1,6 +1,6 @@
 # North America Junior SDE Roles
 
-Last updated: **2026-06-15 09:29 UTC** · **1000** active roles.
+Last updated: **2026-06-15 17:03 UTC** · **1000** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_SDE_START -->
 | Company | Position | Location | Salary | Posting | Age |
