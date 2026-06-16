@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-16 09:16 UTC** · **81** active roles.
+Last updated: **2026-06-16 16:50 UTC** · **81** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |

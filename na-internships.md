@@ -1,6 +1,6 @@
 # North America Internships
 
-Last updated: **2026-06-16 09:16 UTC** · **761** active roles.
+Last updated: **2026-06-16 16:50 UTC** · **761** active roles.
 
 <!-- TABLE_SLICE_NA_INTERN_ONLY_START -->
 | Company | Position | Location | Salary | Posting | Age |

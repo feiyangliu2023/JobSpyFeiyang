@@ -1,6 +1,6 @@
 # North America Graduate Roles
 
-Last updated: **2026-06-16 09:16 UTC** · **738** active North America full-time new-grad roles.
+Last updated: **2026-06-16 16:50 UTC** · **738** active North America full-time new-grad roles.
 
 Filtered to tech-shape titles (software, ML, AI, data, etc.) from batch-hire intake at big companies — mirrors the [speedyapply](https://github.com/speedyapply/2026-SWE-College-Jobs) NEW_GRAD shape. Senior / lead / staff postings excluded. For internships, see the per-region internship slice files.
 
