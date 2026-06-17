@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-17 08:58 UTC** · **88** active roles.
+Last updated: **2026-06-17 16:35 UTC** · **89** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Crumbl"><strong>Crumbl</strong></a> | Data Analyst | Provo, UT | <a href="https://jobs.lever.co/crumbl/81c7238e-c8f9-4484-850e-8cbd8ee2484e/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/SWBC"><strong>SWBC</strong></a> | Data Analyst | San Antonio, TX | <a href="https://swbc.wd1.myworkdayjobs.com/swbccareers/job/San-Antonio-TX/Data-Analyst_R0015059-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/RaceTrac"><strong>RaceTrac</strong></a> | Business Intelligence & Systems Analyst | Atlanta, GA | <a href="https://racetrac.wd5.myworkdayjobs.com/ssc/job/200-Galleria-Parkway-SE-Suite-900-Atlanta-GA-30339/Business-Intelligence---Systems-Analyst_R10013618"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/LivaNova"><strong>LivaNova</strong></a> | Data Analyst | Boston, MA · Houston, TX · Austin, TX | <a href="https://livanova.wd5.myworkdayjobs.com/search/job/US_Remote/Data-Analyst_JR-14561"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -90,7 +91,7 @@ Last updated: **2026-06-17 08:58 UTC** · **88** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 217d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 959d |
 
-_12 live, 72 unverified_
+_12 live, 73 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._
