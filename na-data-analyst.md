@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-18 08:52 UTC** · **90** active roles.
+Last updated: **2026-06-18 16:28 UTC** · **89** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -42,7 +42,6 @@ Last updated: **2026-06-18 08:52 UTC** · **90** active roles.
 | <a href="https://simplify.jobs/c/Crusoe"><strong>Crusoe</strong></a> | Strategic Sourcing Data Analyst | Denver, CO | <a href="https://jobs.ashbyhq.com/Crusoe/0d2f3a05-7f9b-49f7-a34a-e08130812aab/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://simplify.jobs/c/Applied-Fluid-Power"><strong>Applied Fluid Power</strong></a> | Master Data Analyst | Tualatin, OR | <a href="https://applied.wd501.myworkdayjobs.com/applied/job/Sherwood-OR/Master-Data-Analyst_JR104426-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://simplify.jobs/c/Standard-Aero"><strong>Standard Aero</strong></a> | Pricing Data Analyst | San Antonio, TX | <a href="https://cva.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/9483"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
-| <a href="https://simplify.jobs/c/Sanofi"><strong>Sanofi</strong></a> | External Manufacturing & Supply Business Data Analyst - VIE Contract | Cambridge, MA · Framingham, MA | <a href="https://sanofi.wd3.myworkdayjobs.com/SanofiCareers/job/Framingham-MA/External-Manufacturing---Supply-Business-Data-Analyst---VIE-Contract_R2856066"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 27d |
 | <a href="https://simplify.jobs/c/HF-Sinclair"><strong>HF Sinclair</strong></a> | Data Analyst - Procurement | Dallas, TX | <a href="https://careers.hfsinclair.com/job/Dallas-Data-Analyst-Procurement-TX-75219/1393548600/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
 | <a href="https://simplify.jobs/c/UTHealth-Houston"><strong>UTHealth Houston</strong></a> | Data Analyst Associate | San Antonio, TX | <a href="https://fa-eomf-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1002/job/6983"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 28d |
 | <a href="https://simplify.jobs/c/Eastern-Research-Group"><strong>Eastern Research Group</strong></a> | Occupational Safety and Health Data Analyst | Fairfax, VA | <a href="https://jobs.lever.co/erg/55e6dfc9-fe22-4dec-80ae-8d4ec6e46b39/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 28d |
@@ -92,7 +91,7 @@ Last updated: **2026-06-18 08:52 UTC** · **90** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 218d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 960d |
 
-_12 live, 74 unverified_
+_11 live, 74 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._
