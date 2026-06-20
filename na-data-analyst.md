@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-20 08:30 UTC** · **93** active roles.
+Last updated: **2026-06-20 15:53 UTC** · **91** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -41,7 +41,6 @@ Last updated: **2026-06-20 08:30 UTC** · **93** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Analytics Engineer, Safety Systems | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/23662a5c-43c3-4754-a6e0-30f8cbf6d681/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 15d |
 | **TELUS Digital** | Online Data Analyst Canada (French Language) | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-french-language-2090945"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
 | **TELUS Digital** | Online Data Analyst United States Spanish speakers | Remote · USA | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-united-states-spanish-speakers-2090946"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
-| <a href="https://simplify.jobs/c/Harris-Williams"><strong>Harris Williams</strong></a> | Talent Data Analyst | Richmond, VA | <a href="https://pnc.wd5.myworkdayjobs.com/HarrisWilliams/job/VA---Richmond-23219/Talent-Data-Analyst_R224832"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA · Remote in USA | <a href="https://apply.workable.com/connectprep/j/65F6D2C32E/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 20d |
 | <a href="https://simplify.jobs/c/Zone-5-Technologies"><strong>Zone 5 Technologies</strong></a> | Manufacturing Data Analyst Intern | San Luis Obispo, CA | <a href="https://job-boards.greenhouse.io/zone5technologies/jobs/5231405008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 24d |
 | <a href="https://simplify.jobs/c/Standard-Aero"><strong>Standard Aero</strong></a> | Pricing Data Analyst | San Antonio, TX | <a href="https://cva.fa.us1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/9483"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 29d |
@@ -92,10 +91,9 @@ Last updated: **2026-06-20 08:30 UTC** · **93** active roles.
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 142d |
 | <a href="https://simplify.jobs/c/Paccar"><strong>Paccar</strong></a> | Data Analyst Intern Fall 2026 | Columbus, MS | <a href="https://jobs.paccar.com/job/Columbus-Data-Analyst-Intern-Fall-2026-MS-39701/1283451401/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 156d |
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 220d |
-| **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 296d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 962d |
 
-_11 live, 78 unverified_
+_11 live, 76 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

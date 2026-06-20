@@ -1,11 +1,13 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-20 08:30 UTC** · **57** active roles.
+Last updated: **2026-06-20 15:53 UTC** · **59** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://uk.indeed.com/cmp/Marks-&-Spencer"><strong>Marks & Spencer</strong></a> | Senior Software Engineer - Recommendation Experiences | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=86226f0fb5eef664"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/University-of-Oxford"><strong>University of Oxford</strong></a> | Postdoctoral Research Scientist in Computational Vaccinology | Oxford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=0e8cb0c932e3fbb9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://de.indeed.com/cmp/Ses-5"><strong>SES</strong></a> | Senior Engineer, Resource Optimization & Algorithm, IRIS2 | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=02ee77557f6f4102"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://de.indeed.com/cmp/Quantum--systems-1"><strong>Quantum-Systems</strong></a> | Computer Vision & AI Engineer - N3XT Interceptor C‑UAS (m/f/d) | Gilching, BY, DE | <a href="https://de.indeed.com/viewjob?jk=cba12d1093024f36"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Intesa-Sanpaolo"><strong>Intesa Sanpaolo</strong></a> | Expert Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=8f55a5d9b64cf8b3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Intesa-Sanpaolo"><strong>Intesa Sanpaolo</strong></a> | Senior Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=907363047e028c67"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -63,5 +65,5 @@ Last updated: **2026-06-20 08:30 UTC** · **57** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 446d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 780d |
 
-_15 live, 42 unverified_
+_15 live, 44 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->

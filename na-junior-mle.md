@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-20 08:30 UTC** · **221** active roles.
+Last updated: **2026-06-20 15:53 UTC** · **219** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -99,8 +99,6 @@ Last updated: **2026-06-20 08:30 UTC** · **221** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Foundations | San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5197337008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 58d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (RL Velocity) | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5198108008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 58d |
 | <a href="https://simplify.jobs/c/Truveta"><strong>Truveta</strong></a> | Machine Learning Postdoctoral Researcher - Healthcare AI Innovation | Seattle, WA | <a href="https://job-boards.greenhouse.io/truveta/jobs/5978375004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 59d |
-| <a href="https://simplify.jobs/c/Pinterest"><strong>Pinterest</strong></a> | PhD Machine Learning Intern - Visual - Recommender Systems | Palo Alto, CA · Seattle, WA · SF | <a href="https://www.pinterestcareers.com/jobs/?gh_jid=7255640"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
-| **Pinterest** | Machine Learning Intern, PhD | San Francisco, CA · Palo Alto, CA · Seattle, WA | <a href="https://www.pinterestcareers.com/jobs/7255640/phd-fall-machine-learning-intern-atg-visual-multimodal-and-recommender-systems/?jr_id=69e683219b6eb37e26f80c4f&gh_jid=7255640"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
 | **PathAI** | Machine Learning Intern, AI Product and ML Core | Boston, MA · New York, NY · Remote | <a href="https://www.pathai.com/career/job-post?gh_jid=8202342002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
 | **Intercontinental Exchange, Inc.** | Artificial Intelligence, Data & Machine Learning Intern | New York, NY | <a href="https://careers.ice.com/jobs/12830?lang=en-us&iis=LinkedIn&iisn=Linkedin&mode=apply&jr_id=69e67bb27820c036924d0af9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 61d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Scientist - Global E-commerce Content Recommendation | Seattle, WA | <a href="https://lifeattiktok.com/search/7553175919394638087"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 64d |
@@ -218,7 +216,7 @@ Last updated: **2026-06-20 08:30 UTC** · **221** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 788d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 822d |
 
-_149 live, 63 unverified_
+_149 live, 61 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _9 hidden as first_seen >180d. Full set in jobs.db._

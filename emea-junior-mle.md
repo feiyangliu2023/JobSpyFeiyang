@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-20 08:30 UTC** · **132** active roles.
+Last updated: **2026-06-20 15:53 UTC** · **134** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -26,6 +26,7 @@ Last updated: **2026-06-20 08:30 UTC** · **132** active roles.
 | <a href="https://it.indeed.com/cmp/Intesa-Sanpaolo"><strong>Intesa Sanpaolo</strong></a> | Expert Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=8f55a5d9b64cf8b3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Intesa-Sanpaolo"><strong>Intesa Sanpaolo</strong></a> | Junior Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=c3516406a294e5a7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://pt.indeed.com/cmp/Innovation-Labs"><strong>Innovation Labs</strong></a> | R&D - AI Engineer (Mid) | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=4c4281fd8cf7cb28"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://uk.indeed.com/cmp/Genentech"><strong>Genentech</strong></a> | Machine Learning Scientist - Synthesis Planning and Optimization | Welwyn, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9153ee1c20a4bb83"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Fistrek"><strong>Fistrek</strong></a> | AI Engineer Full Stack – AI Coding Agents & Software Engineering | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=6eb7709542088195"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Compare-the-Market-2"><strong>Compare The Market</strong></a> | Machine Learning Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=41c22bd2ac2be7cf"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer- AI Support for Air Quality Services (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=ded4754fdd8e4d27"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -42,6 +43,7 @@ Last updated: **2026-06-20 08:30 UTC** · **132** active roles.
 | <a href="https://it.indeed.com/cmp/S2e-Business-Technology-Consultants"><strong>S2E \| Business Technology Consultants</strong></a> | DATA SCIENTIST JUNIOR | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=61432220b4df1220"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://es.indeed.com/cmp/Nielseniq-6"><strong>NielsenIQ</strong></a> | ML Engineer | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=9de670db5f9b72ca"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://pt.indeed.com/cmp/Noesis"><strong>NOESIS</strong></a> | Data & AI Engineer | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=1cc119884277d736"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
+| <a href="https://cz.indeed.com/cmp/Nn-Group"><strong>NN GROUP</strong></a> | Principal AI Engineer | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=7a568cd94b7ed5fb"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://nl.indeed.com/cmp/Matchmatters-Bv"><strong>MatchMatters BV</strong></a> | AI Engineer (Medior) – Bouw mee aan AI-oplossingen | Breda, NB, NL | <a href="https://nl.indeed.com/viewjob?jk=9b10a0a4c15f438b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Manufacturing-Technology-Centre"><strong>Manufacturing Technology Centre</strong></a> | Advanced Research Engineer | Coventry, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=80a9bb6f872e5d86"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://se.indeed.com/cmp/Kth-Royal-Institute-of-Technology"><strong>KTH Royal Institute of Technology</strong></a> | Research Engineer in Robotics, Perception and Learning | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=52f1cb5f3d1d948b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -134,7 +136,7 @@ Last updated: **2026-06-20 08:30 UTC** · **132** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 780d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 780d |
 
-_23 live, 105 unverified_
+_23 live, 107 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

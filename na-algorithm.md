@@ -1,6 +1,6 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-20 08:30 UTC** · **215** active roles.
+Last updated: **2026-06-20 15:53 UTC** · **214** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -14,7 +14,6 @@ Last updated: **2026-06-20 08:30 UTC** · **215** active roles.
 | <a href="https://simplify.jobs/c/Unity"><strong>Unity</strong></a> | Machine Learning Engineer New Grad - Next-Generation Recommendation Systems | Bellevue, WA |  | <a href="https://boards.greenhouse.io/embed/job_app?token=7999717"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
 | <a href="https://simplify.jobs/c/Unity"><strong>Unity</strong></a> | Machine Learning Engineer New Grad - Next-Generation Recommendation Systems | Mountain View, CA |  | <a href="https://boards.greenhouse.io/embed/job_app?token=7999719"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
 | <a href="https://simplify.jobs/c/Netflix"><strong>Netflix</strong></a> | Research Scientist 4 - Machine Learning and Inference Research - Large Language Model Post-Training | LA · Los Gatos, CA · NYC |  | <a href="https://explore.jobs.netflix.net/careers/job/790311856514"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
-| <a href="https://simplify.jobs/c/Magna"><strong>Magna</strong></a> | Infrared Imaging & Algorithms Intern | Goleta, CA |  | <a href="https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Goleta-California-US/Intern---Infrared-Imaging---Algorithms_R00247602"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/Intel"><strong>Intel</strong></a> | AI Algorithm Engineer | Santa Clara, CA · Hillsboro, OR · Folsom, CA |  | <a href="https://intel.wd1.myworkdayjobs.com/en-us/external/job/US-California-Santa-Clara/AI-Algorithm-Engineer_JR0284868"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
 | <a href="https://simplify.jobs/c/Chickasaw-Nation-Industries"><strong>Chickasaw Nation Industries</strong></a> | Research Engineer | Dothan, AL |  | <a href="https://cni.wd503.myworkdayjobs.com/CNI/job/Dothan-AL/Research-Engineer_R9142"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | CV/NLP/Multimodal LLM Research Scientist Graduate - Trust and Safety | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7517106896071903496"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
@@ -218,7 +217,7 @@ Last updated: **2026-06-20 08:30 UTC** · **215** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 788d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 822d |
 
-_180 live, 32 unverified_
+_180 live, 31 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._

@@ -1,6 +1,6 @@
 # Remote Jobs
 
-Last updated: **2026-06-20 08:30 UTC** · **26 curated** + **39 other** = **65** active remote roles.
+Last updated: **2026-06-20 15:53 UTC** · **26 curated** + **38 other** = **64** active remote roles.
 
 ## Curated companies (matches the JOBS.md allowlist)
 
@@ -11,7 +11,7 @@ Roles at companies on the curated `filters.include_companies` list in `monitor/c
 |---|---|---|---|---|---|
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Software Engineer, Identity & Access Controls | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5270442008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 2d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | IT Systems Engineer, Client Platform Engineer | Boston, MA; New York City, NY; Remote-Friendly (Travel-Required) · Washington, DC |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5255853008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
-| <a href="https://hrblock.com/"><strong>H&R Block</strong></a> | Associate Software Engineer - Seasonal | Remote |  | <a href="https://employees-hrblock.icims.com/jobs/42434/associate-software-engineer%2c-seasonal/job"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 32d |
+| <a href="https://hrblock.com/"><strong>H&R Block</strong></a> | Associate Software Engineer - Seasonal | Remote |  | <a href="https://careers-hrblock.icims.com/jobs/42434/associate-software-engineer%2c-seasonal/job"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 32d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Design Engineer, Web | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5223916008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 33d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Technical Threat Investigator, Threat Intel Engineering | San Francisco, United States · New York City, United States · Remote - US, United States |  | <a href="https://jobs.ashbyhq.com/openai/f01b7084-a68d-4e30-ace9-6b5e6d90c517/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 51d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (RL Velocity) | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5198108008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 58d |
@@ -54,7 +54,6 @@ Everything else that surfaced from Remotive / RemoteOK / JobSpy / SimplifyJobs �
 | <a href="https://de.indeed.com/cmp/Xata"><strong>xata</strong></a> | Software Backend Engineer (Go/Rust) - Remote | Berlin, BE, DE |  | <a href="https://de.indeed.com/viewjob?jk=8b53ce8c354af776"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Yelp"><strong>Yelp</strong></a> | Senior Software Engineer - Machine Learning (Marketplace Dynamics) (Remote - United Kingdom) | Edinburgh, SCT, GB |  | <a href="https://uk.indeed.com/viewjob?jk=eb7e0448b499115d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **Why Hiring** | Junior Data Scientist | Remote · Canada, |  | <a href="https://remoteOK.com/remote-jobs/remote-junior-data-scientist-why-hiring-1133570"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| **Jane Technologies** | Lead Software Engineer Ads | Remote · Santa Cruz, California |  | <a href="https://remoteOK.com/remote-jobs/remote-lead-software-engineer-ads-jane-technologies-1133519"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **Quinncia Inc** | Frontend Developer | Remote · Worldwide | $20k-35k/yr | <a href="https://remotive.com/remote-jobs/software-development/frontend-developer-2090991"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | **A.Team** | Senior Independent Software Developer | Remote · Americas, Europe, Israel | $90k-150k/yr | <a href="https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://de.indeed.com/cmp/Otera"><strong>OTERA</strong></a> | Senior Solutions Engineer - Forward Deployed Agentic Engineer (f/m/d) Remote Europe | Berlin, BE, DE |  | <a href="https://de.indeed.com/viewjob?jk=5e93aa6482659a33"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -83,7 +82,7 @@ Everything else that surfaced from Remotive / RemoteOK / JobSpy / SimplifyJobs �
 | <a href="https://silver.dev/"><strong>Silver</strong></a> | Ramp - Early Career Software Engineer | Remote |  | <a href="https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 67d |
 | <a href="https://www.realmalliance.com/"><strong>Realm</strong></a> | Software Engineer - New Grad | Remote |  | <a href="https://jobs.ashbyhq.com/realmalliance/56d8b433-31ad-43a2-997e-b8538f5f2c9f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 77d |
 
-_0 live, 36 unverified_
+_0 live, 35 unverified_
 <!-- TABLE_SLICE_REMOTE_JOBS_OTHER_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
