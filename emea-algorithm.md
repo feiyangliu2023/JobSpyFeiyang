@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-21 08:49 UTC** · **58** active roles.
+Last updated: **2026-06-21 15:52 UTC** · **57** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -18,7 +18,6 @@ Last updated: **2026-06-21 08:49 UTC** · **58** active roles.
 | <a href="https://uk.indeed.com/cmp/Compare-the-Market-2"><strong>Compare The Market</strong></a> | Senior Machine Learning Engineer | Peterborough, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=98ef283274d0d734"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer- AI Support for Air Quality Services (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=ded4754fdd8e4d27"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://nl.indeed.com/cmp/Abn-Amro"><strong>ABN AMRO</strong></a> | Machine Learning Engineer Enterprise Enabling Data Domain | Amstelveen, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=9ed4248b184ffa36"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
-| <a href="https://il.indeed.com/cmp/%D7%A7%D7%91%D7%95%D7%A6%D7%AA-%D7%99%D7%A2%D7%9C-%D7%AA%D7%95%D7%9B%D7%A0%D7%94"><strong>קבוצת יעל תוכנה</strong></a> | Machine Learning Engineer | פתח תקווה, M, IL | <a href="https://il.indeed.com/viewjob?jk=af0ef855f878ceb4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Manufacturing-Technology-Centre"><strong>Manufacturing Technology Centre</strong></a> | Advanced Research Engineer | Coventry, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=80a9bb6f872e5d86"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Manufacturing-Technology-Centre"><strong>Manufacturing Technology Centre</strong></a> | Senior Research Engineer (SRE)- Automation Transformation | Coventry, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=bc9fa764393b3bdd"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://de.indeed.com/cmp/Lobster-Data-Gmbh"><strong>Lobster Data GmbH</strong></a> | Senior Machine Learning Engineer | Tutzing, BY, DE | <a href="https://de.indeed.com/viewjob?jk=5289a726f16490b8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -64,5 +63,5 @@ Last updated: **2026-06-21 08:49 UTC** · **58** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 447d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 781d |
 
-_15 live, 43 unverified_
+_15 live, 42 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->

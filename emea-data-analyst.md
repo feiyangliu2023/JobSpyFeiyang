@@ -1,6 +1,6 @@
 # EMEA Data Analyst Roles
 
-Last updated: **2026-06-21 08:49 UTC** · **122** active roles.
+Last updated: **2026-06-21 15:52 UTC** · **120** active roles.
 
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -55,7 +55,6 @@ Last updated: **2026-06-21 08:49 UTC** · **122** active roles.
 | **—** | Senior Data Analyst (Retail Experience) | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=ce03ff9b9ba27446"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://il.indeed.com/cmp/%D7%9E%D7%98%D7%A8%D7%99%D7%A7%D7%A1"><strong>מטריקס</strong></a> | לחברת בריאות מובילה דרוש/ה Data Analyst | גוש דן, TA, IL | <a href="https://il.indeed.com/viewjob?jk=7d9674c3139a0d13"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://il.indeed.com/cmp/%D7%90%D7%A1%D7%9D"><strong>אסם</strong></a> | Marketing Data Analyst חברת נספרסו | פתח תקווה, M, IL | <a href="https://il.indeed.com/viewjob?jk=edcb77ca25598580"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| <a href="https://il.indeed.com/cmp/%D7%90%D7%9C%D7%A2%D7%93-%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA"><strong>אלעד מערכות</strong></a> | אנליסט/ית נתונים (Data Analyst) | ירושלים, JM, IL | <a href="https://il.indeed.com/viewjob?jk=035e6f61233f8799"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://at.indeed.com/cmp/%C3%96bb"><strong>ÖBB</strong></a> | Junior Data Analyst für betriebliches Mobilitätsmanagement ÖBB 360° (m/w/x) | Wien, W, AT | <a href="https://at.indeed.com/viewjob?jk=facdd51bb93d03f1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://fi.indeed.com/cmp/Wolt"><strong>wolt</strong></a> | Senior Analytics Engineer, Merchant | Helsinki, F19, FI | <a href="https://fi.indeed.com/viewjob?jk=2900701368b159c7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://es.indeed.com/cmp/Knowmad-Mood"><strong>knowmad mood</strong></a> | Senior Analytics Engineer (DBT & Snowflake) | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=0686e7fba19e198b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -122,7 +121,7 @@ Last updated: **2026-06-21 08:49 UTC** · **122** active roles.
 | <a href="https://simplify.jobs/c/The-Information-Lab"><strong>The Information Lab</strong></a> | The Data School - Data Analyst/Consultant | London, UK | <a href="https://jobs.lever.co/theinformationlab/5c48a12b-6906-43d7-bd95-947b562c8701/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 107d |
 | <a href="https://simplify.jobs/c/WTW"><strong>WTW</strong></a> | 2026 Corporate Risk & Broking – Graduate Data Analyst - London | London, UK | <a href="https://eedu.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1003/job/202508589"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 137d |
 
-_4 live, 112 unverified_
+_4 live, 111 unverified_
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_END -->
 
-_6 hidden as first_seen >180d. Full set in jobs.db._
+_5 hidden as first_seen >180d. Full set in jobs.db._

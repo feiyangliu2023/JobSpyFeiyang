@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-21 08:49 UTC** · **87** active roles.
+Last updated: **2026-06-21 15:52 UTC** · **86** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -8,7 +8,6 @@ Last updated: **2026-06-21 08:49 UTC** · **87** active roles.
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA | <a href="https://apply.workable.com/connectprep/j/E4655645B8/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/UL-Solutions"><strong>UL Solutions</strong></a> | Business Data Analyst Associate | Raleigh, NC | <a href="https://fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ULSolutionsCareers/job/9932"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/daa2f0b8-9146-4be9-90ed-1bd7fd73664c"><strong>The Jackson Laboratory</strong></a> | Research Data Analyst | Bangor, ME | <a href="https://thejacksonlaboratory.wd503.myworkdayjobs.com/External_JAX/job/Bar-Harbor-Maine/Research-Data-Analyst_JR006004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
-| <a href="https://simplify.jobs/c/RELX"><strong>RELX</strong></a> | Data Analyst 1 | Philadelphia, PA | <a href="https://relx.wd3.myworkdayjobs.com/en-US/relx/job/PHL-RE-Shared-Services-Manila/Data-Analyst-I_R114265"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/b5474c30-ac69-40c8-8387-51dcf3675b12"><strong>Hyundai Motor Company</strong></a> | Data Analyst - General Assembly - MFT Data Analysis | Montgomery, AL | <a href="https://careers-americas.hyundai.com/hmma/job/Montgomery-Specialist-General-Assembly-(MFT-Data-Analysis)-AL-36101/1401402400/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Emergent-Holdings"><strong>Emergent Holdings</strong></a> | Associate Data Analyst | United States | <a href="https://ejko.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_5/job/14366"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Cincinnati-Childrens-Hospital-And-Medical-Center"><strong>Cincinnati Children’s Hospital and Medical Center</strong></a> | Business Intelligence Analyst | Cincinnati, OH | <a href="https://cincinnatichildrens.wd5.myworkdayjobs.com/careersatcincinnatichildrens/job/Burnet-Campus/Business-Intelligence-Analyst_JR218729"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -89,7 +88,7 @@ Last updated: **2026-06-21 08:49 UTC** · **87** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 221d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 963d |
 
-_11 live, 72 unverified_
+_11 live, 71 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._
