@@ -1,13 +1,13 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-06-22 09:20 UTC** · **39** active roles.
+Last updated: **2026-06-22 16:51 UTC** · **39** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/AG-Technologies"><strong>AG Technologies</strong></a> | DevOps Java OBIEE Salesforce Training and Placement | Dallas, TX | <a href="https://jobs.smartrecruiters.com/AGTechnologies1/104662317"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Primetals-Technologies"><strong>Primetals Technologies</strong></a> | Project Support Engineer 1 | Orlando, FL | <a href="https://mhicareers.com/job/Orlando-Project-Support-Engineer-I-FL-32809/1406621533/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Mendix"><strong>Mendix</strong></a> | Application Support Engineer | LA | <a href="https://jobs.lever.co/mendix/acd9f6de-8c4a-4226-b5fc-c164ebe39760/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
-| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer 1 | El Paso, TX | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/El-Paso/Field-Engineer-1_R4042436-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/Illinois-Tool-Works"><strong>Illinois Tool Works</strong></a> | Product Support Engineer | Norwood, MA | <a href="https://careers.itw.com/global/en/job/JR7595"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://guidehouse.com"><strong>Guidehouse</strong></a> | Junior Cloud DevOps Engineer | US DC, Washington | <a href="https://guidehouse.wd1.myworkdayjobs.com/en-US/external/job/US---DC-Washington/Junior-Cloud-DevOps-Engineer_40228-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 12d |
 | <a href="https://www.kbr.com"><strong>KBR</strong></a> | Junior Cloud DevOps Engineer | Sioux Falls, South Dakota | <a href="https://kbr.wd5.myworkdayjobs.com/en-US/kbr_careers/job/Sioux-Falls-South-Dakota/Junior-Cloud-DevOps-Engineer_R2124667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |

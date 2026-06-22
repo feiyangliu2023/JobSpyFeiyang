@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-06-22 09:20 UTC** · **50** active roles.
+Last updated: **2026-06-22 16:51 UTC** · **51** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -43,6 +43,7 @@ Last updated: **2026-06-22 09:20 UTC** · **50** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer - Internal Tools & Productivity | San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4654897005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 144d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Data Platform | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4649903005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 158d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Software Engineer, Security Agents | Toronto, Canada · San Francisco, United States · New York, United States | <a href="https://jobs.ashbyhq.com/cohere/a5bbd015-65a9-48a1-aab1-b266bdbc9905/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 158d |
+| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Claude.ai | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5026097008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 186d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer,  Full-Stack – Scale GP | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4637484005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 199d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Staff Software Engineer, Gov | Washington, DC · San Francisco, United States · Seattle, United States | <a href="https://jobs.ashbyhq.com/openai/a90cdb7c-1c33-4fca-9a96-26c236006f14/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 248d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Android | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4899511008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 298d |
@@ -56,5 +57,5 @@ Last updated: **2026-06-22 09:20 UTC** · **50** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Accessibility | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4673416008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 412d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 494d |
 
-_42 live, 8 unverified_
+_43 live, 8 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->

@@ -1,10 +1,11 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-22 09:20 UTC** · **214** active roles.
+Last updated: **2026-06-22 16:51 UTC** · **214** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
 |---|---|---|---|---|---|
+| <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Research Engineer - Safety Tooling and Data | New York, United States |  | <a href="https://jobs.ashbyhq.com/cohere/2d4d224f-94d4-40ce-88d5-5d340bc0da4e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://www.kinaxis.com/"><strong>Kinaxis</strong></a> | Co-op/Intern Software Developer - Core Algorithms | CA ON Ottawa |  | <a href="https://careers-kinaxis.icims.com/jobs/34962/co-op-intern-software-developer%2c-core-algorithms/job"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer / Research Scientist -Personal AGI, Proactivity | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/e57d196b-4fa0-4463-bd33-d8189f0d3541/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Domain Scaling | San Francisco, CA · New York City, NY · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5271380008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
@@ -83,7 +84,6 @@ Last updated: **2026-06-22 09:20 UTC** · **214** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Scientist - Global E-commerce Content Recommendation | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7553175919394638087"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - E-commerce Recommendation - Multiple Teams | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7629188397976586501"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - TikTok Search / Generative AI - LLM | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7629250876813642037"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
-| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Safeguards Labs | San Francisco, CA · New York City, NY |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5191785008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 66d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Research Scientist - Technologies of Data Management - LLM and AI Agents | Seattle, WA |  | <a href="https://jobs.bytedance.com/en/position/7629123702995290421/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 67d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Research Scientist - Technologies of Data Management - LLM and AI Agents | San Jose, CA |  | <a href="https://jobs.bytedance.com/en/position/7629124511380654341/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 67d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7534641634584185095"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |

@@ -1,6 +1,6 @@
 # Remote Jobs
 
-Last updated: **2026-06-22 09:20 UTC** · **26 curated** + **36 other** = **62** active remote roles.
+Last updated: **2026-06-22 16:51 UTC** · **26 curated** + **33 other** = **59** active remote roles.
 
 ## Curated companies (matches the JOBS.md allowlist)
 
@@ -50,14 +50,12 @@ Everything else that surfaced from Remotive / RemoteOK / JobSpy / SimplifyJobs �
 | <a href="http://www.iherb.com"><strong>iHerb</strong></a> | Software Development Intern | Remote |  | <a href="https://job-boards.greenhouse.io/iherb/jobs/7776154003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **Banco BV** | Analista de Software SÃªnior | Remote · SÃ£o Paulo |  | <a href="https://remoteOK.com/remote-jobs/remote-analista-de-software-senior-banco-bv-1133689"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Siena-Ai"><strong>Siena AI</strong></a> | Solutions Engineer - Remote | London, ENG, GB |  | <a href="https://uk.indeed.com/viewjob?jk=5950422f9974670e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| **Haystack** | Junior Data Analyst | Remote · London, London, England, United Kingdom |  | <a href="https://remoteOK.com/remote-jobs/remote-junior-data-analyst-haystack-1133663"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | **Creative Fabrica** | Senior Backend Engineer Studio AI | Remote · Worldwide |  | <a href="https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-studio-ai-creative-fabrica-1133667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://de.indeed.com/cmp/Xata"><strong>xata</strong></a> | Software Backend Engineer (Go/Rust) - Remote | Berlin, BE, DE |  | <a href="https://de.indeed.com/viewjob?jk=8b53ce8c354af776"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://uk.indeed.com/cmp/Yelp"><strong>Yelp</strong></a> | Senior Software Engineer - Machine Learning (Marketplace Dynamics) (Remote - United Kingdom) | Edinburgh, SCT, GB |  | <a href="https://uk.indeed.com/viewjob?jk=eb7e0448b499115d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://de.indeed.com/cmp/Ares-Consulting-Gmbh"><strong>ARES Consulting GmbH</strong></a> | Senior Cloud & DevOps Engineer (m/w/d) - Remote | Aschheim, BY, DE |  | <a href="https://de.indeed.com/viewjob?jk=971371041366e041"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | **Quinncia Inc** | Frontend Developer | Remote · Worldwide | $20k-35k/yr | <a href="https://remotive.com/remote-jobs/software-development/frontend-developer-2090991"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | **A.Team** | Senior Independent Software Developer | Remote · Americas, Europe, Israel | $90k-150k/yr | <a href="https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
-| <a href="https://de.indeed.com/cmp/Otera"><strong>OTERA</strong></a> | Senior Solutions Engineer - Forward Deployed Agentic Engineer (f/m/d) Remote Europe | Berlin, BE, DE |  | <a href="https://de.indeed.com/viewjob?jk=5e93aa6482659a33"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
-| <a href="https://ie.indeed.com/cmp/Hadfield-Green"><strong>Hadfield Green</strong></a> | Site Reliability Engineer – 12 month – Contract – Fully Remote | Dublin, D, IE |  | <a href="https://ie.indeed.com/viewjob?jk=ff9cb6b5ede35698"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | **Mitre Media** | Tech Lead Full-Stack Rails Engineer | Remote · USA, Canada, USA timezones | $170k-200k/yr | <a href="https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="http://www.arine.io"><strong>Arine</strong></a> | Full Stack Engineering Summer Intern | Remote |  | <a href="https://job-boards.greenhouse.io/arine/jobs/6026856004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://wustl.edu"><strong>Washington University in St. Louis</strong></a> | Systems Engineer I - Time Limited/Remote - WUIT - Cloud Security | Washington University Medical Campus |  | <a href="https://wustl.wd1.myworkdayjobs.com/en-US/external/job/Washington-University-Medical-Campus/Systems-Engineer-I--Time-Limited-Remote----WUIT--Cloud-Security_JR94771"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 10d |
@@ -80,7 +78,7 @@ Everything else that surfaced from Remotive / RemoteOK / JobSpy / SimplifyJobs �
 | <a href="https://silver.dev/"><strong>Silver</strong></a> | Ramp - Early Career Software Engineer | Remote |  | <a href="https://jobs.ashbyhq.com/silver/0c7fc4c6-4870-4258-8b27-e0c7d32ce7f8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 68d |
 | <a href="https://www.realmalliance.com/"><strong>Realm</strong></a> | Software Engineer - New Grad | Remote |  | <a href="https://jobs.ashbyhq.com/realmalliance/56d8b433-31ad-43a2-997e-b8538f5f2c9f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 
-_0 live, 33 unverified_
+_0 live, 31 unverified_
 <!-- TABLE_SLICE_REMOTE_JOBS_OTHER_END -->
 
-_3 hidden as first_seen >180d. Full set in jobs.db._
+_2 hidden as first_seen >180d. Full set in jobs.db._
