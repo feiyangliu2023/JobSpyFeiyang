@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-24 08:32 UTC** · **82** active roles.
+Last updated: **2026-06-24 16:05 UTC** · **83** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| **Caterpillar Inc.** | Junior Data Analyst | Remote · Houston, Houston, Texas, United States | <a href="https://remoteOK.com/remote-jobs/remote-junior-data-analyst-caterpillar-inc-1134008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Pearl-Health"><strong>Pearl Health</strong></a> | Data Analyst - ACO Operations | Boston, MA · Seattle, WA · NYC | <a href="https://jobs.ashbyhq.com/pearlhealth/77c51f6c-ba07-4566-a247-f4f06ae16d6f/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA | <a href="https://apply.workable.com/connectprep/j/E4655645B8/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/UL-Solutions"><strong>UL Solutions</strong></a> | Business Data Analyst Associate | Raleigh, NC | <a href="https://fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ULSolutionsCareers/job/9932"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -86,7 +87,7 @@ Last updated: **2026-06-24 08:32 UTC** · **82** active roles.
 | **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 300d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 966d |
 
-_11 live, 69 unverified_
+_11 live, 70 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

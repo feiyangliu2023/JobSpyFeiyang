@@ -1,6 +1,6 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-24 08:32 UTC** · **209** active roles.
+Last updated: **2026-06-24 16:05 UTC** · **210** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -75,6 +75,7 @@ Last updated: **2026-06-24 08:32 UTC** · **209** active roles.
 | <a href="https://www.tiktok.com"><strong>TikTok</strong></a> | Software Engineer Project Intern - Recommendation Infrastructure - TikTok Video Social - 2026 Start - BS/MS | San Jose | $60/hr | <a href="https://lifeattiktok.com/search/7629500062003218741"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 67d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Research Scientist – Generative AI Graduate - Intelligent Creation | San Jose, CA |  | <a href="https://jobs.bytedance.com/en/position/7629855646167091509/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 67d |
 | <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | AI Algorithm Developer | Santa Clara, CA |  | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/AI-Algorithm-Developer_R2519827"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 67d |
+| <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - Multiple Teams | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7629243930022267189"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - LLM Applications on Search/Ads/Recommendation | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7629235064786127109"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - E-commerce Recommendation - LLM Applications | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7629184028664563973"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - Generative AI - Tiktok Search | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7628321017978767621"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
@@ -211,7 +212,7 @@ Last updated: **2026-06-24 08:32 UTC** · **209** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 792d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 826d |
 
-_175 live, 30 unverified_
+_176 live, 30 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

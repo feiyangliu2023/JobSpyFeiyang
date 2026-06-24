@@ -1,10 +1,11 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-06-24 08:32 UTC** · **50** active roles.
+Last updated: **2026-06-24 16:05 UTC** · **51** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://www.confluent.io/"><strong>Confluent</strong></a> | Staff Software Engineer I | Job Posting Only USA | <a href="https://jobs.ashbyhq.com/confluent/bef7f6a5-2481-4eb6-a760-86e3746600bb"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Developer Productivity (CI/CD) - Claude Code | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5271428008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
 | <a href="https://www.westernalliancebancorporation.com"><strong>Western Alliance Bank</strong></a> | Staff Engineer I - Software Engineer | CA Westlake Village | <a href="https://westernalliancebank.wd5.myworkdayjobs.com/en-US/wab/job/Westlake-Village-CA/Staff-Engineer-I---Software-Engineer_R13247"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Engineer or Principal Engineer Systems | Melbourne, FL | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Florida-Melbourne/Engineer-or-Principal-Engineer-Systems_R10235799"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
@@ -56,5 +57,5 @@ Last updated: **2026-06-24 08:32 UTC** · **50** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Accessibility | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4673416008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 414d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 496d |
 
-_43 live, 7 unverified_
+_44 live, 7 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->

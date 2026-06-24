@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-24 08:32 UTC** · **219** active roles.
+Last updated: **2026-06-24 16:05 UTC** · **220** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -34,6 +34,7 @@ Last updated: **2026-06-24 08:32 UTC** · **219** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Code RL (Reinforcement Learning) | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5254364008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 13d |
 | <a href="https://simplify.jobs/c/UL-Solutions"><strong>UL Solutions</strong></a> | Associate Data Scientist | Northbrook, IL | <a href="https://fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ULSolutionsCareers/job/9695"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://simplify.jobs/c/Evolver"><strong>Evolver</strong></a> | Generative AI Engineer - Python | Palo Alto, CA | <a href="https://job-boards.greenhouse.io/evolver/jobs/4092111009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
+| <a href="https://simplify.jobs/c/Public-Service-Enterprise-Group"><strong>Public Service Enterprise Group</strong></a> | Data Scientist | Newark, NJ | <a href="https://jobs.pseg.com/job/Newark-Data-Scientist-NJ-07101/1398268700/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/DataVisor"><strong>DataVisor</strong></a> | Data Scientist - AI Solutions | Mountain View, CA | <a href="https://apply.workable.com/datavisor-jobs/j/FC5ABB4A50/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/EXL"><strong>EXL</strong></a> | Data Scientist Associate | United States | <a href="https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/15323"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Scientist, Economic Insights & Research | US | <a href="https://stripe.com/jobs/search?gh_jid=7980402"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 20d |
@@ -216,7 +217,7 @@ Last updated: **2026-06-24 08:32 UTC** · **219** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 792d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 826d |
 
-_144 live, 66 unverified_
+_144 live, 67 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _9 hidden as first_seen >180d. Full set in jobs.db._
