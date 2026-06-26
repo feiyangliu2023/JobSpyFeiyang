@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-26 08:34 UTC** · **221** active roles.
+Last updated: **2026-06-26 16:02 UTC** · **220** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -53,7 +53,6 @@ Last updated: **2026-06-26 08:34 UTC** · **221** active roles.
 | <a href="https://simplify.jobs/c/LLNL"><strong>Lawrence Livermore National Laboratory (LLNL)</strong></a> | Machine Learning Physics Graduate Student Intern | Livermore, CA | <a href="https://jobs.smartrecruiters.com/LLNL/3743990013424486"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 24d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Applied Scientist - Global Frontier Tech Recruitment Program | San Jose, CA | <a href="https://jobs.bytedance.com/en/position/7629488401364060469/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 24d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Data Scientist, Safeguards | New York City, NY; San Francisco, CA; Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5209196008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 24d |
-| <a href="https://www.halo-industries.com"><strong>Halo Industries</strong></a> | Software Engineer Intern - Machine Learning Workflow | Santa Clara, California, US | <a href="https://apply.workable.com/halo-industries/j/29728B1DAF/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
 | <a href="https://simplify.jobs/c/Boys-Town"><strong>Boys Town</strong></a> | Artificial Intelligence & Machine Learning Intern | Omaha, NE | <a href="https://boystown.wd1.myworkdayjobs.com/boystowncareers/job/Omaha-NE/Artificial-Intelligence---Machine-Learning-Intern_REQ-2026-8543-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Machine Learning Engineer, Capital Underwriting | US | <a href="https://stripe.com/jobs/search?gh_jid=7952048"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 30d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Data Scientist, Policy | New York City, NY; San Francisco, CA · New York City, NY; Washington, DC | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5232055008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 30d |
@@ -120,7 +119,7 @@ Last updated: **2026-06-26 08:34 UTC** · **221** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer - Data Search TikTok | San Jose, CA | <a href="https://lifeattiktok.com/search/7515277586445322503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 76d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Machine Learning Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10785/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Scientist Graduate - Global E-commerce Content Recommendation | San Jose, CA | <a href="https://lifeattiktok.com/search/7553175919393802503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 79d |
-| <a href="https://www.humancomputerlab.com/"><strong>Human Computer Lab</strong></a> | Intern - Software/ML Engineering | San Francisco | <a href="https://jobs.ashbyhq.com/human-computer-lab/7d13ae27-1f02-4d9b-8d39-e3d9d67df705"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 82d |
+| <a href="https://www.humancomputerlab.com/"><strong>Human Computer Lab</strong></a> | Intern - Software/ML Engineering | San Francisco | <a href="https://jobs.ashbyhq.com/human-computer-lab/7d13ae27-1f02-4d9b-8d39-e3d9d67df705"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 83d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Data Search TikTok - BS/MS | San Jose, CA | <a href="https://lifeattiktok.com/search/7533371534829095175"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 84d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer - Global E-Commerce Content Recommendation | San Jose, CA | <a href="https://lifeattiktok.com/search/7623531261580036405"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 84d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer | San Jose, CA | <a href="https://lifeattiktok.com/search/7533384972704778514"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 85d |
@@ -218,7 +217,7 @@ Last updated: **2026-06-26 08:34 UTC** · **221** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 794d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 828d |
 
-_147 live, 65 unverified_
+_147 live, 64 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _9 hidden as first_seen >180d. Full set in jobs.db._
