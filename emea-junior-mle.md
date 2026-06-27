@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-27 08:16 UTC** · **118** active roles.
+Last updated: **2026-06-27 15:48 UTC** · **120** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -31,6 +31,7 @@ Last updated: **2026-06-27 08:16 UTC** · **118** active roles.
 | <a href="https://uk.indeed.com/cmp/Latham-&-Watkins-LLP"><strong>Latham & Watkins LLP</strong></a> | Data Scientist | Manchester, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=fbd4f92d73a794a7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Healx"><strong>Healx</strong></a> | Agentic AI Engineer (life sciences) | Cambridge, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=918f5245d2eae62f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://dk.indeed.com/cmp/Flatpay"><strong>Flatpay</strong></a> | Data Scientist | Herlev, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=d6d946f4680073a4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
+| <a href="https://it.indeed.com/cmp/Engineering-d3f236ef"><strong>Engineering</strong></a> | Junior Foundation AI Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=9c9eb4edb717e954"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Electra"><strong>ELECTRA</strong></a> | Machine Learning Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=3e13a454530556b8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://se.indeed.com/cmp/Dustin-5"><strong>Dustin</strong></a> | AI Engineer | Nacka strand, AB, SE | <a href="https://se.indeed.com/viewjob?jk=7c833a4ba4516715"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Dashlane"><strong>Dashlane</strong></a> | Machine Learning Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=e0c0fddad1ca174b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -71,6 +72,7 @@ Last updated: **2026-06-27 08:16 UTC** · **118** active roles.
 | <a href="https://pt.indeed.com/cmp/Celfocus-1"><strong>Celfocus</strong></a> | AI Engineer | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=7caeddf3407194ac"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://de.indeed.com/cmp/Billie"><strong>Billie</strong></a> | Fraud Data Scientist | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=d51cb2f70754a94f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://uk.indeed.com/cmp/Bbc"><strong>BBC</strong></a> | Snr Software Engineer - Machine Learning | Cardiff, WLS, GB | <a href="https://uk.indeed.com/viewjob?jk=56a42a0f763abf45"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
+| <a href="https://ch.indeed.com/cmp/Autoform-Engineering"><strong>AutoForm Engineering</strong></a> | Internship in Machine Learning (m/f) - 50-100% | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=463ed083e221217b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://nl.indeed.com/cmp/Abn-Amro"><strong>ABN AMRO</strong></a> | Data Scientist Transaction Banking (Amsterdam) | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=c8961522be78f72c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://dk.indeed.com/cmp/Trustpilot"><strong>Trustpilot</strong></a> | Data Scientist | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=c0143b68f8de7607"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://es.indeed.com/cmp/The-Institute-of-Photonic-Sciences-(icfo)"><strong>The Institute of Photonic Sciences (ICFO)</strong></a> | Ultracold Quantum Gases group: Project Research engineer position on quantum simulation with ultracold strontium atoms | Castelldefels, CT, ES | <a href="https://es.indeed.com/viewjob?jk=afcba203256fffae"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -120,7 +122,7 @@ Last updated: **2026-06-27 08:16 UTC** · **118** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 787d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 787d |
 
-_24 live, 90 unverified_
+_24 live, 92 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

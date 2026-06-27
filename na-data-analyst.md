@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-27 08:16 UTC** · **78** active roles.
+Last updated: **2026-06-27 15:48 UTC** · **77** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -23,7 +23,6 @@ Last updated: **2026-06-27 08:16 UTC** · **78** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - TikTok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 12d |
 | <a href="https://simplify.jobs/c/Shaw-Industries-Group"><strong>Shaw Industries Group</strong></a> | Analytics Engineer | Calhoun, GA | <a href="https://shawinc.wd1.myworkdayjobs.com/External/job/Shaw-Plant-72-900-VD-Parrot-Parkway-Dalton-GA-30721-USA/Analytics-Engineer_R-152814"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Software Engineer/Principal Software Engineer - Data Analyst | Escondido, CA · Palmdale, CA | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/Software-Engineer-Principal-Software-Engineer---Data-Analyst_R10234157"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 14d |
-| <a href="https://simplify.jobs/c/Solar-Turbines"><strong>Solar Turbines</strong></a> | Gas Compressor Data Analyst Intern | San Diego, CA | <a href="https://cat.wd5.myworkdayjobs.com/en-US/solarturbines/job/San-Diego-California/XMLNAME-2027-Internship--Gas-Compressor-Data-Analyst_R0000375786"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/Equipment-Share"><strong>EquipmentShare</strong></a> | Analytics Engineer | Columbia, MO | <a href="https://www.equipmentshare.com/careers/openings/?gh_jid=8003299"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
 | <a href="https://simplify.jobs/c/I3"><strong>Integration Innovation (i3)</strong></a> | Data Analyst | Huntsville, AL | <a href="https://careers-i3-corps.icims.com/jobs/5163/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
 | <a href="https://simplify.jobs/c/MiTek"><strong>MiTek</strong></a> | Supply Chain Data Analyst 1 | St Charles, MO | <a href="https://mii.wd5.myworkdayjobs.com/MiTek/job/StCharles-MO-USA/Supply-Chain-Data-Analyst-I_R06378"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 17d |
@@ -82,7 +81,7 @@ Last updated: **2026-06-27 08:16 UTC** · **78** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 227d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 969d |
 
-_9 live, 67 unverified_
+_9 live, 66 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
