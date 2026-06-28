@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-06-28 08:23 UTC** · **49** active roles.
+Last updated: **2026-06-28 15:48 UTC** · **48** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -36,7 +36,6 @@ Last updated: **2026-06-28 08:23 UTC** · **49** active roles.
 | <a href="https://fr.indeed.com/cmp/Inria"><strong>Inria</strong></a> | Data/AI research engineer | Palaiseau, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=c059741669cf829c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer – Event Monitor Analysis (RE1) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=a67d9cb373bfbe73"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, RL Scaling Science | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5264619008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
-| <a href="https://il.indeed.com/cmp/%D7%90%D7%9C%D7%A2%D7%93-%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA"><strong>אלעד מערכות</strong></a> | Experienced Machine Learning Engineer | פתח תקווה, M, IL | <a href="https://il.indeed.com/viewjob?jk=72f6d0fc8e407b90"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 81d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Science of Scaling | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5126127008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 115d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Research Scientist, Pre-training | Zürich, CH | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5135168008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 121d |
@@ -55,5 +54,5 @@ Last updated: **2026-06-28 08:23 UTC** · **49** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer / Scientist, Alignment Science - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 454d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 788d |
 
-_16 live, 33 unverified_
+_16 live, 32 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
