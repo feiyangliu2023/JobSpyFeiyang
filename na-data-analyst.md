@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-29 09:00 UTC** · **77** active roles.
+Last updated: **2026-06-29 16:35 UTC** · **79** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -48,6 +48,7 @@ Last updated: **2026-06-29 09:00 UTC** · **77** active roles.
 | <a href="https://simplify.jobs/c/GM-Financial"><strong>GM financial</strong></a> | Data Analyst 1 - Model Management | Detroit, MI · Fort Worth, TX | <a href="https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2194"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 54d |
 | <a href="https://simplify.jobs/c/Integra-FEC"><strong>Integra FEC</strong></a> | Data Analyst Intern | Austin, TX | <a href="https://job-boards.greenhouse.io/integrainterns/jobs/5134523008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 62d |
 | <a href="https://simplify.jobs/c/Wilson-Elser"><strong>Wilson Elser</strong></a> | Data Analyst | Chicago, IL | <a href="https://job-boards.greenhouse.io/wilsonelser/jobs/5200828008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 65d |
+| <a href="https://simplify.jobs/c/Amazon"><strong>Amazon</strong></a> | Data Analyst | Bellevue, WA | <a href="https://amazon.jobs/en/jobs/10400227/data-analyst-rcx"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 67d |
 | <a href="https://simplify.jobs/c/Gallup"><strong>Gallup</strong></a> | Data Analyst | Omaha, NE | <a href="https://job-boards.greenhouse.io/gallup/jobs/4217886009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 68d |
 | <a href="https://simplify.jobs/c/Jobs-For-Humanity"><strong>Jobs for Humanity</strong></a> | Data Analyst | Cincinnati, OH | <a href="https://jobs.smartrecruiters.com/JobsForHumanity/744000121584977"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
 | <a href="https://simplify.jobs/c/b5474c30-ac69-40c8-8387-51dcf3675b12"><strong>Hyundai Motor Company</strong></a> | Data Analyst | Irvine, CA | <a href="https://careers-americas.hyundai.com/hatci/job/Irvine-Data-Analyst-(North-American-Quality-Center-NAQC)-CA-92618/1368297900/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 77d |
@@ -74,6 +75,7 @@ Last updated: **2026-06-29 09:00 UTC** · **77** active roles.
 | <a href="https://simplify.jobs/c/Collabera"><strong>Collabera</strong></a> | Data Analyst | Salt Lake City, UT | <a href="https://jobs.smartrecruiters.com/Collabera2/83773995"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
 | <a href="https://simplify.jobs/c/Collabera"><strong>Collabera</strong></a> | Data Analyst | Chicago, IL | <a href="https://jobs.smartrecruiters.com/Collabera2/96025426"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
 | <a href="https://simplify.jobs/c/Acumen-Solutions"><strong>Acumen Solutions</strong></a> | Data Analyst | McLean, VA | <a href="https://jobs.smartrecruiters.com/AcumenSolutions/83336667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 131d |
+| <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Benefits Operation Data Analyst Project Intern | San Jose, CA | <a href="https://jobs.bytedance.com/en/position/7605524889478842677/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 136d |
 | <a href="https://simplify.jobs/c/Oracle"><strong>Oracle</strong></a> | Data Analyst Intern | Nashville, TN | <a href="https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/326682"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 137d |
 | <a href="https://simplify.jobs/c/Medpace-Inc"><strong>Medpace, Inc.</strong></a> | Business Intelligence Analyst - Data Engineering | Cincinnati, OH | <a href="https://careers.medpace.com/jobs/12564?lang=en-us&icims=1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 146d |
 | <a href="https://simplify.jobs/c/WR-Berkley"><strong>W.R. Berkley</strong></a> | Business and Data Analyst Intern | Farmington, CT | <a href="https://careers-berkley.icims.com/jobs/13507/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 147d |
@@ -81,7 +83,7 @@ Last updated: **2026-06-29 09:00 UTC** · **77** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 229d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 971d |
 
-_9 live, 66 unverified_
+_10 live, 67 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

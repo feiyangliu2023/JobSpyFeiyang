@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-29 09:00 UTC** · **206** active roles.
+Last updated: **2026-06-29 16:35 UTC** · **206** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -116,9 +116,9 @@ Last updated: **2026-06-29 09:00 UTC** · **206** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer - Data Search TikTok | San Jose, CA | <a href="https://lifeattiktok.com/search/7515277586445322503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 79d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Machine Learning Intern | Ardmore, PA | <a href="https://careers-sig.icims.com/jobs/10785/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 81d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Scientist Graduate - Global E-commerce Content Recommendation | San Jose, CA | <a href="https://lifeattiktok.com/search/7553175919393802503"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 82d |
-| <a href="https://www.humancomputerlab.com/"><strong>Human Computer Lab</strong></a> | Intern - Software/ML Engineering | San Francisco | <a href="https://jobs.ashbyhq.com/human-computer-lab/7d13ae27-1f02-4d9b-8d39-e3d9d67df705"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 85d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Data Search TikTok - BS/MS | San Jose, CA | <a href="https://lifeattiktok.com/search/7533371534829095175"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 87d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer - Global E-Commerce Content Recommendation | San Jose, CA | <a href="https://lifeattiktok.com/search/7623531261580036405"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 87d |
+| <a href="https://www.humancomputerlab.com/"><strong>Human Computer Lab</strong></a> | Intern - Software/ML Engineering | San Francisco | <a href="https://jobs.ashbyhq.com/human-computer-lab/7d13ae27-1f02-4d9b-8d39-e3d9d67df705"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 87d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer | San Jose, CA | <a href="https://lifeattiktok.com/search/7533384972704778514"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 88d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Global E-commerce Recommendation/Search | San Jose, CA | <a href="https://lifeattiktok.com/search/7550436740058581255"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 89d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Global E-commerce Recommendation/Search | Seattle, WA | <a href="https://lifeattiktok.com/search/7550790814831511815"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 89d |
