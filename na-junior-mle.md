@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-06-30 08:31 UTC** · **206** active roles.
+Last updated: **2026-06-30 16:09 UTC** · **206** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |

@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-06-30 08:31 UTC** · **79** active roles.
+Last updated: **2026-06-30 16:09 UTC** · **80** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/74725f11-3918-49f4-8f43-8260492084f7"><strong>Consumer Reports</strong></a> | Data Analyst - Consumer Product Safety | Washington, DC · Bozrah, CT · Yonkers, NY | <a href="https://job-boards.greenhouse.io/consumerreports/jobs/5176455007"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Liberty-University"><strong>Liberty University</strong></a> | Business Data Analyst 1 | Lynchburg, VA | <a href="https://liberty.wd5.myworkdayjobs.com/lu_job_board_staff/job/Hybrid/Business-Data-Analyst-I_R0010425-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Pearl-Health"><strong>Pearl Health</strong></a> | Data Analyst - ACO Operations | Boston, MA · Seattle, WA · NYC | <a href="https://jobs.ashbyhq.com/pearlhealth/77c51f6c-ba07-4566-a247-f4f06ae16d6f/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Boston, MA | <a href="https://apply.workable.com/connectprep/j/E4655645B8/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
@@ -43,6 +44,7 @@ Last updated: **2026-06-30 08:31 UTC** · **79** active roles.
 | <a href="https://simplify.jobs/c/IEM"><strong>IEM</strong></a> | Data Analyst - Switchgear | Surrey, BC, Canada | <a href="https://job-boards.greenhouse.io/industrialelectricmanufacturing/jobs/4249312009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 46d |
 | <a href="https://simplify.jobs/c/Field-AI"><strong>Field AI</strong></a> | Field Data Analyst | Irvine, CA | <a href="https://jobs.lever.co/field-ai/acfba278-5f04-4639-ae26-c85e607eebce/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 46d |
 | <a href="https://simplify.jobs/c/Medpace"><strong>Medpace</strong></a> | Clinical Business Intelligence Analyst | Cincinnati, OH | <a href="https://careers.medpace.com/jobs/12731?lang=en-us&icims=1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 47d |
+| <a href="https://stripe.com/"><strong>Stripe</strong></a> | Staff Data Analyst | US | <a href="https://stripe.com/jobs/search?gh_jid=7921649"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 48d |
 | <a href="https://simplify.jobs/c/Blue-Cross-Blue-Shield-Of-Michigan"><strong>Blue Cross Blue Shield of Michigan</strong></a> | Data Analyst 1 - Data Solution and Design | Detroit, MI | <a href="https://ejko.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/14109"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 49d |
 | <a href="https://simplify.jobs/c/Trane-Technologies"><strong>Trane Technologies</strong></a> | Collections Data Analyst Intern | Winona, MN | <a href="https://careers.tranetechnologies.com/global/en/job/JR-4222"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 53d |
 | <a href="https://simplify.jobs/c/GM-Financial"><strong>GM financial</strong></a> | Data Analyst 1 - Model Management | Detroit, MI · Fort Worth, TX | <a href="https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2194"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 55d |
@@ -53,7 +55,6 @@ Last updated: **2026-06-30 08:31 UTC** · **79** active roles.
 | <a href="https://simplify.jobs/c/Jobs-For-Humanity"><strong>Jobs for Humanity</strong></a> | Data Analyst | Cincinnati, OH | <a href="https://jobs.smartrecruiters.com/JobsForHumanity/744000121584977"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 73d |
 | <a href="https://simplify.jobs/c/b5474c30-ac69-40c8-8387-51dcf3675b12"><strong>Hyundai Motor Company</strong></a> | Data Analyst | Irvine, CA | <a href="https://careers-americas.hyundai.com/hatci/job/Irvine-Data-Analyst-(North-American-Quality-Center-NAQC)-CA-92618/1368297900/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | <a href="https://simplify.jobs/c/3ecdc79f-8fc8-40f7-937f-aa01eb195efc"><strong>BlueLabs Analytics</strong></a> | Data Analyst 1 | Washington, DC | <a href="https://job-boards.greenhouse.io/bluelabsanalyticsinc/jobs/5106857007"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
-| <a href="https://stripe.com/"><strong>Stripe</strong></a> | Staff Data Analyst | US | <a href="https://stripe.com/jobs/search?gh_jid=7801457"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 81d |
 | <a href="https://simplify.jobs/c/Shepherd"><strong>Shepherd</strong></a> | Actuarial Data Analyst | Chicago, IL · NYC | <a href="https://jobs.ashbyhq.com/shepherd/6100294f-ac13-4a9a-bf5c-8b49a8925820/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 116d |
 | <a href="https://simplify.jobs/c/KPH-Healthcare-Services"><strong>KPH Healthcare Services</strong></a> | Business Intelligence Intern | Syracuse, NY | <a href="https://kphcareers-kphhealthcareservices.icims.com/jobs/14851/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 117d |
 | <a href="https://simplify.jobs/c/Integrated-Resources"><strong>Integrated Resources</strong></a> | Data Analyst | Cambridge, MA | <a href="https://jobs.smartrecruiters.com/IntegratedResourcesINC/83331357"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 117d |
@@ -83,7 +84,7 @@ Last updated: **2026-06-30 08:31 UTC** · **79** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 230d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 972d |
 
-_10 live, 67 unverified_
+_10 live, 68 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
