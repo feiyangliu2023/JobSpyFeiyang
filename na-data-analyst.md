@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-03 10:19 UTC** · **90** active roles.
+Last updated: **2026-07-03 16:43 UTC** · **91** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -28,6 +28,7 @@ Last updated: **2026-07-03 10:19 UTC** · **90** active roles.
 | <a href="https://simplify.jobs/c/Snapon"><strong>Snap-on</strong></a> | Business Intelligence Analyst 1 | Kenosha, WI | <a href="https://careers-snapon.icims.com/jobs/20352/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 9d |
 | <a href="https://simplify.jobs/c/Manulife-Financial"><strong>Manulife Financial</strong></a> | GRO Program Data Analyst - Operations Data Analyst | Toronto, ON, Canada | <a href="https://manulife.wd3.myworkdayjobs.com/en-US/MFCJH_adminJobs/job/Toronto-Ontario/GRO-Program---Operations-Data-Analyst--Toronto-_JR26061467"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 10d |
 | <a href="https://simplify.jobs/c/Manulife-Financial"><strong>Manulife Financial</strong></a> | Data Analyst New Grad - Operations Data Analyst | Montreal, QC, Canada | <a href="https://manulife.wd3.myworkdayjobs.com/en-US/MFCJH_adminJobs/job/Montreal-Quebec/GRO-Program---Operations-Data-Analyst--Montreal-_JR26061468"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 10d |
+| <a href="https://simplify.jobs/c/Inova"><strong>Inova</strong></a> | Epic Community Connect BI Developer | Fairfax, VA | <a href="https://elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/676305"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 11d |
 | <a href="https://simplify.jobs/c/Cooper-Companies"><strong>Cooper Companies</strong></a> | Data Analyst 1 | Rochester, NY | <a href="https://hcjy.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11730"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 11d |
 | <a href="https://simplify.jobs/c/UL-Solutions"><strong>UL Solutions</strong></a> | Business Data Analyst Associate | Raleigh, NC | <a href="https://fa-eups-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ULSolutionsCareers/job/9932"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 14d |
 | <a href="https://simplify.jobs/c/b5474c30-ac69-40c8-8387-51dcf3675b12"><strong>Hyundai Motor Company</strong></a> | Data Analyst - General Assembly - MFT Data Analysis | Montgomery, AL | <a href="https://careers-americas.hyundai.com/hmma/job/Montgomery-Specialist-General-Assembly-(MFT-Data-Analysis)-AL-36101/1401402400/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 15d |
@@ -94,7 +95,7 @@ Last updated: **2026-07-03 10:19 UTC** · **90** active roles.
 | **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 309d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 975d |
 
-_14 live, 74 unverified_
+_14 live, 75 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

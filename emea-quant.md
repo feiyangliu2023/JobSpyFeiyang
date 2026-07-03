@@ -1,10 +1,11 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-07-03 10:19 UTC** · **14** active roles.
+Last updated: **2026-07-03 16:43 UTC** · **15** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://uk.indeed.com/cmp/Flowdesk"><strong>Flowdesk</strong></a> | Technology \| Quantitative Developer (Low Latency) \| London | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9852f17d28ef3150"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://fi.indeed.com/cmp/Aalto-University"><strong>Aalto University</strong></a> | Postdoctoral researcher in quantum algorithms and optimization for Life Science applications | Espoo, F19, FI | <a href="https://fi.indeed.com/viewjob?jk=3f9b89b5cebe6ebc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://fi.indeed.com/cmp/Aalto-University"><strong>Aalto University</strong></a> | Doctoral Researcher in quantum computing and algorithms for Life Science applications | Espoo, F19, FI | <a href="https://fi.indeed.com/viewjob?jk=ca53761c0dad391e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Prima"><strong>Prima</strong></a> | Quantitative Analyst (Math, Physics & Engineering degrees) | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=928a9ff3b632dffc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -20,5 +21,5 @@ Last updated: **2026-07-03 10:19 UTC** · **14** active roles.
 | <a href="https://simplify.jobs/c/Talos"><strong>Talos</strong></a> | Software Engineer - Trading Connectivity | London, UK | <a href="https://jobs.ashbyhq.com/Talos-Trading/c743ff13-4a80-4907-adf4-922a3bfbd30b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 172d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 213d |
 
-_2 live, 12 unverified_
+_2 live, 13 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
