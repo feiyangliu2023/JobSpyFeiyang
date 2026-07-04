@@ -1,10 +1,11 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-04 09:45 UTC** · **74** active roles.
+Last updated: **2026-07-04 16:18 UTC** · **74** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/SPAICE-Technology"><strong>SPAICE Technology</strong></a> | Computer Vision Engineer | London, UK | <a href="https://jobs.ashbyhq.com/spaice-tech/185e5614-1105-48c5-b434-85ff49587615/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://fr.indeed.com/cmp/Safran"><strong>Safran</strong></a> | Ingénieur(e) Algorithmes de Navigation Spatiale F-H | Éragny, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=d4b03c758ea59ea6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Ntt-Data"><strong>NTT DATA</strong></a> | Senior Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=e87c5421073288c9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://ie.indeed.com/cmp/Moonshot"><strong>Moonshot</strong></a> | AI/Machine Learning Engineer | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=5ee3d4bf58fdf6e0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -13,7 +14,6 @@ Last updated: **2026-07-04 09:45 UTC** · **74** active roles.
 | <a href="https://pl.indeed.com/cmp/Iqvia"><strong>IQVIA</strong></a> | Junior Machine Learning Engineer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=9241cc15654bfa8c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Houseful"><strong>Houseful</strong></a> | Senior Machine Learning Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=125c8b9c729ccf43"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://it.indeed.com/cmp/Hrm-4c0f6050"><strong>HRM</strong></a> | Senior Machine Learning Engineer FREELANCE | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=0e9adf37cfdbca40"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
-| <a href="https://fr.indeed.com/cmp/Cnrs"><strong>CNRS</strong></a> | Research Engineer (H/F) in Mechanics of mammalian development | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=93bfd1808f0336fe"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer, specialised in web front-end developments (RE2) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=11e08a0287dbeec0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://cz.indeed.com/cmp/Knuspr"><strong>knuspr</strong></a> | Machine Learning Engineer | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=f78693fb7d122fe2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://se.indeed.com/cmp/Truecaller"><strong>Truecaller</strong></a> | Senior Data Engineer - Recommendations | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=0bc73e6da38cf09e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |

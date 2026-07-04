@@ -1,6 +1,6 @@
 # EMEA Data Analyst Roles
 
-Last updated: **2026-07-04 09:45 UTC** · **133** active roles.
+Last updated: **2026-07-04 16:18 UTC** · **132** active roles.
 
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -17,7 +17,6 @@ Last updated: **2026-07-04 09:45 UTC** · **133** active roles.
 | <a href="https://pl.indeed.com/cmp/Procter-&-Gamble"><strong>Procter & Gamble</strong></a> | Analytics Engineer Trainee | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=2ea8166eb01bca1e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Perk-9"><strong>Perk</strong></a> | Analytics Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=80c217d65788a173"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://es.indeed.com/cmp/Perk-9"><strong>Perk</strong></a> | Analytics Engineer | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=a676b1f28a284c3d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
-| <a href="https://pt.indeed.com/cmp/Numa"><strong>Numa</strong></a> | Junior Data Analyst (m/f/d) | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=5c9b789ff775d7e8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | **Numa** | Junior Data Analyst | Remote · Lisboa, Lisboa, Lisboa, Portugal | <a href="https://remoteOK.com/remote-jobs/remote-junior-data-analyst-numa-1134429"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Nexperia-Germany-Gmbh"><strong>Nexperia Germany GmbH</strong></a> | PMO Data Analyst | Manchester, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=3d7b6a2dfbb12948"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://dk.indeed.com/cmp/Nne-5"><strong>NNE</strong></a> | Advanced Data Analyst to join our Data Engineering department at Novo Nordisk Engineering | Virum, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=5f357f93442b882f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -138,7 +137,7 @@ Last updated: **2026-07-04 09:45 UTC** · **133** active roles.
 | <a href="https://simplify.jobs/c/The-Information-Lab"><strong>The Information Lab</strong></a> | The Data School - Data Analyst/Consultant | London, UK | <a href="https://jobs.lever.co/theinformationlab/5c48a12b-6906-43d7-bd95-947b562c8701/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 120d |
 | <a href="https://simplify.jobs/c/WTW"><strong>WTW</strong></a> | 2026 Corporate Risk & Broking – Graduate Data Analyst - London | London, UK | <a href="https://eedu.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1003/job/202508589"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 150d |
 
-_3 live, 129 unverified_
+_3 live, 128 unverified_
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

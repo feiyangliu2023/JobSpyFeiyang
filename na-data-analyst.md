@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-04 09:45 UTC** · **86** active roles.
+Last updated: **2026-07-04 16:18 UTC** · **87** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Becton-Dickinson"><strong>Becton Dickinson</strong></a> | Commercial Analytics Engineer Business Decision Intelligence | Midland Park, NJ · Vernon Hills, IL · San Diego, CA | <a href="https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer-Business-Decision-Intelligence_R-549477-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 - Supply Chain | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/150075/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/169212/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Washington, DC · Remote in USA | <a href="https://apply.workable.com/connectprep/j/C0CA13664F/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -54,6 +55,7 @@ Last updated: **2026-07-04 09:45 UTC** · **86** active roles.
 | <a href="https://simplify.jobs/c/IEM"><strong>IEM</strong></a> | Data Analyst - Switchgear | Surrey, BC, Canada | <a href="https://job-boards.greenhouse.io/industrialelectricmanufacturing/jobs/4249312009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 50d |
 | <a href="https://simplify.jobs/c/Field-AI"><strong>Field AI</strong></a> | Field Data Analyst | Irvine, CA | <a href="https://jobs.lever.co/field-ai/acfba278-5f04-4639-ae26-c85e607eebce/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 50d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Staff Data Analyst | US | <a href="https://stripe.com/jobs/search?gh_jid=7921649"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 52d |
+| <a href="https://simplify.jobs/c/Eversource-Energy"><strong>Eversource Energy</strong></a> | IT Associate Data Analyst | Norwood, MA | <a href="https://eversource.wd1.myworkdayjobs.com/ExternalSite/job/Westwood-MA/IT-Associate-Data-Analyst_R-030512"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 52d |
 | <a href="https://simplify.jobs/c/Blue-Cross-Blue-Shield-Of-Michigan"><strong>Blue Cross Blue Shield of Michigan</strong></a> | Data Analyst 1 - Data Solution and Design | Detroit, MI | <a href="https://ejko.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/14109"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 53d |
 | <a href="https://simplify.jobs/c/GM-Financial"><strong>GM financial</strong></a> | Data Analyst 1 - Model Management | Detroit, MI · Fort Worth, TX | <a href="https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2194"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 59d |
 | <a href="https://simplify.jobs/c/Integra-FEC"><strong>Integra FEC</strong></a> | Data Analyst Intern | Austin, TX | <a href="https://job-boards.greenhouse.io/integrainterns/jobs/5134523008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 67d |
@@ -87,10 +89,9 @@ Last updated: **2026-07-04 09:45 UTC** · **86** active roles.
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 156d |
 | <a href="https://simplify.jobs/c/University-Of-Southern-California"><strong>University of Southern California</strong></a> | Business Data Analyst | LA | <a href="https://usc.wd5.myworkdayjobs.com/ExternalUSCCareers/job/Los-Angeles-CA/Business-Data-Analyst_REQ20170647-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 177d |
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 234d |
-| **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 310d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 976d |
 
-_14 live, 70 unverified_
+_14 live, 71 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
