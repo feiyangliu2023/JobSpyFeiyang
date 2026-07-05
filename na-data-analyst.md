@@ -1,11 +1,12 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-05 10:00 UTC** · **87** active roles.
+Last updated: **2026-07-05 16:25 UTC** · **88** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://simplify.jobs/c/Becton-Dickinson"><strong>Becton Dickinson</strong></a> | Commercial Analytics Engineer Business Decision Intelligence | Midland Park, NJ · Vernon Hills, IL · San Diego, CA | <a href="https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer-Business-Decision-Intelligence_R-549477-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://simplify.jobs/c/Becton-Dickinson"><strong>Becton Dickinson</strong></a> | Commercial Analytics Engineer - Go To Market Analytics | Midland Park, NJ · Vernon Hills, IL · San Diego, CA | <a href="https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer---Go-To-Market-Analytics_R-548948-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 - Supply Chain | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/150075/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/169212/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/ConnectPrep"><strong>ConnectPrep</strong></a> | Data Analyst Intern | Washington, DC · Remote in USA | <a href="https://apply.workable.com/connectprep/j/C0CA13664F/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -91,7 +92,7 @@ Last updated: **2026-07-05 10:00 UTC** · **87** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 235d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 977d |
 
-_14 live, 71 unverified_
+_14 live, 72 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

@@ -1,6 +1,6 @@
 # EMEA Data Analyst Roles
 
-Last updated: **2026-07-05 10:00 UTC** · **131** active roles.
+Last updated: **2026-07-05 16:25 UTC** · **128** active roles.
 
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -38,7 +38,6 @@ Last updated: **2026-07-05 10:00 UTC** · **131** active roles.
 | <a href="https://uk.indeed.com/cmp/Billing-Finance-Ltd."><strong>Billing Finance Ltd.</strong></a> | Data Analyst | Northampton, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=10e2052ada04d9db"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Air-France"><strong>Air France</strong></a> | Senior Data Analyst - Flying Blue F/H | Aéroport Paris-Roissy-Charles-de-Gaulle, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=97cf8aea58a76d86"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Air-France"><strong>Air France</strong></a> | Alternance - Apprenti Business Data Analyst : Reporting et Consolidation F/H | Villeneuve-le-Roi, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=b110efbdf186b417"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
-| <a href="https://es.indeed.comNone"><strong>—</strong></a> | Senior Analytics Engineer | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=067a85c5be2496a0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Wgsn"><strong>WGSN</strong></a> | Senior Analytics Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=6ad6c20c8925c463"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Thomson-Reuters"><strong>Thomson Reuters</strong></a> | Market Research & Data Analyst, Reuters Insights | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=0c0dcb81bf86efa7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/The-Growth-Company-1"><strong>The Growth Company</strong></a> | Data Analyst | Manchester, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9a06417b016aa871"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -117,8 +116,6 @@ Last updated: **2026-07-05 10:00 UTC** · **131** active roles.
 | <a href="https://de.indeed.com/cmp/Bestsecret-Group"><strong>BestSecret Group</strong></a> | Data Analyst Loss Prevention (All Genders) | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=4a5a1f11800a40ef"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Axpo-Group"><strong>Axpo group</strong></a> | Intern BI Engineer(f/m/d) | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=975d6bbb24d870f4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | **—** | Internship - WM Data Analyst (Zurich, 6 months) | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=34fabde624baec65"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
-| <a href="https://il.indeed.com/cmp/Horizon-Technologies"><strong>Horizon Technologies</strong></a> | Clinical Data Analyst & Systems Analyst | רמת גן, TA, IL | <a href="https://il.indeed.com/viewjob?jk=f0c565ba11eb4f64"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
-| <a href="https://nl.indeed.com/cmp/Cushman-&-Wakefield"><strong>Cushman & Wakefield</strong></a> | EIC Junior Analytics Engineer | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=49af9d1759b0efac"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://pl.indeed.com/cmp/Fresha"><strong>Fresha</strong></a> | Analytics Engineer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=042d206ba35a8f25"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 11d |
 | <a href="https://simplify.jobs/c/Schroders"><strong>Schroders</strong></a> | Client Static Data Analyst - Operations Academy | Crawley, UK | <a href="https://ekbq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/1677"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 12d |
 | <a href="https://it.indeed.com/cmp/Atlante-Srl"><strong>Atlante srl</strong></a> | Marketing Data Analyst | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=66654ecb658144cc"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 12d |
@@ -136,7 +133,7 @@ Last updated: **2026-07-05 10:00 UTC** · **131** active roles.
 | <a href="https://simplify.jobs/c/The-Information-Lab"><strong>The Information Lab</strong></a> | The Data School - Data Analyst/Consultant | London, UK | <a href="https://jobs.lever.co/theinformationlab/5c48a12b-6906-43d7-bd95-947b562c8701/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 121d |
 | <a href="https://simplify.jobs/c/WTW"><strong>WTW</strong></a> | 2026 Corporate Risk & Broking – Graduate Data Analyst - London | London, UK | <a href="https://eedu.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1003/job/202508589"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 151d |
 
-_3 live, 127 unverified_
+_3 live, 124 unverified_
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

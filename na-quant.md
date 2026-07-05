@@ -1,6 +1,6 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-07-05 10:00 UTC** · **13** active roles.
+Last updated: **2026-07-05 16:25 UTC** · **13** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -13,7 +13,7 @@ Last updated: **2026-07-05 10:00 UTC** · **13** active roles.
 | **Susquehanna** | Trading System Engineering Intern | Bala Cynwyd, PA |  | <a href="https://careers.sig.com/jobs/10837?lang=en-us&mode=apply&iis=LinkedIn&jr_id=69f3d11158b23a2329da8088"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 44d |
 | <a href="https://simplify.jobs/c/ChicagoTradingCo"><strong>Chicago Trading Company</strong></a> | Associate Engineer - Quantitative Research - Trading Technology | Chicago, IL |  | <a href="https://job-boards.greenhouse.io/chicagotrading/jobs/4698402005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 45d |
 | **NVIDIA** | Quantum Research Scientist Intern | Santa Clara, CA |  | <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 47d |
-| <a href="https://www.deshaw.com/careers"><strong>D. E. Shaw & Co.</strong></a> | Quantitative Analyst and Software Developer Intern - Summer 2027 | New York | $127/hr | <a href="https://www.deshaw.com/careers/5906"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 58d |
+| <a href="https://www.deshaw.com/careers"><strong>D. E. Shaw & Co.</strong></a> | Quantitative Analyst and Software Developer Intern - Summer 2027 | New York | $127/hr | <a href="https://www.deshaw.com/careers/5906"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 59d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Trading System Engineering Intern | Ardmore, PA |  | <a href="https://careers-sig.icims.com/jobs/10837/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 73d |
 | **Point72** | Quantitative Developer Intern | New York, NY |  | <a href="https://careers.point72.com/CSJobDetail?jobName=summer-2027-quantitative-developer-internship&jobCode=CSS-0012293"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 77d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA |  | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 165d |
