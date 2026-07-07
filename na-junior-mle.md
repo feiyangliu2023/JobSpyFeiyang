@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-07 10:42 UTC** · **222** active roles.
+Last updated: **2026-07-07 17:31 UTC** · **223** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -18,7 +18,6 @@ Last updated: **2026-07-07 10:42 UTC** · **222** active roles.
 | <a href="https://simplify.jobs/c/RTX"><strong>RTX</strong></a> | Research Engineer 1 | Cambridge, MA · Arlington, VA | <a href="https://globalhr.wd5.myworkdayjobs.com/rec_rtx_ext_gateway/job/US-VA-ARLINGTON-111--1300-17Th-St-N--BBN-ARLINGTON/XMLNAME-2026-Research-Engineer-I---Arlington--VA---Cambridge--MA---Hybrid_01855555"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 5d |
 | <a href="https://simplify.jobs/c/CACI"><strong>CACI</strong></a> | Data Scientist for Analytics - Engineer/Scientist Support | Norco, CA | <a href="https://caci.wd1.myworkdayjobs.com/external/job/Norco-CA-US/Data-Scientist-for-Analytics--Engineer-Scientist-Support-_328426"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://simplify.jobs/c/Bot-Auto"><strong>Bot Auto</strong></a> | Machine Learning/Deep Learning Engineer New Grad | Houston, TX · Oakland, CA | <a href="https://job-boards.greenhouse.io/botauto/jobs/5290395008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
-| **New Flyer** | Data Scientist | Remote · Winnipeg, Winnipeg, Manitoba, Canada | <a href="https://remoteOK.com/remote-jobs/remote-data-scientist-new-flyer-1134357"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://simplify.jobs/c/Iowa-State-University"><strong>Iowa State University</strong></a> | Postdoctoral Researcher in Machine Learning and Computational Chemistry | Ames, IA | <a href="https://isu.wd1.myworkdayjobs.com/IowaStateJobs/job/Ames-IA/Postdoctoral-Researcher-in-Machine-Learning-and-Computational-Chemistry_R19556-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://simplify.jobs/c/IMC-Trading"><strong>IMC Trading</strong></a> | Graduate Machine Learning Researcher | Chicago, IL | <a href="https://job-boards.eu.greenhouse.io/imc/jobs/4907416101"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
 | <a href="https://simplify.jobs/c/IMC-Trading"><strong>IMC Trading</strong></a> | Machine Learning Research Intern | Chicago, IL | <a href="https://job-boards.eu.greenhouse.io/imc/jobs/4907430101"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 6d |
@@ -128,6 +127,8 @@ Last updated: **2026-07-07 10:42 UTC** · **222** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Foundations | San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5197337008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 75d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (RL Velocity) | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5198108008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 75d |
 | <a href="https://simplify.jobs/c/Truveta"><strong>Truveta</strong></a> | Machine Learning Postdoctoral Researcher - Healthcare AI Innovation | Seattle, WA | <a href="https://job-boards.greenhouse.io/truveta/jobs/5978375004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
+| <a href="https://simplify.jobs/c/Pinterest"><strong>Pinterest</strong></a> | PhD Machine Learning Intern - Visual - Recommender Systems | Palo Alto, CA · Seattle, WA · SF | <a href="https://www.pinterestcareers.com/jobs/?gh_jid=7255640"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
+| **Pinterest** | Machine Learning Intern, PhD | San Francisco, CA · Palo Alto, CA · Seattle, WA | <a href="https://www.pinterestcareers.com/jobs/7255640/phd-fall-machine-learning-intern-atg-visual-multimodal-and-recommender-systems/?jr_id=69e683219b6eb37e26f80c4f&gh_jid=7255640"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | **PathAI** | Machine Learning Intern, AI Product and ML Core | Boston, MA · New York, NY · Remote | <a href="https://www.pathai.com/career/job-post?gh_jid=8202342002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | **Intercontinental Exchange, Inc.** | Artificial Intelligence, Data & Machine Learning Intern | New York, NY | <a href="https://careers.ice.com/jobs/12830?lang=en-us&iis=LinkedIn&iisn=Linkedin&mode=apply&jr_id=69e67bb27820c036924d0af9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Scientist - Global E-commerce Content Recommendation | Seattle, WA | <a href="https://lifeattiktok.com/search/7553175919394638087"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 81d |
@@ -220,7 +221,7 @@ Last updated: **2026-07-07 10:42 UTC** · **222** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 805d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 839d |
 
-_135 live, 79 unverified_
+_135 live, 80 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _8 hidden as first_seen >180d. Full set in jobs.db._

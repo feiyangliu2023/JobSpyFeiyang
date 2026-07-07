@@ -1,6 +1,6 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-07 10:42 UTC** · **204** active roles.
+Last updated: **2026-07-07 17:31 UTC** · **203** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -26,7 +26,6 @@ Last updated: **2026-07-07 10:42 UTC** · **204** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Domain Scaling | San Francisco, CA · New York City, NY · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5271380008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
 | <a href="https://simplify.jobs/c/Snowflake"><strong>Snowflake</strong></a> | AI Research Scientist New Grad - Agents & Reinforcement Learning | Bellevue, WA |  | <a href="https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 20d |
 | <a href="https://simplify.jobs/c/Netflix"><strong>Netflix</strong></a> | Research Scientist 4 - Machine Learning and Inference Research - Large Language Model Post-Training | LA · Los Gatos, CA · NYC |  | <a href="https://explore.jobs.netflix.net/careers/job/790311856514"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 21d |
-| <a href="https://simplify.jobs/c/Magna"><strong>Magna</strong></a> | Infrared Imaging & Algorithms Intern | Goleta, CA |  | <a href="https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Goleta-California-US/Intern---Infrared-Imaging---Algorithms_R00247602"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 21d |
 | <a href="https://simplify.jobs/c/Chickasaw-Nation-Industries"><strong>Chickasaw Nation Industries</strong></a> | Research Engineer | Dothan, AL |  | <a href="https://cni.wd503.myworkdayjobs.com/CNI/job/Dothan-AL/Research-Engineer_R9142"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 21d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | CV/NLP/Multimodal LLM Research Scientist Graduate - Trust and Safety | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7517106896071903496"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Research Scientist - Multiple Teams | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7517105710544161032"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
@@ -206,7 +205,7 @@ Last updated: **2026-07-07 10:42 UTC** · **204** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 805d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 839d |
 
-_169 live, 31 unverified_
+_169 live, 30 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

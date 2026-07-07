@@ -1,10 +1,12 @@
 # North America Quant & Trading Roles
 
-Last updated: **2026-07-07 10:42 UTC** · **15** active roles.
+Last updated: **2026-07-07 17:31 UTC** · **17** active roles.
 
 <!-- TABLE_SLICE_NA_QUANT_START -->
 | Company | Position | Location | Salary | Posting | Age |
 |---|---|---|---|---|---|
+| **Tower Research** | Quantitative Developer Intern | Chicago, IL · New York, NY |  | <a href="https://tower-research.com/open-positions/?gh_jid=8044334"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| **Susquehanna Investment Group** | Quantitative Strategy Developer Intern | Bala Cynwyd, PA |  | <a href="https://careers.sig.com/intern-co-op-technology/jobs/10838?lang=en-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer Intern | Philadelphia, PA |  | <a href="https://careers-sig.icims.com/jobs/11170/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Tower-Research-Capital"><strong>Tower Research Capital</strong></a> | Quantitative Developer Intern | Chicago, IL · NYC |  | <a href="https://www.tower-research.com/open-positions/?gh_jid=8044334"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Python Developer Quant Core Data | Ardmore, PA |  | <a href="https://careers-sig.icims.com/jobs/11163/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
@@ -20,7 +22,7 @@ Last updated: **2026-07-07 10:42 UTC** · **15** active roles.
 | **Point72** | Quantitative Developer Intern | New York, NY |  | <a href="https://careers.point72.com/CSJobDetail?jobName=summer-2027-quantitative-developer-internship&jobCode=CSS-0012293"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 79d |
 | <a href="https://simplify.jobs/c/Susquehanna"><strong>Susquehanna International Group (SIG)</strong></a> | Quantitative Strategy Developer New Grad | Ardmore, PA |  | <a href="https://careers-sig.icims.com/jobs/9531/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 167d |
 
-_3 live, 11 unverified_
+_3 live, 13 unverified_
 <!-- TABLE_SLICE_NA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
