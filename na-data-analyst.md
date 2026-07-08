@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-08 09:43 UTC** · **88** active roles.
+Last updated: **2026-07-08 16:56 UTC** · **87** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -40,7 +40,6 @@ Last updated: **2026-07-08 09:43 UTC** · **88** active roles.
 | <a href="https://simplify.jobs/c/Criteo"><strong>Criteo</strong></a> | Client Focused Data Analyst - Performance Marketing | Boston, MA · NYC | <a href="https://criteo.wd3.myworkdayjobs.com/Criteo_Career_Site/job/Boston/Client-Focused-Data-Analyst--Performance-Marketing_r20736"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - TikTok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 23d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Software Engineer/Principal Software Engineer - Data Analyst | Escondido, CA · Palmdale, CA | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/Software-Engineer-Principal-Software-Engineer---Data-Analyst_R10234157"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 25d |
-| <a href="https://simplify.jobs/c/Gravie"><strong>Gravie</strong></a> | Data Analyst | Minneapolis, MN | <a href="https://jobs.lever.co/gravie/8dc6e9a1-c1fc-4259-9677-d07565f4eb99/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 26d |
 | <a href="https://simplify.jobs/c/Equipment-Share"><strong>EquipmentShare</strong></a> | Analytics Engineer | Columbia, MO | <a href="https://www.equipmentshare.com/careers/openings/?gh_jid=8003299"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 26d |
 | <a href="https://simplify.jobs/c/MiTek"><strong>MiTek</strong></a> | Supply Chain Data Analyst 1 | St Charles, MO | <a href="https://mii.wd5.myworkdayjobs.com/MiTek/job/StCharles-MO-USA/Supply-Chain-Data-Analyst-I_R06378"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 28d |
 | <a href="https://simplify.jobs/c/Further"><strong>Further</strong></a> | Graduate Data Analyst | Cleveland, OH | <a href="https://job-boards.greenhouse.io/furtherearlycareer/jobs/8384017002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 28d |
@@ -91,7 +90,7 @@ Last updated: **2026-07-08 09:43 UTC** · **88** active roles.
 | **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 314d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 980d |
 
-_15 live, 70 unverified_
+_15 live, 69 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
