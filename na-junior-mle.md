@@ -1,15 +1,16 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-09 10:48 UTC** · **227** active roles.
+Last updated: **2026-07-09 17:41 UTC** · **229** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Uber-Freight"><strong>Uber Freight</strong></a> | Data Scientist Intern | Chicago, IL | <a href="https://job-boards.greenhouse.io/uberfreight/jobs/5194491008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Associate Data Scientist/Data Scientist | Palmdale, CA | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Palmdale/Associate-Data-Scientist-Data-Scientist_R10238493"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
+| <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | Applied AI Engineer, Learning Intelligence | United States | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8625462002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://simplify.jobs/c/Red-Ventures"><strong>Red Ventures</strong></a> | Associate Data Scientist - Home Client Services | Charlotte, NC | <a href="https://www.redventures.com/careers/positions/open?gh_jid=8043811"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/OLG"><strong>OLG</strong></a> | Data Scientist Co-op | Toronto, ON, Canada | <a href="https://olg.wd3.myworkdayjobs.com/Careers-Students/job/Toronto-Ontario-Canada/Data-Scientist-Student_R26_00479"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Novartis"><strong>Novartis</strong></a> | Human Genetics Data Scientist | Cambridge, MA | <a href="https://novartis.wd3.myworkdayjobs.com/Novartis_Careers/job/Cambridge-USA/Human-Genetics-Data-Scientist_REQ-10083110-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
-| <a href="https://simplify.jobs/c/Loblaw-Companies"><strong>Loblaw Companies</strong></a> | AI Engineering Co-op | Brampton, ON, Canada | <a href="https://myview.wd3.myworkdayjobs.com/paradox_careers/job/1-Presidents-Choice-Circle-Brampton-ON/AI-Engineering---Co-op-Student_R2000681500"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Koalafi"><strong>Koalafi</strong></a> | Associate Data Scientist | Richmond, VA · Arlington, VA | <a href="https://boards.greenhouse.io/koalafi/jobs/6110802004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Jump-Trading"><strong>Jump Trading</strong></a> | AI Research Engineer | Chicago, IL · NYC | <a href="https://boards.greenhouse.io/embed/job_app?token=8052313"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Jump-Trading"><strong>Jump Trading</strong></a> | AI Research Engineer - Research Automation | Chicago, IL · NYC | <a href="https://boards.greenhouse.io/embed/job_app?token=8052356"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -132,6 +133,7 @@ Last updated: **2026-07-09 10:48 UTC** · **227** active roles.
 | <a href="https://simplify.jobs/c/d-Matrix"><strong>d-Matrix</strong></a> | Applied AI Engineering Intern | Santa Clara, CA | <a href="https://jobs.ashbyhq.com/d-Matrix/93a6e6ee-3391-4437-8459-e28eb05eace7/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 71d |
 | <a href="https://simplify.jobs/c/Integra-FEC"><strong>Integra FEC</strong></a> | Data Scientist Intern - PhD | Austin, TX | <a href="https://job-boards.greenhouse.io/integra/jobs/5134592008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
 | <a href="https://simplify.jobs/c/Integra-FEC"><strong>Integra FEC</strong></a> | Data Scientist Intern | Austin, TX | <a href="https://job-boards.greenhouse.io/integrainterns/jobs/5134593008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 72d |
+| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Model Evaluations | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5198255008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 72d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer - Local Services Search | San Jose, CA | <a href="https://lifeattiktok.com/search/7534641468595489032"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 76d |
 | <a href="https://simplify.jobs/c/Tifin"><strong>TIFIN</strong></a> | AI Engineering Intern | Charlotte, NC · Boulder, CO | <a href="https://tifin.com/careers/apply/?gh_jid=5981740004"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 76d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Foundations | San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5197337008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 77d |
@@ -225,7 +227,7 @@ Last updated: **2026-07-09 10:48 UTC** · **227** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 807d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 841d |
 
-_134 live, 85 unverified_
+_137 live, 84 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _8 hidden as first_seen >180d. Full set in jobs.db._

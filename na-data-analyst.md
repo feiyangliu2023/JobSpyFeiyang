@@ -1,12 +1,12 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-09 10:48 UTC** · **93** active roles.
+Last updated: **2026-07-09 17:41 UTC** · **92** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Kearny-Bank"><strong>Kearny Bank</strong></a> | Data Analyst | Wayne, NJ | <a href="https://careers-kearnybank.icims.com/jobs/3162/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/327b145c-ab5d-44a2-9d9b-cd05859c4ce5"><strong>World Wide Professional Solutions</strong></a> | Data Analyst - Data Center | Phoenix, AZ | <a href="https://jobs.lever.co/wwprosolutions/0ffd03e5-9556-41b9-8eee-85932d0fe5b9/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
-| <a href="https://simplify.jobs/c/Wood"><strong>Wood</strong></a> | Data Analyst 1 | Parkersburg, WV | <a href="https://ehif.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/30525"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/William-And-Mary"><strong>William & Mary</strong></a> | Data Analyst | Williamsburg, VA · Newport News, VA | <a href="https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---VIMS-Gloucester/Data-Analyst_JR101823"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Walmart"><strong>Walmart</strong></a> | Principal Data Analyst - Data Analyst | Bentonville, AR | <a href="https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Trust-Building-AR-Bentonville-Home-Office/XMLNAME--USA--Principal--Data-Analyst_R-2565747-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Masco"><strong>Masco</strong></a> | Data Analyst - Procurement | Livonia, MI | <a href="https://masco.wd1.myworkdayjobs.com/Masco/job/US---Michigan---Livonia/Data-Analyst--Procurement_REQ53585"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -49,7 +49,6 @@ Last updated: **2026-07-09 10:48 UTC** · **93** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Intern - TikTok Shop AMS Data Science | Seattle, WA | <a href="https://lifeattiktok.com/search/7532267134924867847"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 24d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Software Engineer/Principal Software Engineer - Data Analyst | Escondido, CA · Palmdale, CA | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/Software-Engineer-Principal-Software-Engineer---Data-Analyst_R10234157"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 26d |
 | <a href="https://simplify.jobs/c/Equipment-Share"><strong>EquipmentShare</strong></a> | Analytics Engineer | Columbia, MO | <a href="https://www.equipmentshare.com/careers/openings/?gh_jid=8003299"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
-| <a href="https://simplify.jobs/c/MiTek"><strong>MiTek</strong></a> | Supply Chain Data Analyst 1 | St Charles, MO | <a href="https://mii.wd5.myworkdayjobs.com/MiTek/job/StCharles-MO-USA/Supply-Chain-Data-Analyst-I_R06378"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 29d |
 | <a href="https://simplify.jobs/c/Further"><strong>Further</strong></a> | Graduate Data Analyst | Cleveland, OH | <a href="https://job-boards.greenhouse.io/furtherearlycareer/jobs/8384017002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 29d |
 | <a href="https://simplify.jobs/c/Eurofins"><strong>Eurofins</strong></a> | Business Intelligence Intern | Lancaster, PA | <a href="https://jobs.smartrecruiters.com/Eurofins/744000131132249"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 30d |
 | <a href="https://simplify.jobs/c/Gotion"><strong>Gotion</strong></a> | Data Analyst | Fremont, CA | <a href="https://job-boards.greenhouse.io/gotion/jobs/8282912002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 31d |
@@ -97,7 +96,7 @@ Last updated: **2026-07-09 10:48 UTC** · **93** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 239d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 981d |
 
-_15 live, 76 unverified_
+_15 live, 75 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
