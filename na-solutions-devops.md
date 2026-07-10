@@ -1,13 +1,11 @@
 # North America Solutions / Customer / DevOps Roles
 
-Last updated: **2026-07-10 10:42 UTC** · **45** active roles.
+Last updated: **2026-07-10 17:14 UTC** · **42** active roles.
 
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer Apprentice | Salt Lake City, UT | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/Field-Engineer---Apprentice_R4043354-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer Apprentice | Chattanooga, TN | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/Field-Engineer-Apprentice_R4043060-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
-| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer Apprentice | Chicago, IL | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/Field-Engineer-Apprentice_R4043150-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer Apprentice | Jackson Township, NJ | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Remote/Field-Engineer-Apprentice_R4043345-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | **Intracom Telecom** | Wireless Systems Technical Support Engineer | Remote · Florida, Florida, United States | <a href="https://remoteOK.com/remote-jobs/remote-wireless-systems-technical-support-engineer-intracom-telecom-1134530"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/Sitreps"><strong>Sitreps</strong></a> | Implementation Engineer | Arlington, VA | <a href="https://job-boards.greenhouse.io/sitrepsllc/jobs/4093707009"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
@@ -19,7 +17,6 @@ Last updated: **2026-07-10 10:42 UTC** · **45** active roles.
 | <a href="https://simplify.jobs/c/AG-Technologies"><strong>AG Technologies</strong></a> | DevOps Java OBIEE Salesforce Training and Placement | Dallas, TX | <a href="https://jobs.smartrecruiters.com/AGTechnologies1/104662317"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 18d |
 | <a href="https://simplify.jobs/c/Primetals-Technologies"><strong>Primetals Technologies</strong></a> | Project Support Engineer 1 | Orlando, FL | <a href="https://mhicareers.com/job/Orlando-Project-Support-Engineer-I-FL-32809/1406621533/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 21d |
 | <a href="https://simplify.jobs/c/Snapon"><strong>Snap-on</strong></a> | Support Engineer | Kenosha, WI | <a href="https://careers-snapon.icims.com/jobs/20333/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
-| <a href="https://simplify.jobs/c/GE-Healthcare"><strong>GE Healthcare</strong></a> | Field Engineer 1 | El Paso, TX | <a href="https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/El-Paso/Field-Engineer-1_R4042436-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 22d |
 | <a href="https://simplify.jobs/c/Illinois-Tool-Works"><strong>Illinois Tool Works</strong></a> | Product Support Engineer | Norwood, MA | <a href="https://careers.itw.com/global/en/job/JR7595"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 27d |
 | <a href="https://www.kbr.com"><strong>KBR</strong></a> | Junior Cloud DevOps Engineer | Sioux Falls, SD | <a href="https://kbr.wd5.myworkdayjobs.com/en-US/kbr_careers/job/Sioux-Falls-South-Dakota/Junior-Cloud-DevOps-Engineer_R2124667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 36d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineering, Ads Solutions | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/9f179118-5df6-4ccb-b8d1-cfb0642fba37/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
@@ -51,5 +48,5 @@ Last updated: **2026-07-10 10:42 UTC** · **45** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Solutions Engineer, Pre-Sales | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/98a36c10-3497-4955-9cc0-a6f211e4dc1b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 326d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Solutions Engineer, Enterprise | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4554440005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 444d |
 
-_25 live, 20 unverified_
+_25 live, 17 unverified_
 <!-- TABLE_SLICE_NA_SOLUTIONS_DEVOPS_END -->

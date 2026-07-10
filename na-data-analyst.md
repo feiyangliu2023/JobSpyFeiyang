@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-10 10:42 UTC** · **94** active roles.
+Last updated: **2026-07-10 17:14 UTC** · **95** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -11,6 +11,7 @@ Last updated: **2026-07-10 10:42 UTC** · **94** active roles.
 | <a href="https://simplify.jobs/c/327b145c-ab5d-44a2-9d9b-cd05859c4ce5"><strong>World Wide Professional Solutions</strong></a> | Data Analyst - Data Center | Phoenix, AZ | <a href="https://jobs.lever.co/wwprosolutions/0ffd03e5-9556-41b9-8eee-85932d0fe5b9/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/William-And-Mary"><strong>William & Mary</strong></a> | Data Analyst | Williamsburg, VA · Newport News, VA | <a href="https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---VIMS-Gloucester/Data-Analyst_JR101823"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Walmart"><strong>Walmart</strong></a> | Principal Data Analyst - Data Analyst | Bentonville, AR | <a href="https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Trust-Building-AR-Bentonville-Home-Office/XMLNAME--USA--Principal--Data-Analyst_R-2565747-2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
+| **TELUS Digital** | Online Data Analyst Canada | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-2091047"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Masco"><strong>Masco</strong></a> | Data Analyst - Procurement | Livonia, MI | <a href="https://masco.wd1.myworkdayjobs.com/Masco/job/US---Michigan---Livonia/Data-Analyst--Procurement_REQ53585"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/ITT"><strong>ITT</strong></a> | Supply Chain Data Analyst Co-op | Seneca Falls, NY | <a href="https://careersenus-itt-inc.icims.com/jobs/15908/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Genuine-Parts-Company"><strong>Genuine Parts Company</strong></a> | Product Information Management Data Analyst | Birmingham, AL | <a href="https://genpt.wd1.myworkdayjobs.com/Careers/job/Birmingham-AL-USA/PIM-Data-Analyst_R26_0000019236"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -98,7 +99,7 @@ Last updated: **2026-07-10 10:42 UTC** · **94** active roles.
 | **Lyft** | Data Analyst Intern | New York, NY | <a href="https://app.careerpuck.com/job-board/lyft/job/8218030002/"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 240d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 982d |
 
-_15 live, 77 unverified_
+_15 live, 78 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

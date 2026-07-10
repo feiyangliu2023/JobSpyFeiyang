@@ -1,10 +1,12 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-10 10:42 UTC** · **53** active roles.
+Last updated: **2026-07-10 17:14 UTC** · **52** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://de.indeed.com/cmp/Wolt"><strong>wolt</strong></a> | (Senior) Applied Scientist, Search | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=4f3d5d55d9e259a8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://es.indeed.com/cmp/News-Corp-1"><strong>News Corp</strong></a> | Machine Learning Engineer, Personalization | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=9368636c218f6ea7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/University-of-Salford"><strong>University of Salford</strong></a> | Research Scientist in Microsystems and Nanotechnology | Salford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=95860bc7b361d22a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://nl.indeed.com/cmp/Eneco-5"><strong>Eneco</strong></a> | Machine Learning Engineer - Energy Management | Rotterdam, ZH, NL | <a href="https://nl.indeed.com/viewjob?jk=b73ebe3810b7f5d7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://uk.indeed.com/cmp/Checkout.com"><strong>Checkout.com</strong></a> | Senior Machine Learning Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=519d7d14e96c30df"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -36,9 +38,6 @@ Last updated: **2026-07-10 10:42 UTC** · **53** active roles.
 | <a href="https://se.indeed.com/cmp/Orbdb-Labs-Ab"><strong>OrbDB Labs AB</strong></a> | Machine Learning Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=914127596c9f148c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://simplify.jobs/c/SPAICE-Technology"><strong>SPAICE Technology</strong></a> | Computer Vision Engineer | London, UK | <a href="https://jobs.ashbyhq.com/spaice-tech/185e5614-1105-48c5-b434-85ff49587615/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://it.indeed.com/cmp/Ntt-Data"><strong>NTT DATA</strong></a> | Senior Machine Learning Engineer | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=e87c5421073288c9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
-| <a href="https://ie.indeed.com/cmp/Moonshot"><strong>Moonshot</strong></a> | AI/Machine Learning Engineer | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=5ee3d4bf58fdf6e0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
-| <a href="https://it.indeed.com/cmp/Hrm-4c0f6050"><strong>HRM</strong></a> | Senior Machine Learning Engineer FREELANCE | Milano, LOM, IT | <a href="https://it.indeed.com/viewjob?jk=0e9adf37cfdbca40"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
-| <a href="https://es.indeed.com/cmp/Barcelona-Supercomputing-Center-(bsc)"><strong>Barcelona Supercomputing Center (BSC)</strong></a> | Research Engineer, specialised in web front-end developments (RE2) | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=11e08a0287dbeec0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Platform | London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4711544005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 8d |
 | <a href="https://simplify.jobs/c/Hiverge"><strong>Hiverge</strong></a> | Research Engineer Intern | Cambridge, UK | <a href="https://jobs.ashbyhq.com/hiverge/ea6edea4-5216-4cdc-b368-909ba91c78a3/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 16d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, RL Scaling Science | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5264619008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 18d |
@@ -59,5 +58,5 @@ Last updated: **2026-07-10 10:42 UTC** · **53** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | [Expression of Interest] Research Engineer / Scientist, Alignment - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 466d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 800d |
 
-_15 live, 38 unverified_
+_15 live, 37 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->

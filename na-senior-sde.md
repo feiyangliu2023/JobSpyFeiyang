@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-07-10 10:42 UTC** · **54** active roles.
+Last updated: **2026-07-10 17:14 UTC** · **52** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -9,7 +9,6 @@ Last updated: **2026-07-10 10:42 UTC** · **54** active roles.
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Principal Software Engineer, Agent Harness Bridge | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/86450337-b12a-48c1-836e-cc0c5766eb8e/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Principal Software Engineer, Codex Cyber | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/6c552323-f0bd-4756-a5fb-db2cda70173f/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer, Identity | San Francisco, CA; New York, NY; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4711898005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 2d |
-| <a href="https://simplify.jobs/c/Fifth-Third-Bank"><strong>Fifth Third Bank</strong></a> | Senior Backend Java Developer | Cincinnati, OH | <a href="https://fifththird.wd5.myworkdayjobs.com/en-US/53careers/job/Cincinnati-OH/Senior-Backend-Java-Developer_R70066-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Labs: Applied AI | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5304425008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 2d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Engineer/Principal Engineer Mechanical | Hill AFB, UT | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/Sentinel---Engineer-Principal-Engineer-Mechanical-18743_R10238355"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Engineer Software/Principal Engineer Software - Embedded and Real Time | Palmdale, CA · San Diego, CA · El Segundo, CA | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/Engineer-Software-Principal-Engineer-Software---Embedded-and-Real-Time_R10238857"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
@@ -30,7 +29,6 @@ Last updated: **2026-07-10 10:42 UTC** · **54** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff + Senior Software Engineer, Inference | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5245851008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 32d |
 | <a href="https://simplify.jobs/c/STR"><strong>STR</strong></a> | Senior Software Engineer | Atlanta, GA | <a href="https://job-boards.greenhouse.io/systemstechnologyresearch/jobs/4686234006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 37d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Staff Software Engineer, Identity Infrastructure Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/72a58872-70e2-4340-a259-e9bea3596883/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 38d |
-| <a href="https://www.confluent.io/"><strong>Confluent</strong></a> | Staff Software Engineer I | Austin, Texas | <a href="https://jobs.ashbyhq.com/confluent/b070fb23-7041-4336-bee9-b8f31204dac4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 49d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Software Engineer, Full-stack | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5174743008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 93d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer, Public Sector | San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4674911005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 101d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Public Sector | San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4674913005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 101d |
@@ -60,5 +58,5 @@ Last updated: **2026-07-10 10:42 UTC** · **54** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Accessibility | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4673416008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 430d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 512d |
 
-_48 live, 6 unverified_
+_47 live, 5 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->

@@ -1,10 +1,12 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-07-10 10:42 UTC** · **12** active roles.
+Last updated: **2026-07-10 17:14 UTC** · **14** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://uk.indeed.com/cmp/Talan"><strong>Talan</strong></a> | Electronic Trading Application Support Engineer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=45d4ae9e1187c4b2"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://nl.indeed.com/cmp/Levy-Professionals-1"><strong>Levy Professionals</strong></a> | Quants Developer | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=3bb4d52ad83b6dc4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://ie.indeed.com/cmp/Kohlberg-Kravis-Roberts-&-Co."><strong>Kohlberg Kravis Roberts & Co.</strong></a> | Quantitative Data Engineer New | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=e376a226da73e7a3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://at.indeed.com/cmp/Iqam-Invest"><strong>IQAM Invest</strong></a> | Quant Developer & Data Platform Engineer (m/w/d) | Wien, W, AT | <a href="https://at.indeed.com/viewjob?jk=df1234ff01603cb6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://nl.indeed.com/cmp/Blocktech"><strong>BlockTech</strong></a> | Quantitative Developer | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=335c9f6d24fb45a6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -18,5 +20,5 @@ Last updated: **2026-07-10 10:42 UTC** · **12** active roles.
 | <a href="https://simplify.jobs/c/Talos"><strong>Talos</strong></a> | Software Engineer - Trading Connectivity | London, UK | <a href="https://jobs.ashbyhq.com/Talos-Trading/c743ff13-4a80-4907-adf4-922a3bfbd30b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 179d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 220d |
 
-_2 live, 10 unverified_
+_2 live, 12 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
