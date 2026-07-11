@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-11 09:03 UTC** · **53** active roles.
+Last updated: **2026-07-11 16:10 UTC** · **53** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |

@@ -1,6 +1,6 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-11 09:03 UTC** · **126** active roles.
+Last updated: **2026-07-11 16:10 UTC** · **126** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -57,7 +57,6 @@ Last updated: **2026-07-11 09:03 UTC** · **126** active roles.
 | <a href="https://es.indeed.com/cmp/Onthegosystems"><strong>OnTheGoSystems</strong></a> | AI Engineer - Ruby on Rails | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=14a1143d136141a8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://pt.indeed.com/cmp/Onthegosystems"><strong>OnTheGoSystems</strong></a> | AI Engineer - Ruby on Rails | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=f1d8a2905031170a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://pl.indeed.com/cmp/Onthegosystems"><strong>OnTheGoSystems</strong></a> | AI Engineer - Ruby on Rails | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=4c46236faecff5c0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
-| <a href="https://nl.indeed.com/cmp/Masorange"><strong>MasOrange</strong></a> | AI Engineer | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=e09681db85cd3e03"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://es.indeed.com/cmp/Labhouse"><strong>LabHouse</strong></a> | AI Engineer | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=ac36545ac55bbbd6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://ch.indeed.com/cmp/Julius-Baer"><strong>JULIUS BAER</strong></a> | Working Student – Junior Machine Learning Engineer 60 - 100% (f/m/d) | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=bf212d701d9e1153"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://fr.indeed.com/cmp/Inria"><strong>Inria</strong></a> | Research Engineer or Post Doc/ EICACS2 project | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=f6ae0ab06e44e427"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -126,12 +125,13 @@ Last updated: **2026-07-11 09:03 UTC** · **126** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (Reinforcement Learning) | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5115935008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 150d |
 | <a href="https://simplify.jobs/c/Shift-Technology"><strong>Shift</strong></a> | Graduate Data Scientist | London, UK | <a href="https://job-boards.greenhouse.io/shifttechnology/jobs/5910904003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 152d |
 | <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | AI Engineer Intern - BCG X | London, UK | <a href="https://careers.bcg.com/global/en/job/56635"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 168d |
+| <a href="https://simplify.jobs/c/Boston-Consulting-Group"><strong>Boston Consulting Group</strong></a> | Data Scientist Intern | London, UK | <a href="https://careers.bcg.com/global/en/job/56634"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 168d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Pretraining Scaling - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4938436008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 284d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | [Expression of Interest] Research Engineer / Scientist, Alignment - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 467d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 801d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 801d |
 
-_21 live, 104 unverified_
+_22 live, 103 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-11 09:03 UTC** · **86** active roles.
+Last updated: **2026-07-11 16:10 UTC** · **87** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -24,6 +24,7 @@ Last updated: **2026-07-11 09:03 UTC** · **86** active roles.
 | <a href="https://simplify.jobs/c/Metergy-Solutions"><strong>Metergy Solutions</strong></a> | Meter Data Analyst | Toronto, ON, Canada | <a href="https://jobs.lever.co/metergysolutions/c9608025-557a-4ed7-a612-a69cd1db3ab6/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://simplify.jobs/c/Capital-One"><strong>Capital One</strong></a> | Data Analyst Associate | McLean, VA · Richmond, VA | <a href="https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Analyst-Associate---2027_R244316-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://simplify.jobs/c/Becton-Dickinson"><strong>Becton Dickinson</strong></a> | Commercial Analytics Engineer Business Decision Intelligence | Midland Park, NJ · Vernon Hills, IL · San Diego, CA | <a href="https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer-Business-Decision-Intelligence_R-549477-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
+| <a href="https://simplify.jobs/c/Becton-Dickinson"><strong>Becton Dickinson</strong></a> | Commercial Analytics Engineer - Go To Market Analytics | Midland Park, NJ · Vernon Hills, IL · San Diego, CA | <a href="https://bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA/job/USA-NJ---Franklin-Lakes/Commercial-Analytics-Engineer---Go-To-Market-Analytics_R-548948-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/Mass-General-Brigham"><strong>Mass General Brigham</strong></a> | Clinical Research Coordinator Data Analyst | Boston, MA | <a href="https://massgeneralbrigham.wd1.myworkdayjobs.com/mgbexternal/job/Boston-MA/Clinical-Research-Coordinator-Data-Analyst_RQ4070230"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 - Supply Chain | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/150075/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
 | <a href="https://simplify.jobs/c/Emory-Healthcare"><strong>Emory Healthcare</strong></a> | Data Analyst 2 | Atlanta, GA | <a href="https://non-clinical-emory.icims.com/jobs/169212/job?hub=14&mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 9d |
@@ -90,7 +91,7 @@ Last updated: **2026-07-11 09:03 UTC** · **86** active roles.
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 163d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 983d |
 
-_12 live, 72 unverified_
+_12 live, 73 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
