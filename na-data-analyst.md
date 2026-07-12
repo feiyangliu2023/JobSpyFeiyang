@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-12 09:17 UTC** · **87** active roles.
+Last updated: **2026-07-12 16:13 UTC** · **89** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -64,6 +64,7 @@ Last updated: **2026-07-12 09:17 UTC** · **87** active roles.
 | <a href="https://simplify.jobs/c/Wilson-Elser"><strong>Wilson Elser</strong></a> | Data Analyst | Chicago, IL | <a href="https://job-boards.greenhouse.io/wilsonelser/jobs/5200828008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 78d |
 | <a href="https://simplify.jobs/c/Jobs-For-Humanity"><strong>Jobs for Humanity</strong></a> | Data Analyst | Cincinnati, OH | <a href="https://jobs.smartrecruiters.com/JobsForHumanity/744000121584977"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 85d |
 | <a href="https://simplify.jobs/c/b5474c30-ac69-40c8-8387-51dcf3675b12"><strong>Hyundai Motor Company</strong></a> | Data Analyst | Irvine, CA | <a href="https://careers-americas.hyundai.com/hatci/job/Irvine-Data-Analyst-(North-American-Quality-Center-NAQC)-CA-92618/1368297900/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 90d |
+| <a href="https://simplify.jobs/c/University-Of-Rochester"><strong>University of Rochester</strong></a> | Data Analyst 1 - Drug Diversion Analyst | Rochester, NY | <a href="https://rochester.wd5.myworkdayjobs.com/UR_Staff/job/Strong-Memorial-Hospital/Data-Analyst-I---Pharmacy_R269792-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 109d |
 | <a href="https://simplify.jobs/c/KPH-Healthcare-Services"><strong>KPH Healthcare Services</strong></a> | Business Intelligence Intern | Syracuse, NY | <a href="https://kphcareers-kphhealthcareservices.icims.com/jobs/14851/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
 | <a href="https://simplify.jobs/c/Integrated-Resources"><strong>Integrated Resources</strong></a> | Data Analyst | Cambridge, MA | <a href="https://jobs.smartrecruiters.com/IntegratedResourcesINC/83331357"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
 | <a href="https://simplify.jobs/c/Collabera"><strong>Collabera</strong></a> | Data Analyst | Eagan, MN | <a href="https://jobs.smartrecruiters.com/Collabera2/93172410"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 129d |
@@ -89,9 +90,10 @@ Last updated: **2026-07-12 09:17 UTC** · **87** active roles.
 | <a href="https://simplify.jobs/c/Medpace-Inc"><strong>Medpace, Inc.</strong></a> | Business Intelligence Analyst - Data Engineering | Cincinnati, OH | <a href="https://careers.medpace.com/jobs/12564?lang=en-us&icims=1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 159d |
 | <a href="https://simplify.jobs/c/WR-Berkley"><strong>W.R. Berkley</strong></a> | Business and Data Analyst Intern | Farmington, CT | <a href="https://careers-berkley.icims.com/jobs/13507/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 160d |
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 164d |
+| **Amazon** | Business Intelligence Engineer Co-Op | Seattle, WA | <a href="https://www.amazon.jobs/en/jobs/3066646/business-intelligence-engineer-co-op-2026-us"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 318d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 984d |
 
-_12 live, 73 unverified_
+_12 live, 75 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

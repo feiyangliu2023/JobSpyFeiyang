@@ -1,11 +1,12 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-12 09:17 UTC** · **126** active roles.
+Last updated: **2026-07-12 16:13 UTC** · **127** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://pl.indeed.com/cmp/Moderna"><strong>Moderna</strong></a> | Power Platform & AI Engineer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=9af9aafbf7183596"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://nl.indeed.comNone"><strong>—</strong></a> | AI & Machine Learning Engineer | Eindhoven, NB, NL | <a href="https://nl.indeed.com/viewjob?jk=0985998cd35a3ac1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://fr.indeed.com/cmp/Tilencia"><strong>Tilencia</strong></a> | ML Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=fd79bdd608793816"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/The-Football-Association"><strong>The Football Association</strong></a> | ML Engineer | Wembley Stadium, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=fbf9d1e5b9d6f766"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://fr.indeed.com/cmp/Tf1"><strong>TF1</strong></a> | ML Engineer B2B - H/F | Boulogne-Billancourt, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=2fe8d5f6ee7e32f3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -131,7 +132,7 @@ Last updated: **2026-07-12 09:17 UTC** · **126** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 802d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 802d |
 
-_22 live, 103 unverified_
+_22 live, 104 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

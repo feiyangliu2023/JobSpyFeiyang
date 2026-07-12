@@ -1,11 +1,13 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-12 09:17 UTC** · **53** active roles.
+Last updated: **2026-07-12 16:13 UTC** · **55** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://fi.indeed.com/cmp/Wolt"><strong>wolt</strong></a> | (Senior) Applied Scientist, Search | Helsinki, F19, FI | <a href="https://fi.indeed.com/viewjob?jk=c60f0ac2ad1ecb06"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://il.indeed.com/cmp/Mobileye"><strong>Mobileye</strong></a> | Algorithm & Software Engineer | ירושלים, JM, IL | <a href="https://il.indeed.com/viewjob?jk=b0cb77fd5cefa693"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://nl.indeed.comNone"><strong>—</strong></a> | AI & Machine Learning Engineer | Eindhoven, NB, NL | <a href="https://nl.indeed.com/viewjob?jk=0985998cd35a3ac1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://fr.indeed.com/cmp/Safran"><strong>Safran</strong></a> | Ingénieur(e) Algorithmes de Navigation Aéronautique pour Drone F-H | Éragny, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=f378af1fbedaa65c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://de.indeed.com/cmp/Wolt"><strong>wolt</strong></a> | (Senior) Applied Scientist, Search | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=4f3d5d55d9e259a8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://es.indeed.com/cmp/News-Corp-1"><strong>News Corp</strong></a> | Machine Learning Engineer, Personalization | Barcelona, CT, ES | <a href="https://es.indeed.com/viewjob?jk=9368636c218f6ea7"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -59,5 +61,5 @@ Last updated: **2026-07-12 09:17 UTC** · **53** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | [Expression of Interest] Research Engineer / Scientist, Alignment - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 468d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 802d |
 
-_15 live, 38 unverified_
+_15 live, 40 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
