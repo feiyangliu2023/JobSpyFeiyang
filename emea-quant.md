@@ -1,11 +1,11 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-07-14 09:21 UTC** · **12** active roles.
+Last updated: **2026-07-14 16:31 UTC** · **12** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://uk.indeed.com/cmp/Isam-Securities"><strong>iSAM Securities</strong></a> | Helix Junior Quantitative Developer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=feb3a78c8c42c717"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://es.indeed.com/cmp/Six-Group-Ag"><strong>SIX Group AG</strong></a> | IT & Quantitative Risk Engineering Analyst | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=e51ace8a065e3ada"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://nl.indeed.com/cmp/Tu-Delft"><strong>TU Delft</strong></a> | PhD Position Electrical Engineering: Cryo-CMOS Circuit Design for Temperature Sensors in Quantum | Delft, ZH, NL | <a href="https://nl.indeed.com/viewjob?jk=d1b3aedde9e4ebe8"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://ch.indeed.com/cmp/G--20-Group"><strong>G-20 Group</strong></a> | Prediction Markets Quantitative Engineer | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=d19344c552afe528"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://ie.indeed.com/cmp/Kohlberg-Kravis-Roberts-&-Co."><strong>Kohlberg Kravis Roberts & Co.</strong></a> | Quantitative Data Engineer New | Dublin, D, IE | <a href="https://ie.indeed.com/viewjob?jk=e376a226da73e7a3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
