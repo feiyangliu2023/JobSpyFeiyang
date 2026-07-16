@@ -1,6 +1,6 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-16 09:28 UTC** · **88** active roles.
+Last updated: **2026-07-16 16:32 UTC** · **88** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
@@ -20,7 +20,7 @@ Last updated: **2026-07-16 09:28 UTC** · **88** active roles.
 | <a href="https://simplify.jobs/c/Mass-General-Brigham"><strong>Mass General Brigham</strong></a> | Data Innovation Research Data Analyst | Boston, MA | <a href="https://massgeneralbrigham.wd1.myworkdayjobs.com/mgbexternal/job/Boston-MA/Data-Innovation-Research-Data-Analyst-per-diem_RQ4072147"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://simplify.jobs/c/Brevium"><strong>Brevium</strong></a> | Data Analyst Assistant | American Fork, UT | <a href="https://job-boards.greenhouse.io/brevium/jobs/4326783006"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://simplify.jobs/c/327b145c-ab5d-44a2-9d9b-cd05859c4ce5"><strong>World Wide Professional Solutions</strong></a> | Data Analyst - Data Center | Phoenix, AZ | <a href="https://jobs.lever.co/wwprosolutions/0ffd03e5-9556-41b9-8eee-85932d0fe5b9/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
-| **TELUS Digital** | Online Data Analyst Canada | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-2091047"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
+| **TELUS Digital** | Online Data Analyst Canada (French Language) (C) | Remote · Canada | <a href="https://remotive.com/remote-jobs/all-others/online-data-analyst-canada-french-language-c-2091047"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://simplify.jobs/c/Masco"><strong>Masco</strong></a> | Data Analyst - Procurement | Livonia, MI | <a href="https://masco.wd1.myworkdayjobs.com/Masco/job/US---Michigan---Livonia/Data-Analyst--Procurement_REQ53585"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://simplify.jobs/c/Genuine-Parts-Company"><strong>Genuine Parts Company</strong></a> | Product Information Management Data Analyst | Birmingham, AL | <a href="https://genpt.wd1.myworkdayjobs.com/Careers/job/Birmingham-AL-USA/PIM-Data-Analyst_R26_0000019236"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
 | <a href="https://simplify.jobs/c/Apex-Service-Partners"><strong>Apex Service Partners</strong></a> | Business Intelligence Analyst - Data & Analytics | Tampa, FL | <a href="https://careers-apexservicepartners.icims.com/jobs/22843/job?mobile=true&needsRedirect=false"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |

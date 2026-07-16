@@ -1,6 +1,6 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-16 09:28 UTC** · **224** active roles.
+Last updated: **2026-07-16 16:32 UTC** · **224** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
@@ -122,6 +122,7 @@ Last updated: **2026-07-16 09:28 UTC** · **224** active roles.
 | <a href="https://simplify.jobs/c/ShyftLabs"><strong>ShyftLabs</strong></a> | Associate AI Engineer | Toronto, ON, Canada | <a href="https://jobs.lever.co/shyftlabs/1a665cf5-1f3f-4610-be00-b46ffa13a675/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 64d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Data Scientist, Core Experimentation | Seattle, United States | <a href="https://jobs.ashbyhq.com/openai/e90a44a7-fc2e-49bf-aec4-d43b9e3d8e92/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 64d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | United States | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 64d |
+| <a href="https://simplify.jobs/c/SOTI"><strong>SOTI</strong></a> | Data Scientist Intern | Mississauga, ON, Canada | <a href="https://soti.wd3.myworkdayjobs.com/SOTI-Next-Gen/job/Mississauga-Canada--Meadowvale-Office-HQ/Data-Scientist--Intern--September-2026-12-Months-_R10065"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 65d |
 | <a href="https://simplify.jobs/c/Neuralink"><strong>Neuralink</strong></a> | Machine Learning Engineer Intern | Fremont, CA | <a href="https://boards.greenhouse.io/neuralink/jobs/6594261003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 65d |
 | **BMO** | Machine Learning Intern | Chicago, IL | <a href="https://bmo.wd3.myworkdayjobs.com/Privileged/job/Chicago-IL-USA/Machine-Learning-Intern--Fall-2026--Internship----4-months_R260014372"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 65d |
 | <a href="https://simplify.jobs/c/Eluvio"><strong>Eluvio</strong></a> | AI Machine Learning Intern - Gen AI - Multimodal | Berkeley, CA | <a href="https://apply.workable.com/eluvio/j/F70F3473E7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 68d |
@@ -177,7 +178,6 @@ Last updated: **2026-07-16 09:28 UTC** · **224** active roles.
 | <a href="https://simplify.jobs/c/Bree"><strong>Bree</strong></a> | Software Engineer – Machine Learning Intern/Co-op | Toronto, ON, Canada | <a href="http://jobs.ashbyhq.com/bree/5e79b2fd-164c-4e72-91ef-1b8fd1c5518a/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 149d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Research Engineer | Toronto, Canada | <a href="https://jobs.ashbyhq.com/cohere/1a5925d0-41bd-4549-9b78-f427a2dda922/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 150d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Fellow - Human Frontier Collective (Canada) | Canada | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4661650005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 154d |
-| <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Fellow - Human Frontier Collective (US) | United States | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4660340005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 154d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Machine Learning Engineer, Distributed Data Systems - Robotics | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/4a13c764-18c3-4076-ac87-29e05491be07/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 160d |
 | <a href="https://simplify.jobs/c/Expedia-Group"><strong>Expedia Group</strong></a> | Machine Learning Science Graduate - PhD - 2026 | Seattle, WA · San Jose, CA | <a href="https://expedia.wd108.myworkdayjobs.com/private/job/USA---California---San-Jose/Machine-Learning-Science-Graduate---PhD---2026---San-Jose--Seattle_R-98587-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 164d |
 | <a href="https://simplify.jobs/c/Parallel-Web-Systems"><strong>Parallel Web Systems</strong></a> | Early Career Research Engineer | Palo Alto, CA | <a href="https://jobs.ashbyhq.com/parallel/056e41f8-7d5f-41c1-99fd-bf002dc072fd/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 168d |
@@ -223,7 +223,7 @@ Last updated: **2026-07-16 09:28 UTC** · **224** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 814d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 848d |
 
-_130 live, 87 unverified_
+_129 live, 88 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _7 hidden as first_seen >180d. Full set in jobs.db._
