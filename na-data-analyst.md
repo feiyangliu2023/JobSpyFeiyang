@@ -1,12 +1,13 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-17 09:25 UTC** · **91** active roles.
+Last updated: **2026-07-17 16:29 UTC** · **92** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
 | <a href="https://simplify.jobs/c/Semtech"><strong>Semtech</strong></a> | Salesforce QA & Data Analyst Co-op | Burlington, ON, Canada | <a href="https://semtech.wd1.myworkdayjobs.com/SemtechCareers/job/CAN---Burlington-ON/Salesforce-QA---Data-Analyst-Intern_REQ3488"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/35169098-8354-45bb-9bff-7822a0e71312"><strong>Bottom Line</strong></a> | AI Data Analyst - Sales | Portsmouth, NH | <a href="https://job-boards.greenhouse.io/bottomlinetechnologies/jobs/8597355002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
+| <a href="https://simplify.jobs/c/Bosch-Home-Comfort"><strong>Bosch Home Comfort</strong></a> | Associate Vehicle Data Analyst | Northfield, MN | <a href="https://jobs.smartrecruiters.com/BoschGroup/744000138177390"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
 | <a href="https://simplify.jobs/c/AtkinsRealis"><strong>AtkinsRéalis</strong></a> | Cost and Data Analyst Intern | Mississauga, ON, Canada | <a href="https://slihrms.wd3.myworkdayjobs.com/careers/job/CAONMississauga2251-Speakman-Drive/Cost-and-Data-Analyst-Student---Fall_R-158933"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Allegion"><strong>Allegion</strong></a> | Associate Analytics Engineer | Carmel, IN | <a href="https://allegion.wd5.myworkdayjobs.com/careers/job/Carmel-IN/Associate-Analytics-Engineer_JR36667"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/PartnerRe"><strong>PartnerRe</strong></a> | Business Data Analyst Co-op | Toronto, ON, Canada | <a href="https://careers.partnerre.com/job/Toronto-Business-Data-Analyst-Student-ON/1414882233/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -95,7 +96,7 @@ Last updated: **2026-07-17 09:25 UTC** · **91** active roles.
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 169d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 989d |
 
-_14 live, 75 unverified_
+_15 live, 75 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._

@@ -1,10 +1,11 @@
 # North America Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-17 09:25 UTC** · **208** active roles.
+Last updated: **2026-07-17 16:29 UTC** · **209** active roles.
 
 <!-- TABLE_SLICE_NA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
 |---|---|---|---|---|---|
+| <a href="https://formlabs.com"><strong>Formlabs</strong></a> | Algorithms Software Intern - Fall 2026 | Somerville, MA |  | <a href="https://careers.formlabs.com/job/8060759/apply/?gh_jid=8060759"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Formlabs"><strong>Formlabs</strong></a> | Algorithms Software Intern | Cambridge, MA |  | <a href="https://careers.formlabs.com/job/8060759/apply/?gh_jid=8060759"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/X-Development"><strong>X Development</strong></a> | Machine Learning Engineer - Tapestry | Mountain View, CA |  | <a href="https://x.company/careers/8633983002?gh_jid=8633983002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Fundamental-Research-Labs"><strong>Fundamental Research Labs</strong></a> | Research Engineer | Menlo Park, CA |  | <a href="https://jobs.ashbyhq.com/fundamentalresearchlabs/8d460b28-233d-4305-a708-cf547ec3285e/application?embed=true"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -100,7 +101,6 @@ Last updated: **2026-07-17 09:25 UTC** · **208** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Foundations | San Francisco, CA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5197337008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 85d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Machine Learning (RL Velocity) | Remote-Friendly (Travel-Required) · San Francisco, CA · New York City, NY |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5198108008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 85d |
 | **TikTok** | Software Engineer Intern, Recommendation Infrastructure | Seattle, WA |  | <a href="https://lifeattiktok.com/referral/tiktok/campus/position/7537493362585979154/detail?token=MzsxNzU3OTM3MTgyMDE1OzczNzM0OTcwMTcxNzQxMzIyNDA7MDsy"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 88d |
-| <a href="https://www.tiktok.com"><strong>TikTok</strong></a> | Software Engineer Project Intern - Recommendation Infrastructure - TikTok Video Social - 2026 Start - BS/MS | San Jose, CA | $60/hr | <a href="https://lifeattiktok.com/search/7629500062003218741"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 90d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Research Scientist – Generative AI Graduate - Intelligent Creation | San Jose, CA |  | <a href="https://jobs.bytedance.com/en/position/7629855646167091509/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 90d |
 | <a href="https://simplify.jobs/c/Applied-Materials"><strong>Applied Materials</strong></a> | AI Algorithm Developer | Santa Clara, CA |  | <a href="https://amat.wd1.myworkdayjobs.com/External/job/Santa-ClaraCA/AI-Algorithm-Developer_R2519827"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 90d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist - Multiple Teams | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7629243930022267189"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
@@ -110,6 +110,7 @@ Last updated: **2026-07-17 09:25 UTC** · **208** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Scientist - Global E-commerce Content Recommendation | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7553175919394638087"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - E-commerce Recommendation - Multiple Teams | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7629188397976586501"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Research Scientist Intern - TikTok Search / Generative AI - LLM | San Jose, CA |  | <a href="https://lifeattiktok.com/search/7629250876813642037"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
+| <a href="https://www.tiktok.com"><strong>TikTok</strong></a> | Software Engineer Project Intern - Recommendation Infrastructure - TikTok Video Social - 2026 Start - BS/MS | San Jose, CA | $60/hr | <a href="https://lifeattiktok.com/search/7629500062003218741"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer (Senior Staff+), Safeguards Labs | San Francisco, CA · New York City, NY |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5191785008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 91d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Graduate - Tiktok Trust and Safety-CV/NLP/Multimodal LLM - 2026 Start - PhD | Seattle, WA |  | <a href="https://lifeattiktok.com/search/7517108164819454216"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 92d |
 | <a href="https://simplify.jobs/c/ByteDance"><strong>ByteDance</strong></a> | Research Scientist - Technologies of Data Management - LLM and AI Agents | Seattle, WA |  | <a href="https://jobs.bytedance.com/en/position/7629123702995290421/detail"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 92d |
@@ -210,7 +211,7 @@ Last updated: **2026-07-17 09:25 UTC** · **208** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 815d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States |  | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 849d |
 
-_169 live, 35 unverified_
+_169 live, 36 unverified_
 <!-- TABLE_SLICE_NA_ALGORITHM_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._

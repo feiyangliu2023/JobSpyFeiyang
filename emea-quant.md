@@ -1,6 +1,6 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-07-17 09:25 UTC** · **32** active roles.
+Last updated: **2026-07-17 16:29 UTC** · **31** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
@@ -24,7 +24,6 @@ Last updated: **2026-07-17 09:25 UTC** · **32** active roles.
 | <a href="https://pl.indeed.com/cmp/Keyrock-1"><strong>Keyrock</strong></a> | Rust Engineer - Trading Systems | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=d2add8e08ae8e8f5"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://cz.indeed.com/cmp/Keyrock-1"><strong>Keyrock</strong></a> | Rust Engineer - Trading Systems | Praha, A, CZ | <a href="https://cz.indeed.com/viewjob?jk=16da9f7d0c36021c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://dk.indeed.com/cmp/Keyrock-1"><strong>Keyrock</strong></a> | Rust Engineer - Trading Systems | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=b5370aca831e2b13"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
-| <a href="https://de.indeed.com/cmp/Iqm-Finland-Oy"><strong>IQM Finland Oy</strong></a> | Quantum Software Engineer, Benchmarking and Error Reduction | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=a13c4cc715921391"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://ch.indeed.com/cmp/Enzian-Labs-Ag"><strong>Enzian Labs AG</strong></a> | CTO / Quant Engineer | Zürich, ZH, CH | <a href="https://ch.indeed.com/viewjob?jk=039695ee662af1a6"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://uk.indeed.com/cmp/Isam-Securities"><strong>iSAM Securities</strong></a> | Helix Junior Quantitative Developer | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=feb3a78c8c42c717"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://dk.indeed.com/cmp/Atom-Computing"><strong>Atom Computing</strong></a> | Quantum Operations Engineer, Control Systems | København, D84, DK | <a href="https://dk.indeed.com/viewjob?jk=888c45145540609c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
@@ -37,7 +36,7 @@ Last updated: **2026-07-17 09:25 UTC** · **32** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 141d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 227d |
 
-_2 live, 29 unverified_
+_2 live, 28 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._

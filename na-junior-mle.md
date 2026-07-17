@@ -1,10 +1,12 @@
 # North America Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-07-17 09:25 UTC** · **219** active roles.
+Last updated: **2026-07-17 16:29 UTC** · **221** active roles.
 
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/TD-Bank"><strong>TD Bank</strong></a> | Applied Machine Learning Scientist 1 | Toronto, ON, Canada | <a href="https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Applied-Machine-Learning-Scientist-I_R_1500263"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://simplify.jobs/c/CACI"><strong>CACI</strong></a> | Data Scientist - Junior | Aberdeen, MD · Aiea, HI | <a href="https://caci.wd1.myworkdayjobs.com/external/job/Camp-Smith-HI-US/Data-Scientist--Junior_329250"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/X-Development"><strong>X Development</strong></a> | Machine Learning Engineer - Tapestry | Mountain View, CA | <a href="https://x.company/careers/8633983002?gh_jid=8633983002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Westlake"><strong>Westlake</strong></a> | Data Scientist 1 - Digital | Houston, TX | <a href="https://westlake.wd1.myworkdayjobs.com/westlake/job/US---Houston-TX/Data-Scientist-I---Digital_R32974"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/TheBrattleGroup"><strong>The Brattle Group</strong></a> | Data and AI Engineer | Boston, MA | <a href="https://job-boards.greenhouse.io/thebrattlegroup/jobs/4713471005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -120,6 +122,7 @@ Last updated: **2026-07-17 09:25 UTC** · **219** active roles.
 | <a href="https://simplify.jobs/c/ShyftLabs"><strong>ShyftLabs</strong></a> | Associate AI Engineer | Toronto, ON, Canada | <a href="https://jobs.lever.co/shyftlabs/1a665cf5-1f3f-4610-be00-b46ffa13a675/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 65d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Data Scientist, Core Experimentation | Seattle, United States | <a href="https://jobs.ashbyhq.com/openai/e90a44a7-fc2e-49bf-aec4-d43b9e3d8e92/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 65d |
 | <a href="https://www.databricks.com/"><strong>Databricks</strong></a> | AI Engineer - FDE (Forward Deployed Engineer) | United States | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 65d |
+| <a href="https://simplify.jobs/c/SOTI"><strong>SOTI</strong></a> | Data Scientist Intern | Mississauga, ON, Canada | <a href="https://soti.wd3.myworkdayjobs.com/SOTI-Next-Gen/job/Mississauga-Canada--Meadowvale-Office-HQ/Data-Scientist--Intern--September-2026-12-Months-_R10065"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 66d |
 | <a href="https://simplify.jobs/c/Neuralink"><strong>Neuralink</strong></a> | Machine Learning Engineer Intern | Fremont, CA | <a href="https://boards.greenhouse.io/neuralink/jobs/6594261003"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 66d |
 | **BMO** | Machine Learning Intern | Chicago, IL | <a href="https://bmo.wd3.myworkdayjobs.com/Privileged/job/Chicago-IL-USA/Machine-Learning-Intern--Fall-2026--Internship----4-months_R260014372"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 66d |
 | <a href="https://simplify.jobs/c/Eluvio"><strong>Eluvio</strong></a> | AI Machine Learning Intern - Gen AI - Multimodal | Berkeley, CA | <a href="https://apply.workable.com/eluvio/j/F70F3473E7/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 69d |
@@ -156,7 +159,6 @@ Last updated: **2026-07-17 09:25 UTC** · **219** active roles.
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Graduate Machine Learning Engineer - Global E-commerce Recommendation/Search - PhD | San Jose, CA | <a href="https://lifeattiktok.com/search/7550798923146250504"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 107d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer - Search Ads | San Jose, CA | <a href="https://lifeattiktok.com/search/7623166667125508357"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 108d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Machine Learning Engineer Intern - App Ads | San Jose, CA | <a href="https://lifeattiktok.com/search/7623166673809770757"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 108d |
-| <a href="https://simplify.jobs/c/Denso"><strong>Denso</strong></a> | Data Scientist 2 | Southfield, MI | <a href="https://hcwt.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/23724"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 112d |
 | <a href="https://simplify.jobs/c/Global-Lending-Services"><strong>Global Lending Services</strong></a> | Data Scientist | Greenville, SC | <a href="https://jobs.lever.co/glsllc/c1191357-09ab-4707-855b-a99c5cb99ac1/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 114d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Data Scientist, Marketing | New York City, NY · Seattle, WA; San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5161402008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 116d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Performance RL (Reinforcement Learning) | San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5160330008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 116d |
@@ -219,7 +221,7 @@ Last updated: **2026-07-17 09:25 UTC** · **219** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Research Engineer, Knowledge Team | Remote-Friendly (Travel-Required) · San Francisco, CA · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4017331008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 815d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Research Engineer, Retrieval & Search, Applied Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/7322d344-9325-4a92-8445-0a2c4e9272f8/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 849d |
 
-_128 live, 85 unverified_
+_128 live, 87 unverified_
 <!-- TABLE_SLICE_NA_JUNIOR_MLE_END -->
 
 _6 hidden as first_seen >180d. Full set in jobs.db._
