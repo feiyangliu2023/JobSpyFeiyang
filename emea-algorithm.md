@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-07-18 09:05 UTC** · **69** active roles.
+Last updated: **2026-07-18 16:17 UTC** · **70** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Posting | Age |
@@ -36,6 +36,7 @@ Last updated: **2026-07-18 09:05 UTC** · **69** active roles.
 | <a href="https://il.indeed.com/cmp/D--fend-Solutions"><strong>D-Fend Solutions</strong></a> | Communication PHY Algorithms Engineer | רעננה, M, IL | <a href="https://il.indeed.com/viewjob?jk=129be0a5b68d44cd"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://pt.indeed.com/cmp/Complyadvantage"><strong>ComplyAdvantage</strong></a> | Principal Machine Learning Engineer | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=41521a0ee2cdc260"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://nl.indeed.com/cmp/Zympler"><strong>Zympler</strong></a> | Machine Learning Engineer | Utrecht Binnenstad, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=5ea9d49f383fabef"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
+| <a href="https://uk.indeed.com/cmp/Wiley-4"><strong>Wiley</strong></a> | Applied Scientist — AI Studio | Oxford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=bc4c68cd15b8cc69"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://uk.indeed.com/cmp/Oxford-Dynamics"><strong>Oxford Dynamics</strong></a> | Research Engineer | Oxford, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=e9729e3685192bff"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://uk.indeed.com/cmp/Graphcore"><strong>Graphcore</strong></a> | Research Scientist (Visual Generative AI & World Models) | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=69c26557cfb68d2b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://uk.indeed.com/cmp/Graphcore"><strong>Graphcore</strong></a> | Research Scientist (Visual Generative AI & World Models) | Bristol, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=a7d8a8c19b056ea1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -74,7 +75,7 @@ Last updated: **2026-07-18 09:05 UTC** · **69** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | [Expression of Interest] Research Engineer / Scientist, Alignment - London | London, UK | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 474d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 808d |
 
-_14 live, 54 unverified_
+_14 live, 55 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
