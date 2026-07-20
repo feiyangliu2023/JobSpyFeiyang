@@ -1,10 +1,11 @@
 # North America Data Analyst Roles
 
-Last updated: **2026-07-20 10:29 UTC** · **77** active roles.
+Last updated: **2026-07-20 16:38 UTC** · **79** active roles.
 
 <!-- TABLE_SLICE_NA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://simplify.jobs/c/Aramark"><strong>Aramark</strong></a> | Junior Data Analyst | Philadelphia, PA | <a href="https://aramarkcareers.com/UnitedStates/job/Philadelphia-Junior-Data-Analyst-Remote-PA-19103/1410478500/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://simplify.jobs/c/Lincoln-Financial"><strong>Lincoln Financial</strong></a> | Associate Analytics Engineer | Villanova, PA · Lincoln, NE · Charlotte, NC | <a href="https://jobs.lincolnfinancial.com/job/Omaha-Associate,-Analytics-Engineer-NE-68046/1410206500/?ats=successfactors"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://simplify.jobs/c/35169098-8354-45bb-9bff-7822a0e71312"><strong>Bottom Line</strong></a> | AI Data Analyst - Sales | Portsmouth, NH | <a href="https://job-boards.greenhouse.io/bottomlinetechnologies/jobs/8597355002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://simplify.jobs/c/Bosch-Home-Comfort"><strong>Bosch Home Comfort</strong></a> | Associate Vehicle Data Analyst | Northfield, MN | <a href="https://jobs.smartrecruiters.com/BoschGroup/744000138177390"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 4d |
@@ -51,6 +52,7 @@ Last updated: **2026-07-20 10:29 UTC** · **77** active roles.
 | <a href="https://simplify.jobs/c/Field-AI"><strong>Field AI</strong></a> | Field Data Analyst | Irvine, CA | <a href="https://jobs.lever.co/field-ai/acfba278-5f04-4639-ae26-c85e607eebce/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 66d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Staff Data Analyst | US | <a href="https://stripe.com/jobs/search?gh_jid=7921649"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://simplify.jobs/c/Blue-Cross-Blue-Shield-Of-Michigan"><strong>Blue Cross Blue Shield of Michigan</strong></a> | Data Analyst 1 - Data Solution and Design | Detroit, MI | <a href="https://ejko.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/14109"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 69d |
+| <a href="https://simplify.jobs/c/Trane-Technologies"><strong>Trane Technologies</strong></a> | Collections Data Analyst Intern | Winona, MN | <a href="https://careers.tranetechnologies.com/global/en/job/JR-4222"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 73d |
 | <a href="https://simplify.jobs/c/Integra-FEC"><strong>Integra FEC</strong></a> | Data Analyst Intern | Austin, TX | <a href="https://job-boards.greenhouse.io/integrainterns/jobs/5134523008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 83d |
 | <a href="https://simplify.jobs/c/Wilson-Elser"><strong>Wilson Elser</strong></a> | Data Analyst | Chicago, IL | <a href="https://job-boards.greenhouse.io/wilsonelser/jobs/5200828008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 86d |
 | <a href="https://simplify.jobs/c/Jobs-For-Humanity"><strong>Jobs for Humanity</strong></a> | Data Analyst | Cincinnati, OH | <a href="https://jobs.smartrecruiters.com/JobsForHumanity/744000121584977"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 93d |
@@ -82,7 +84,7 @@ Last updated: **2026-07-20 10:29 UTC** · **77** active roles.
 | <a href="https://simplify.jobs/c/Artefact"><strong>Artefact</strong></a> | Junior Data Analyst - Canada-based | Montreal, QC, Canada | <a href="https://job-boards.greenhouse.io/artefactus/jobs/8395651002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 172d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Data Analyst | Canada | <a href="https://stripe.com/jobs/search?gh_jid=5416444"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 992d |
 
-_13 live, 63 unverified_
+_13 live, 65 unverified_
 <!-- TABLE_SLICE_NA_DATA_ANALYST_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
