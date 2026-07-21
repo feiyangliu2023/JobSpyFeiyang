@@ -1,10 +1,11 @@
 # EMEA Quant & Trading Roles
 
-Last updated: **2026-07-21 09:41 UTC** · **31** active roles.
+Last updated: **2026-07-21 16:36 UTC** · **32** active roles.
 
 <!-- TABLE_SLICE_EMEA_QUANT_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://fr.indeed.com/cmp/C12-Quantum-Electronics"><strong>C12 Quantum Electronics</strong></a> | Quantum Application Scientist | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=b8ccfd9c2ddea2b0"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://nl.indeed.com/cmp/Tu-Delft"><strong>TU Delft</strong></a> | PhD Position Quantum Algorithms for Numerical Simulation in Aerospace | Delft, ZH, NL | <a href="https://nl.indeed.com/viewjob?jk=1cabf7191ebadd2a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://fr.indeed.com/cmp/Natixis"><strong>Natixis</strong></a> | Internship - 6 months - Assistant Quant Economiste / Data Scientist F/M | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=b8ad46e3446d1cbf"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://simplify.jobs/c/Goldman-Sachs"><strong>Goldman Sachs</strong></a> | Corporate Treasury - Quantitative Engineer - Associate | London, UK | <a href="https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LateralHiring/job/178881"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 1d |
@@ -36,7 +37,7 @@ Last updated: **2026-07-21 09:41 UTC** · **31** active roles.
 | <a href="https://simplify.jobs/c/JP-Morgan-Chase"><strong>JP Morgan Chase</strong></a> | FICC Quantitative Trading - Algorithmic Execution - Analyst or Associate | London, UK | <a href="https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210717795"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 145d |
 | <a href="https://simplify.jobs/c/Hudson-River-Trading"><strong>Hudson River Trading</strong></a> | Junior Crypto Electronic Trading Support Engineer | London, UK | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=7351141"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 231d |
 
-_3 live, 27 unverified_
+_3 live, 28 unverified_
 <!-- TABLE_SLICE_EMEA_QUANT_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
