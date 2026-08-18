@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-08-18 07:55 UTC** · **62** active roles.
+Last updated: **2026-08-18 15:49 UTC** · **62** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -33,7 +33,7 @@ Last updated: **2026-08-18 07:55 UTC** · **62** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff + Senior Software Engineer, Inference Deployment | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5285557008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 50d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Software Engineer - Research Platform, Consumer Devices | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/6d9925f4-3d0a-4710-8304-032d0080d12d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 53d |
 | <a href="https://stripe.com/"><strong>Stripe</strong></a> | Senior Software Engineer | South San Francisco, CA | <a href="https://stripe.com/jobs/search?gh_jid=8026511"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 55d |
-| <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Tech Lead Software Engineer - AI & Agent - TikTok Ecosystem & Platform | San Jose, CA | <a href="https://lifeattiktok.com/search/7647672631889873205"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 64d |
+| <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Tech Lead Software Engineer - AI & Agent - TikTok Ecosystem & Platform | San Jose, CA | <a href="https://lifeattiktok.com/search/7647672631889873205"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 64d |
 | <a href="https://simplify.jobs/c/Onto-Innovation"><strong>Onto Innovation</strong></a> | Senior Software Engineer | Burlington, MA | <a href="https://onto.wd1.myworkdayjobs.com/onto_careers/job/Wilmington-MA-Upton/Senior-Software-Engineer_R-5554"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 66d |
 | <a href="https://simplify.jobs/c/Northrop-Grumman"><strong>Northrop Grumman</strong></a> | Materials & Processes Engineer/Principal Engineer - Composites | Hackleburg, AL | <a href="https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Mississippi-Iuka/Materials---Processes-Engineer-Principal-Engineer--Composites----2nd-Shift_R10236040-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 68d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Senior Staff Software Engineer, Identity Infrastructure Engineering | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/72a58872-70e2-4340-a259-e9bea3596883/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 77d |
@@ -68,5 +68,5 @@ Last updated: **2026-08-18 07:55 UTC** · **62** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Enterprise GenAI | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4569678005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 448d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 551d |
 
-_48 live, 14 unverified_
+_49 live, 13 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->
