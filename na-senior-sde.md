@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-08-22 07:48 UTC** · **59** active roles.
+Last updated: **2026-08-22 15:37 UTC** · **59** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |

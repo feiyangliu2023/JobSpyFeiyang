@@ -1,10 +1,11 @@
 # EMEA Junior ML Engineer / Applied Scientist Roles
 
-Last updated: **2026-08-22 07:48 UTC** · **126** active roles.
+Last updated: **2026-08-22 15:37 UTC** · **125** active roles.
 
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://de.indeed.com/cmp/Dl-Remote"><strong>DL Remote</strong></a> | AI Engineer | Berlin, BE, DE | <a href="https://de.indeed.com/viewjob?jk=5fbb56b3a8bde9b4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Referrals-Only"><strong>Referrals Only</strong></a> | Data Scientist | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=ac1d4802c87ae69e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://de.indeed.com/cmp/Repa-Deutschland-Gmbh"><strong>REPA Deutschland GmbH</strong></a> | AI Engineer / Specialist (m/f/d) | Bergkirchen, BY, DE | <a href="https://de.indeed.com/viewjob?jk=d8f9fd511dbcbf60"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
 | <a href="https://se.indeed.com/cmp/Modulai"><strong>Modulai</strong></a> | Machine Learning Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=b1b0ce2b0a8cf0dd"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 1d |
@@ -69,7 +70,6 @@ Last updated: **2026-08-22 07:48 UTC** · **126** active roles.
 | <a href="https://il.indeed.com/cmp/Applied-Materials"><strong>Applied Materials</strong></a> | Algorithm Research Engineer | רחובות, M, IL | <a href="https://il.indeed.com/viewjob?jk=0fb1b7c56807efed"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://nl.indeed.com/cmp/Amsterdam-Data-Collective"><strong>Amsterdam Data Collective</strong></a> | Consultant \| Machine Learning Engineer \| Public Sector | Amsterdam, NH, NL | <a href="https://nl.indeed.com/viewjob?jk=d24789d8267986d5"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://uk.indeed.com/cmp/Sky-1"><strong>Sky</strong></a> | Data Scientist | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9790eca7f0fe2027"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
-| <a href="https://fr.indeed.com/cmp/Photoroom"><strong>PHOTOROOM</strong></a> | Product ML Engineer | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=154f467acdd1fb9a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://fr.indeed.com/cmp/Bairesdev"><strong>BairesDev</strong></a> | AI Engineer - Remote Work | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=557a6d5f31034a24"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://fr.indeed.com/cmp/Bairesdev"><strong>BairesDev</strong></a> | Research Engineer - Remote Work | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=69f9002f3eaeb6df"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 7d |
 | <a href="https://uk.indeed.com/cmp/Sky-1"><strong>Sky</strong></a> | Principal ML Engineer \| Sports AI & Computer Vision | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=9cbf021be209669d"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 8d |
@@ -112,7 +112,6 @@ Last updated: **2026-08-22 07:48 UTC** · **126** active roles.
 | <a href="https://simplify.jobs/c/Entrust"><strong>Entrust</strong></a> | Applied Scientist 1 | London, UK | <a href="https://entrust.wd1.myworkdayjobs.com/entrustcareers/job/United-Kingdom---London-Onfido/Applied-Scientist-I_R003921"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 70d |
 | <a href="https://simplify.jobs/c/Melotech"><strong>Melotech</strong></a> | AI/ML Engineer Intern | London, UK · NYC · Berlin, Germany | <a href="https://jobs.ashbyhq.com/melotech/e99207bd-8a2f-4641-a463-08a6633a7073/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 95d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Machine Learning Intern/Co-op  (Winter 2027) | Canada, Canada · Europe, European Union · United States, United States | <a href="https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 101d |
-| <a href="https://www.amazon.com"><strong>Amazon</strong></a> | Software Dev Engineer Intern Machine Learning - Amazon Robotics | Berlin, Germany | <a href="https://www.amazon.jobs/jobs/10401402/apply"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 119d |
 | <a href="https://simplify.jobs/c/PerplexityAI"><strong>Perplexity AI</strong></a> | Intern - Search Machine Learning Engineer | London, UK | <a href="https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 136d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Applied AI Engineer, Codex Core Agent | San Francisco, United States · New York City, United States · Seattle, United States | <a href="https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 149d |
 | <a href="https://simplify.jobs/c/Jobs-For-Humanity"><strong>Jobs for Humanity</strong></a> | Associate Data Scientist | Whiteley, UK · Cardiff, UK | <a href="https://jobs.smartrecruiters.com/JobsForHumanity/744000113595857"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 165d |
@@ -129,7 +128,7 @@ Last updated: **2026-08-22 07:48 UTC** · **126** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Applied AI Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413992005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 843d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 843d |
 
-_33 live, 90 unverified_
+_32 live, 90 unverified_
 <!-- TABLE_SLICE_EMEA_JUNIOR_MLE_END -->
 
 _3 hidden as first_seen >180d. Full set in jobs.db._
