@@ -1,6 +1,6 @@
 # EMEA Algorithm Engineer Roles (算法岗)
 
-Last updated: **2026-08-23 07:47 UTC** · **72** active roles.
+Last updated: **2026-08-23 15:36 UTC** · **73** active roles.
 
 <!-- TABLE_SLICE_EMEA_ALGORITHM_START -->
 | Company | Position | Location | Salary | Posting | Age |
@@ -22,6 +22,7 @@ Last updated: **2026-08-23 07:47 UTC** · **72** active roles.
 | <a href="https://uk.indeed.com/cmp/Callosum"><strong>Callosum</strong></a> | ML Research Engineer - Member of Technical Staff | London, ENG, GB |  | <a href="https://uk.indeed.com/viewjob?jk=e7dcbbe9be103d6e"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://uk.indeed.com/cmp/Callosum"><strong>Callosum</strong></a> | Research Engineer, Evals - Member of Technical Staff | London, ENG, GB |  | <a href="https://uk.indeed.com/viewjob?jk=f6bb00e4f4a0bf70"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://ch.indeed.com/cmp/Belimo"><strong>Belimo</strong></a> | Research Engineer Mechatronics (80-100%) | Hinwil, ZH, CH |  | <a href="https://ch.indeed.com/viewjob?jk=484311493e02929f"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
+| **—** | Research engineer - urban water modelling | Berlin, BE, DE |  | <a href="https://de.indeed.com/viewjob?jk=0f03a24964ab5221"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 3d |
 | <a href="https://se.indeed.com/cmp/Scandinavian-Airlines-System-(sas)"><strong>Scandinavian Airlines System (SAS)</strong></a> | MACHINE LEARNING ENGINEER | Solna, AB, SE |  | <a href="https://se.indeed.com/viewjob?jk=eaabfdf019e6e955"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://de.indeed.com/cmp/Iqm-Finland-Oy"><strong>IQM Finland Oy</strong></a> | Senior Quantum Algorithms Engineer, QML | München, BY, DE |  | <a href="https://de.indeed.com/viewjob?jk=b56a42963275b71b"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
 | <a href="https://ie.indeed.com/cmp/Exl-Service-3984583b"><strong>EXL Service</strong></a> | Machine Learning Engineer | Dublin, D, IE |  | <a href="https://ie.indeed.com/viewjob?jk=0ff7f61585119b02"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 4d |
@@ -52,8 +53,8 @@ Last updated: **2026-08-23 07:47 UTC** · **72** active roles.
 | <a href="https://simplify.jobs/c/Cloudflare"><strong>Cloudflare</strong></a> | Research Engineer Intern | London, UK |  | <a href="https://boards.greenhouse.io/cloudflare/jobs/8089407"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 25d |
 | <a href="https://simplify.jobs/c/Mistral-AI"><strong>Mistral AI</strong></a> | Applied Scientist / Research Engineer Intern | London, UK · Paris, France |  | <a href="https://jobs.ashbyhq.com/mistral.ai/de46ba8b-00cb-4618-83df-66e15a78434e/application?embed=true"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 33d |
 | <a href="https://simplify.jobs/c/355d00b3-2e7a-4b48-9cc7-c54370b52622"><strong>Frontier Health</strong></a> | Applied Scientist / Research Engineer Intern | London, UK |  | <a href="https://jobs.ashbyhq.com/frontier-health/0ff47d07-91b5-4456-9ecf-8438239b00ef/application?embed=true"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 33d |
-| <a href="https://www.hudsonrivertrading.com"><strong>Hudson River Trading</strong></a> | Algorithm Developer - Quant Research & Trading - 2027 PhDs | London, United Kingdom +2 | $412k/yr | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=8059845"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 39d |
-| <a href="https://www.hudsonrivertrading.com"><strong>Hudson River Trading</strong></a> | Algorithm Developer - Quant Research & Trading - 2027 Grads | London, United Kingdom +2 | $412k/yr | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052050"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 39d |
+| <a href="https://www.hudsonrivertrading.com"><strong>Hudson River Trading</strong></a> | Algorithm Developer - Quant Research & Trading - 2027 PhDs | London, United Kingdom +2 | $412k/yr | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=8059845"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 40d |
+| <a href="https://www.hudsonrivertrading.com"><strong>Hudson River Trading</strong></a> | Algorithm Developer - Quant Research & Trading - 2027 Grads | London, United Kingdom +2 | $412k/yr | <a href="https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052050"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 40d |
 | <a href="https://simplify.jobs/c/Jump-Trading"><strong>Jump Trading</strong></a> | ML Research Engineer | London, UK |  | <a href="https://boards.greenhouse.io/embed/job_app?token=7977132"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 41d |
 | <a href="https://simplify.jobs/c/Jump-Trading"><strong>Jump Trading</strong></a> | Campus ML Research Engineer Intern | London, UK |  | <a href="https://boards.greenhouse.io/embed/job_app?token=7977145"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 41d |
 | <a href="https://simplify.jobs/c/SpAItial"><strong>SpAItial</strong></a> | Research Engineer - 3D World Models | London, UK · Munich, Germany |  | <a href="https://jobs.ashbyhq.com/spaitial/e3eaeee7-27db-4fa9-9e72-505d24457603/application?embed=true"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 47d |
@@ -74,7 +75,7 @@ Last updated: **2026-08-23 07:47 UTC** · **72** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | [Expression of Interest] Research Engineer / Scientist, Alignment - London | London, UK |  | <a href="https://job-boards.greenhouse.io/anthropic/jobs/4610158008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 510d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Machine Learning Engineer, Global Public Sector | Doha, Qatar; London, UK |  | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4413274005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 844d |
 
-_22 live, 46 unverified_
+_22 live, 47 unverified_
 <!-- TABLE_SLICE_EMEA_ALGORITHM_END -->
 
 _4 hidden as first_seen >180d. Full set in jobs.db._
