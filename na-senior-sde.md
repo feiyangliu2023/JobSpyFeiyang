@@ -1,11 +1,11 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-08-24 08:15 UTC** · **59** active roles.
+Last updated: **2026-08-24 15:58 UTC** · **59** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Full-Stack Engineer (North Admin) | Toronto, Canada · Canada, Canada · United States, United States | <a href="https://jobs.ashbyhq.com/cohere/c12e3636-ed16-47e7-ba1f-82860f88d340/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
+| <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Full-Stack Engineer (Front-End Leanding), North Admin | Toronto, Canada · Canada, Canada · United States, United States | <a href="https://jobs.ashbyhq.com/cohere/c12e3636-ed16-47e7-ba1f-82860f88d340/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 3d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Education | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5389305008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 11d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Principal Software Engineer, Enterprise Technology Vertical | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/a99e16a8-6fb1-41b9-8d2f-3cf80383121c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 13d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Claude Code | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5383610008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 17d |
