@@ -1,6 +1,6 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-08-29 13:14 UTC** · **58** active roles.
+Last updated: **2026-08-29 18:27 UTC** · **57** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
@@ -45,7 +45,6 @@ Last updated: **2026-08-29 13:14 UTC** · **58** active roles.
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Engineer, Datacenter Server Lifecycle | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5139038008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 171d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Billing Platform | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5146298008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 172d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Senior Staff Software Engineer, API | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5134895008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 184d |
-| <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, People Products | Remote-Friendly (Travel Required) · San Francisco, CA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5119468008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 198d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, AI Reliability | San Francisco, CA · New York City, NY · Seattle, WA | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5113224008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 203d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Senior Software Engineer - Agentic Tooling & Productivity | San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4654897005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 212d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Data Platform | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4649903005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 226d |
@@ -63,7 +62,7 @@ Last updated: **2026-08-29 13:14 UTC** · **58** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Enterprise GenAI | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4569678005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 459d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 562d |
 
-_54 live, 3 unverified_
+_53 live, 3 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
