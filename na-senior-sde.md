@@ -1,10 +1,11 @@
 # North America Senior SDE Roles
 
-Last updated: **2026-09-02 12:14 UTC** · **54** active roles.
+Last updated: **2026-09-02 18:39 UTC** · **55** active roles.
 
 <!-- TABLE_SLICE_NA_SENIOR_SDE_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, RL Environments | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4729820005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://cohere.com/"><strong>Cohere</strong></a> | Senior Full-Stack Engineer (Front-End Leaning), North Admin | Toronto, Canada · Canada, Canada · United States, United States | <a href="https://jobs.ashbyhq.com/cohere/c12e3636-ed16-47e7-ba1f-82860f88d340/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 12d |
 | <a href="https://www.anthropic.com/"><strong>Anthropic</strong></a> | Staff Software Engineer, Education | San Francisco, CA · New York City, NY | <a href="https://job-boards.greenhouse.io/anthropic/jobs/5389305008"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 20d |
 | <a href="https://openai.com/"><strong>OpenAI</strong></a> | Principal Software Engineer, Enterprise Technology Vertical | San Francisco, United States | <a href="https://jobs.ashbyhq.com/openai/a99e16a8-6fb1-41b9-8d2f-3cf80383121c/application"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 22d |
@@ -59,7 +60,7 @@ Last updated: **2026-09-02 12:14 UTC** · **54** active roles.
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Enterprise GenAI | San Francisco, CA; New York, NY | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4569678005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 463d |
 | <a href="https://scale.com/"><strong>Scale AI</strong></a> | Staff Software Engineer, Full-Stack - Enterprise Gen AI | New York, NY; San Francisco, CA | <a href="https://job-boards.greenhouse.io/scaleai/jobs/4529529005"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 566d |
 
-_51 live, 2 unverified_
+_52 live, 2 unverified_
 <!-- TABLE_SLICE_NA_SENIOR_SDE_END -->
 
 _1 hidden as first_seen >180d. Full set in jobs.db._
