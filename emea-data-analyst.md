@@ -1,10 +1,13 @@
 # EMEA Data Analyst Roles
 
-Last updated: **2026-09-06 11:48 UTC** · **105** active roles.
+Last updated: **2026-09-06 17:44 UTC** · **109** active roles.
 
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
+| <a href="https://fr.indeed.com/cmp/Ingeniance"><strong>INGENIANCE</strong></a> | Consultant Data Analyst Expert Dataiku - F/H | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=57cfc3c2fb83c007"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://se.indeed.com/cmp/Enklare"><strong>Enklare</strong></a> | Senior Analytics Engineer | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=d1fba31cc58a1b08"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
+| <a href="https://il.indeed.com/cmp/Communix"><strong>Communix</strong></a> | Business Data Analyst | יפו, TA, IL | <a href="https://il.indeed.com/viewjob?jk=e64313d1dd37ad48"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 0d |
 | <a href="https://uk.indeed.com/cmp/Innocent-5cc3d2b2"><strong>innocent</strong></a> | BI Developer (SQL, Data Modelling, Power BI) | London, ENG, GB | <a href="https://uk.indeed.com/viewjob?jk=fde91a7ba68487ba"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://pl.indeed.com/cmp/Ust-2"><strong>UST</strong></a> | Lead BI Developer | Warszawa, MZ, PL | <a href="https://pl.indeed.com/viewjob?jk=191046556517e8d3"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
 | <a href="https://simplify.jobs/c/Symphony-Comm"><strong>Symphony</strong></a> | Business Intelligence and Solutions | Belfast, UK | <a href="https://symphony.com/company/apply?gh_jid=8130042"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 2d |
@@ -87,6 +90,7 @@ Last updated: **2026-09-06 11:48 UTC** · **105** active roles.
 | <a href="https://nl.indeed.com/cmp/Abn-Amro"><strong>ABN AMRO</strong></a> | Medior Data Analyst & Engineer (DFC) | Amersfoort, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=c4624888c62b933a"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | **—** | Data Analyst (w/m/d) | München, BY, DE | <a href="https://de.indeed.com/viewjob?jk=80ca8662efef9fab"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
 | <a href="https://fr.indeed.comNone"><strong>—</strong></a> | Data Analyst H/F | Paris, A8, FR | <a href="https://fr.indeed.com/viewjob?jk=ac863349f2aeca93"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 5d |
+| <a href="https://nl.indeed.com/cmp/Vodafoneziggo"><strong>VodafoneZiggo</strong></a> | HR Data Analyst | Utrecht, UT, NL | <a href="https://nl.indeed.com/viewjob?jk=399bed2d3b05dfc9"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://se.indeed.com/cmp/Netlight-Consulting-Ab"><strong>NetLight Consulting AB</strong></a> | Analytics Engineer in-house | Stockholm, AB, SE | <a href="https://se.indeed.com/viewjob?jk=b6ce31afb7915cf4"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://es.indeed.com/cmp/Appcast"><strong>AppCast</strong></a> | Business Intelligence Developer, Madrid | Madrid, MD, ES | <a href="https://es.indeed.com/viewjob?jk=fd1aec2a0b4bdc7c"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
 | <a href="https://pt.indeed.com/cmp/Autodoc"><strong>AUTODOC</strong></a> | Data Analyst (m/f/d) - Revenue Intelligence | Lisboa, P11, PT | <a href="https://pt.indeed.com/viewjob?jk=0a6e4efdab8e5602"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 6d |
@@ -109,7 +113,7 @@ Last updated: **2026-09-06 11:48 UTC** · **105** active roles.
 | <a href="https://simplify.jobs/c/DP-World"><strong>DP World</strong></a> | Business Intelligence Apprentice | Thurrock, UK | <a href="https://ehpv.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/23989"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> <sup title="not yet verified live — may be stale">(?)</sup> | 174d |
 | <a href="https://simplify.jobs/c/TikTok"><strong>TikTok</strong></a> | Data Analyst Project Intern | London, UK | <a href="https://lifeattiktok.com/search/7616659899507591477"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 177d |
 
-_7 live, 96 unverified_
+_7 live, 100 unverified_
 <!-- TABLE_SLICE_EMEA_DATA_ANALYST_END -->
 
 _2 hidden as first_seen >180d. Full set in jobs.db._
